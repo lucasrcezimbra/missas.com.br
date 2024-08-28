@@ -39,6 +39,18 @@ class Parish(models.Model):
         return self.name
 
 
+class Source(models.Model):
+    class Type(models.TextChoices):
+        SITE = ("site", "Site")
+
+    type = models.CharField(choices=Type.choices, default=Type.SITE)
+    link = models.URLField(null=True, blank=True)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description
+
+
 class Schedule(models.Model):
     class Day(models.IntegerChoices):
         # It's integer to make the ordering easier
@@ -61,7 +73,14 @@ class Schedule(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField(null=True, blank=True)
     type = models.CharField(choices=Type.choices, default=Type.MASS)
+    source = models.ForeignKey(Source, on_delete=models.RESTRICT)
     observation = models.TextField(null=True, blank=True)
 
     class Meta:
         unique_together = ("parish", "day", "start_time")
+
+    def __str__(self):
+        if self.end_time:
+            return f"{self.get_day_display()} {self.start_time} - {self.end_time} at {self.parish}"
+        else:
+            return f"{self.get_day_display()} {self.start_time} at {self.parish}"

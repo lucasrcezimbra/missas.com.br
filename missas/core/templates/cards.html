@@ -14,8 +14,18 @@
                             {% if schedule.end_time %}- {{ schedule.end_time|time:"H:i" }}{% endif %}
                         </span>
                     </div>
+                    <div class="col-12 col-sm-4 col-md-6 col-lg-8 col-xl-8">
+                        <span>
+                            <i class="fa-solid fa-exclamation-circle"></i>
+                            {% if schedule.source.link %}
+                                Fonte: <a href="{{ schedule.source.link }}" target="_blank">{{ schedule.source.description }}</a>
+                            {% else %}
+                                Fonte: {{ schedule.source.description }}
+                            {% endif %}
+                        </span>
+                    </div>
                     {% if schedule.observation %}
-                        <div class="col-12 col-sm-4 col-md-6 col-lg-8 col-xl-8">
+                        <div class="col-12">
                             <span>
                                 <i class="fa-solid fa-exclamation-circle"></i>
                                 {{ schedule.observation }}

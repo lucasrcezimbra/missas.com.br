@@ -13,7 +13,7 @@ from pytest_django.asserts import (
     assertTemplateUsed,
 )
 
-from missas.core.models import City, Schedule, State
+from missas.core.models import City, Schedule, Source, State
 
 
 @pytest.mark.django_db
@@ -305,4 +305,31 @@ def test_checked_day(client, weekday):
     assertInHTML(
         f'<input class="btn-check" id="{weekday}" name="dia" type="radio" value="{weekday}" checked>',
         response.content.decode(),
+    )
+
+
+@pytest.mark.django_db
+def test_schedule_with_source(client):
+    source = baker.make(Source)
+    schedule = baker.make(Schedule, source=source)
+
+    city = schedule.parish.city
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    html = response.content.decode()
+    assert source.description in html
+
+
+@pytest.mark.django_db
+def test_schedule_with_source_with_link(client):
+    source = baker.make(Source, _fill_optional=["link"])
+    schedule = baker.make(Schedule, source=source)
+
+    city = schedule.parish.city
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    html = response.content.decode()
+    assert (
+        f'Fonte: <a href="{source.link}" target="_blank">{source.description}</a>'
+        in html
     )
