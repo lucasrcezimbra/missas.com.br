@@ -65,3 +65,9 @@ class Schedule(models.Model):
 
     class Meta:
         unique_together = ("parish", "day", "start_time")
+
+    def __str__(self):
+        if self.end_time:
+            return f"{self.get_day_display()} {self.start_time} - {self.end_time} at {self.parish}"
+        else:
+            return f"{self.get_day_display()} {self.start_time} at {self.parish}"
