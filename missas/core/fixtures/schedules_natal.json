@@ -1,0 +1,6374 @@
+[
+{
+  "model": "core.schedule",
+  "pk": 1207,
+  "fields": {
+    "parish": 10,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1208,
+  "fields": {
+    "parish": 10,
+    "day": 0,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1209,
+  "fields": {
+    "parish": 10,
+    "day": 0,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1210,
+  "fields": {
+    "parish": 74,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1211,
+  "fields": {
+    "parish": 74,
+    "day": 0,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1212,
+  "fields": {
+    "parish": 74,
+    "day": 0,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1213,
+  "fields": {
+    "parish": 74,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1214,
+  "fields": {
+    "parish": 34,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1215,
+  "fields": {
+    "parish": 34,
+    "day": 0,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1216,
+  "fields": {
+    "parish": 34,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1217,
+  "fields": {
+    "parish": 26,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1218,
+  "fields": {
+    "parish": 56,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1219,
+  "fields": {
+    "parish": 56,
+    "day": 0,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1220,
+  "fields": {
+    "parish": 44,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1221,
+  "fields": {
+    "parish": 74,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1222,
+  "fields": {
+    "parish": 76,
+    "day": 0,
+    "start_time": "06:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1223,
+  "fields": {
+    "parish": 76,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1224,
+  "fields": {
+    "parish": 1,
+    "day": 0,
+    "start_time": "09:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1225,
+  "fields": {
+    "parish": 1,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1226,
+  "fields": {
+    "parish": 21,
+    "day": 0,
+    "start_time": "06:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1227,
+  "fields": {
+    "parish": 21,
+    "day": 0,
+    "start_time": "10:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1228,
+  "fields": {
+    "parish": 21,
+    "day": 0,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1229,
+  "fields": {
+    "parish": 23,
+    "day": 0,
+    "start_time": "07:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1230,
+  "fields": {
+    "parish": 23,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1231,
+  "fields": {
+    "parish": 16,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1232,
+  "fields": {
+    "parish": 16,
+    "day": 0,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1233,
+  "fields": {
+    "parish": 16,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1234,
+  "fields": {
+    "parish": 55,
+    "day": 0,
+    "start_time": "10:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1235,
+  "fields": {
+    "parish": 55,
+    "day": 0,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1236,
+  "fields": {
+    "parish": 62,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1237,
+  "fields": {
+    "parish": 62,
+    "day": 0,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1238,
+  "fields": {
+    "parish": 62,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1239,
+  "fields": {
+    "parish": 30,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1240,
+  "fields": {
+    "parish": 30,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1241,
+  "fields": {
+    "parish": 19,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1242,
+  "fields": {
+    "parish": 19,
+    "day": 0,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1243,
+  "fields": {
+    "parish": 19,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1244,
+  "fields": {
+    "parish": 76,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1245,
+  "fields": {
+    "parish": 76,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1246,
+  "fields": {
+    "parish": 75,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1247,
+  "fields": {
+    "parish": 75,
+    "day": 0,
+    "start_time": "10:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1248,
+  "fields": {
+    "parish": 75,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1249,
+  "fields": {
+    "parish": 11,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1250,
+  "fields": {
+    "parish": 44,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1251,
+  "fields": {
+    "parish": 38,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1252,
+  "fields": {
+    "parish": 38,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1253,
+  "fields": {
+    "parish": 63,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1254,
+  "fields": {
+    "parish": 63,
+    "day": 0,
+    "start_time": "09:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1255,
+  "fields": {
+    "parish": 63,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1256,
+  "fields": {
+    "parish": 42,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1257,
+  "fields": {
+    "parish": 5,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1258,
+  "fields": {
+    "parish": 5,
+    "day": 0,
+    "start_time": "16:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1259,
+  "fields": {
+    "parish": 5,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1260,
+  "fields": {
+    "parish": 52,
+    "day": 0,
+    "start_time": "09:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1261,
+  "fields": {
+    "parish": 52,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1262,
+  "fields": {
+    "parish": 45,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1263,
+  "fields": {
+    "parish": 45,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1264,
+  "fields": {
+    "parish": 33,
+    "day": 0,
+    "start_time": "07:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1265,
+  "fields": {
+    "parish": 33,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1266,
+  "fields": {
+    "parish": 22,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1267,
+  "fields": {
+    "parish": 22,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1268,
+  "fields": {
+    "parish": 70,
+    "day": 0,
+    "start_time": "09:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1269,
+  "fields": {
+    "parish": 70,
+    "day": 0,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1270,
+  "fields": {
+    "parish": 70,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1271,
+  "fields": {
+    "parish": 2,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1272,
+  "fields": {
+    "parish": 2,
+    "day": 0,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1273,
+  "fields": {
+    "parish": 2,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1274,
+  "fields": {
+    "parish": 3,
+    "day": 0,
+    "start_time": "07:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1275,
+  "fields": {
+    "parish": 3,
+    "day": 0,
+    "start_time": "16:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1276,
+  "fields": {
+    "parish": 3,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1277,
+  "fields": {
+    "parish": 64,
+    "day": 0,
+    "start_time": "08:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1278,
+  "fields": {
+    "parish": 64,
+    "day": 0,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1279,
+  "fields": {
+    "parish": 64,
+    "day": 0,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1280,
+  "fields": {
+    "parish": 53,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1281,
+  "fields": {
+    "parish": 53,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1282,
+  "fields": {
+    "parish": 15,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1283,
+  "fields": {
+    "parish": 61,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1284,
+  "fields": {
+    "parish": 61,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1285,
+  "fields": {
+    "parish": 43,
+    "day": 0,
+    "start_time": "07:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1286,
+  "fields": {
+    "parish": 43,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1287,
+  "fields": {
+    "parish": 54,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1288,
+  "fields": {
+    "parish": 54,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1289,
+  "fields": {
+    "parish": 55,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1290,
+  "fields": {
+    "parish": 55,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1291,
+  "fields": {
+    "parish": 76,
+    "day": 0,
+    "start_time": "07:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1292,
+  "fields": {
+    "parish": 65,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1293,
+  "fields": {
+    "parish": 65,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1294,
+  "fields": {
+    "parish": 36,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1295,
+  "fields": {
+    "parish": 36,
+    "day": 0,
+    "start_time": "18:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1296,
+  "fields": {
+    "parish": 71,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1297,
+  "fields": {
+    "parish": 71,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1298,
+  "fields": {
+    "parish": 38,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1299,
+  "fields": {
+    "parish": 32,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1300,
+  "fields": {
+    "parish": 32,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1301,
+  "fields": {
+    "parish": 57,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1302,
+  "fields": {
+    "parish": 57,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1303,
+  "fields": {
+    "parish": 66,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1304,
+  "fields": {
+    "parish": 66,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1305,
+  "fields": {
+    "parish": 31,
+    "day": 0,
+    "start_time": "09:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1306,
+  "fields": {
+    "parish": 31,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1307,
+  "fields": {
+    "parish": 59,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1308,
+  "fields": {
+    "parish": 59,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1309,
+  "fields": {
+    "parish": 13,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1310,
+  "fields": {
+    "parish": 13,
+    "day": 0,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1311,
+  "fields": {
+    "parish": 60,
+    "day": 0,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1312,
+  "fields": {
+    "parish": 60,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1313,
+  "fields": {
+    "parish": 4,
+    "day": 0,
+    "start_time": "09:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1314,
+  "fields": {
+    "parish": 4,
+    "day": 0,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1315,
+  "fields": {
+    "parish": 35,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1316,
+  "fields": {
+    "parish": 35,
+    "day": 0,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1317,
+  "fields": {
+    "parish": 8,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1318,
+  "fields": {
+    "parish": 8,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1319,
+  "fields": {
+    "parish": 27,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1320,
+  "fields": {
+    "parish": 27,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1321,
+  "fields": {
+    "parish": 44,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1322,
+  "fields": {
+    "parish": 44,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1323,
+  "fields": {
+    "parish": 67,
+    "day": 0,
+    "start_time": "07:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1324,
+  "fields": {
+    "parish": 67,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1325,
+  "fields": {
+    "parish": 55,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1326,
+  "fields": {
+    "parish": 22,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1327,
+  "fields": {
+    "parish": 14,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1328,
+  "fields": {
+    "parish": 14,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1329,
+  "fields": {
+    "parish": 49,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1330,
+  "fields": {
+    "parish": 44,
+    "day": 0,
+    "start_time": "07:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1331,
+  "fields": {
+    "parish": 1,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1332,
+  "fields": {
+    "parish": 1,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1333,
+  "fields": {
+    "parish": 25,
+    "day": 0,
+    "start_time": "10:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1334,
+  "fields": {
+    "parish": 25,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1335,
+  "fields": {
+    "parish": 6,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1336,
+  "fields": {
+    "parish": 37,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1337,
+  "fields": {
+    "parish": 37,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1338,
+  "fields": {
+    "parish": 28,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1339,
+  "fields": {
+    "parish": 36,
+    "day": 0,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1340,
+  "fields": {
+    "parish": 36,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1341,
+  "fields": {
+    "parish": 7,
+    "day": 0,
+    "start_time": "10:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1342,
+  "fields": {
+    "parish": 7,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1343,
+  "fields": {
+    "parish": 18,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1344,
+  "fields": {
+    "parish": 29,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1345,
+  "fields": {
+    "parish": 24,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1346,
+  "fields": {
+    "parish": 24,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1347,
+  "fields": {
+    "parish": 44,
+    "day": 0,
+    "start_time": "06:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1348,
+  "fields": {
+    "parish": 44,
+    "day": 0,
+    "start_time": "10:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1349,
+  "fields": {
+    "parish": 44,
+    "day": 0,
+    "start_time": "16:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1350,
+  "fields": {
+    "parish": 39,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1351,
+  "fields": {
+    "parish": 39,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1352,
+  "fields": {
+    "parish": 12,
+    "day": 0,
+    "start_time": "10:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1353,
+  "fields": {
+    "parish": 12,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1354,
+  "fields": {
+    "parish": 53,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1355,
+  "fields": {
+    "parish": 53,
+    "day": 0,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1356,
+  "fields": {
+    "parish": 44,
+    "day": 0,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1357,
+  "fields": {
+    "parish": 50,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1358,
+  "fields": {
+    "parish": 50,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1359,
+  "fields": {
+    "parish": 20,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1360,
+  "fields": {
+    "parish": 20,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1361,
+  "fields": {
+    "parish": 72,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1362,
+  "fields": {
+    "parish": 59,
+    "day": 0,
+    "start_time": "07:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1363,
+  "fields": {
+    "parish": 59,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1364,
+  "fields": {
+    "parish": 17,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1365,
+  "fields": {
+    "parish": 17,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1366,
+  "fields": {
+    "parish": 38,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1367,
+  "fields": {
+    "parish": 38,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1368,
+  "fields": {
+    "parish": 51,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1369,
+  "fields": {
+    "parish": 51,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1370,
+  "fields": {
+    "parish": 62,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1371,
+  "fields": {
+    "parish": 62,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1372,
+  "fields": {
+    "parish": 74,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1373,
+  "fields": {
+    "parish": 22,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1374,
+  "fields": {
+    "parish": 40,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1375,
+  "fields": {
+    "parish": 40,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1376,
+  "fields": {
+    "parish": 33,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1377,
+  "fields": {
+    "parish": 33,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1378,
+  "fields": {
+    "parish": 14,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1379,
+  "fields": {
+    "parish": 14,
+    "day": 0,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1380,
+  "fields": {
+    "parish": 21,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1381,
+  "fields": {
+    "parish": 21,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1382,
+  "fields": {
+    "parish": 75,
+    "day": 0,
+    "start_time": "18:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1383,
+  "fields": {
+    "parish": 46,
+    "day": 0,
+    "start_time": "07:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1384,
+  "fields": {
+    "parish": 46,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1385,
+  "fields": {
+    "parish": 73,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1386,
+  "fields": {
+    "parish": 73,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1387,
+  "fields": {
+    "parish": 58,
+    "day": 0,
+    "start_time": "07:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1388,
+  "fields": {
+    "parish": 58,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1389,
+  "fields": {
+    "parish": 41,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1390,
+  "fields": {
+    "parish": 59,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1391,
+  "fields": {
+    "parish": 76,
+    "day": 0,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1392,
+  "fields": {
+    "parish": 21,
+    "day": 0,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1393,
+  "fields": {
+    "parish": 68,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1394,
+  "fields": {
+    "parish": 68,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1395,
+  "fields": {
+    "parish": 9,
+    "day": 0,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1396,
+  "fields": {
+    "parish": 9,
+    "day": 0,
+    "start_time": "10:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1397,
+  "fields": {
+    "parish": 9,
+    "day": 0,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1398,
+  "fields": {
+    "parish": 10,
+    "day": 1,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1399,
+  "fields": {
+    "parish": 74,
+    "day": 1,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1400,
+  "fields": {
+    "parish": 34,
+    "day": 1,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1401,
+  "fields": {
+    "parish": 34,
+    "day": 1,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1402,
+  "fields": {
+    "parish": 21,
+    "day": 1,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1403,
+  "fields": {
+    "parish": 23,
+    "day": 1,
+    "start_time": "05:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1404,
+  "fields": {
+    "parish": 23,
+    "day": 1,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1405,
+  "fields": {
+    "parish": 23,
+    "day": 1,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1406,
+  "fields": {
+    "parish": 62,
+    "day": 1,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1407,
+  "fields": {
+    "parish": 30,
+    "day": 1,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1408,
+  "fields": {
+    "parish": 11,
+    "day": 1,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1409,
+  "fields": {
+    "parish": 44,
+    "day": 1,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1410,
+  "fields": {
+    "parish": 63,
+    "day": 1,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1411,
+  "fields": {
+    "parish": 10,
+    "day": 2,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1412,
+  "fields": {
+    "parish": 74,
+    "day": 2,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1413,
+  "fields": {
+    "parish": 34,
+    "day": 2,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1414,
+  "fields": {
+    "parish": 34,
+    "day": 2,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1415,
+  "fields": {
+    "parish": 56,
+    "day": 2,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1416,
+  "fields": {
+    "parish": 44,
+    "day": 2,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1417,
+  "fields": {
+    "parish": 76,
+    "day": 2,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1418,
+  "fields": {
+    "parish": 76,
+    "day": 2,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1419,
+  "fields": {
+    "parish": 1,
+    "day": 2,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1420,
+  "fields": {
+    "parish": 21,
+    "day": 2,
+    "start_time": "06:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1421,
+  "fields": {
+    "parish": 21,
+    "day": 2,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1422,
+  "fields": {
+    "parish": 23,
+    "day": 2,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1423,
+  "fields": {
+    "parish": 16,
+    "day": 2,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1424,
+  "fields": {
+    "parish": 55,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1425,
+  "fields": {
+    "parish": 62,
+    "day": 2,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1426,
+  "fields": {
+    "parish": 30,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1427,
+  "fields": {
+    "parish": 19,
+    "day": 2,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1428,
+  "fields": {
+    "parish": 76,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1429,
+  "fields": {
+    "parish": 75,
+    "day": 2,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1430,
+  "fields": {
+    "parish": 11,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1431,
+  "fields": {
+    "parish": 44,
+    "day": 2,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1432,
+  "fields": {
+    "parish": 38,
+    "day": 2,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1433,
+  "fields": {
+    "parish": 63,
+    "day": 2,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1434,
+  "fields": {
+    "parish": 42,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1435,
+  "fields": {
+    "parish": 5,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1436,
+  "fields": {
+    "parish": 52,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1437,
+  "fields": {
+    "parish": 45,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1438,
+  "fields": {
+    "parish": 33,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1439,
+  "fields": {
+    "parish": 70,
+    "day": 2,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1440,
+  "fields": {
+    "parish": 2,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1441,
+  "fields": {
+    "parish": 69,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1442,
+  "fields": {
+    "parish": 3,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1443,
+  "fields": {
+    "parish": 64,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1444,
+  "fields": {
+    "parish": 53,
+    "day": 2,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1445,
+  "fields": {
+    "parish": 61,
+    "day": 2,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1446,
+  "fields": {
+    "parish": 54,
+    "day": 2,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1447,
+  "fields": {
+    "parish": 55,
+    "day": 2,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1448,
+  "fields": {
+    "parish": 65,
+    "day": 2,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1449,
+  "fields": {
+    "parish": 65,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1450,
+  "fields": {
+    "parish": 48,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1451,
+  "fields": {
+    "parish": 44,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1452,
+  "fields": {
+    "parish": 59,
+    "day": 2,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1453,
+  "fields": {
+    "parish": 13,
+    "day": 2,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1454,
+  "fields": {
+    "parish": 4,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1455,
+  "fields": {
+    "parish": 27,
+    "day": 2,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1456,
+  "fields": {
+    "parish": 22,
+    "day": 2,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1457,
+  "fields": {
+    "parish": 44,
+    "day": 2,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1458,
+  "fields": {
+    "parish": 25,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1459,
+  "fields": {
+    "parish": 47,
+    "day": 2,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1460,
+  "fields": {
+    "parish": 7,
+    "day": 2,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1461,
+  "fields": {
+    "parish": 17,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1462,
+  "fields": {
+    "parish": 38,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1463,
+  "fields": {
+    "parish": 1,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1464,
+  "fields": {
+    "parish": 73,
+    "day": 2,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1465,
+  "fields": {
+    "parish": 59,
+    "day": 2,
+    "start_time": "18:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1466,
+  "fields": {
+    "parish": 68,
+    "day": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1467,
+  "fields": {
+    "parish": 9,
+    "day": 2,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1468,
+  "fields": {
+    "parish": 10,
+    "day": 3,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1469,
+  "fields": {
+    "parish": 74,
+    "day": 3,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1470,
+  "fields": {
+    "parish": 34,
+    "day": 3,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1471,
+  "fields": {
+    "parish": 26,
+    "day": 3,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1472,
+  "fields": {
+    "parish": 56,
+    "day": 3,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1473,
+  "fields": {
+    "parish": 44,
+    "day": 3,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1474,
+  "fields": {
+    "parish": 76,
+    "day": 3,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1475,
+  "fields": {
+    "parish": 76,
+    "day": 3,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1476,
+  "fields": {
+    "parish": 1,
+    "day": 3,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1477,
+  "fields": {
+    "parish": 21,
+    "day": 3,
+    "start_time": "06:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1478,
+  "fields": {
+    "parish": 21,
+    "day": 3,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1479,
+  "fields": {
+    "parish": 23,
+    "day": 3,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1480,
+  "fields": {
+    "parish": 23,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1481,
+  "fields": {
+    "parish": 23,
+    "day": 3,
+    "start_time": "05:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1482,
+  "fields": {
+    "parish": 16,
+    "day": 3,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1483,
+  "fields": {
+    "parish": 55,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1484,
+  "fields": {
+    "parish": 62,
+    "day": 3,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1485,
+  "fields": {
+    "parish": 30,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1486,
+  "fields": {
+    "parish": 19,
+    "day": 3,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1487,
+  "fields": {
+    "parish": 76,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1488,
+  "fields": {
+    "parish": 44,
+    "day": 3,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1489,
+  "fields": {
+    "parish": 38,
+    "day": 3,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1490,
+  "fields": {
+    "parish": 63,
+    "day": 3,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1491,
+  "fields": {
+    "parish": 42,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1492,
+  "fields": {
+    "parish": 5,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1493,
+  "fields": {
+    "parish": 45,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1494,
+  "fields": {
+    "parish": 70,
+    "day": 3,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1495,
+  "fields": {
+    "parish": 2,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1496,
+  "fields": {
+    "parish": 69,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1497,
+  "fields": {
+    "parish": 3,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1498,
+  "fields": {
+    "parish": 64,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1499,
+  "fields": {
+    "parish": 53,
+    "day": 3,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1500,
+  "fields": {
+    "parish": 61,
+    "day": 3,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1501,
+  "fields": {
+    "parish": 43,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1502,
+  "fields": {
+    "parish": 54,
+    "day": 3,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1503,
+  "fields": {
+    "parish": 55,
+    "day": 3,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1504,
+  "fields": {
+    "parish": 65,
+    "day": 3,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1505,
+  "fields": {
+    "parish": 65,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1506,
+  "fields": {
+    "parish": 48,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1507,
+  "fields": {
+    "parish": 44,
+    "day": 3,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1508,
+  "fields": {
+    "parish": 31,
+    "day": 3,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1509,
+  "fields": {
+    "parish": 59,
+    "day": 3,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1510,
+  "fields": {
+    "parish": 13,
+    "day": 3,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1511,
+  "fields": {
+    "parish": 60,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1512,
+  "fields": {
+    "parish": 22,
+    "day": 3,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1513,
+  "fields": {
+    "parish": 14,
+    "day": 3,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1514,
+  "fields": {
+    "parish": 44,
+    "day": 3,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1515,
+  "fields": {
+    "parish": 25,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1516,
+  "fields": {
+    "parish": 47,
+    "day": 3,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1517,
+  "fields": {
+    "parish": 7,
+    "day": 3,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1518,
+  "fields": {
+    "parish": 74,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1519,
+  "fields": {
+    "parish": 17,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1520,
+  "fields": {
+    "parish": 38,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1521,
+  "fields": {
+    "parish": 46,
+    "day": 3,
+    "start_time": "16:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1522,
+  "fields": {
+    "parish": 41,
+    "day": 3,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1523,
+  "fields": {
+    "parish": 21,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1524,
+  "fields": {
+    "parish": 68,
+    "day": 3,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1525,
+  "fields": {
+    "parish": 9,
+    "day": 3,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1526,
+  "fields": {
+    "parish": 10,
+    "day": 4,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1527,
+  "fields": {
+    "parish": 74,
+    "day": 4,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1528,
+  "fields": {
+    "parish": 34,
+    "day": 4,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1529,
+  "fields": {
+    "parish": 34,
+    "day": 4,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1530,
+  "fields": {
+    "parish": 26,
+    "day": 4,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1531,
+  "fields": {
+    "parish": 56,
+    "day": 4,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1532,
+  "fields": {
+    "parish": 44,
+    "day": 4,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1533,
+  "fields": {
+    "parish": 76,
+    "day": 4,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1534,
+  "fields": {
+    "parish": 76,
+    "day": 4,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1535,
+  "fields": {
+    "parish": 1,
+    "day": 4,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1536,
+  "fields": {
+    "parish": 21,
+    "day": 4,
+    "start_time": "06:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1537,
+  "fields": {
+    "parish": 21,
+    "day": 4,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1538,
+  "fields": {
+    "parish": 23,
+    "day": 4,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1539,
+  "fields": {
+    "parish": 16,
+    "day": 4,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1540,
+  "fields": {
+    "parish": 55,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1541,
+  "fields": {
+    "parish": 62,
+    "day": 4,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1542,
+  "fields": {
+    "parish": 30,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1543,
+  "fields": {
+    "parish": 19,
+    "day": 4,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1544,
+  "fields": {
+    "parish": 76,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1545,
+  "fields": {
+    "parish": 75,
+    "day": 4,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1546,
+  "fields": {
+    "parish": 11,
+    "day": 4,
+    "start_time": "18:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1547,
+  "fields": {
+    "parish": 44,
+    "day": 4,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1548,
+  "fields": {
+    "parish": 38,
+    "day": 4,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1549,
+  "fields": {
+    "parish": 63,
+    "day": 4,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1550,
+  "fields": {
+    "parish": 5,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1551,
+  "fields": {
+    "parish": 52,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1552,
+  "fields": {
+    "parish": 33,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1553,
+  "fields": {
+    "parish": 70,
+    "day": 4,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1554,
+  "fields": {
+    "parish": 2,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1555,
+  "fields": {
+    "parish": 69,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1556,
+  "fields": {
+    "parish": 3,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1557,
+  "fields": {
+    "parish": 64,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1558,
+  "fields": {
+    "parish": 53,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1559,
+  "fields": {
+    "parish": 61,
+    "day": 4,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1560,
+  "fields": {
+    "parish": 54,
+    "day": 4,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1561,
+  "fields": {
+    "parish": 55,
+    "day": 4,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1562,
+  "fields": {
+    "parish": 65,
+    "day": 4,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1563,
+  "fields": {
+    "parish": 65,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1564,
+  "fields": {
+    "parish": 48,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1565,
+  "fields": {
+    "parish": 44,
+    "day": 4,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1566,
+  "fields": {
+    "parish": 31,
+    "day": 4,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1567,
+  "fields": {
+    "parish": 59,
+    "day": 4,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1568,
+  "fields": {
+    "parish": 13,
+    "day": 4,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1569,
+  "fields": {
+    "parish": 60,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1570,
+  "fields": {
+    "parish": 4,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1571,
+  "fields": {
+    "parish": 35,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1572,
+  "fields": {
+    "parish": 8,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1573,
+  "fields": {
+    "parish": 27,
+    "day": 4,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1574,
+  "fields": {
+    "parish": 67,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1575,
+  "fields": {
+    "parish": 22,
+    "day": 4,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1576,
+  "fields": {
+    "parish": 14,
+    "day": 4,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1577,
+  "fields": {
+    "parish": 44,
+    "day": 4,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1578,
+  "fields": {
+    "parish": 25,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1579,
+  "fields": {
+    "parish": 6,
+    "day": 4,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1580,
+  "fields": {
+    "parish": 47,
+    "day": 4,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1581,
+  "fields": {
+    "parish": 37,
+    "day": 4,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1582,
+  "fields": {
+    "parish": 7,
+    "day": 4,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1583,
+  "fields": {
+    "parish": 18,
+    "day": 4,
+    "start_time": "06:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1584,
+  "fields": {
+    "parish": 39,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1585,
+  "fields": {
+    "parish": 12,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1586,
+  "fields": {
+    "parish": 44,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1587,
+  "fields": {
+    "parish": 50,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1588,
+  "fields": {
+    "parish": 59,
+    "day": 4,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1589,
+  "fields": {
+    "parish": 17,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1590,
+  "fields": {
+    "parish": 38,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1591,
+  "fields": {
+    "parish": 44,
+    "day": 4,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1592,
+  "fields": {
+    "parish": 40,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1593,
+  "fields": {
+    "parish": 21,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1594,
+  "fields": {
+    "parish": 46,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1595,
+  "fields": {
+    "parish": 73,
+    "day": 4,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1596,
+  "fields": {
+    "parish": 59,
+    "day": 4,
+    "start_time": "18:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1597,
+  "fields": {
+    "parish": 9,
+    "day": 4,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1598,
+  "fields": {
+    "parish": 10,
+    "day": 5,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1599,
+  "fields": {
+    "parish": 74,
+    "day": 5,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1600,
+  "fields": {
+    "parish": 34,
+    "day": 5,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1601,
+  "fields": {
+    "parish": 34,
+    "day": 5,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1602,
+  "fields": {
+    "parish": 26,
+    "day": 5,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1603,
+  "fields": {
+    "parish": 56,
+    "day": 5,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1604,
+  "fields": {
+    "parish": 44,
+    "day": 5,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1605,
+  "fields": {
+    "parish": 76,
+    "day": 5,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1606,
+  "fields": {
+    "parish": 76,
+    "day": 5,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1607,
+  "fields": {
+    "parish": 1,
+    "day": 5,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1608,
+  "fields": {
+    "parish": 21,
+    "day": 5,
+    "start_time": "06:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1609,
+  "fields": {
+    "parish": 21,
+    "day": 5,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1610,
+  "fields": {
+    "parish": 23,
+    "day": 5,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1611,
+  "fields": {
+    "parish": 16,
+    "day": 5,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1612,
+  "fields": {
+    "parish": 55,
+    "day": 5,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1613,
+  "fields": {
+    "parish": 62,
+    "day": 5,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1614,
+  "fields": {
+    "parish": 30,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1615,
+  "fields": {
+    "parish": 19,
+    "day": 5,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1616,
+  "fields": {
+    "parish": 76,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1617,
+  "fields": {
+    "parish": 11,
+    "day": 5,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1618,
+  "fields": {
+    "parish": 44,
+    "day": 5,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1619,
+  "fields": {
+    "parish": 38,
+    "day": 5,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1620,
+  "fields": {
+    "parish": 63,
+    "day": 5,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1621,
+  "fields": {
+    "parish": 5,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1622,
+  "fields": {
+    "parish": 52,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1623,
+  "fields": {
+    "parish": 45,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1624,
+  "fields": {
+    "parish": 22,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1625,
+  "fields": {
+    "parish": 70,
+    "day": 5,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1626,
+  "fields": {
+    "parish": 2,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1627,
+  "fields": {
+    "parish": 69,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1628,
+  "fields": {
+    "parish": 3,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1629,
+  "fields": {
+    "parish": 64,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1630,
+  "fields": {
+    "parish": 53,
+    "day": 5,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1631,
+  "fields": {
+    "parish": 61,
+    "day": 5,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1632,
+  "fields": {
+    "parish": 43,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1633,
+  "fields": {
+    "parish": 54,
+    "day": 5,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1634,
+  "fields": {
+    "parish": 65,
+    "day": 5,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1635,
+  "fields": {
+    "parish": 65,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1636,
+  "fields": {
+    "parish": 48,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1637,
+  "fields": {
+    "parish": 44,
+    "day": 5,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1638,
+  "fields": {
+    "parish": 31,
+    "day": 5,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1639,
+  "fields": {
+    "parish": 59,
+    "day": 5,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1640,
+  "fields": {
+    "parish": 13,
+    "day": 5,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1641,
+  "fields": {
+    "parish": 60,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1642,
+  "fields": {
+    "parish": 4,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1643,
+  "fields": {
+    "parish": 35,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1644,
+  "fields": {
+    "parish": 22,
+    "day": 5,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1645,
+  "fields": {
+    "parish": 14,
+    "day": 5,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1646,
+  "fields": {
+    "parish": 44,
+    "day": 5,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1647,
+  "fields": {
+    "parish": 44,
+    "day": 5,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1648,
+  "fields": {
+    "parish": 25,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1649,
+  "fields": {
+    "parish": 47,
+    "day": 5,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1650,
+  "fields": {
+    "parish": 28,
+    "day": 5,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1651,
+  "fields": {
+    "parish": 7,
+    "day": 5,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1652,
+  "fields": {
+    "parish": 17,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1653,
+  "fields": {
+    "parish": 38,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1654,
+  "fields": {
+    "parish": 22,
+    "day": 5,
+    "start_time": "09:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1655,
+  "fields": {
+    "parish": 21,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1656,
+  "fields": {
+    "parish": 46,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1657,
+  "fields": {
+    "parish": 59,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1658,
+  "fields": {
+    "parish": 76,
+    "day": 5,
+    "start_time": "08:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1659,
+  "fields": {
+    "parish": 68,
+    "day": 5,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1660,
+  "fields": {
+    "parish": 9,
+    "day": 5,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1661,
+  "fields": {
+    "parish": 10,
+    "day": 6,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1662,
+  "fields": {
+    "parish": 74,
+    "day": 6,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1663,
+  "fields": {
+    "parish": 34,
+    "day": 6,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1664,
+  "fields": {
+    "parish": 34,
+    "day": 6,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1665,
+  "fields": {
+    "parish": 56,
+    "day": 6,
+    "start_time": "16:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1666,
+  "fields": {
+    "parish": 44,
+    "day": 6,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1667,
+  "fields": {
+    "parish": 76,
+    "day": 6,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1668,
+  "fields": {
+    "parish": 76,
+    "day": 6,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1669,
+  "fields": {
+    "parish": 1,
+    "day": 6,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1670,
+  "fields": {
+    "parish": 21,
+    "day": 6,
+    "start_time": "06:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1671,
+  "fields": {
+    "parish": 21,
+    "day": 6,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1672,
+  "fields": {
+    "parish": 23,
+    "day": 6,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1673,
+  "fields": {
+    "parish": 16,
+    "day": 6,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1674,
+  "fields": {
+    "parish": 55,
+    "day": 6,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1675,
+  "fields": {
+    "parish": 62,
+    "day": 6,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1676,
+  "fields": {
+    "parish": 19,
+    "day": 6,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1677,
+  "fields": {
+    "parish": 76,
+    "day": 6,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1678,
+  "fields": {
+    "parish": 75,
+    "day": 6,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1679,
+  "fields": {
+    "parish": 11,
+    "day": 6,
+    "start_time": "06:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1680,
+  "fields": {
+    "parish": 11,
+    "day": 6,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1681,
+  "fields": {
+    "parish": 44,
+    "day": 6,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1682,
+  "fields": {
+    "parish": 38,
+    "day": 6,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1683,
+  "fields": {
+    "parish": 63,
+    "day": 6,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1684,
+  "fields": {
+    "parish": 63,
+    "day": 6,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1685,
+  "fields": {
+    "parish": 5,
+    "day": 6,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1686,
+  "fields": {
+    "parish": 33,
+    "day": 6,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1687,
+  "fields": {
+    "parish": 22,
+    "day": 6,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1688,
+  "fields": {
+    "parish": 70,
+    "day": 6,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1689,
+  "fields": {
+    "parish": 2,
+    "day": 6,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1690,
+  "fields": {
+    "parish": 3,
+    "day": 6,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1691,
+  "fields": {
+    "parish": 64,
+    "day": 6,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1692,
+  "fields": {
+    "parish": 54,
+    "day": 6,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1693,
+  "fields": {
+    "parish": 48,
+    "day": 6,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1694,
+  "fields": {
+    "parish": 31,
+    "day": 6,
+    "start_time": "18:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1695,
+  "fields": {
+    "parish": 59,
+    "day": 6,
+    "start_time": "16:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1696,
+  "fields": {
+    "parish": 13,
+    "day": 6,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1697,
+  "fields": {
+    "parish": 60,
+    "day": 6,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1698,
+  "fields": {
+    "parish": 4,
+    "day": 6,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1699,
+  "fields": {
+    "parish": 35,
+    "day": 6,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1700,
+  "fields": {
+    "parish": 27,
+    "day": 6,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1701,
+  "fields": {
+    "parish": 44,
+    "day": 6,
+    "start_time": "07:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1702,
+  "fields": {
+    "parish": 22,
+    "day": 6,
+    "start_time": "10:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1703,
+  "fields": {
+    "parish": 25,
+    "day": 6,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1704,
+  "fields": {
+    "parish": 47,
+    "day": 6,
+    "start_time": "10:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1705,
+  "fields": {
+    "parish": 36,
+    "day": 6,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1706,
+  "fields": {
+    "parish": 44,
+    "day": 6,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1707,
+  "fields": {
+    "parish": 62,
+    "day": 6,
+    "start_time": "10:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1708,
+  "fields": {
+    "parish": 22,
+    "day": 6,
+    "start_time": "06:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1709,
+  "fields": {
+    "parish": 44,
+    "day": 6,
+    "start_time": "08:30:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1710,
+  "fields": {
+    "parish": 14,
+    "day": 6,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1711,
+  "fields": {
+    "parish": 59,
+    "day": 6,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1712,
+  "fields": {
+    "parish": 68,
+    "day": 6,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1713,
+  "fields": {
+    "parish": 9,
+    "day": 6,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1714,
+  "fields": {
+    "parish": 74,
+    "day": 2,
+    "start_time": "09:00:00",
+    "end_time": "11:00:00",
+    "type": "confession",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1715,
+  "fields": {
+    "parish": 74,
+    "day": 3,
+    "start_time": "09:00:00",
+    "end_time": "11:00:00",
+    "type": "confession",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1716,
+  "fields": {
+    "parish": 74,
+    "day": 4,
+    "start_time": "09:00:00",
+    "end_time": "11:00:00",
+    "type": "confession",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1717,
+  "fields": {
+    "parish": 11,
+    "day": 3,
+    "start_time": "16:00:00",
+    "end_time": "17:00:00",
+    "type": "confession",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1718,
+  "fields": {
+    "parish": 30,
+    "day": 4,
+    "start_time": "16:00:00",
+    "end_time": "18:00:00",
+    "type": "confession",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1719,
+  "fields": {
+    "parish": 76,
+    "day": 2,
+    "start_time": "14:30:00",
+    "end_time": "17:00:00",
+    "type": "confession",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1720,
+  "fields": {
+    "parish": 76,
+    "day": 3,
+    "start_time": "14:30:00",
+    "end_time": "17:00:00",
+    "type": "confession",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1721,
+  "fields": {
+    "parish": 76,
+    "day": 4,
+    "start_time": "14:30:00",
+    "end_time": "17:00:00",
+    "type": "confession",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1722,
+  "fields": {
+    "parish": 76,
+    "day": 5,
+    "start_time": "14:30:00",
+    "end_time": "17:00:00",
+    "type": "confession",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1723,
+  "fields": {
+    "parish": 56,
+    "day": 2,
+    "start_time": "14:00:00",
+    "end_time": "16:00:00",
+    "type": "confession",
+    "observation": "Agendamento"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1724,
+  "fields": {
+    "parish": 56,
+    "day": 3,
+    "start_time": "14:00:00",
+    "end_time": "16:00:00",
+    "type": "confession",
+    "observation": "Agendamento"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1725,
+  "fields": {
+    "parish": 56,
+    "day": 4,
+    "start_time": "14:00:00",
+    "end_time": "16:00:00",
+    "type": "confession",
+    "observation": "Agendamento"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1726,
+  "fields": {
+    "parish": 56,
+    "day": 5,
+    "start_time": "14:00:00",
+    "end_time": "16:00:00",
+    "type": "confession",
+    "observation": "Agendamento"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1727,
+  "fields": {
+    "parish": 23,
+    "day": 2,
+    "start_time": "15:00:00",
+    "end_time": "17:00:00",
+    "type": "confession",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1728,
+  "fields": {
+    "parish": 23,
+    "day": 3,
+    "start_time": "15:00:00",
+    "end_time": "17:00:00",
+    "type": "confession",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1729,
+  "fields": {
+    "parish": 23,
+    "day": 4,
+    "start_time": "15:00:00",
+    "end_time": "17:00:00",
+    "type": "confession",
+    "observation": null
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1730,
+  "fields": {
+    "parish": 34,
+    "day": 2,
+    "start_time": "14:00:00",
+    "end_time": "15:30:00",
+    "type": "confession",
+    "observation": "30 fichas"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1731,
+  "fields": {
+    "parish": 34,
+    "day": 3,
+    "start_time": "14:00:00",
+    "end_time": "15:30:00",
+    "type": "confession",
+    "observation": "30 fichas"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1732,
+  "fields": {
+    "parish": 34,
+    "day": 4,
+    "start_time": "14:00:00",
+    "end_time": "15:30:00",
+    "type": "confession",
+    "observation": "30 fichas"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1733,
+  "fields": {
+    "parish": 34,
+    "day": 5,
+    "start_time": "14:00:00",
+    "end_time": "15:30:00",
+    "type": "confession",
+    "observation": "30 fichas"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1734,
+  "fields": {
+    "parish": 5,
+    "day": 2,
+    "start_time": "15:00:00",
+    "end_time": "18:30:00",
+    "type": "confession",
+    "observation": "Agendamento"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1735,
+  "fields": {
+    "parish": 5,
+    "day": 3,
+    "start_time": "15:00:00",
+    "end_time": "18:30:00",
+    "type": "confession",
+    "observation": "Agendamento"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1736,
+  "fields": {
+    "parish": 5,
+    "day": 4,
+    "start_time": "15:00:00",
+    "end_time": "18:30:00",
+    "type": "confession",
+    "observation": "Agendamento"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1737,
+  "fields": {
+    "parish": 11,
+    "day": 4,
+    "start_time": "16:00:00",
+    "end_time": "18:30:00",
+    "type": "confession",
+    "observation": null
+  }
+}
+]

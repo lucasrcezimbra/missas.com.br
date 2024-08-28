@@ -1,0 +1,308 @@
+from datetime import time
+from http import HTTPStatus
+
+import pytest
+from django.shortcuts import resolve_url
+from django.test.client import Client
+from model_bakery import baker
+from pytest_django.asserts import (
+    assertContains,
+    assertInHTML,
+    assertNotContains,
+    assertQuerySetEqual,
+    assertTemplateUsed,
+)
+
+from missas.core.models import City, Schedule, State
+
+
+@pytest.mark.django_db
+def test_404_if_state_doesnt_exist(client):
+    response = client.get(resolve_url("by_city", state="unknown", city="natal"))
+    assert response.status_code == HTTPStatus.NOT_FOUND
+
+
+@pytest.mark.django_db
+def test_404_if_city_doesnt_exist(client):
+    state = baker.make(State)
+
+    response = client.get(resolve_url("by_city", state=state.slug, city="unknown"))
+
+    assert response.status_code == HTTPStatus.NOT_FOUND
+
+
+@pytest.mark.django_db
+def test_view_by_city(client):
+    city = baker.make(City)
+
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    assert response.status_code == HTTPStatus.OK
+
+
+@pytest.mark.django_db
+def test_cache(client):
+    city = baker.make(City)
+
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    assert response.headers["Cache-Control"] == "max-age=86400"
+
+
+@pytest.mark.django_db
+def test_template(client):
+    city = baker.make(City)
+
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    assertTemplateUsed(response, "index.html")
+
+
+@pytest.mark.django_db
+def test_show_schedules_by_city(client: Client):
+    city = baker.make(City)
+    another_city = baker.make(City)
+    schedule = baker.make(Schedule, start_time=time(9, 57), parish__city=city)
+    another_schedule = baker.make(
+        Schedule, start_time=time(8, 12), parish__city=another_city
+    )
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+    )
+
+    assertContains(response, schedule.get_day_display())
+    assertContains(response, "9:57")
+    assertContains(response, schedule.parish.name)
+
+    assertNotContains(response, "8:12")
+    assertNotContains(response, another_schedule.parish.name)
+
+
+@pytest.mark.django_db
+def test_filter_by_day(client: Client):
+    city = baker.make(City)
+    schedule = baker.make(Schedule, parish__city=city, day=Schedule.Day.SATURDAY)
+    another_schedule = baker.make(Schedule, parish__city=city, day=Schedule.Day.SUNDAY)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"dia": "sabado"},
+    )
+
+    assertContains(response, schedule.parish.name)
+    assertNotContains(response, another_schedule.parish.name)
+
+
+@pytest.mark.django_db
+def test_filter_by_sunday(client: Client):
+    city = baker.make(City)
+    sunday = baker.make(Schedule, parish__city=city, day=Schedule.Day.SUNDAY)
+    saturday = baker.make(Schedule, parish__city=city, day=Schedule.Day.SATURDAY)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"dia": "domingo"},
+    )
+
+    assertContains(response, sunday.parish.name)
+    assertNotContains(response, saturday.parish.name)
+
+
+@pytest.mark.django_db
+def test_order_by_day_and_time(client: Client):
+    city = baker.make(City)
+    saturday_morning = baker.make(
+        Schedule, day=Schedule.Day.SATURDAY, start_time=time(9, 57), parish__city=city
+    )
+    saturday_afternoon = baker.make(
+        Schedule, day=Schedule.Day.SATURDAY, start_time=time(14, 12), parish__city=city
+    )
+    sunday_morning = baker.make(
+        Schedule, day=Schedule.Day.SUNDAY, start_time=time(9, 57), parish__city=city
+    )
+    sunday_afternoon = baker.make(
+        Schedule, day=Schedule.Day.SUNDAY, start_time=time(14, 12), parish__city=city
+    )
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+    )
+
+    assertQuerySetEqual(
+        response.context["schedules"],
+        [
+            sunday_morning,
+            sunday_afternoon,
+            saturday_morning,
+            saturday_afternoon,
+        ],
+    )
+
+
+@pytest.mark.django_db
+def test_filter_by_day_and_order_by_time(client: Client):
+    city = baker.make(City)
+    saturday_morning = baker.make(
+        Schedule, day=Schedule.Day.SATURDAY, start_time=time(9, 57), parish__city=city
+    )
+    saturday_afternoon = baker.make(
+        Schedule, day=Schedule.Day.SATURDAY, start_time=time(14, 12), parish__city=city
+    )
+    baker.make(
+        Schedule, day=Schedule.Day.SUNDAY, start_time=time(9, 57), parish__city=city
+    )
+    baker.make(
+        Schedule, day=Schedule.Day.SUNDAY, start_time=time(14, 12), parish__city=city
+    )
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"dia": "sabado"},
+    )
+
+    assertQuerySetEqual(
+        response.context["schedules"],
+        [
+            saturday_morning,
+            saturday_afternoon,
+        ],
+    )
+
+
+@pytest.mark.django_db
+def test_no_schedules(client: Client):
+    city = baker.make(City)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+    )
+
+    assertContains(response, "Nenhum horário cadastrado.")
+
+
+@pytest.mark.django_db
+def test_filter_by_time(client: Client):
+    city = baker.make(City)
+    baker.make(
+        Schedule, day=Schedule.Day.SUNDAY, start_time=time(9, 57), parish__city=city
+    )
+    sunday_afternoon = baker.make(
+        Schedule, day=Schedule.Day.SUNDAY, start_time=time(14, 12), parish__city=city
+    )
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"horario": "12"},
+    )
+
+    assertQuerySetEqual(
+        response.context["schedules"],
+        [sunday_afternoon],
+    )
+
+
+@pytest.mark.django_db
+def test_filter_by_type_default_mass(client):
+    city = baker.make(City)
+    mass = baker.make(Schedule, parish__city=city, type=Schedule.Type.MASS)
+    baker.make(Schedule, parish__city=city, type=Schedule.Type.CONFESSION)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+    )
+    assertQuerySetEqual(
+        response.context["schedules"],
+        [mass],
+    )
+    assertInHTML(
+        '<input class="btn-check" id="missas" name="tipo" type="radio" value="missas" checked>',
+        response.content.decode(),
+    )
+
+
+@pytest.mark.django_db
+def test_filter_by_type(client):
+    city = baker.make(City)
+    baker.make(Schedule, parish__city=city, type=Schedule.Type.MASS)
+    confession = baker.make(Schedule, parish__city=city, type=Schedule.Type.CONFESSION)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"tipo": "confissoes"},
+    )
+
+    assertInHTML(
+        '<input class="btn-check" id="confissoes" name="tipo" type="radio" value="confissoes" checked>',
+        response.content.decode(),
+    )
+    assertQuerySetEqual(
+        response.context["schedules"],
+        [confession],
+    )
+
+
+@pytest.mark.django_db
+def test_show_end_time(client: Client):
+    city = baker.make(City)
+    baker.make(
+        Schedule,
+        type=Schedule.Type.CONFESSION,
+        start_time=time(9),
+        end_time=time(11),
+        parish__city=city,
+    )
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"tipo": "confissoes"},
+    )
+
+    assertContains(response, "9:00")
+    assertContains(response, "11:00")
+
+
+@pytest.mark.django_db
+def test_filter_by_end_time_if_exists(client: Client):
+    city = baker.make(City)
+    confession = baker.make(
+        Schedule,
+        type=Schedule.Type.CONFESSION,
+        start_time=time(9),
+        end_time=time(11),
+        parish__city=city,
+    )
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"tipo": "confissoes", "horario": "10"},
+    )
+
+    assertQuerySetEqual(response.context["schedules"], [confession])
+
+
+@pytest.mark.parametrize(
+    ["weekday"],
+    (
+        ["segunda"],
+        ["terca"],
+        ["quarta"],
+        ["quinta"],
+        ["sexta"],
+        ["sabado"],
+        ["domingo"],
+    ),
+)
+@pytest.mark.django_db
+def test_checked_day(client, weekday):
+    city = baker.make(City)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"dia": weekday},
+    )
+
+    assertInHTML(
+        f'<input class="btn-check" id="{weekday}" name="dia" type="radio" value="{weekday}" checked>',
+        response.content.decode(),
+    )

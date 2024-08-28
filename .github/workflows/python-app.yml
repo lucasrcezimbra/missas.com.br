@@ -1,0 +1,29 @@
+name: Python application
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: pipx install poetry
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+        cache: 'poetry'
+    - name: Install dependencies
+      run: |
+        poetry install
+        poetry run pre-commit install
+        cp contrib/env-sample .env
+    - run: poetry run pre-commit run -a
+    - name: pytest
+      run: |
+        docker-compose up -d
+        sleep 5
+        poetry run pytest

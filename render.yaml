@@ -1,0 +1,34 @@
+databases:
+  - name: missas
+    databaseName: missas
+    user: missas
+    plan: free
+
+services:
+  - type: web
+    name: missas
+    plan: free
+    runtime: python
+    buildCommand: "poetry install && poetry run python manage.py collectstatic && poetry run python manage.py migrate"
+    startCommand: "poetry run gunicorn missas.wsgi:application"
+    domains:
+      - missas.com.br
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: missas
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
+      - key: ALLOWED_HOSTS
+        value: missas.com.br,www.missas.com.br,missas.onrender.com
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: POETRY_VERSION
+        value: 1.7.1
+      - key: SENTRY_DSN
+        value: <TODO>
+      - key: ENV
+        value: prod

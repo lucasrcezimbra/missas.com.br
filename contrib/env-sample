@@ -1,0 +1,6 @@
+ALLOWED_HOSTS=127.0.0.1, .localhost
+DATABASE_URL=postgres://missas:p4ssw0rd@localhost:5432/missas
+DEBUG=True
+ENV=local
+SECRET_KEY=THIS_IS_NOT_A_GOOD_SECRET
+SENTRY_DSN=
