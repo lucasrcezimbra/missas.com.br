@@ -73,6 +73,7 @@ class Schedule(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField(null=True, blank=True)
     type = models.CharField(choices=Type.choices, default=Type.MASS)
+    source = models.ForeignKey(Source, on_delete=models.RESTRICT)
     observation = models.TextField(null=True, blank=True)
 
     class Meta:
