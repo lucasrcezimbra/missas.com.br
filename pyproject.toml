@@ -7,7 +7,7 @@ authors = []
 [tool.poetry.dependencies]
 python = "^3.12"
 dj-database-url = "2.1.0"
-django = "5.0.4"
+django = "5.1"
 django-extensions = "3.2.3"
 django-htmx = "1.17.3"
 fontawesomefree = "6.5.1"
