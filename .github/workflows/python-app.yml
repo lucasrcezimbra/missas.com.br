@@ -24,6 +24,6 @@ jobs:
     - run: poetry run pre-commit run -a
     - name: pytest
       run: |
-        docker-compose up -d
+        docker compose up -d
         sleep 5
         poetry run pytest
