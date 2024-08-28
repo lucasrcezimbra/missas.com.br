@@ -1,7 +1,7 @@
 from django.contrib import admin  # noqa
 from django.contrib.auth.admin import UserAdmin
 
-from missas.core.models import City, State, User, Parish, Schedule
+from missas.core.models import City, State, User, Parish, Schedule, Source
 
 admin.site.register(User, UserAdmin)
 
@@ -33,3 +33,8 @@ class StateAdmin(admin.ModelAdmin):
     list_display = ("name", "short_name", "slug")
     search_fields = ("name", "short_name", "slug")
     ordering = ("name",)
+
+
+@admin.register(Source)
+class SourceAdmin(admin.ModelAdmin):
+    pass

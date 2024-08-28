@@ -39,6 +39,18 @@ class Parish(models.Model):
         return self.name
 
 
+class Source(models.Model):
+    class Type(models.TextChoices):
+        SITE = ("site", "Site")
+
+    type = models.CharField(choices=Type.choices, default=Type.SITE)
+    link = models.URLField(null=True, blank=True)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description
+
+
 class Schedule(models.Model):
     class Day(models.IntegerChoices):
         # It's integer to make the ordering easier
