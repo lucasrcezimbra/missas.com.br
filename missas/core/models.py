@@ -85,6 +85,7 @@ class Schedule(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField(null=True, blank=True)
     type = models.CharField(choices=Type.choices, default=Type.MASS)
+    verified_at = models.DateField(blank=True, null=True)
 
     class Meta:
         unique_together = ("parish", "day", "start_time")
