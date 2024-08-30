@@ -24,10 +24,11 @@ class ParishAdmin(admin.ModelAdmin):
 @admin.register(Schedule)
 class ScheduleAdmin(admin.ModelAdmin):
     autocomplete_fields = ("parish",)
-    list_display = ("parish", "type", "day", "start_time", "observation")
+    list_display = ("parish", "type", "day", "start_time", "verified_at", "observation")
     list_filter = (
         ("type", admin.ChoicesFieldListFilter),
         ("day", admin.ChoicesFieldListFilter),
+        ("verified_at", admin.EmptyFieldListFilter),
         ("observation", admin.EmptyFieldListFilter),
     )
     search_fields = ("parish__name", "day", "start_time")
