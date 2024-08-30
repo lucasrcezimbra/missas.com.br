@@ -7,6 +7,8 @@ class User(AbstractUser):
 
 
 class State(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=254)
     short_name = models.CharField(max_length=2)
     slug = models.SlugField(unique=True)
@@ -16,6 +18,8 @@ class State(models.Model):
 
 
 class City(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=254)
     slug = models.SlugField()
     state = models.ForeignKey(State, on_delete=models.CASCADE, related_name="cities")
@@ -28,6 +32,8 @@ class City(models.Model):
 
 
 class Parish(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="parishes")
     name = models.CharField(max_length=254)
     slug = models.SlugField(max_length=254)
@@ -43,6 +49,8 @@ class Source(models.Model):
     class Type(models.TextChoices):
         SITE = ("site", "Site")
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     description = models.TextField()
     link = models.URLField(null=True, blank=True)
     type = models.CharField(choices=Type.choices, default=Type.SITE)
@@ -66,6 +74,8 @@ class Schedule(models.Model):
         MASS = ("mass", "Missa")
         CONFESSION = ("confession", "Confissão")
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     day = models.IntegerField(choices=Day.choices)
     observation = models.TextField(null=True, blank=True)
     parish = models.ForeignKey(
