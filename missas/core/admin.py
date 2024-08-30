@@ -1,7 +1,7 @@
-from django.contrib import admin  # noqa
+from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from missas.core.models import City, State, User, Parish, Schedule, Source
+from missas.core.models import City, Parish, Schedule, Source, State, User
 
 admin.site.register(User, UserAdmin)
 
@@ -24,7 +24,12 @@ class ParishAdmin(admin.ModelAdmin):
 @admin.register(Schedule)
 class ScheduleAdmin(admin.ModelAdmin):
     autocomplete_fields = ("parish",)
-    list_display = ("parish", "type", "day", "start_time")
+    list_display = ("parish", "type", "day", "start_time", "observation")
+    list_filter = (
+        ("type", admin.ChoicesFieldListFilter),
+        ("day", admin.ChoicesFieldListFilter),
+        ("observation", admin.EmptyFieldListFilter),
+    )
     search_fields = ("parish__name", "day", "start_time")
 
 
