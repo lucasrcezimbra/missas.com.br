@@ -9,30 +9,30 @@ admin.site.register(User, UserAdmin)
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
     list_display = ("name", "state", "slug")
-    search_fields = ("name", "state__name", "slug")
     ordering = ("name",)
+    search_fields = ("name", "state__name", "slug")
 
 
 @admin.register(Parish)
 class ParishAdmin(admin.ModelAdmin):
-    list_display = ("name", "city", "slug")
-    search_fields = ("name", "city__name", "slug")
     autocomplete_fields = ("city",)
+    list_display = ("name", "city", "slug")
     prepopulated_fields = {"slug": ("name",)}
+    search_fields = ("name", "city__name", "slug")
 
 
 @admin.register(Schedule)
 class ScheduleAdmin(admin.ModelAdmin):
+    autocomplete_fields = ("parish",)
     list_display = ("parish", "type", "day", "start_time")
     search_fields = ("parish__name", "day", "start_time")
-    autocomplete_fields = ("parish",)
 
 
 @admin.register(State)
 class StateAdmin(admin.ModelAdmin):
     list_display = ("name", "short_name", "slug")
-    search_fields = ("name", "short_name", "slug")
     ordering = ("name",)
+    search_fields = ("name", "short_name", "slug")
 
 
 @admin.register(Source)
