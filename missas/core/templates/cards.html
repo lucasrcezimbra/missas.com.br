@@ -32,6 +32,12 @@
                             </span>
                         </div>
                     {% endif %}
+                    {% if schedule.verified_at %}
+                        <div class="col-12">
+                            <i class="fa-solid fa-circle-check verified"></i>
+                            Verificado por Missas.com.br no dia {{ schedule.verified_at|date:"SHORT_DATE_FORMAT" }}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

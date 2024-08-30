@@ -333,3 +333,17 @@ def test_schedule_with_source_with_link(client):
         f'Fonte: <a href="{source.link}" target="_blank">{source.description}</a>'
         in html
     )
+
+
+@pytest.mark.django_db
+def test_verified_schedule(client):
+    schedule = baker.make(Schedule, _fill_optional=["verified_at"])
+
+    city = schedule.parish.city
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    html = response.content.decode()
+    assert (
+        f"Verificado por Missas.com.br no dia {schedule.verified_at.strftime('%d/%m/%Y')}"
+        in html
+    )
