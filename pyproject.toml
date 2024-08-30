@@ -6,25 +6,25 @@ authors = []
 
 [tool.poetry.dependencies]
 python = "^3.12"
-dj-database-url = "2.1.0"
-django = "5.0.4"
+dj-database-url = "2.2.0"
+django = "5.1"
 django-extensions = "3.2.3"
-django-htmx = "1.17.3"
-fontawesomefree = "6.5.1"
-gunicorn = "21.2.0"
+django-htmx = "1.19.0"
+fontawesomefree = "6.6.0"
+gunicorn = "23.0.0"
 psycopg2-binary = "2.9.9"
 python-decouple = "3.8"
-sentry-sdk = {extras = ["django"], version = "2.2.1"}
-whitenoise = {extras = ["brotli"], version = "6.6.0"}
+sentry-sdk = {extras = ["django"], version = "2.13.0"}
+whitenoise = {extras = ["brotli"], version = "6.7.0"}
 
 [tool.poetry.group.dev.dependencies]
 freezegun = "1.5.1"
-model-bakery = "1.18.0"
-pre-commit = "3.7.0"
+model-bakery = "1.19.5"
+pre-commit = "3.8.0"
 pytest = "8.3.2"
 pytest-django = "4.8.0"
 pytest-mock = "3.14.0"
-scrapy = "2.11.1"
+scrapy = "2.11.2"
 
 
 [tool.pytest.ini_options]
