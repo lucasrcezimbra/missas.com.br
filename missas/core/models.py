@@ -17,8 +17,8 @@ class State(models.Model):
 
 class City(models.Model):
     name = models.CharField(max_length=254)
-    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name="cities")
     slug = models.SlugField()
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name="cities")
 
     class Meta:
         unique_together = ("slug", "state")
@@ -28,8 +28,8 @@ class City(models.Model):
 
 
 class Parish(models.Model):
-    name = models.CharField(max_length=254)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="parishes")
+    name = models.CharField(max_length=254)
     slug = models.SlugField(max_length=254)
 
     class Meta:
@@ -43,9 +43,9 @@ class Source(models.Model):
     class Type(models.TextChoices):
         SITE = ("site", "Site")
 
-    type = models.CharField(choices=Type.choices, default=Type.SITE)
-    link = models.URLField(null=True, blank=True)
     description = models.TextField()
+    link = models.URLField(null=True, blank=True)
+    type = models.CharField(choices=Type.choices, default=Type.SITE)
 
     def __str__(self):
         return self.description
@@ -66,15 +66,15 @@ class Schedule(models.Model):
         MASS = ("mass", "Missa")
         CONFESSION = ("confession", "Confissão")
 
+    day = models.IntegerField(choices=Day.choices)
+    observation = models.TextField(null=True, blank=True)
     parish = models.ForeignKey(
         Parish, on_delete=models.CASCADE, related_name="schedules"
     )
-    day = models.IntegerField(choices=Day.choices)
+    source = models.ForeignKey(Source, on_delete=models.RESTRICT)
     start_time = models.TimeField()
     end_time = models.TimeField(null=True, blank=True)
     type = models.CharField(choices=Type.choices, default=Type.MASS)
-    source = models.ForeignKey(Source, on_delete=models.RESTRICT)
-    observation = models.TextField(null=True, blank=True)
 
     class Meta:
         unique_together = ("parish", "day", "start_time")
