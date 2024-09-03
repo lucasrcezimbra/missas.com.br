@@ -22,7 +22,7 @@ freezegun = "1.5.1"
 model-bakery = "1.19.5"
 pre-commit = "3.8.0"
 pytest = "8.3.2"
-pytest-django = "4.8.0"
+pytest-django = "4.9.0"
 pytest-mock = "3.14.0"
 scrapy = "2.11.2"
 
