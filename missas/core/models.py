@@ -47,7 +47,7 @@ class Parish(models.Model):
 
 class Contact(models.Model):
     email = models.EmailField(blank=True)
-    facebook = models.CharField(max_length=64, blank=True)
+    facebook = models.CharField(max_length=256, blank=True)
     instagram = models.CharField(max_length=64, blank=True)
     phone = models.CharField(max_length=16, blank=True)
     phone2 = models.CharField(max_length=16, blank=True)
