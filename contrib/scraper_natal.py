@@ -4,7 +4,9 @@ import scrapy
 class NatalSpider(scrapy.Spider):
     name = "natal"
     allowed_domains = ["www.arquidiocesedenatal.org.br"]
-    start_urls = ["https://www.arquidiocesedenatal.org.br/horariosdemissa"]
+    start_urls = [
+        "https://www.arquidiocesedenatal.org.br/c%C3%B3pia-hor%C3%A1rios-de-missa-2"
+    ]
 
     def parse(self, response):
         """
