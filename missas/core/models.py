@@ -31,25 +31,10 @@ class City(models.Model):
         return self.name
 
 
-class Contact(models.Model):
-    email = models.EmailField(blank=True)
-    facebook = models.URLField(blank=True)
-    instagram = models.CharField(max_length=64, blank=True)
-    phone = models.CharField(max_length=16, blank=True)
-    phone2 = models.CharField(max_length=16, blank=True)
-    whatsapp = models.CharField(max_length=16, blank=True)
-
-    def __str__(self):
-        return self.whatsapp or self.phone
-
-
 class Parish(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="parishes")
-    contact = models.OneToOneField(
-        Contact, on_delete=models.CASCADE, blank=True, null=True
-    )
     name = models.CharField(max_length=254)
     slug = models.SlugField(max_length=254)
 
@@ -58,6 +43,21 @@ class Parish(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Contact(models.Model):
+    email = models.EmailField(blank=True)
+    facebook = models.URLField(blank=True)
+    instagram = models.CharField(max_length=64, blank=True)
+    phone = models.CharField(max_length=16, blank=True)
+    phone2 = models.CharField(max_length=16, blank=True)
+    whatsapp = models.CharField(max_length=16, blank=True)
+    parish = models.OneToOneField(
+        Parish, on_delete=models.CASCADE, blank=True, null=True
+    )
+
+    def __str__(self):
+        return self.whatsapp or self.phone
 
 
 class Source(models.Model):
