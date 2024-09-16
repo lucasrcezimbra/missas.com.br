@@ -52,7 +52,9 @@ class Contact(models.Model):
     phone = models.CharField(max_length=16, blank=True)
     phone2 = models.CharField(max_length=16, blank=True)
     whatsapp = models.CharField(max_length=16, blank=True)
-    parish = models.OneToOneField(Parish, on_delete=models.CASCADE)
+    parish = models.OneToOneField(
+        Parish, on_delete=models.CASCADE, blank=True, null=True
+    )
 
     def __str__(self):
         return self.whatsapp or self.phone
