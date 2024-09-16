@@ -1,6 +1,12 @@
 import json
+import os
 
-from missas.core.models import Contact, Parish
+import django
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "missas.settings")
+django.setup()
+
+from missas.core.models import Contact, Parish  # noqa
 
 NAMES_MAPPER = {
     "Paróquia de São José – Angicos": "",
@@ -23,7 +29,7 @@ NAMES_MAPPER = {
     "Paróquia de São José – São José de Campestre": "",
 }
 
-with open("./natal_contacts.jsonl") as f:
+with open("./contrib/natal_contacts.jsonl") as f:
     datas = [json.loads(line) for line in f.readlines()]
 
 
