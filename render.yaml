@@ -9,7 +9,7 @@ services:
     name: missas
     plan: free
     runtime: python
-    buildCommand: "poetry install && poetry run python manage.py collectstatic && poetry run python manage.py migrate && poetry run python contrib/natal_contracts_into_django.py"
+    buildCommand: "poetry install && poetry run python manage.py collectstatic && poetry run python manage.py migrate"
     startCommand: "poetry run gunicorn missas.wsgi:application"
     domains:
       - missas.com.br
