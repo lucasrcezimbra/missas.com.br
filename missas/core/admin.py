@@ -3,7 +3,6 @@ from django.contrib.auth.admin import UserAdmin
 
 from missas.core.models import City, Contact, Parish, Schedule, Source, State, User
 
-admin.site.register(Contact)
 admin.site.register(Source)
 admin.site.register(User, UserAdmin)
 
@@ -13,6 +12,20 @@ class CityAdmin(admin.ModelAdmin):
     list_display = ("name", "state", "slug")
     ordering = ("name",)
     search_fields = ("name", "state__name", "slug")
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = (
+        "parish__name",
+        "whatsapp",
+        "instagram",
+        "facebook",
+        "email",
+        "phone",
+        "phone2",
+    )
+    ordering = ("parish__name",)
 
 
 @admin.register(Parish)
