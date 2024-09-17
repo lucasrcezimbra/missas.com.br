@@ -10,6 +10,7 @@ admin.site.register(User, UserAdmin)
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
     list_display = ("name", "state", "slug")
+    list_filter = ("state",)
     ordering = ("name",)
     search_fields = ("name", "state__name", "slug")
 
