@@ -63,10 +63,11 @@ class Contact(models.Model):
 class Source(models.Model):
     class Type(models.TextChoices):
         SITE = ("site", "Site")
+        WHATSAPP = ("whatsapp", "WhatsApp")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    description = models.TextField()
+    description = models.TextField(blank=True)
     link = models.URLField(null=True, blank=True)
     type = models.CharField(choices=Type.choices, default=Type.SITE)
 
