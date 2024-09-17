@@ -28,7 +28,7 @@ class City(models.Model):
         unique_together = ("slug", "state")
 
     def __str__(self):
-        return self.name
+        return f"{self.name}/{self.state.short_name}"
 
 
 class Parish(models.Model):
