@@ -96,7 +96,7 @@ class Schedule(models.Model):
     parish = models.ForeignKey(
         Parish, on_delete=models.CASCADE, related_name="schedules"
     )
-    source = models.ForeignKey(Source, on_delete=models.RESTRICT)
+    source = models.ForeignKey(Source, on_delete=models.RESTRICT, blank=True, null=True)
     start_time = models.TimeField()
     end_time = models.TimeField(null=True, blank=True)
     type = models.CharField(choices=Type.choices, default=Type.MASS)
