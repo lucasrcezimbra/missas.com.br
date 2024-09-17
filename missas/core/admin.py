@@ -16,6 +16,7 @@ class CityAdmin(admin.ModelAdmin):
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
+    autocomplete_fields = ("parish",)
     list_display = (
         "parish__name",
         "whatsapp",
