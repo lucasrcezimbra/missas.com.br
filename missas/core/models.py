@@ -42,7 +42,7 @@ class Parish(models.Model):
         unique_together = ("slug", "city")
 
     def __str__(self):
-        return self.name
+        return f"{self.name} ({self.city.name}/{self.city.state.short_name})"
 
 
 class Contact(models.Model):
