@@ -3,6 +3,16 @@
         <div class="card mb-3 inverse-indicator">
             <div class="card-body">
                 <span class="fs-5">{{ schedule.parish.name }}</span>
+                {% if schedule.location %}
+                    <div class="row">
+                        <div class="col-auto">
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                                {{ schedule.location }}
+                            </span>
+                        </div>
+                    </div>
+                {% endif %}
                 <div class="row">
                     <div class="col-auto">
                         <span><i class="fa-solid fa-calendar-week"></i> {{ schedule.get_day_display }}</span>

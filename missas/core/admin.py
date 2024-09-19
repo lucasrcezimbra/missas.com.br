@@ -42,7 +42,15 @@ class ParishAdmin(admin.ModelAdmin):
 @admin.register(Schedule)
 class ScheduleAdmin(admin.ModelAdmin):
     autocomplete_fields = ("parish",)
-    list_display = ("parish", "type", "day", "start_time", "verified_at", "observation")
+    list_display = (
+        "parish",
+        "type",
+        "day",
+        "start_time",
+        "location",
+        "observation",
+        "verified_at",
+    )
     list_filter = (
         ("type", admin.ChoicesFieldListFilter),
         ("day", admin.ChoicesFieldListFilter),

@@ -347,3 +347,14 @@ def test_verified_schedule(client):
         f"Verificado por Missas.com.br em {schedule.verified_at.strftime('%d/%m/%Y')}"
         in html
     )
+
+
+@pytest.mark.django_db
+def test_schedule_with_location(client):
+    schedule = baker.make(Schedule, _fill_optional=["location"])
+
+    city = schedule.parish.city
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    html = response.content.decode()
+    assert schedule.location in html
