@@ -12,6 +12,7 @@ class CityAdmin(admin.ModelAdmin):
     list_display = ("name", "state", "slug")
     list_filter = ("state",)
     ordering = ("name",)
+    prepopulated_fields = {"slug": ("name",)}
     search_fields = ("name", "state__name", "slug")
 
 
