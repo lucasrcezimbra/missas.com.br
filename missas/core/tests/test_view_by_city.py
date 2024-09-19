@@ -344,6 +344,6 @@ def test_verified_schedule(client):
 
     html = response.content.decode()
     assert (
-        f"Verificado por Missas.com.br no dia {schedule.verified_at.strftime('%d/%m/%Y')}"
+        f"Verificado por Missas.com.br em {schedule.verified_at.strftime('%d/%m/%Y')}"
         in html
     )
