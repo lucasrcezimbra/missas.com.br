@@ -2,11 +2,13 @@ import json
 import os
 
 import django
+from django.db.utils import IntegrityError
+from django.utils.text import slugify
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "missas.settings")
 django.setup()
 
-from missas.core.models import Contact, Parish  # noqa
+from missas.core.models import Contact, City, Parish  # noqa
 
 NAMES_MAPPER = {
     "Paróquia de São José – Angicos": "",
@@ -34,30 +36,51 @@ with open("./contrib/natal_contacts.jsonl") as f:
 
 
 for d in datas:
-    parish_name = d.pop("parish_name")
-
-    if not parish_name:
-        print(f"No parish_name for: {d}")
+    if "city" not in d:
         continue
 
-    cleaned_parish_name = NAMES_MAPPER.get(parish_name, parish_name)
-    cleaned_parish_name = (
-        cleaned_parish_name.replace("’", "'").split("–")[0].split("-")[0].strip()
-    )
+    name = d["parish_name"].replace("’", "'").split("–")[0].split("-")[0].strip()
 
     try:
-        parish = Parish.objects.get(name__contains=cleaned_parish_name)
-    except Parish.DoesNotExist:
-        print(f"'{parish_name}': '',")
-        continue
-    except Parish.MultipleObjectsReturned:
-        print(f"'{parish_name}': '',")
-        continue
+        name = NAMES_MAPPER.get(name, name)
+        city = City.objects.get(
+            name=d["city"].replace("’", "'"), state__short_name="RN"
+        )
+    except City.DoesNotExist:
+        city = City.objects.get(
+            name__icontains=d["city"].replace("’", "'"), state__short_name="RN"
+        )
+
+    if d["city"] == "Natal":
+        try:
+            parish = Parish.objects.get(city=city, name__contains=name)
+        except Parish.DoesNotExist:
+            print(f"'{name}': '',")
+            continue
+        except Parish.MultipleObjectsReturned:
+            print(f"'{name}': '',")
+            continue
+    else:
+        parish, created = Parish.objects.get_or_create(
+            city=city, name=name, slug=slugify(name)
+        )
+
+    if created:
+        print(f"{parish} created")
 
     try:
-        parish.contact = Contact.objects.create(**d)
-    except TypeError:
-        print(f"TypeError for {d}")
+        contact, created = Contact.objects.get_or_create(
+            email=d.get("email", ""),
+            facebook=d.get("facebook", ""),
+            instagram=d.get("instagram", ""),
+            phone=d.get("phone", ""),
+            phone2=d.get("phone2", ""),
+            whatsapp=d.get("whatsapp", ""),
+            parish=parish,
+        )
+    except IntegrityError:
+        print(d)
         continue
 
-    parish.save()
+    if created:
+        print(f"{contact} created")
