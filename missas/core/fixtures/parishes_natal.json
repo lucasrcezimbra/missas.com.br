@@ -507,17 +507,6 @@
 },
 {
   "model": "core.parish",
-  "pk": 77,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-08-30T10:20:31.676Z",
-    "city": 4351,
-    "name": "Capela Santo Antônio",
-    "slug": "capela-santo-antonio"
-  }
-},
-{
-  "model": "core.parish",
   "pk": 78,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
