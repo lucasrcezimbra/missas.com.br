@@ -61543,5 +61543,49 @@
     "slug": "xambioa",
     "state": 29
   }
+},
+{
+  "model": "core.city",
+  "pk": 6146,
+  "fields": {
+    "created_at": "2024-09-19T09:28:57.689Z",
+    "updated_at": "2024-09-19T09:28:57.689Z",
+    "name": "São Miguel do Gostoso",
+    "slug": "sao-miguel-do-gostoso",
+    "state": 22
+  }
+},
+{
+  "model": "core.city",
+  "pk": 6147,
+  "fields": {
+    "created_at": "2024-09-19T09:32:13.919Z",
+    "updated_at": "2024-09-19T09:32:13.919Z",
+    "name": "Serra Caiada",
+    "slug": "serra-caiada",
+    "state": 22
+  }
+},
+{
+  "model": "core.city",
+  "pk": 6148,
+  "fields": {
+    "created_at": "2024-09-19T09:32:33.646Z",
+    "updated_at": "2024-09-19T09:32:33.646Z",
+    "name": "Boa Saúde",
+    "slug": "boa-saude",
+    "state": 22
+  }
+},
+{
+  "model": "core.city",
+  "pk": 6149,
+  "fields": {
+    "created_at": "2024-09-19T09:34:16.645Z",
+    "updated_at": "2024-09-19T09:34:16.645Z",
+    "name": "Arez",
+    "slug": "arez",
+    "state": 22
+  }
 }
 ]
