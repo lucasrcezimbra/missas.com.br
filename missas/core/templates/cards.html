@@ -14,6 +14,22 @@
                             {% if schedule.end_time %}- {{ schedule.end_time|time:"H:i" }}{% endif %}
                         </span>
                     </div>
+                    {% if schedule.observation %}
+                        <div class="col-auto">
+                            <span>
+                                <i class="fa-solid fa-exclamation-circle"></i>
+                                {{ schedule.observation }}
+                            </span>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="row">
+                    {% if schedule.verified_at %}
+                        <div class="col-auto">
+                            <i class="fa-solid fa-circle-check verified"></i>
+                            Verificado por Missas.com.br em {{ schedule.verified_at|date:"SHORT_DATE_FORMAT" }}
+                        </div>
+                    {% endif %}
                     <div class="col-auto">
                         <span>
                             <i class="fa-solid fa-exclamation-circle"></i>
@@ -24,20 +40,6 @@
                             {% endif %}
                         </span>
                     </div>
-                    {% if schedule.observation %}
-                        <div class="col-auto">
-                            <span>
-                                <i class="fa-solid fa-exclamation-circle"></i>
-                                {{ schedule.observation }}
-                            </span>
-                        </div>
-                    {% endif %}
-                    {% if schedule.verified_at %}
-                        <div class="col-12">
-                            <i class="fa-solid fa-circle-check verified"></i>
-                            Verificado por Missas.com.br no dia {{ schedule.verified_at|date:"SHORT_DATE_FORMAT" }}
-                        </div>
-                    {% endif %}
                 </div>
             </div>
         </div>
