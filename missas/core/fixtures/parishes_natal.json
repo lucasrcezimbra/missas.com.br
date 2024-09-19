@@ -45,39 +45,6 @@
 },
 {
   "model": "core.parish",
-  "pk": 5,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-08-30T10:20:31.676Z",
-    "city": 4351,
-    "name": "Paróquia de São Mateus Moreira",
-    "slug": "paroquia-de-sao-mateus-moreira"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 6,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.666Z",
-    "city": 4351,
-    "name": "Paróquia de São José Operário",
-    "slug": "paroquia-de-sao-jose-operario"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 7,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.602Z",
-    "city": 4351,
-    "name": "Paróquia do Bom Jesus dos Navegantes",
-    "slug": "paroquia-do-bom-jesus-dos-navegantes"
-  }
-},
-{
-  "model": "core.parish",
   "pk": 8,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
@@ -85,17 +52,6 @@
     "city": 4351,
     "name": "Paróquia de Santo André de Soveral",
     "slug": "paroquia-de-santo-andre-de-soveral"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 9,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.510Z",
-    "city": 4351,
-    "name": "Paróquia de Sant'ana e São Joaquim",
-    "slug": "paroquia-de-santana-e-sao-joaquim"
   }
 },
 {
@@ -111,28 +67,6 @@
 },
 {
   "model": "core.parish",
-  "pk": 11,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.329Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora Rainha da Paz",
-    "slug": "paroquia-de-nossa-senhora-rainha-da-paz"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 12,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.605Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora do Livramento",
-    "slug": "paroquia-de-nossa-senhora-do-livramento"
-  }
-},
-{
-  "model": "core.parish",
   "pk": 13,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
@@ -140,17 +74,6 @@
     "city": 4351,
     "name": "Paróquia de Santa Clara",
     "slug": "paroquia-de-santa-clara"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 14,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.685Z",
-    "city": 4351,
-    "name": "Paróquia de São Paulo Apóstolo",
-    "slug": "paroquia-de-sao-paulo-apostolo"
   }
 },
 {
@@ -177,17 +100,6 @@
 },
 {
   "model": "core.parish",
-  "pk": 17,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.117Z",
-    "city": 4351,
-    "name": "Paróquia do Divino Espírito Santo",
-    "slug": "paroquia-do-divino-espirito-santo"
-  }
-},
-{
-  "model": "core.parish",
   "pk": 18,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
@@ -206,17 +118,6 @@
     "city": 4351,
     "name": "Paróquia de São Camilo de Léllis",
     "slug": "paroquia-de-sao-camilo-de-lellis"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 20,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.192Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora das Dores",
-    "slug": "paroquia-de-nossa-senhora-das-dores"
   }
 },
 {
@@ -265,17 +166,6 @@
 },
 {
   "model": "core.parish",
-  "pk": 25,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.026Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora do Rosário",
-    "slug": "paroquia-de-nossa-senhora-do-rosario"
-  }
-},
-{
-  "model": "core.parish",
   "pk": 26,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
@@ -298,28 +188,6 @@
 },
 {
   "model": "core.parish",
-  "pk": 28,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.609Z",
-    "city": 4351,
-    "name": "Paróquia de Santo Antão Abade",
-    "slug": "paroquia-de-santo-antao-abade"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 29,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.677Z",
-    "city": 4351,
-    "name": "Área Pastoral de Nossa Senhora do Rosário de Fátima",
-    "slug": "area-pastoral-de-nossa-senhora-do-rosario-de-fatima"
-  }
-},
-{
-  "model": "core.parish",
   "pk": 30,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
@@ -327,28 +195,6 @@
     "city": 4351,
     "name": "Paróquia de Santo Afonso Maria de Ligório",
     "slug": "paroquia-de-santo-afonso-maria-de-ligorio"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 31,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.487Z",
-    "city": 4351,
-    "name": "Paróquia de São Lucas",
-    "slug": "paroquia-de-sao-lucas"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 32,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-08-30T10:20:31.676Z",
-    "city": 4351,
-    "name": "Paróquia de Santo Antônio",
-    "slug": "paroquia-de-santo-antonio"
   }
 },
 {
@@ -371,94 +217,6 @@
     "city": 4351,
     "name": "Paróquia da Catedral",
     "slug": "paroquia-da-catedral"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 35,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.294Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora Virgem dos Pobres",
-    "slug": "paroquia-de-nossa-senhora-virgem-dos-pobres"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 36,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.583Z",
-    "city": 4351,
-    "name": "Paróquia de São Miguel Arcanjo",
-    "slug": "paroquia-de-sao-miguel-arcanjo"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 37,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.662Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora de Nazaré",
-    "slug": "paroquia-de-nossa-senhora-de-nazare"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 38,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.195Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora de Fátima",
-    "slug": "paroquia-de-nossa-senhora-de-fatima"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 39,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.598Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora da Pureza",
-    "slug": "paroquia-de-nossa-senhora-da-pureza"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 40,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.712Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora da Saúde",
-    "slug": "paroquia-de-nossa-senhora-da-saude"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 41,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.172Z",
-    "city": 4351,
-    "name": "Paróquia de Santo Antônio de Lisboa",
-    "slug": "paroquia-de-santo-antonio-de-lisboa"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 42,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.101Z",
-    "city": 4351,
-    "name": "Paróquia de São Francisco de Assis e São João Lostau Navarro",
-    "slug": "paroquia-de-sao-francisco-de-assis-e-sao-joao-lostau-navarro"
   }
 },
 {
@@ -496,17 +254,6 @@
 },
 {
   "model": "core.parish",
-  "pk": 47,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.673Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora Mãe dos Homens",
-    "slug": "paroquia-de-nossa-senhora-mae-dos-homens"
-  }
-},
-{
-  "model": "core.parish",
   "pk": 48,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
@@ -518,17 +265,6 @@
 },
 {
   "model": "core.parish",
-  "pk": 49,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.066Z",
-    "city": 4351,
-    "name": "Paróquia de São Vicente Férrer",
-    "slug": "paroquia-de-sao-vicente-ferrer"
-  }
-},
-{
-  "model": "core.parish",
   "pk": 50,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
@@ -536,17 +272,6 @@
     "city": 4351,
     "name": "Paróquia de Nossa Senhora da Penha",
     "slug": "paroquia-de-nossa-senhora-da-penha"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 51,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.720Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora do Amparo",
-    "slug": "paroquia-de-nossa-senhora-do-amparo"
   }
 },
 {
@@ -602,28 +327,6 @@
     "city": 4351,
     "name": "Paróquia de Nossa Senhora da Apresentação",
     "slug": "paroquia-de-nossa-senhora-da-apresentacao"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 57,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.502Z",
-    "city": 4351,
-    "name": "Paróquia de Santo Expedito",
-    "slug": "paroquia-de-santo-expedito"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 58,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.180Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora dos Prazeres",
-    "slug": "paroquia-de-nossa-senhora-dos-prazeres"
   }
 },
 {
@@ -716,17 +419,6 @@
 },
 {
   "model": "core.parish",
-  "pk": 67,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.070Z",
-    "city": 4351,
-    "name": "Paróquia de Nossa Senhora das Graças",
-    "slug": "paroquia-de-nossa-senhora-das-gracas"
-  }
-},
-{
-  "model": "core.parish",
   "pk": 68,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
@@ -771,17 +463,6 @@
 },
 {
   "model": "core.parish",
-  "pk": 72,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.176Z",
-    "city": 4351,
-    "name": "Paróquia de São Bento Abade",
-    "slug": "paroquia-de-sao-bento-abade"
-  }
-},
-{
-  "model": "core.parish",
   "pk": 73,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
@@ -796,10 +477,10 @@
   "pk": 74,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.760Z",
+    "updated_at": "2024-09-19T10:38:52.885Z",
     "city": 4351,
-    "name": "Paróquia de Santa Teresinha",
-    "slug": "paroquia-de-santa-teresinha"
+    "name": "Paróquia de Nossa Senhora das Graças e Santa Teresinha",
+    "slug": "paroquia-de-nossa-senhora-das-gracas-e-santa-teresinha"
   }
 },
 {
@@ -818,10 +499,10 @@
   "pk": 76,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.490Z",
+    "updated_at": "2024-09-19T10:33:19.852Z",
     "city": 4351,
-    "name": "Paróquia de São João Batista",
-    "slug": "paroquia-de-sao-joao-batista"
+    "name": "Paróquia de São João Batista - Lagoa Seca",
+    "slug": "paroquia-de-sao-joao-batista-lagoa-seca"
   }
 },
 {
@@ -1603,6 +1284,17 @@
     "city": 6149,
     "name": "Paróquia de São João Batista",
     "slug": "paroquia-de-sao-joao-batista"
+  }
+},
+{
+  "model": "core.parish",
+  "pk": 149,
+  "fields": {
+    "created_at": "2024-09-19T10:31:04.366Z",
+    "updated_at": "2024-09-19T10:31:14.381Z",
+    "city": 4351,
+    "name": "Paróquia de São João Batista - Vila de Ponta Negra",
+    "slug": "paroquia-de-sao-joao-batista-vila-de-ponta-negra"
   }
 }
 ]

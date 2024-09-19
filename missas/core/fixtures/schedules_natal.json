@@ -593,54 +593,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1249,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 11,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1251,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1252,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1253,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -682,70 +634,6 @@
     "parish": 63,
     "source": 1,
     "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1256,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 42,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1257,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 5,
-    "source": 1,
-    "start_time": "08:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1258,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 5,
-    "source": 1,
-    "start_time": "16:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1259,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 5,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -1249,38 +1137,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1294,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 36,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1295,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 36,
-    "source": 1,
-    "start_time": "18:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1296,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -1304,86 +1160,6 @@
     "day": 0,
     "observation": null,
     "parish": 71,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1298,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1299,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 32,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1300,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 32,
-    "source": 1,
-    "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1301,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 57,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1302,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 57,
     "source": 1,
     "start_time": "19:00:00",
     "end_time": null,
@@ -1418,38 +1194,6 @@
     "parish": 66,
     "source": 1,
     "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1305,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 31,
-    "source": 1,
-    "start_time": "09:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1306,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 31,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -1585,38 +1329,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1315,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 35,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1316,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 35,
-    "source": 1,
-    "start_time": "17:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1317,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -1681,38 +1393,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1323,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 67,
-    "source": 1,
-    "start_time": "07:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1324,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 67,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1325,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -1745,214 +1425,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1327,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 14,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1328,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 14,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1329,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 49,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1333,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 25,
-    "source": 1,
-    "start_time": "10:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1334,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 25,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1335,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 6,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1336,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 37,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1337,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 37,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1338,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 28,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1339,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 36,
-    "source": 1,
-    "start_time": "17:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1340,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 36,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1341,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 7,
-    "source": 1,
-    "start_time": "10:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1342,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 7,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1343,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -1960,22 +1432,6 @@
     "day": 0,
     "observation": null,
     "parish": 18,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1344,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 29,
     "source": 1,
     "start_time": "19:00:00",
     "end_time": null,
@@ -2010,70 +1466,6 @@
     "parish": 24,
     "source": 1,
     "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1350,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 39,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1351,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 39,
-    "source": 1,
-    "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1352,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 12,
-    "source": 1,
-    "start_time": "10:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1353,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 12,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -2145,54 +1537,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1359,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 20,
-    "source": 1,
-    "start_time": "08:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1360,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 20,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1361,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 72,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1362,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -2225,102 +1569,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1364,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 17,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1365,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 17,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1366,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "08:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1367,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1368,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 51,
-    "source": 1,
-    "start_time": "08:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1369,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 51,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1373,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -2328,38 +1576,6 @@
     "day": 0,
     "observation": null,
     "parish": 22,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1374,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 40,
-    "source": 1,
-    "start_time": "08:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1375,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 40,
     "source": 1,
     "start_time": "19:00:00",
     "end_time": null,
@@ -2397,38 +1613,6 @@
     "end_time": null,
     "type": "mass",
     "verified_at": "2024-09-16"
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1378,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 14,
-    "source": 1,
-    "start_time": "08:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1379,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 14,
-    "source": 1,
-    "start_time": "17:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
   }
 },
 {
@@ -2545,54 +1729,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1387,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 58,
-    "source": 1,
-    "start_time": "07:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1388,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 58,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1389,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 41,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1390,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -2648,54 +1784,6 @@
     "day": 0,
     "observation": null,
     "parish": 68,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1395,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 9,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1396,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 9,
-    "source": 1,
-    "start_time": "10:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1397,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": null,
-    "parish": 9,
     "source": 1,
     "start_time": "19:00:00",
     "end_time": null,
@@ -2808,22 +1896,6 @@
     "day": 1,
     "observation": null,
     "parish": 30,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1408,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 1,
-    "observation": null,
-    "parish": 11,
     "source": 1,
     "start_time": "19:00:00",
     "end_time": null,
@@ -3121,38 +2193,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1430,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 2,
-    "observation": null,
-    "parish": 11,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1432,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 2,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1433,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -3162,38 +2202,6 @@
     "parish": 63,
     "source": 1,
     "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1434,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 2,
-    "observation": null,
-    "parish": 42,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1435,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 2,
-    "observation": null,
-    "parish": 5,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -3521,86 +2529,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1458,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 2,
-    "observation": null,
-    "parish": 25,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1459,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 2,
-    "observation": null,
-    "parish": 47,
-    "source": 1,
-    "start_time": "17:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1460,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 2,
-    "observation": null,
-    "parish": 7,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1461,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 2,
-    "observation": null,
-    "parish": 17,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1462,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 2,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1464,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -3642,22 +2570,6 @@
     "parish": 68,
     "source": 1,
     "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1467,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 2,
-    "observation": null,
-    "parish": 9,
-    "source": 1,
-    "start_time": "07:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -3921,22 +2833,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1489,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1490,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -3946,38 +2842,6 @@
     "parish": 63,
     "source": 1,
     "start_time": "06:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1491,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 42,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1492,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 5,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -4209,22 +3073,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1508,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 31,
-    "source": 1,
-    "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1509,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -4289,70 +3137,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1513,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 14,
-    "source": 1,
-    "start_time": "17:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1515,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 25,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1516,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 47,
-    "source": 1,
-    "start_time": "17:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1517,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 7,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1518,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -4360,38 +3144,6 @@
     "day": 3,
     "observation": null,
     "parish": 74,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1519,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 17,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1520,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 38,
     "source": 1,
     "start_time": "19:00:00",
     "end_time": null,
@@ -4410,22 +3162,6 @@
     "parish": 46,
     "source": 1,
     "start_time": "16:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1522,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 41,
-    "source": 1,
-    "start_time": "19:30:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -4458,22 +3194,6 @@
     "parish": 68,
     "source": 1,
     "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1525,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 9,
-    "source": 1,
-    "start_time": "07:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -4769,38 +3489,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1546,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 11,
-    "source": 1,
-    "start_time": "18:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1548,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1549,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -4810,22 +3498,6 @@
     "parish": 63,
     "source": 1,
     "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1550,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 5,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -5057,22 +3729,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1566,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 31,
-    "source": 1,
-    "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1567,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -5137,22 +3793,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1571,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 35,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1572,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -5185,22 +3825,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1574,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 67,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1575,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -5217,102 +3841,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1576,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 14,
-    "source": 1,
-    "start_time": "17:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1578,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 25,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1579,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 6,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1580,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 47,
-    "source": 1,
-    "start_time": "17:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1581,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 37,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1582,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 7,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1583,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -5322,38 +3850,6 @@
     "parish": 18,
     "source": 1,
     "start_time": "06:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1584,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 39,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1585,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 12,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -5386,54 +3882,6 @@
     "parish": 59,
     "source": 1,
     "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1589,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 17,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1590,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1592,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 40,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -5498,22 +3946,6 @@
     "parish": 59,
     "source": 1,
     "start_time": "18:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1597,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 9,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -5793,38 +4225,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1617,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 11,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1619,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1620,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -5834,22 +4234,6 @@
     "parish": 63,
     "source": 1,
     "start_time": "06:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1621,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 5,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -6097,22 +4481,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1638,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 31,
-    "source": 1,
-    "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1639,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -6177,22 +4545,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1643,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 35,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1644,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -6202,118 +4554,6 @@
     "parish": 22,
     "source": 1,
     "start_time": "17:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1645,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 14,
-    "source": 1,
-    "start_time": "17:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1648,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 25,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1649,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 47,
-    "source": 1,
-    "start_time": "17:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1650,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 28,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1651,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 7,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1652,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 17,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1653,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -6394,22 +4634,6 @@
     "parish": 68,
     "source": 1,
     "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1660,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 5,
-    "observation": null,
-    "parish": 9,
-    "source": 1,
-    "start_time": "07:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -6673,54 +4897,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1679,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "observation": null,
-    "parish": 11,
-    "source": 1,
-    "start_time": "06:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1680,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "observation": null,
-    "parish": 11,
-    "source": 1,
-    "start_time": "17:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1682,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "observation": null,
-    "parish": 38,
-    "source": 1,
-    "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1683,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -6746,22 +4922,6 @@
     "parish": 63,
     "source": 1,
     "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1685,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "observation": null,
-    "parish": 5,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -6897,22 +5057,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1694,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "observation": null,
-    "parish": 31,
-    "source": 1,
-    "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1695,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -6977,22 +5121,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1699,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "observation": null,
-    "parish": 35,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1700,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -7025,54 +5153,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1703,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "observation": null,
-    "parish": 25,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1704,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "observation": null,
-    "parish": 47,
-    "source": 1,
-    "start_time": "10:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1705,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "observation": null,
-    "parish": 36,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1708,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -7082,22 +5162,6 @@
     "parish": 22,
     "source": 1,
     "start_time": "06:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1710,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "observation": null,
-    "parish": 14,
-    "source": 1,
-    "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -7130,22 +5194,6 @@
     "parish": 68,
     "source": 1,
     "start_time": "06:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1713,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "observation": null,
-    "parish": 9,
-    "source": 1,
-    "start_time": "07:00:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -7195,22 +5243,6 @@
     "source": 1,
     "start_time": "09:00:00",
     "end_time": "11:00:00",
-    "type": "confession",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1717,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": null,
-    "parish": 11,
-    "source": 1,
-    "start_time": "16:00:00",
-    "end_time": "17:00:00",
     "type": "confession",
     "verified_at": null
   }
@@ -7457,70 +5489,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1734,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 2,
-    "observation": "Agendamento",
-    "parish": 5,
-    "source": 1,
-    "start_time": "15:00:00",
-    "end_time": "18:30:00",
-    "type": "confession",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1735,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "observation": "Agendamento",
-    "parish": 5,
-    "source": 1,
-    "start_time": "15:00:00",
-    "end_time": "18:30:00",
-    "type": "confession",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1736,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": "Agendamento",
-    "parish": 5,
-    "source": 1,
-    "start_time": "15:00:00",
-    "end_time": "18:30:00",
-    "type": "confession",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1737,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "observation": null,
-    "parish": 11,
-    "source": 1,
-    "start_time": "16:00:00",
-    "end_time": "18:30:00",
-    "type": "confession",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1738,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -7547,54 +5515,6 @@
     "source": 1,
     "start_time": "16:00:00",
     "end_time": "18:00:00",
-    "type": "confession",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1740,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "observation": "Antes da missa",
-    "parish": 25,
-    "source": 1,
-    "start_time": "15:00:00",
-    "end_time": "17:00:00",
-    "type": "confession",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1741,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": "Antes e após a missa das 8h",
-    "parish": 25,
-    "source": 1,
-    "start_time": "07:00:00",
-    "end_time": "09:30:00",
-    "type": "confession",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1742,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "observation": "Após a missa das 9h30",
-    "parish": 25,
-    "source": 1,
-    "start_time": "10:30:00",
-    "end_time": null,
     "type": "confession",
     "verified_at": null
   }
