@@ -50,11 +50,12 @@ class NatalSpider(scrapy.Spider):
                 `phone`, `phone2`, `whatsapp` MUST be in the format +5584000000000 or +558400000000.
                 `instagram` and `facebook` MUST be only the username, remove the URL.
                 The JSON example:
-                `{"email": "mail@example.com", "facebook": "paroquiadacatedraldenatal", "instagram": "paroquiadacatedraldenatal", "phone": "+5584000000000", "phone2": "+5584000000000", "whatsapp": "+5584000000000"}`\
+                `{"city": "Natal", email": "mail@example.com", "facebook": "paroquiadacatedraldenatal", "instagram": "paroquiadacatedraldenatal", "phone": "+5584000000000", "phone2": "+5584000000000", "whatsapp": "+5584000000000"}`\
             """,
             json_object=True,
         )
         yield {
             "parish_name": parish_name,
+            "state": "Rio Grande do Norte",
             **json.loads(ai_response.text()),
         }
