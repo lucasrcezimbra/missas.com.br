@@ -1242,40 +1242,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1303,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "location": "",
-    "observation": null,
-    "parish": 66,
-    "source": 1,
-    "start_time": "08:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1304,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "location": "",
-    "observation": null,
-    "parish": 66,
-    "source": 1,
-    "start_time": "19:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1307,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -5495,33 +5461,16 @@
   "pk": 1714,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-19T13:44:49.307Z",
     "day": 2,
     "location": "",
-    "observation": "Agendamento",
+    "observation": "",
     "parish": 74,
-    "source": 1,
-    "start_time": "09:00:00",
-    "end_time": "11:00:00",
+    "source": 2,
+    "start_time": "15:30:00",
+    "end_time": "17:00:00",
     "type": "confession",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1715,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 3,
-    "location": "",
-    "observation": null,
-    "parish": 74,
-    "source": 1,
-    "start_time": "09:00:00",
-    "end_time": "11:00:00",
-    "type": "confession",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -5529,16 +5478,16 @@
   "pk": 1716,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-19T13:43:55.145Z",
     "day": 4,
     "location": "",
-    "observation": null,
+    "observation": "",
     "parish": 74,
-    "source": 1,
+    "source": 2,
     "start_time": "09:00:00",
     "end_time": "11:00:00",
     "type": "confession",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
