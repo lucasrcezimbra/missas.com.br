@@ -109,7 +109,7 @@ class Schedule(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     day = models.IntegerField(choices=Day.choices)
     location = models.CharField(max_length=128, blank=True)
-    observation = models.TextField(null=True, blank=True)
+    observation = models.TextField(blank=True, default="")
     parish = models.ForeignKey(
         Parish, on_delete=models.CASCADE, related_name="schedules"
     )
