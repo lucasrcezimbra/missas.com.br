@@ -259,13 +259,28 @@ def ynput():
             return False
 
 
+print("=" * 150)
+
+print(MESSAGE)
+
+print("=" * 150)
+
 for s in to_be_deleted:
     print("DELETE?", s.type, s, s.observation or "", s.tracker.changed())
 
     if ynput():
         s.delete()
 
+    print("-" * 100)
+
+print("=" * 150)
+
 for s in schedules:
+    if not s.tracker.changed():
+        print("Didn't change", s.type, s, s.observation or "", s.tracker.changed())
+        print("-" * 100)
+        continue
+
     if s.pk:
         message = "UPDATE?"
     else:
@@ -274,4 +289,8 @@ for s in schedules:
     print(message, s.type, s, s.observation or "", s.tracker.changed())
 
     if ynput():
-        s.delete()
+        s.save()
+
+    print("-" * 100)
+
+print("=" * 150)
