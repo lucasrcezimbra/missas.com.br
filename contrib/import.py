@@ -405,7 +405,7 @@ for s in to_be_deleted:
         s.delete()
 
 
-for s in to_be_deleted:
+for s in to_be_created:
     print("SAVE?", s.type, s, s.observation or "")
     if ynput():
         s.save()
