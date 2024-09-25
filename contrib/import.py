@@ -4,9 +4,7 @@ from textwrap import dedent
 import django
 import jsonstar as json
 import llm
-from datadiff import diff
 from decouple import config
-from django.forms.models import model_to_dict
 from django.utils.dateparse import parse_time
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "missas.settings")
@@ -125,7 +123,7 @@ ai_response = model.prompt(
                 {
                     "day": 2,
                     "location": "",
-                    "observation": null,
+                    "observation": "",
                     "start_time": "17:30",
                     "end_time": null,
                     "type": "mass",
@@ -134,7 +132,7 @@ ai_response = model.prompt(
                 {
                     "day": 3,
                     "location": "",
-                    "observation": null,
+                    "observation": "",
                     "start_time": "17:30",
                     "end_time": null,
                     "type": "mass",
@@ -161,7 +159,7 @@ ai_response = model.prompt(
                 {
                     "day": 6,
                     "location": "",
-                    "observation": null,
+                    "observation": "",
                     "start_time": "17:30",
                     "end_time": null,
                     "type": "mass",
@@ -170,7 +168,7 @@ ai_response = model.prompt(
                 {
                     "day": 0,
                     "location": "",
-                    "observation": null,
+                    "observation": "",
                     "start_time": "09:00",
                     "end_time": null,
                     "type": "mass",
@@ -179,7 +177,7 @@ ai_response = model.prompt(
                 {
                     "day": 0,
                     "location": "",
-                    "observation": null,
+                    "observation": "",
                     "start_time": "19:00",
                     "end_time": null,
                     "type": "mass",
@@ -188,7 +186,7 @@ ai_response = model.prompt(
                 {
                     "day": 2,
                     "location": "",
-                    "observation": null,
+                    "observation": "",
                     "start_time": "16:00",
                     "end_time": null,
                     "type": "confession",
@@ -197,7 +195,7 @@ ai_response = model.prompt(
                 {
                     "day": 3,
                     "location": "",
-                    "observation": null,
+                    "observation": "",
                     "start_time": "16:00",
                     "end_time": null,
                     "type": "confession",
@@ -206,7 +204,7 @@ ai_response = model.prompt(
                 {
                     "day": 4,
                     "location": "",
-                    "observation": null,
+                    "observation": "",
                     "start_time": "18:00",
                     "end_time": null,
                     "type": "mass",
@@ -218,176 +216,38 @@ ai_response = model.prompt(
     ),
     json_object=True,
 )
-AI_RESPONSE = """\
-{
-    "schedules": [
-        {
-            "day": 1,
-            "location": "",
-            "observation": null,
-            "start_time": "06:00",
-            "end_time": null,
-            "type": "mass",
-            "verified_at": "2024-09-16"
-        },
-        {
-            "day": 3,
-            "location": "",
-            "observation": null,
-            "start_time": "06:00",
-            "end_time": null,
-            "type": "mass",
-            "verified_at": "2024-09-16"
-        },
-        {
-            "day": 5,
-            "location": "",
-            "observation": null,
-            "start_time": "06:00",
-            "end_time": null,
-            "type": "mass",
-            "verified_at": "2024-09-16"
-        },
-        {
-            "day": 6,
-            "location": "",
-            "observation": null,
-            "start_time": "06:00",
-            "end_time": null,
-            "type": "mass",
-            "verified_at": "2024-09-16"
-        },
-        {
-            "day": 2,
-            "location": "",
-            "observation": null,
-            "start_time": "19:30",
-            "end_time": null,
-            "type": "mass",
-            "verified_at": "2024-09-16"
-        },
-        {
-            "day": 3,
-            "location": "",
-            "observation": "Celebração especial às 19:30",
-            "start_time": "19:30",
-            "end_time": null,
-            "type": "mass",
-            "verified_at": "2024-09-16"
-        },
-        {
-            "day": 6,
-            "location": "",
-            "observation": null,
-            "start_time": "19:30",
-            "end_time": null,
-            "type": "mass",
-            "verified_at": "2024-09-16"
-        },
-        {
-            "day": 0,
-            "location": "",
-            "observation": null,
-            "start_time": "07:00",
-            "end_time": null,
-            "type": "mass",
-            "verified_at": "2024-09-16"
-        },
-        {
-            "day": 0,
-            "location": "",
-            "observation": null,
-            "start_time": "09:00",
-            "end_time": null,
-            "type": "mass",
-            "verified_at": "2024-09-16"
-        },
-        {
-            "day": 0,
-            "location": "",
-            "observation": null,
-            "start_time": "18:00",
-            "end_time": null,
-            "type": "mass",
-            "verified_at": "2024-09-16"
-        },
-        {
-            "day": 4,
-            "location": "",
-            "observation": "Adoração e benção do Santíssimo às 18:00",
-            "start_time": "15:00",
-            "end_time": "18:00",
-            "type": "adoration",
-            "verified_at": "2024-09-16"
-        }
-    ]
-}
-"""
-
-
-# class ai_response:
-#     @staticmethod
-#     def text():
-#         return AI_RESPONSE
-
 
 data = json.loads(ai_response.text())
 
-to_be_created = []
+schedules = []
+
 for s in data["schedules"]:
     start_time = parse_time(s.pop("start_time"))
 
     if end_time := s.pop("end_time", None):
         end_time = parse_time(end_time)
 
-    to_be_created.append(
-        Schedule(
-            parish=parish,
-            source=source,
-            **s,
-            start_time=start_time,
-            end_time=end_time,
+    try:
+        schedule = Schedule.objects.get(
+            parish=parish, day=s["day"], type=s["type"], start_time=start_time
         )
-    )
+    except Schedule.DoesNotExist:
+        schedule = Schedule(
+            parish=parish, day=s["day"], type=s["type"], start_time=start_time
+        )
+
+    schedule.end_time = end_time
+    schedule.location = s["location"]
+    schedule.observation = s["observation"] or ""
+    schedule.source = source
+    schedule.verified_at = s["verified_at"].date()
+
+    schedules.append(schedule)
 
 
-def model_to_dicts(os):
-    return [model_to_dict(s, exclude=("id",)) for s in os]
-
-
-def compare(ss1, ss2):
-    l1 = sorted(model_to_dicts(ss1), key=lambda x: (x["day"], x["start_time"]))
-    l2 = sorted(model_to_dicts(ss2), key=lambda x: (x["day"], x["start_time"]))
-    print(diff(l1, l2))
-
-
-to_be_deleted = Schedule.objects.filter(parish=parish)
-
-# to_be_created = sorted(to_be_created, key=lambda x: (x.day, x.start_time))
-# to_be_deleted = sorted(to_be_deleted, key=lambda x: (x.day, x.start_time))
-
-print("=" * 150)
-
-print(MESSAGE)
-
-print("-" * 100)
-
-print("TO BE CREATED")
-for s in to_be_created:
-    print(s.type, s, s.observation or "")
-
-print("-" * 100)
-
-print("TO BE DELETED")
-for s in to_be_deleted:
-    print(s.type, s, s.observation or "")
-
-print("-" * 100)
-
-print("COMPARE")
-compare(to_be_deleted, to_be_created)
-
-print("=" * 150)
+to_be_deleted = [
+    s for s in Schedule.objects.filter(parish=parish) if s not in schedules
+]
 
 
 def ynput():
@@ -400,12 +260,18 @@ def ynput():
 
 
 for s in to_be_deleted:
-    print("DELETE?", s.type, s, s.observation or "")
+    print("DELETE?", s.type, s, s.observation or "", s.tracker.changed())
+
     if ynput():
         s.delete()
 
+for s in schedules:
+    if s.pk:
+        message = "UPDATE?"
+    else:
+        message = "CREATE?"
 
-for s in to_be_created:
-    print("SAVE?", s.type, s, s.observation or "")
+    print(message, s.type, s, s.observation or "", s.tracker.changed())
+
     if ynput():
-        s.save()
+        s.delete()
