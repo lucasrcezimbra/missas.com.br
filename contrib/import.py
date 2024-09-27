@@ -18,7 +18,7 @@ from missas.core.models import Contact, City, Parish, Schedule, Source  # noqa
 // 1. Open WhatsApp web
 // 2. Open the conversation to extract the messages
 // 3. Open Browser Inspect > Console
-// 4. Rus this code:
+// 4. Run this code:
 var messages = []
 document.querySelectorAll('#main .copyable-text').forEach(element => {
     if (element.tagName.toLowerCase() === 'div') {
@@ -26,7 +26,7 @@ document.querySelectorAll('#main .copyable-text').forEach(element => {
         messages.push(element.innerText);
     }
 });
-console.log(document.getElementById('main').querySelector('header').innerText.replace(' ', '').replace(' ', '9').replace('-', ''));
+console.log(document.getElementById('main').querySelector('header').innerText.replaceAll(' ', '').replace('-', ''));
 console.log(messages.join('\n'))
 """
 
@@ -53,6 +53,8 @@ print(f"{contact=}")
 
 parish = contact.parish
 print(f"{parish=}")
+if not parish:
+    raise
 
 source = Source.objects.get(type=Source.Type.WHATSAPP)
 print(f"{source=}")
