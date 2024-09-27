@@ -12,6 +12,25 @@ django.setup()
 
 from missas.core.models import Contact, City, Parish, Schedule, Source  # noqa
 
+
+"""
+// JS snippet to extract message from WhatsApp Web
+// 1. Open WhatsApp web
+// 2. Open the conversation to extract the messages
+// 3. Open Browser Inspect > Console
+// 4. Rus this code:
+var messages = []
+document.querySelectorAll('#main .copyable-text').forEach(element => {
+    if (element.tagName.toLowerCase() === 'div') {
+        messages.push(element.getAttribute('data-pre-plain-text'));
+        messages.push(element.innerText);
+    }
+});
+console.log(document.getElementById('main').querySelector('header').innerText.replace(' ', '').replace(' ', '9').replace('-', ''));
+console.log(messages.join('\n'))
+"""
+
+
 WHATSAPP = "+5584994766014"
 MESSAGE = """
 [Message at 2024-09-16]
@@ -94,26 +113,25 @@ ai_response = model.prompt(
         An example:
         Messages:
         ```
-        [Message at 2024-09-16]
+        [12:28, 16/09/2024] Missas.com.br:
         Bom dia. Qual o horário das missas na paróquia?
-        [Message at 2024-09-16]
+        [12:29, 16/09/2024] +55 84 9876-5432:
         Hoje as 19h
-        [Message at 2024-09-16]
+        [12:29, 16/09/2024] Missas.com.br:
         E nos outros dias?
-        [Message at 2024-09-16]
+        [12:30, 16/09/2024] +55 84 9876-5432:
         De terça à sábado às 17h30  e  aos domingos às 9h e 19h
-        [Message at 2024-09-16]
+        [12:30, 16/09/2024] +55 84 9876-5432:
         Prineira quinta do mês missa por cura é liberação
-        [Message at 2024-09-16]
+        [12:30, 16/09/2024] +55 84 9876-5432:
         Primeira sexta feira missa só sagrado coração de Jesus
-        [Message at 2024-09-16]
+        [12:31, 16/09/2024] Missas.com.br:
         Certo. Obrigado
-        [Message at 2024-09-16]
+        [12:31, 16/09/2024] Missas.com.br:
         E vocês atendem confissão? Se sim, que dias e horários?
-        [Message at 2024-09-16]
+        [12:32, 16/09/2024] +55 84 9876-5432:
         terça, quarta e quinta a partir das 16h
-
-        [Message at 2024-09-16]
+        [12:32, 16/09/2024] Missas.com.br:
         Obrigado!
         ```
         AI response:
