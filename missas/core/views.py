@@ -1,6 +1,6 @@
 from datetime import datetime, time, timedelta
 
-from django.db.models import Count, Q
+from django.db.models import Case, Count, Q, When
 from django.shortcuts import get_object_or_404, redirect, render, resolve_url
 
 from missas.core.models import City, Schedule, State
@@ -20,9 +20,16 @@ def index(request):
 
 def cities_by_state(request, state):
     state = get_object_or_404(State, slug=state)
-    cities = state.cities.annotate(
-        number_of_schedules=Count("parishes__schedules")
-    ).all()
+    cities = (
+        state.cities.annotate(
+            number_of_schedules=Count("parishes__schedules"),
+            has_schedules=Case(
+                When(number_of_schedules__gt=0, then=True), default=False
+            ),
+        )
+        .order_by("-has_schedules", "name")
+        .all()
+    )
     return render(
         request, "cities_by_state.html", context={"state": state, "cities": cities}
     )

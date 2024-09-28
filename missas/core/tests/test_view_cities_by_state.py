@@ -78,3 +78,39 @@ def test_only_cities_with_parishes_and_schedules_have_link(client):
         f'<a href="/{state.slug}/{city_with_parish_with_schedule.slug}/">{city_with_parish_with_schedule.name}</a>',
         html=True,
     )
+
+
+@pytest.mark.django_db
+def test_order_by_cities_with_schedules_and_by_name(client):
+    state = baker.make(State)
+
+    cityA_with_schedule = baker.make(
+        City, state=state, name="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    )
+    cityB_with_schedule = baker.make(
+        City, state=state, name="BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+    )
+    cityA_without_schedule = baker.make(
+        City, state=state, name="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    )
+    cityB_without_schedule = baker.make(
+        City, state=state, name="bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    )
+
+    baker.make(Schedule, parish__city=cityA_with_schedule)
+    baker.make(Schedule, parish__city=cityB_with_schedule)
+
+    response = client.get(resolve_url("cities_by_state", state=state.slug))
+
+    html = response.content.decode()
+    cityA_with_schedule_index = html.index(cityA_with_schedule.name)
+    cityB_with_schedule_index = html.index(cityB_with_schedule.name)
+    cityA_without_schedule_index = html.index(cityA_without_schedule.name)
+    cityB_without_schedule_index = html.index(cityB_without_schedule.name)
+
+    assert (
+        cityA_with_schedule_index
+        < cityB_with_schedule_index
+        < cityA_without_schedule_index
+        < cityB_without_schedule_index
+    )
