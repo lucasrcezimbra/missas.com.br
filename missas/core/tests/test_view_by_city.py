@@ -343,10 +343,7 @@ def test_verified_schedule(client):
     response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
 
     html = response.content.decode()
-    assert (
-        f"Verificado por Missas.com.br em {schedule.verified_at.strftime('%d/%m/%Y')}"
-        in html
-    )
+    assert f"Verificado por Missas.com.br em {schedule.verified_at:%d/%m/%Y}" in html
 
 
 @pytest.mark.django_db
