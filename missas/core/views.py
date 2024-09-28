@@ -58,7 +58,7 @@ def by_city(request, state, city):
 
     schedules = schedules.order_by("day", "start_time")
 
-    template = "index.html"
+    template = "parishes_by_city.html"
 
     if request.htmx:
         template = "cards.html"

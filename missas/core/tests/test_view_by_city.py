@@ -55,7 +55,7 @@ def test_template(client):
 
     response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
 
-    assertTemplateUsed(response, "index.html")
+    assertTemplateUsed(response, "parishes_by_city.html")
 
 
 @pytest.mark.django_db
