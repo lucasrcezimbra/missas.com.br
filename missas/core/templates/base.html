@@ -58,11 +58,18 @@
             </div>
             <div class="row">
                 <div class="col">
-                    {% if city %}
-                        <h2>{{ city.state.name }} - {{ city.name }}</h2>
-                    {% elif state %}
-                        <h2>{{ state }}</h2>
-                    {% endif %}
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            {% if city %}
+                                <li class="breadcrumb-item">
+                                    <a href="/{{ city.state.slug }}">{{ city.state.name }}</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ city.name }}</li>
+                            {% elif state %}
+                                <li class="breadcrumb-item active" aria-current="page">{{ state.name }}</li>
+                            {% endif %}
+                        </ol>
+                    </nav>
                 </div>
             </div>
             <div id="content">
