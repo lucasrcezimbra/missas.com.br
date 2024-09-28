@@ -9,6 +9,8 @@ class CityQuerySet(models.QuerySet):
     def annotate_has_schedules(self):
         return self.annotate_number_of_schedules().annotate(
             has_schedules=Case(
-                When(number_of_schedules__gt=0, then=True), default=False
+                When(number_of_schedules__gt=0, then=True),
+                default=False,
+                output_field=models.BooleanField(),
             )
         )
