@@ -3,9 +3,11 @@
     <ul>
         {% for city in cities %}
             <li>
-                {#                <a href="{% url 'by_city' state=state.slug city=city.slug %}">#}
-                {{ city }}
-                {#                </a>#}
+                {% if city.number_of_schedules > 0 %}
+                    <a href="{% url 'by_city' state=state.slug city=city.slug %}">{{ city.name }}</a>
+                {% else %}
+                    {{ city.name }}
+                {% endif %}
             </li>
         {% endfor %}
     </ul>

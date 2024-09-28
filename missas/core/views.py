@@ -1,6 +1,6 @@
 from datetime import datetime, time, timedelta
 
-from django.db.models import Q
+from django.db.models import Count, Q
 from django.shortcuts import get_object_or_404, redirect, render, resolve_url
 
 from missas.core.models import City, Schedule, State
@@ -20,10 +20,11 @@ def index(request):
 
 def cities_by_state(request, state):
     state = get_object_or_404(State, slug=state)
+    cities = state.cities.annotate(
+        number_of_schedules=Count("parishes__schedules")
+    ).all()
     return render(
-        request,
-        "cities_by_state.html",
-        context={"state": state, "cities": state.cities.all()},
+        request, "cities_by_state.html", context={"state": state, "cities": cities}
     )
 
 
