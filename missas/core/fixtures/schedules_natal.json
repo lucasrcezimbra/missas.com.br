@@ -89,12 +89,12 @@
   "pk": 1213,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-09-19T11:35:19.152Z",
+    "updated_at": "2024-09-28T12:37:11.895Z",
     "day": 0,
     "location": "",
     "observation": "",
     "parish": 74,
-    "source": 1,
+    "source": 2,
     "start_time": "19:30:00",
     "end_time": null,
     "type": "mass",
@@ -497,16 +497,16 @@
   "pk": 1239,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:43:08.862Z",
     "day": 0,
-    "location": "",
-    "observation": null,
+    "location": "Matriz Santo Afonso",
+    "observation": "",
     "parish": 30,
-    "source": 1,
+    "source": 2,
     "start_time": "08:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -514,16 +514,16 @@
   "pk": 1240,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:43:16.300Z",
     "day": 0,
-    "location": "",
-    "observation": null,
+    "location": "Matriz Santo Afonso",
+    "observation": "",
     "parish": 30,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -582,50 +582,16 @@
   "pk": 1246,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:25:58.915Z",
     "day": 0,
-    "location": "",
-    "observation": null,
+    "location": "matriz",
+    "observation": "",
     "parish": 75,
-    "source": 1,
+    "source": 2,
     "start_time": "07:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1247,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "location": "",
-    "observation": null,
-    "parish": 75,
-    "source": 1,
-    "start_time": "10:30:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1248,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 0,
-    "location": "",
-    "observation": null,
-    "parish": 75,
-    "source": 1,
-    "start_time": "19:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-18"
   }
 },
 {
@@ -939,9 +905,9 @@
   "pk": 1277,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-09-18T15:30:31.875Z",
+    "updated_at": "2024-09-28T12:20:53.310Z",
     "day": 0,
-    "location": "",
+    "location": "Matriz Santuário",
     "observation": "",
     "parish": 64,
     "source": 2,
@@ -956,9 +922,9 @@
   "pk": 1278,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-09-18T15:30:32.269Z",
+    "updated_at": "2024-09-28T12:20:59.382Z",
     "day": 0,
-    "location": "",
+    "location": "Matriz Santuário",
     "observation": "",
     "parish": 64,
     "source": 2,
@@ -973,9 +939,9 @@
   "pk": 1279,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-09-18T15:30:32.865Z",
+    "updated_at": "2024-09-28T12:21:04.887Z",
     "day": 0,
-    "location": "",
+    "location": "Matriz Santuário",
     "observation": "",
     "parish": 64,
     "source": 2,
@@ -1211,16 +1177,16 @@
   "pk": 1296,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:34:56.551Z",
     "day": 0,
     "location": "",
-    "observation": null,
+    "observation": "",
     "parish": 71,
-    "source": 1,
+    "source": 2,
     "start_time": "07:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -1228,16 +1194,16 @@
   "pk": 1297,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:34:59.685Z",
     "day": 0,
     "location": "",
-    "observation": null,
+    "observation": "",
     "parish": 71,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -1721,16 +1687,16 @@
   "pk": 1382,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:26:05.012Z",
     "day": 0,
-    "location": "",
-    "observation": null,
+    "location": "matriz",
+    "observation": "",
     "parish": 75,
-    "source": 1,
+    "source": 2,
     "start_time": "18:30:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-18"
   }
 },
 {
@@ -1976,16 +1942,16 @@
   "pk": 1407,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:39:19.452Z",
     "day": 1,
-    "location": "",
-    "observation": null,
+    "location": "Matriz Santo Afonso",
+    "observation": "",
     "parish": 30,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -2248,16 +2214,16 @@
   "pk": 1426,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:39:24.369Z",
     "day": 2,
-    "location": "",
-    "observation": null,
+    "location": "Matriz Santo Afonso",
+    "observation": "",
     "parish": 30,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -2272,23 +2238,6 @@
     "parish": 19,
     "source": 1,
     "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1429,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 2,
-    "location": "",
-    "observation": null,
-    "parish": 75,
-    "source": 1,
-    "start_time": "19:30:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -2316,16 +2265,16 @@
   "pk": 1436,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T13:15:56.648Z",
     "day": 2,
     "location": "",
-    "observation": null,
+    "observation": "",
     "parish": 52,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -2401,16 +2350,16 @@
   "pk": 1441,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:45:13.151Z",
     "day": 2,
-    "location": "",
-    "observation": null,
+    "location": "Santuário",
+    "observation": "",
     "parish": 69,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -2945,16 +2894,16 @@
   "pk": 1485,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:40:09.726Z",
     "day": 3,
-    "location": "",
-    "observation": null,
+    "location": "Matriz Santo Afonso",
+    "observation": "",
     "parish": 30,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -3047,16 +2996,16 @@
   "pk": 1496,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:45:20.847Z",
     "day": 3,
-    "location": "",
-    "observation": null,
+    "location": "Santuário",
+    "observation": "",
     "parish": 69,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -3608,16 +3557,16 @@
   "pk": 1542,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:40:42.573Z",
     "day": 4,
-    "location": "",
-    "observation": null,
+    "location": "Matriz Santo Afonso",
+    "observation": "",
     "parish": 30,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -3632,23 +3581,6 @@
     "parish": 19,
     "source": 1,
     "start_time": "18:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
-  "pk": 1545,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 4,
-    "location": "",
-    "observation": null,
-    "parish": 75,
-    "source": 1,
-    "start_time": "19:30:00",
     "end_time": null,
     "type": "mass",
     "verified_at": null
@@ -3676,16 +3608,16 @@
   "pk": 1551,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T13:16:01.839Z",
     "day": 4,
     "location": "",
-    "observation": null,
+    "observation": "",
     "parish": 52,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -3744,16 +3676,16 @@
   "pk": 1555,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:47:40.456Z",
     "day": 4,
-    "location": "",
-    "observation": null,
+    "location": "Santuário",
+    "observation": "Exceto na primeira quinta-feira do mês",
     "parish": 69,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -4407,16 +4339,16 @@
   "pk": 1614,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:41:10.142Z",
     "day": 5,
-    "location": "",
-    "observation": null,
+    "location": "Matriz Santo Afonso",
+    "observation": "",
     "parish": 30,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -4458,16 +4390,16 @@
   "pk": 1622,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T13:17:20.582Z",
     "day": 5,
-    "location": "",
-    "observation": null,
+    "location": "Capela de Santa Luzia",
+    "observation": "Somente na segunda e quarta sexta-feira do mês",
     "parish": 52,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -4543,16 +4475,16 @@
   "pk": 1627,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:50:53.583Z",
     "day": 5,
-    "location": "",
-    "observation": null,
+    "location": "Santuário",
+    "observation": "",
     "parish": 69,
-    "source": 1,
+    "source": 2,
     "start_time": "19:00:00",
     "end_time": null,
     "type": "mass",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -5118,23 +5050,6 @@
 },
 {
   "model": "core.schedule",
-  "pk": 1678,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
-    "day": 6,
-    "location": "",
-    "observation": null,
-    "parish": 75,
-    "source": 1,
-    "start_time": "17:00:00",
-    "end_time": null,
-    "type": "mass",
-    "verified_at": null
-  }
-},
-{
-  "model": "core.schedule",
   "pk": 1683,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
@@ -5495,16 +5410,16 @@
   "pk": 1718,
   "fields": {
     "created_at": "2024-08-30T10:20:31.680Z",
-    "updated_at": "2024-08-30T10:20:31.685Z",
+    "updated_at": "2024-09-28T12:40:57.327Z",
     "day": 4,
-    "location": "",
-    "observation": null,
+    "location": "Matriz Santo Afonso",
+    "observation": "",
     "parish": 30,
-    "source": 1,
+    "source": 2,
     "start_time": "16:00:00",
     "end_time": "18:00:00",
     "type": "confession",
-    "verified_at": null
+    "verified_at": "2024-09-19"
   }
 },
 {
@@ -7051,6 +6966,448 @@
     "start_time": "09:30:00",
     "end_time": "11:00:00",
     "type": "confession",
+    "verified_at": "2024-09-17"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1822,
+  "fields": {
+    "created_at": "2024-09-28T12:26:51.250Z",
+    "updated_at": "2024-09-28T12:26:51.250Z",
+    "day": 3,
+    "location": "capela de santa rita",
+    "observation": "",
+    "parish": 75,
+    "source": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-18"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1823,
+  "fields": {
+    "created_at": "2024-09-28T12:26:55.116Z",
+    "updated_at": "2024-09-28T12:26:55.116Z",
+    "day": 6,
+    "location": "capela de santa rita",
+    "observation": "",
+    "parish": 75,
+    "source": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-18"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1824,
+  "fields": {
+    "created_at": "2024-09-28T12:31:56.161Z",
+    "updated_at": "2024-09-28T12:31:56.161Z",
+    "day": 0,
+    "location": "Matriz",
+    "observation": "",
+    "parish": 133,
+    "source": 2,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-17"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1825,
+  "fields": {
+    "created_at": "2024-09-28T12:32:00.530Z",
+    "updated_at": "2024-09-28T12:32:00.530Z",
+    "day": 0,
+    "location": "Matriz",
+    "observation": "",
+    "parish": 133,
+    "source": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-17"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1826,
+  "fields": {
+    "created_at": "2024-09-28T12:32:22.892Z",
+    "updated_at": "2024-09-28T12:32:22.892Z",
+    "day": 5,
+    "location": "",
+    "observation": "",
+    "parish": 133,
+    "source": 2,
+    "start_time": "10:00:00",
+    "end_time": "12:00:00",
+    "type": "confession",
+    "verified_at": "2024-09-17"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1827,
+  "fields": {
+    "created_at": "2024-09-28T12:33:26.966Z",
+    "updated_at": "2024-09-28T12:33:26.967Z",
+    "day": 5,
+    "location": "",
+    "observation": "",
+    "parish": 71,
+    "source": 2,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "confession",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1828,
+  "fields": {
+    "created_at": "2024-09-28T12:34:30.123Z",
+    "updated_at": "2024-09-28T12:35:26.821Z",
+    "day": 5,
+    "location": "",
+    "observation": "Somente na primeira sexta-feira do mês",
+    "parish": 71,
+    "source": 2,
+    "start_time": "06:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1829,
+  "fields": {
+    "created_at": "2024-09-28T12:34:51.129Z",
+    "updated_at": "2024-09-28T12:35:32.320Z",
+    "day": 5,
+    "location": "",
+    "observation": "Exceto na primeira sexta-feira do mês",
+    "parish": 71,
+    "source": 2,
+    "start_time": "18:30:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1830,
+  "fields": {
+    "created_at": "2024-09-28T12:40:29.399Z",
+    "updated_at": "2024-09-28T12:40:29.399Z",
+    "day": 3,
+    "location": "Igreja Santo Agostinho",
+    "observation": "",
+    "parish": 30,
+    "source": 2,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1831,
+  "fields": {
+    "created_at": "2024-09-28T12:41:49.368Z",
+    "updated_at": "2024-09-28T12:42:08.375Z",
+    "day": 5,
+    "location": "Igreja Santo Agostinho",
+    "observation": "Somente na primeira sexta-feira do mês",
+    "parish": 30,
+    "source": 2,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1832,
+  "fields": {
+    "created_at": "2024-09-28T12:42:32.927Z",
+    "updated_at": "2024-09-28T12:42:32.927Z",
+    "day": 6,
+    "location": "Igreja Santo Agostinho",
+    "observation": "",
+    "parish": 30,
+    "source": 2,
+    "start_time": "09:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1833,
+  "fields": {
+    "created_at": "2024-09-28T12:42:39.328Z",
+    "updated_at": "2024-09-28T12:42:39.328Z",
+    "day": 6,
+    "location": "Igreja Santo Agostinho",
+    "observation": "",
+    "parish": 30,
+    "source": 2,
+    "start_time": "19:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1834,
+  "fields": {
+    "created_at": "2024-09-28T12:42:54.360Z",
+    "updated_at": "2024-09-28T12:42:54.360Z",
+    "day": 0,
+    "location": "Igreja Santo Agostinho",
+    "observation": "",
+    "parish": 30,
+    "source": 2,
+    "start_time": "11:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1835,
+  "fields": {
+    "created_at": "2024-09-28T12:42:59.799Z",
+    "updated_at": "2024-09-28T12:42:59.799Z",
+    "day": 0,
+    "location": "Igreja Santo Agostinho",
+    "observation": "",
+    "parish": 30,
+    "source": 2,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1836,
+  "fields": {
+    "created_at": "2024-09-28T12:43:28.130Z",
+    "updated_at": "2024-09-28T12:43:28.130Z",
+    "day": 0,
+    "location": "Capela do Campus",
+    "observation": "",
+    "parish": 30,
+    "source": 2,
+    "start_time": "18:30:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1837,
+  "fields": {
+    "created_at": "2024-09-28T12:47:51.225Z",
+    "updated_at": "2024-09-28T12:48:18.770Z",
+    "day": 4,
+    "location": "Santuário",
+    "observation": "Somente na primeira quinta-feira do mês; Missa com Oração por Cura e Libertação",
+    "parish": 69,
+    "source": 2,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1838,
+  "fields": {
+    "created_at": "2024-09-28T12:51:32.421Z",
+    "updated_at": "2024-09-28T12:51:32.421Z",
+    "day": 6,
+    "location": "Capela de N. Sra. de Nazaré",
+    "observation": "",
+    "parish": 69,
+    "source": 2,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1839,
+  "fields": {
+    "created_at": "2024-09-28T12:51:38.698Z",
+    "updated_at": "2024-09-28T12:51:38.698Z",
+    "day": 0,
+    "location": "Santuário",
+    "observation": "",
+    "parish": 69,
+    "source": 2,
+    "start_time": "07:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1840,
+  "fields": {
+    "created_at": "2024-09-28T12:51:41.563Z",
+    "updated_at": "2024-09-28T12:51:41.563Z",
+    "day": 0,
+    "location": "Santuário",
+    "observation": "",
+    "parish": 69,
+    "source": 2,
+    "start_time": "10:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1841,
+  "fields": {
+    "created_at": "2024-09-28T12:51:44.418Z",
+    "updated_at": "2024-09-28T12:51:44.418Z",
+    "day": 0,
+    "location": "Santuário",
+    "observation": "",
+    "parish": 69,
+    "source": 2,
+    "start_time": "17:00:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1842,
+  "fields": {
+    "created_at": "2024-09-28T12:54:12.539Z",
+    "updated_at": "2024-09-28T12:54:12.539Z",
+    "day": 5,
+    "location": "Capela",
+    "observation": "Somente na primeira sexta-feira do mês; missa do Coração de Jesus",
+    "parish": 69,
+    "source": 2,
+    "start_time": "19:00:01",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1843,
+  "fields": {
+    "created_at": "2024-09-28T13:18:00.887Z",
+    "updated_at": "2024-09-28T13:18:00.887Z",
+    "day": 5,
+    "location": "",
+    "observation": "Somente na primeira e terceira sexta-feira do mês",
+    "parish": 52,
+    "source": 2,
+    "start_time": "19:00:01",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-19"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1844,
+  "fields": {
+    "created_at": "2024-09-28T13:24:24.232Z",
+    "updated_at": "2024-09-28T13:24:24.232Z",
+    "day": 3,
+    "location": "Matriz",
+    "observation": "",
+    "parish": 84,
+    "source": 2,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-17"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1845,
+  "fields": {
+    "created_at": "2024-09-28T13:24:25.323Z",
+    "updated_at": "2024-09-28T13:24:25.323Z",
+    "day": 4,
+    "location": "Capela de São Sebastião em Pipa",
+    "observation": "",
+    "parish": 84,
+    "source": 2,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-17"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1846,
+  "fields": {
+    "created_at": "2024-09-28T13:24:26.833Z",
+    "updated_at": "2024-09-28T13:24:26.833Z",
+    "day": 0,
+    "location": "Matriz",
+    "observation": "",
+    "parish": 84,
+    "source": 2,
+    "start_time": "19:30:00",
+    "end_time": null,
+    "type": "mass",
+    "verified_at": "2024-09-17"
+  }
+},
+{
+  "model": "core.schedule",
+  "pk": 1847,
+  "fields": {
+    "created_at": "2024-09-28T13:24:27.222Z",
+    "updated_at": "2024-09-28T13:24:27.222Z",
+    "day": 0,
+    "location": "Capela de São Sebastião em Pipa",
+    "observation": "",
+    "parish": 84,
+    "source": 2,
+    "start_time": "17:30:00",
+    "end_time": null,
+    "type": "mass",
     "verified_at": "2024-09-17"
   }
 }
