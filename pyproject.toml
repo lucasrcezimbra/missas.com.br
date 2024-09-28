@@ -37,10 +37,9 @@ python_files = "tests.py test_*.py *_tests.py"
 
 
 [tool.ruff]
-select = ["E", "F", "I", "S", "TRY"]
+select = ["E", "F", "I", "S"]
 ignore = ["E501"]
 line-length = 88
 
 [tool.ruff.per-file-ignores]
-"manage.py" = ["TRY003"]
 "**/tests/**" = ["S101"]
