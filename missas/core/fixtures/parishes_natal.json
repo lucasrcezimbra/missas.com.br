@@ -408,22 +408,11 @@
 },
 {
   "model": "core.parish",
-  "pk": 66,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.494Z",
-    "city": 4351,
-    "name": "Paróquia de São Gonçalo",
-    "slug": "paroquia-de-sao-goncalo"
-  }
-},
-{
-  "model": "core.parish",
   "pk": 68,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.128Z",
-    "city": 4351,
+    "updated_at": "2024-09-19T11:55:40.161Z",
+    "city": 4277,
     "name": "Paróquia de São Pedro Pescador",
     "slug": "paroquia-de-sao-pedro-pescador"
   }
@@ -433,10 +422,10 @@
   "pk": 69,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-08-30T10:20:31.676Z",
+    "updated_at": "2024-09-19T11:51:34.379Z",
     "city": 4351,
-    "name": "Paróquia do Santuário dos Santos Mártires",
-    "slug": "paroquia-do-santuario-dos-santos-martires"
+    "name": "Paróquia do Santuário dos Santos Mártires de Cunhaú e Uruaçu",
+    "slug": "paroquia-do-santuario-dos-santos-martires-de-cunhau-e-uruacu"
   }
 },
 {
@@ -466,8 +455,8 @@
   "pk": 73,
   "fields": {
     "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-09-16T13:54:19.109Z",
-    "city": 4351,
+    "updated_at": "2024-09-19T11:49:00.095Z",
+    "city": 4352,
     "name": "Paróquia de Nossa Senhora do Ó",
     "slug": "paroquia-de-nossa-senhora-do-o"
   }
@@ -503,17 +492,6 @@
     "city": 4351,
     "name": "Paróquia de São João Batista - Lagoa Seca",
     "slug": "paroquia-de-sao-joao-batista-lagoa-seca"
-  }
-},
-{
-  "model": "core.parish",
-  "pk": 77,
-  "fields": {
-    "created_at": "2024-08-30T10:20:31.672Z",
-    "updated_at": "2024-08-30T10:20:31.676Z",
-    "city": 4351,
-    "name": "Capela Santo Antônio",
-    "slug": "capela-santo-antonio"
   }
 },
 {

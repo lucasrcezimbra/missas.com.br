@@ -1,5 +1,20 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from model_utils import FieldTracker
+from model_utils.tracker import FieldInstanceTracker
+
+
+class MyFieldInstanceTracker(FieldInstanceTracker):
+    def changed(self):
+        return {
+            field: (self.previous(field), self.get_field_value(field))
+            for field in self.fields
+            if self.has_changed(field)
+        }
+
+
+class MyFieldTracker(FieldTracker):
+    tracker_class = MyFieldInstanceTracker
 
 
 class User(AbstractUser):
@@ -94,7 +109,7 @@ class Schedule(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     day = models.IntegerField(choices=Day.choices)
     location = models.CharField(max_length=128, blank=True)
-    observation = models.TextField(null=True, blank=True)
+    observation = models.TextField(blank=True, default="")
     parish = models.ForeignKey(
         Parish, on_delete=models.CASCADE, related_name="schedules"
     )
@@ -103,6 +118,8 @@ class Schedule(models.Model):
     end_time = models.TimeField(null=True, blank=True)
     type = models.CharField(choices=Type.choices, default=Type.MASS)
     verified_at = models.DateField(blank=True, null=True)
+
+    tracker = MyFieldTracker()
 
     class Meta:
         unique_together = ("parish", "day", "start_time")
