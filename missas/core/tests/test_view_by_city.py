@@ -55,7 +55,7 @@ def test_template(client):
 
     response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
 
-    assertTemplateUsed(response, "index.html")
+    assertTemplateUsed(response, "parishes_by_city.html")
 
 
 @pytest.mark.django_db
@@ -343,10 +343,7 @@ def test_verified_schedule(client):
     response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
 
     html = response.content.decode()
-    assert (
-        f"Verificado por Missas.com.br em {schedule.verified_at.strftime('%d/%m/%Y')}"
-        in html
-    )
+    assert f"Verificado por Missas.com.br em {schedule.verified_at:%d/%m/%Y}" in html
 
 
 @pytest.mark.django_db
@@ -358,3 +355,14 @@ def test_schedule_with_location(client):
 
     html = response.content.decode()
     assert schedule.location in html
+
+
+@pytest.mark.django_db
+def test_breadcrumb_to_state(client):
+    schedule = baker.make(Schedule)
+
+    city = schedule.parish.city
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    html = response.content.decode()
+    assert f'<a href="/{city.state.slug}">{city.state.name}</a>' in html

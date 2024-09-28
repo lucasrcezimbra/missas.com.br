@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Missas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description"
+              content="Plataforma que fornece informações sobre horários de missas e confissões em várias paróquias do Brasil, permitindo o filtro por dia e horários.">
+        <meta name="keywords"
+              content="missas, confissões, horários, paróquias, Brasil">
+        <meta name="author" content="Lucas Rangel Cezimbra">
+        {% load static %}
+        <script src="{% static 'htmx.min.js' %}" defer></script>
+        <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" async>
+        <link rel="apple-touch-icon"
+              sizes="180x180"
+              href="{% static 'apple-touch-icon.png' %}">
+        <link rel="icon"
+              type="image/png"
+              sizes="32x32"
+              href="{% static 'favicon-32x32.png' %}">
+        <link rel="icon"
+              type="image/png"
+              sizes="16x16"
+              href="{% static 'favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'site.webmanifest' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+              rel="stylesheet"
+              async>
+        <link href="{% static 'fontawesomefree/css/fontawesome.css' %}"
+              rel="stylesheet"
+              type="text/css"
+              async>
+        <link href="{% static 'fontawesomefree/css/solid.css' %}"
+              rel="stylesheet"
+              type="text/css"
+              async>
+        <meta name="htmx-config" content='{"getCacheBusterParam":true}'>
+        <style>
+            body {
+                background-color: #E1F5FE;
+                font-family: 'Open Sans', sans-serif;
+            }
+            {% block style %}{% endblock %}
+        </style>
+    </head>
+    <body>
+        <div class="container mt-3">
+            <div class="row mb-3 align-items-center">
+                <div class="col-2 col-lg-1">
+                    <img src="{% static 'logo.webp' %}" style="max-width: 100%" loading="lazy">
+                </div>
+                <div class="col-10 col-lg-11">
+                    <h1 class="fs-1">Missas.com.br</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            {% if city %}
+                                <li class="breadcrumb-item">
+                                    <a href="/{{ city.state.slug }}">{{ city.state.name }}</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ city.name }}</li>
+                            {% elif state %}
+                                <li class="breadcrumb-item active" aria-current="page">{{ state.name }}</li>
+                            {% endif %}
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div id="content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <script src="{% static 'bootstrap.min.js' %}" defer></script>
+        <script defer
+                src='https://static.cloudflareinsights.com/beacon.min.js'
+                data-cf-beacon='{"token": "b300d389869f4fac95d6c34ac8ea2d0d"}'></script>
+    </body>
+</html>

@@ -3,6 +3,8 @@ from django.db import models
 from model_utils import FieldTracker
 from model_utils.tracker import FieldInstanceTracker
 
+from missas.core.managers import CityQuerySet
+
 
 class MyFieldInstanceTracker(FieldInstanceTracker):
     def changed(self):
@@ -38,6 +40,8 @@ class City(models.Model):
     name = models.CharField(max_length=254)
     slug = models.SlugField()
     state = models.ForeignKey(State, on_delete=models.CASCADE, related_name="cities")
+
+    objects = CityQuerySet.as_manager()
 
     class Meta:
         unique_together = ("slug", "state")

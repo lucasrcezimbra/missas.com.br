@@ -5,7 +5,7 @@ from django.shortcuts import resolve_url
 from model_bakery import baker
 from pytest_django.asserts import assertContains, assertNotContains, assertTemplateUsed
 
-from missas.core.models import City, State
+from missas.core.models import City, Parish, Schedule, State
 
 
 @pytest.mark.django_db
@@ -54,3 +54,63 @@ def test_all_cities(client):
     assertNotContains(response, city_another_state.name)
     for city in cities:
         assertContains(response, city.name)
+
+
+@pytest.mark.django_db
+def test_only_cities_with_parishes_and_schedules_have_link(client):
+    state = baker.make(State)
+
+    city_with_parish_with_schedule = baker.make(City, state=state)
+    city_with_parish_without_schedule = baker.make(City, state=state)
+    city_without_parish = baker.make(City, state=state)
+
+    parish_with_schedule = baker.make(Parish, city=city_with_parish_with_schedule)
+    baker.make(Parish, city=city_with_parish_without_schedule)
+
+    baker.make(Schedule, parish=parish_with_schedule)
+
+    response = client.get(resolve_url("cities_by_state", state=state.slug))
+
+    assertNotContains(response, f"/{city_without_parish.slug}")
+    assertNotContains(response, f"/{city_with_parish_without_schedule.slug}")
+    assertContains(
+        response,
+        f'<a href="/{state.slug}/{city_with_parish_with_schedule.slug}/">{city_with_parish_with_schedule.name}</a>',
+        html=True,
+    )
+
+
+@pytest.mark.django_db
+def test_order_by_cities_with_schedules_and_by_name(client):
+    state = baker.make(State)
+
+    cityA_with_schedule = baker.make(
+        City, state=state, name="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    )
+    cityB_with_schedule = baker.make(
+        City, state=state, name="BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+    )
+    cityA_without_schedule = baker.make(
+        City, state=state, name="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    )
+    cityB_without_schedule = baker.make(
+        City, state=state, name="bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    )
+
+    baker.make(Schedule, parish__city=cityA_with_schedule)
+    baker.make(Schedule, parish__city=cityB_with_schedule)
+
+    response = client.get(resolve_url("cities_by_state", state=state.slug))
+
+    html = response.content.decode()
+    cityA_with_schedule_index = html.index(cityA_with_schedule.name)
+    cityB_with_schedule_index = html.index(cityB_with_schedule.name)
+    cityA_without_schedule_index = html.index(cityA_without_schedule.name)
+    cityB_without_schedule_index = html.index(cityB_without_schedule.name)
+
+    assert (
+        cityA_with_schedule_index
+        < cityB_with_schedule_index
+        < cityA_without_schedule_index
+        < cityB_without_schedule_index
+    )
