@@ -54,7 +54,7 @@ print(f"{contact=}")
 parish = contact.parish
 print(f"{parish=}")
 if not parish:
-    raise
+    raise Exception("No parish")
 
 source = Source.objects.get(type=Source.Type.WHATSAPP)
 print(f"{source=}")
