@@ -1,0 +1,20 @@
+{
+  "template": "https://github.com/lucasrcezimbra/django-template",
+  "commit": "630edd394e6fc0a23e64d59d6ea27575fdcc25c6",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "missas.com.br",
+      "project_slug": "missas",
+      "github_username": "lucasrcezimbra",
+      "database": "PostgreSQL",
+      "api": "No",
+      "html": "HTMX",
+      "deploy": "Render",
+      "use_sentry": true,
+      "staticfiles": true,
+      "_template": "https://github.com/lucasrcezimbra/django-template"
+    }
+  },
+  "directory": null
+}
