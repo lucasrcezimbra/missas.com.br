@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.4.0
+  rev: v4.6.0
   hooks:
     - id: check-added-large-files
       args: [--maxkb=1024]
@@ -17,19 +17,19 @@ repos:
     - id: trailing-whitespace
 
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.0.284
+  rev: v0.6.8
   hooks:
     - id: ruff
       args: [--fix, --exit-non-zero-on-fix]
 
 - repo: https://github.com/psf/black
-  rev: 23.7.0
+  rev: 24.8.0
   hooks:
   - id: black
     types: [python]
 
 - repo: https://github.com/Riverside-Healthcare/djLint/
-  rev: v1.34.0
+  rev: v1.35.2
   hooks:
     - id: djlint-reformat-django
 
