@@ -1,5 +1,6 @@
 # Missas
 
+![](./contrib/screenshot.png)
 
 ## Installation
 ```bash
