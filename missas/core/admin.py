@@ -28,6 +28,11 @@ class ContactAdmin(admin.ModelAdmin):
         "phone",
         "phone2",
     )
+    list_filter = (
+        ("parish", admin.EmptyFieldListFilter),
+        ("phone", admin.EmptyFieldListFilter),
+        ("whatsapp", admin.EmptyFieldListFilter),
+    )
     ordering = ("parish__name",)
 
 
