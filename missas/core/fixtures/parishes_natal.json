@@ -1274,5 +1274,16 @@
     "name": "Paróquia de São João Batista - Vila de Ponta Negra",
     "slug": "paroquia-de-sao-joao-batista-vila-de-ponta-negra"
   }
+},
+{
+  "model": "core.parish",
+  "pk": 150,
+  "fields": {
+    "created_at": "2024-10-08T10:43:15.188Z",
+    "updated_at": "2024-10-08T10:43:15.188Z",
+    "city": 4314,
+    "name": "Paróquia de Nossa Senhora de Lourdes",
+    "slug": "paroquia-de-nossa-senhora-de-lourdes"
+  }
 }
 ]
