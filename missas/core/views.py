@@ -34,6 +34,7 @@ def by_city(request, state, city):
     day_name = request.GET.get("dia")
     hour = request.GET.get("horario")
     type_name = request.GET.get("tipo")
+    verified_only = request.GET.get("verificado") == "1"
     day = {
         "domingo": Schedule.Day.SUNDAY,
         "segunda": Schedule.Day.MONDAY,
@@ -56,6 +57,9 @@ def by_city(request, state, city):
         hour = time(int(hour))
         qs = Q(start_time__gte=hour) | Q(end_time__gte=hour)
         schedules = schedules.filter(qs)
+
+    if verified_only:
+        schedules = schedules.filter(verified_at__isnull=False)
 
     schedules = schedules.order_by("day", "start_time")
 

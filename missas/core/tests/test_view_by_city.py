@@ -281,6 +281,21 @@ def test_filter_by_end_time_if_exists(client: Client):
     assertQuerySetEqual(response.context["schedules"], [confession])
 
 
+@pytest.mark.django_db
+def test_filter_by_verified(client: Client):
+    city = baker.make(City)
+    verified = baker.make(Schedule, parish__city=city, _fill_optional=["verified_at"])
+    unverified = baker.make(Schedule, parish__city=city)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"verificado": "1"},
+    )
+
+    assertContains(response, verified.parish.name)
+    assertNotContains(response, unverified.parish.name)
+
+
 @pytest.mark.parametrize(
     ["weekday"],
     (
