@@ -49,13 +49,25 @@ def test_cache(client):
     assert response.headers["Cache-Control"] == "max-age=86400"
 
 
+@pytest.mark.parametrize(
+    ("hx_request", "hx_boosted", "expected_template"),
+    (
+        (True, True, "parishes_by_city.html"),
+        (True, False, "cards.html"),
+        (False, True, "parishes_by_city.html"),
+        (False, False, "parishes_by_city.html"),
+    ),
+)
 @pytest.mark.django_db
-def test_template(client):
+def test_template(client, hx_request, hx_boosted, expected_template):
     city = baker.make(City)
 
-    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        headers={"HX-Request": hx_request, "HX-Boosted": hx_boosted},
+    )
 
-    assertTemplateUsed(response, "parishes_by_city.html")
+    assertTemplateUsed(response, expected_template)
 
 
 @pytest.mark.django_db
