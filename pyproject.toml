@@ -6,7 +6,7 @@ authors = []
 
 [tool.poetry.dependencies]
 python = "^3.12"
-dj-database-url = "2.2.0"
+dj-database-url = "2.3.0"
 django = "5.1.2"
 django-extensions = "3.2.3"
 django-htmx = "1.19.0"
