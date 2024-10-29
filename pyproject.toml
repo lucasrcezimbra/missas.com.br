@@ -16,7 +16,7 @@ gunicorn = "23.0.0"
 psycopg2-binary = "2.9.10"
 python-decouple = "3.8"
 sentry-sdk = {extras = ["django"], version = "2.17.0"}
-whitenoise = {extras = ["brotli"], version = "6.7.0"}
+whitenoise = {extras = ["brotli"], version = "6.8.1"}
 
 [tool.poetry.group.dev.dependencies]
 freezegun = "1.5.1"
