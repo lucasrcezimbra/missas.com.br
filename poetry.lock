@@ -935,13 +935,13 @@ files = [
 
 [[package]]
 name = "llm"
-version = "0.16"
+version = "0.17"
 description = "A CLI utility and Python library for interacting with Large Language Models, including OpenAI, PaLM and local models installed on your own machine."
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "llm-0.16-py3-none-any.whl", hash = "sha256:b9fe4f43b0b7da4b2f53d9c051e6abf3cd5db7b14fee6747655b9242f0aee22e"},
-    {file = "llm-0.16.tar.gz", hash = "sha256:6f8780308d021bb8df755e58e0188ab34af0961f64e303e808f928b456ccc51b"},
+    {file = "llm-0.17-py3-none-any.whl", hash = "sha256:f1fb15c78fff122ac36ecef40633f7fe3d33946df5b4d7a6f30b7aaa7d1eaf27"},
+    {file = "llm-0.17.tar.gz", hash = "sha256:16ef3c5f0777180d5c28d5b934d92da3af7b5093264b92023c5d06df96eb4be5"},
 ]
 
 [package.dependencies]
@@ -950,6 +950,7 @@ click-default-group = ">=1.2.3"
 openai = ">=1.0"
 pip = "*"
 pluggy = "*"
+puremagic = "*"
 pydantic = ">=1.10.2"
 pyreadline3 = {version = "*", markers = "sys_platform == \"win32\""}
 python-ulid = "*"
@@ -959,7 +960,7 @@ sqlite-migrate = ">=0.1a2"
 sqlite-utils = ">=3.37"
 
 [package.extras]
-test = ["black (>=24.1.0)", "cogapp", "mypy (>=1.10.0)", "numpy", "pytest", "pytest-httpx", "ruff", "types-PyYAML", "types-click", "types-setuptools"]
+test = ["black (>=24.1.0)", "cogapp", "mypy (>=1.10.0)", "numpy", "pytest", "pytest-httpx (>=0.33.0)", "ruff", "types-PyYAML", "types-click", "types-setuptools"]
 
 [[package]]
 name = "lxml"
@@ -1342,6 +1343,17 @@ files = [
     {file = "psycopg2_binary-2.9.10-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:7f5d859928e635fa3ce3477704acee0f667b3a3d3e4bb109f2b18d4005f38287"},
     {file = "psycopg2_binary-2.9.10-cp39-cp39-win32.whl", hash = "sha256:3216ccf953b3f267691c90c6fe742e45d890d8272326b4a8b20850a03d05b7b8"},
     {file = "psycopg2_binary-2.9.10-cp39-cp39-win_amd64.whl", hash = "sha256:30e34c4e97964805f715206c7b789d54a78b70f3ff19fbe590104b71c45600e5"},
+]
+
+[[package]]
+name = "puremagic"
+version = "1.28"
+description = "Pure python implementation of magic file detection"
+optional = false
+python-versions = "*"
+files = [
+    {file = "puremagic-1.28-py3-none-any.whl", hash = "sha256:e16cb9708ee2007142c37931c58f07f7eca956b3472489106a7245e5c3aa1241"},
+    {file = "puremagic-1.28.tar.gz", hash = "sha256:195893fc129657f611b86b959aab337207d6df7f25372209269ed9e303c1a8c0"},
 ]
 
 [[package]]
@@ -2216,4 +2228,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "d3e55ba11fd1d85cd8975c6eee4ad87b5893b1f2e7d430a1dee7589b716e5974"
+content-hash = "870712ab9d94c2be93df9a2557816f0e57b045ac992f08d099651dfa152f823b"
