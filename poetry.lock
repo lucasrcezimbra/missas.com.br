@@ -935,13 +935,13 @@ files = [
 
 [[package]]
 name = "llm"
-version = "0.17.1"
+version = "0.18"
 description = "A CLI utility and Python library for interacting with Large Language Models, including OpenAI, PaLM and local models installed on your own machine."
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "llm-0.17.1-py3-none-any.whl", hash = "sha256:e963e9694a2c54cea25c0a493d32fb5e631c53b7351d6688b11c55b8f846a7c2"},
-    {file = "llm-0.17.1.tar.gz", hash = "sha256:b7688d721f0d42a6e428c945f3dbdba5b92dde790f71b3610631bea24a725f21"},
+    {file = "llm-0.18-py3-none-any.whl", hash = "sha256:bf1ad0b41425909a5aecd855ccb1ad2fb64d78fb2ac0d1ab07ddc2eba4b58c42"},
+    {file = "llm-0.18.tar.gz", hash = "sha256:1c4243dea5ec3e7ee50f4fd0b8ccd6475b8f5a6cca2b9aac8270c0e843c0e490"},
 ]
 
 [package.dependencies]
@@ -960,7 +960,7 @@ sqlite-migrate = ">=0.1a2"
 sqlite-utils = ">=3.37"
 
 [package.extras]
-test = ["black (>=24.1.0)", "cogapp", "mypy (>=1.10.0)", "numpy", "pytest", "pytest-httpx (>=0.33.0)", "ruff", "types-PyYAML", "types-click", "types-setuptools"]
+test = ["black (>=24.1.0)", "cogapp", "mypy (>=1.10.0)", "numpy", "pytest", "pytest-asyncio", "pytest-httpx (>=0.33.0)", "ruff", "types-PyYAML", "types-click", "types-setuptools"]
 
 [[package]]
 name = "lxml"
@@ -2230,4 +2230,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "e22ce669218d087606054859b46f40abc28115b7a22d9dd75aa4ce42f82744ca"
+content-hash = "775df40f3217e6808a814f219b67fa44c3844ae8eb357774de304b1c975e2996"
