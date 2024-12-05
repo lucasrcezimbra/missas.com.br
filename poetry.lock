@@ -935,13 +935,13 @@ files = [
 
 [[package]]
 name = "llm"
-version = "0.18"
+version = "0.19"
 description = "A CLI utility and Python library for interacting with Large Language Models, including OpenAI, PaLM and local models installed on your own machine."
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "llm-0.18-py3-none-any.whl", hash = "sha256:bf1ad0b41425909a5aecd855ccb1ad2fb64d78fb2ac0d1ab07ddc2eba4b58c42"},
-    {file = "llm-0.18.tar.gz", hash = "sha256:1c4243dea5ec3e7ee50f4fd0b8ccd6475b8f5a6cca2b9aac8270c0e843c0e490"},
+    {file = "llm-0.19-py3-none-any.whl", hash = "sha256:b92dea1ede673fe23a4109056df0607068f96afc50ae20db83c0316a6764330d"},
+    {file = "llm-0.19.tar.gz", hash = "sha256:66c75ec5aa3d88d09175419a65b3742ac3b13992b26ab89e3b5c271b9e7cec82"},
 ]
 
 [package.dependencies]
@@ -2229,4 +2229,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "dea832767a1741be79091b8d8528c4171f2a0170ee17405f14519851eb755249"
+content-hash = "ed5767d2109757b7bf265274104f7bf3245353d12dd64545f67ef6e7c5659214"
