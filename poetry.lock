@@ -935,13 +935,13 @@ files = [
 
 [[package]]
 name = "llm"
-version = "0.19"
+version = "0.19.1"
 description = "A CLI utility and Python library for interacting with Large Language Models, including OpenAI, PaLM and local models installed on your own machine."
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "llm-0.19-py3-none-any.whl", hash = "sha256:b92dea1ede673fe23a4109056df0607068f96afc50ae20db83c0316a6764330d"},
-    {file = "llm-0.19.tar.gz", hash = "sha256:66c75ec5aa3d88d09175419a65b3742ac3b13992b26ab89e3b5c271b9e7cec82"},
+    {file = "llm-0.19.1-py3-none-any.whl", hash = "sha256:6450fe6ab7b844365da21a8dfacf03d1e26730109f487aec456b872ffc85ae63"},
+    {file = "llm-0.19.1.tar.gz", hash = "sha256:64f0c9500ec26a7de61a3a07b1f0f1cdd333a753c4a7aba7791b4ed3cd54117f"},
 ]
 
 [package.dependencies]
