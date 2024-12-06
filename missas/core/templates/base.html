@@ -37,11 +37,23 @@
               rel="stylesheet"
               type="text/css"
               async>
+        <link href="{% static 'fontawesomefree/css/brands.css' %}"
+              rel="stylesheet"
+              type="text/css"
+              async>
         <meta name="htmx-config" content='{"getCacheBusterParam":true}'>
         <style>
             body {
                 background-color: #E1F5FE;
                 font-family: 'Open Sans', sans-serif;
+            }
+            footer {
+                background-color: #f8f9fa;
+                padding: 1rem;
+                text-align: center;
+            }
+            footer a {
+                margin: 0 10px;
             }
             {% block style %}{% endblock %}
         </style>
@@ -78,6 +90,13 @@
 
             </div>
         </div>
+        <footer>
+            <a href="/">Início</a> |
+            <a href="https://github.com/lucasrcezimbra/missas.com.br"
+               target="_blank">
+                <i class="fa-solid fa-brands fa-github"></i> GitHub
+            </a>
+        </footer>
         <script src="{% static 'bootstrap.min.js' %}" defer></script>
         <script defer
                 src='https://static.cloudflareinsights.com/beacon.min.js'
