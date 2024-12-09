@@ -15,7 +15,7 @@ fontawesomefree = "6.6.0"
 gunicorn = "23.0.0"
 psycopg2-binary = "2.9.10"
 python-decouple = "3.8"
-sentry-sdk = {extras = ["django"], version = "2.19.1"}
+sentry-sdk = {extras = ["django"], version = "2.19.2"}
 whitenoise = {extras = ["brotli"], version = "6.8.2"}
 
 [tool.poetry.group.dev.dependencies]
