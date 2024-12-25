@@ -16,14 +16,6 @@ jobs:
       with:
         python-version: '3.12'
         cache: 'poetry'
-    - name: Install dependencies
-      run: |
-        poetry install
-        poetry run pre-commit install
-        cp contrib/env-sample .env
-    - run: poetry run pre-commit run -a
-    - name: pytest
-      run: |
-        docker compose up -d
-        sleep 5
-        poetry run pytest
+    - run: make install
+    - run: make lint
+    - run: make test
