@@ -8,4 +8,5 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("<slug:state>/<slug:city>/", views.by_city, name="by_city"),
     path("<slug:state>/", views.cities_by_state, name="cities_by_state"),
+    path("horarios/<str:id>/", views.fix_schedule, name="fix_schedule"),
 ]

@@ -80,3 +80,7 @@ def by_city(request, state, city):
             "Schedule": Schedule,
         },
     )
+
+
+def fix_schedule(request, id):
+    schedule = get_object_or_404(Schedule, id=id)
