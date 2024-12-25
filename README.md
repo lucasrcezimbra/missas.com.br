@@ -4,8 +4,8 @@
 
 ## Installation
 ```bash
-git clone git@github.com:lucasrcezimbra/missas.git
-cd missas
+git clone git@github.com:lucasrcezimbra/missas.com.br.git
+cd missas.com.br
 make install
 ```
 
