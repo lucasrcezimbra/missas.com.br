@@ -1,4 +1,5 @@
 import os
+import sys
 from textwrap import dedent
 
 import django
@@ -14,24 +15,21 @@ from missas.core.models import Contact, City, Parish, Schedule, Source  # noqa
 
 
 """
-// JS snippet to extract message from WhatsApp Web
-// 1. Open WhatsApp web
-// 2. Open the conversation to extract the messages
-// 3. Open Browser Inspect > Console
-// 4. Run this code:
-var messages = []
-document.querySelectorAll('#main .copyable-text').forEach(element => {
-    if (element.tagName.toLowerCase() === 'div') {
-        messages.push(element.getAttribute('data-pre-plain-text'));
-        messages.push(element.innerText);
-    }
-});
-console.log(document.getElementById('main').querySelector('header').innerText.replaceAll(' ', '').replace('-', ''));
-console.log(messages.join('\n'))
+const wppconnect = require('@wppconnect-team/wppconnect');
+client = await wppconnect.create({headless: false})
+chats = await client.listChats()
+unarchived_chats = chats.filter((c) => !c.archive && !c.contact.isMe)
+
+for (const chat of unarchived_chats) {
+	messages = await client.getMessages(chat.id)
+	phone = chat.id.user
+	console.log(`call Python 'poetry run python contrib/import.py ${phone} <JSON.stringfy(messages)>'`)
+}
 """
 
 
-WHATSAPP = "+5584994766014"
+WHATSAPP = f"+{sys.argv[1]}"
+messages_data = json.loads(sys.argv[2])
 MESSAGE = """
 [Message at 2024-09-16]
 Bom dia. Qual o horário das missas na paróquia?
