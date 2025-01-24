@@ -1,4 +1,5 @@
 import os
+import sys
 from textwrap import dedent
 
 import django
@@ -31,24 +32,10 @@ console.log(messages.join('\n'))
 """
 
 
-WHATSAPP = "+5584994766014"
-MESSAGE = """
-[Message at 2024-09-16]
-Bom dia. Qual o horário das missas na paróquia?
-[Message at 2024-09-16]
-Boa tarde
-Hoje  dia 16 em especial celebra a missa votiva de nossa senhora do Carmo às 19:30
-Segundas, quartas, sextas e sábados às 06:00 horas
-Tercas, quartas e sábados às 19:30 horas
-Domingo 07:00, 09:00 e 18:00 hrs.
-Prineira quinta do mês missa por cura é liberação
-Primeira sexta feira missa só sagrado coração de Jesus
-Dia 16 missa votiva de nossa senhora do Carmo
-Todas às quartas grupo de oração Monte Carmelo
-Todas as quintas exposição do Santíssimo às 15:00 adoração até às 18h e encerra com a benção do Santíssimo.
-"""
+phone = sys.argv[1]
+messages = sys.argv[2]
 
-contact = Contact.objects.get(whatsapp=WHATSAPP)
+contact = Contact.objects.get(whatsapp=phone)
 print(f"{contact=}")
 
 parish = contact.parish
@@ -63,7 +50,7 @@ model = llm.get_model("gpt-4o")
 model.key = config("OPENAI_API_KEY")
 
 ai_response = model.prompt(
-    MESSAGE,
+    messages,
     system=dedent(
         """\
         You are a Django management tool. You help to create new objects based on WhatsApp messages.
@@ -281,7 +268,7 @@ def ynput():
 
 print("=" * 150)
 
-print(MESSAGE)
+print(messages)
 
 print("=" * 150)
 
