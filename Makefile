@@ -2,7 +2,7 @@
 .PHONY: build dbdump dbload dev install lint run test
 
 build:
-	poetry install
+	poetry install --without=dev --without=scrapers
 	poetry run python manage.py collectstatic --no-input
 	poetry run python manage.py migrate
 
