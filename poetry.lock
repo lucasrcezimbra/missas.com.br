@@ -939,7 +939,7 @@ version = "1.0.0"
 description = "Extensible JSON module to serialize all objects."
 optional = false
 python-versions = ">=3.9"
-groups = ["scraper"]
+groups = ["scrapers"]
 files = []
 develop = false
 
@@ -2304,4 +2304,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "7d619eb79217c311a1b0c3f833858a003cbfbf34e5df8087290756424b5a5676"
+content-hash = "27782906bc38ae476a7806a003a2c41c426845d5f11aeedb166fb8b1b0823a14"
