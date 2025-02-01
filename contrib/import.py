@@ -1,9 +1,10 @@
+import json
 import os
 import sys
+from datetime import datetime
 from textwrap import dedent
 
 import django
-import jsonstar as json
 import llm
 from decouple import config
 from django.utils.dateparse import parse_time
@@ -35,8 +36,14 @@ console.log(messages.join('\n'))
 phone = sys.argv[1]
 messages = sys.argv[2]
 
-contact = Contact.objects.get(whatsapp=phone)
-print(f"{contact=}")
+try:
+    contact = Contact.objects.get(whatsapp=phone)
+    print(f"{contact=}")
+except Contact.DoesNotExist:
+    phone = phone[:6] + "9" + phone[6:]
+    contact = Contact.objects.get(whatsapp=phone)
+    print(f"{contact=}")
+
 
 parish = contact.parish
 print(f"{parish=}")
@@ -247,7 +254,7 @@ for s in data["schedules"]:
     schedule.location = s["location"]
     schedule.observation = s["observation"] or ""
     schedule.source = source
-    schedule.verified_at = s["verified_at"].date()
+    schedule.verified_at = datetime.strptime(s["verified_at"], "%Y-%m-%d").date()
 
     schedules.append(schedule)
 

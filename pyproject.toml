@@ -27,7 +27,6 @@ pytest-django = "4.9.0"
 pytest-mock = "3.14.0"
 
 [tool.poetry.group.scrapers.dependencies]
-jsonstar = {git = "https://github.com/routablehq/python-jsonstar.git"}
 llm = "^0.19"
 scrapy = "2.12.0"
 
