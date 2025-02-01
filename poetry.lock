@@ -939,13 +939,13 @@ version = "1.0.0"
 description = "Extensible JSON module to serialize all objects."
 optional = false
 python-versions = ">=3.9"
-groups = ["scrapers"]
+groups = ["scraper"]
 files = []
 develop = false
 
 [package.source]
 type = "git"
-url = "ssh://git@github.com/routablehq/python-jsonstar"
+url = "https://github.com/routablehq/python-jsonstar.git"
 reference = "HEAD"
 resolved_reference = "15aca28824c2ecc82c1b0334ad47ede9caf56f7c"
 
@@ -2304,4 +2304,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "2109d251be34c38f8f45609919b25d72eead8c3aba33fca7f76ab0406d291a96"
+content-hash = "7d619eb79217c311a1b0c3f833858a003cbfbf34e5df8087290756424b5a5676"
