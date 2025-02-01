@@ -1,9 +1,10 @@
+import json
 import os
 import sys
+from datetime import datetime
 from textwrap import dedent
 
 import django
-import jsonstar as json
 import llm
 from decouple import config
 from django.utils.dateparse import parse_time
@@ -247,7 +248,7 @@ for s in data["schedules"]:
     schedule.location = s["location"]
     schedule.observation = s["observation"] or ""
     schedule.source = source
-    schedule.verified_at = s["verified_at"].date()
+    schedule.verified_at = datetime.strptime(s["verified_at"], "%Y-%m-%d").date()
 
     schedules.append(schedule)
 

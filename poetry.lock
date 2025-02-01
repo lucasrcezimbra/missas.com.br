@@ -934,22 +934,6 @@ files = [
 ]
 
 [[package]]
-name = "jsonstar"
-version = "1.0.0"
-description = "Extensible JSON module to serialize all objects."
-optional = false
-python-versions = ">=3.9"
-groups = ["scrapers"]
-files = []
-develop = false
-
-[package.source]
-type = "git"
-url = "https://github.com/routablehq/python-jsonstar.git"
-reference = "HEAD"
-resolved_reference = "15aca28824c2ecc82c1b0334ad47ede9caf56f7c"
-
-[[package]]
 name = "llm"
 version = "0.19.1"
 description = "A CLI utility and Python library for interacting with Large Language Models, including OpenAI, PaLM and local models installed on your own machine."
@@ -2304,4 +2288,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "27782906bc38ae476a7806a003a2c41c426845d5f11aeedb166fb8b1b0823a14"
+content-hash = "b246bdcf3f7e0c5b4f63037e1ca795830b9fdfb206fed846b0b38b0a210f4fc5"
