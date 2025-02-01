@@ -36,8 +36,14 @@ console.log(messages.join('\n'))
 phone = sys.argv[1]
 messages = sys.argv[2]
 
-contact = Contact.objects.get(whatsapp=phone)
-print(f"{contact=}")
+try:
+    contact = Contact.objects.get(whatsapp=phone)
+    print(f"{contact=}")
+except Contact.DoesNotExist:
+    phone = phone[:6] + "9" + phone[6:]
+    contact = Contact.objects.get(whatsapp=phone)
+    print(f"{contact=}")
+
 
 parish = contact.parish
 print(f"{parish=}")
