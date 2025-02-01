@@ -940,9 +940,14 @@ description = "Extensible JSON module to serialize all objects."
 optional = false
 python-versions = ">=3.9"
 groups = ["scrapers"]
-files = [
-    {file = "jsonstar-1.0.0.tar.gz", hash = "sha256:af9dc5a160a098bf0138990612c53eb4e95df086c8948506d613fead49a32111"},
-]
+files = []
+develop = false
+
+[package.source]
+type = "git"
+url = "ssh://git@github.com/routablehq/python-jsonstar"
+reference = "HEAD"
+resolved_reference = "15aca28824c2ecc82c1b0334ad47ede9caf56f7c"
 
 [[package]]
 name = "llm"
@@ -2299,4 +2304,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "c9d9f840c22572e73cdd55a8f65ae98b9ffb794e8825dac946f86aaf025d6a89"
+content-hash = "2109d251be34c38f8f45609919b25d72eead8c3aba33fca7f76ab0406d291a96"
