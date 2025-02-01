@@ -28,18 +28,20 @@ poetry run scrapy runspider contrib/scraper_natal.py -o natal.jsonl
 The WhatsApp automation is still a very manual process. There are two scripts:
 - `contrib/whats-extract.js`: extracts the messages from WhatsApp, format them,
   and output to the stdout
-- `contrib/import.py`: parse the messages using LLM, ask for confirmation and
+- `contrib/import.py`: parse the messages using LLM, ask for confirmation, and
   update the database.
 
 Running:
-1.
-```shell
-npm install
-node contrib/whats-extract.js
-```
 
-2. Copy each output and paste in a new terminal. It should looks like this:
+1.
     ```shell
+    npm install
+    node contrib/whats-extract.js
+    ```
+
+2. Copy each output and paste it into a new terminal. It should look like this:
+    ```shell
+    # example
     poetry run python contrib/import.py '+551298765432' '[17:23, 02/12/2024] You:
     Bom dia.
 
