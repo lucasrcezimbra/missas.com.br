@@ -21,7 +21,7 @@ whitenoise = {extras = ["brotli"], version = "6.8.2"}
 [tool.poetry.group.dev.dependencies]
 freezegun = "1.5.1"
 model-bakery = "1.20.1"
-pre-commit = "4.0.1"
+pre-commit = "4.1.0"
 pytest = "8.3.4"
 pytest-django = "4.9.0"
 pytest-mock = "3.14.0"
