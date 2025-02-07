@@ -935,19 +935,19 @@ files = [
 
 [[package]]
 name = "llm"
-version = "0.19.1"
+version = "0.21"
 description = "A CLI utility and Python library for interacting with Large Language Models, including OpenAI, PaLM and local models installed on your own machine."
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "llm-0.19.1-py3-none-any.whl", hash = "sha256:6450fe6ab7b844365da21a8dfacf03d1e26730109f487aec456b872ffc85ae63"},
-    {file = "llm-0.19.1.tar.gz", hash = "sha256:64f0c9500ec26a7de61a3a07b1f0f1cdd333a753c4a7aba7791b4ed3cd54117f"},
+    {file = "llm-0.21-py3-none-any.whl", hash = "sha256:d045276c92d0eb4e5f2978123ad1a0f607085cdd454ef055731a55487ae5c0a6"},
+    {file = "llm-0.21.tar.gz", hash = "sha256:ac1717e7cb68275271ad90d8f045407e59215a69b4ccc222ef4e60c43edeb95e"},
 ]
 
 [package.dependencies]
 click = "*"
 click-default-group = ">=1.2.3"
-openai = ">=1.0"
+openai = ">=1.55.3"
 pip = "*"
 pluggy = "*"
 puremagic = "*"
@@ -960,7 +960,7 @@ sqlite-migrate = ">=0.1a2"
 sqlite-utils = ">=3.37"
 
 [package.extras]
-test = ["black (>=24.1.0)", "cogapp", "mypy (>=1.10.0)", "numpy", "pytest", "pytest-asyncio", "pytest-httpx (>=0.33.0)", "ruff", "types-PyYAML", "types-click", "types-setuptools"]
+test = ["black (==24.10.0)", "cogapp", "mypy (>=1.10.0)", "numpy", "pytest", "pytest-asyncio", "pytest-httpx (>=0.33.0)", "ruff", "types-PyYAML", "types-click", "types-setuptools"]
 
 [[package]]
 name = "lxml"
@@ -1147,13 +1147,13 @@ files = [
 
 [[package]]
 name = "openai"
-version = "1.47.1"
+version = "1.61.1"
 description = "The official Python library for the openai API"
 optional = false
-python-versions = ">=3.7.1"
+python-versions = ">=3.8"
 files = [
-    {file = "openai-1.47.1-py3-none-any.whl", hash = "sha256:34277583bf268bb2494bc03f48ac123788c5e2a914db1d5a23d5edc29d35c825"},
-    {file = "openai-1.47.1.tar.gz", hash = "sha256:62c8f5f478f82ffafc93b33040f8bb16a45948306198bd0cba2da2ecd9cf7323"},
+    {file = "openai-1.61.1-py3-none-any.whl", hash = "sha256:72b0826240ce26026ac2cd17951691f046e5be82ad122d20a8e1b30ca18bd11e"},
+    {file = "openai-1.61.1.tar.gz", hash = "sha256:ce1851507218209961f89f3520e06726c0aa7d0512386f0f977e3ac3e4f2472e"},
 ]
 
 [package.dependencies]
@@ -1168,6 +1168,7 @@ typing-extensions = ">=4.11,<5"
 
 [package.extras]
 datalib = ["numpy (>=1)", "pandas (>=1.2.3)", "pandas-stubs (>=1.1.0.11)"]
+realtime = ["websockets (>=13,<15)"]
 
 [[package]]
 name = "packaging"
@@ -2231,4 +2232,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "6e728e206db39e33d1f4c4b95928570c3346808ba1e26b97c895495c35f2edcd"
+content-hash = "6c89c1677b7064fe40d98da3ec6e8ea10b9b1219d439f7c5572204b7dd86306c"
