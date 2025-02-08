@@ -3,7 +3,7 @@ from datetime import datetime, time, timedelta
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render, resolve_url
 
-from missas.core.models import City, Schedule, State
+from missas.core.models import City, Parish, Schedule, State
 
 
 def index(request):
@@ -76,6 +76,37 @@ def by_city(request, state, city):
             "day": day,
             "city": city,
             "hour": hour.hour if hour else 0,
+            "type": type,
+            "Schedule": Schedule,
+        },
+    )
+
+
+def parish_schedules(request, state, city, parish):
+    parish = get_object_or_404(
+        Parish, slug=parish, city__slug=city, city__state__slug=state
+    )
+    type_name = request.GET.get("tipo")
+    verified_only = request.GET.get("verificado") == "1"
+
+    type = {
+        "missas": Schedule.Type.MASS,
+        "confissoes": Schedule.Type.CONFESSION,
+    }.get(type_name, Schedule.Type.MASS)
+
+    schedules = Schedule.objects.filter(parish=parish, type=type)
+
+    if verified_only:
+        schedules = schedules.filter(verified_at__isnull=False)
+
+    schedules = schedules.order_by("day", "start_time")
+
+    return render(
+        request,
+        "parish_schedules.html",
+        {
+            "parish": parish,
+            "schedules": schedules,
             "type": type,
             "Schedule": Schedule,
         },

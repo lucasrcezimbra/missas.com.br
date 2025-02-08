@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% load core_extras %}
+
+{% block title %}{{ parish.name }} - Horários{% endblock %}
+
+{% block content %}
+    <div class="container py-4">
+        <nav aria-label="breadcrumb" class="mb-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/" class="text-decoration-none">Início</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/{{ parish.city.state.slug }}/" class="text-decoration-none">{{ parish.city.state.name }}</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/{{ parish.city.state.slug }}/{{ parish.city.slug }}/"
+                       class="text-decoration-none">{{ parish.city.name }}</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">{{ parish.name }}</li>
+            </ol>
+        </nav>
+        <div class="row mb-3">
+            <div class="col">
+                <div class="card bg-light border-0 shadow-sm">
+                    <div class="card-body py-2">
+                        <h1 class="fs-3 mb-1">
+                            <i class="fa-solid fa-church text-primary me-2"></i>
+                            {{ parish.name }}
+                        </h1>
+                        <p class="text-muted small mb-0">
+                            <i class="fa-solid fa-location-dot me-1"></i>
+                            {{ parish.city.name }}/{{ parish.city.state.short_name }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="btn-group shadow-sm" role="group">
+                    <a href="?tipo=missas"
+                       class="btn btn-sm {% if type == 'mass' %}btn-primary{% else %}btn-outline-primary{% endif %} px-3">
+                        <i class="fa-solid fa-church me-1"></i>Missas
+                    </a>
+                    <a href="?tipo=confissoes"
+                       class="btn btn-sm {% if type == 'confession' %}btn-primary{% else %}btn-outline-primary{% endif %} px-3">
+                        <i class="fa-solid fa-hands-praying me-1"></i>Confissões
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% if schedules %}
+            {% for day_number, day_schedules in schedules|group_by_day %}
+                <div class="row mb-3">
+                    <div class="col">
+                        <h2 class="fs-5 mb-2 d-flex align-items-center">
+                            <span class="badge bg-primary me-2">
+                                <i class="fa-solid fa-calendar-day"></i>
+                            </span>
+                            {{ day_schedules.0.get_day_display }}
+                        </h2>
+                        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-2">
+                            {% for schedule in day_schedules %}
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                                        <div class="card-body p-2">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fa-solid fa-clock text-primary me-2"></i>
+                                                    <h3 class="card-title fs-6 mb-0">
+                                                        {{ schedule.start_time|time:"H:i" }}
+                                                        {% if schedule.end_time %}- {{ schedule.end_time|time:"H:i" }}{% endif %}
+                                                    </h3>
+                                                </div>
+                                                {% if schedule.verified_at %}
+                                                    <span class="badge bg-success d-flex align-items-center p-1">
+                                                        <i class="fa-solid fa-circle-check"></i>
+                                                    </span>
+                                                {% endif %}
+                                            </div>
+                                            {% if schedule.location or schedule.observation %}
+                                                <div class="mt-1 ps-4">
+                                                    {% if schedule.location %}
+                                                        <p class="card-text text-muted small mb-1">
+                                                            <i class="fa-solid fa-location-dot text-primary me-1"></i>
+                                                            {{ schedule.location }}
+                                                        </p>
+                                                    {% endif %}
+                                                    {% if schedule.observation %}
+                                                        <p class="card-text text-muted small mb-0">
+                                                            <i class="fa-solid fa-circle-info text-primary me-1"></i>
+                                                            {{ schedule.observation }}
+                                                        </p>
+                                                    {% endif %}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-info d-flex align-items-center shadow-sm py-2">
+                        <i class="fa-solid fa-info-circle me-2"></i>
+                        <span>Nenhum horário encontrado.</span>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if parish.contact %}
+            <div class="row mt-4">
+                <div class="col">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="fs-5 mb-3 d-flex align-items-center">
+                                <span class="badge bg-primary me-2">
+                                    <i class="fa-solid fa-address-book"></i>
+                                </span>
+                                Contato
+                            </h3>
+                            <div class="row g-2">
+                                {% if parish.contact.phone %}
+                                    <div class="col-12 col-md-6">
+                                        <div class="d-flex align-items-center contact-item py-1">
+                                            <i class="fa-solid fa-phone text-primary me-2"></i>
+                                            <small class="me-2">Telefone:</small>
+                                            <a href="tel:{{ parish.contact.phone }}"
+                                               class="text-decoration-none small stretched-link">
+                                                {{ parish.contact.phone }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if parish.contact.whatsapp %}
+                                    <div class="col-12 col-md-6">
+                                        <div class="d-flex align-items-center contact-item py-1">
+                                            <i class="fa-brands fa-whatsapp text-primary me-2"></i>
+                                            <small class="me-2">WhatsApp:</small>
+                                            <a href="https://wa.me/{{ parish.contact.whatsapp }}"
+                                               class="text-decoration-none small stretched-link"
+                                               target="_blank">{{ parish.contact.whatsapp }}</a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if parish.contact.email %}
+                                    <div class="col-12 col-md-6">
+                                        <div class="d-flex align-items-center contact-item py-1">
+                                            <i class="fa-solid fa-envelope text-primary me-2"></i>
+                                            <small class="me-2">Email:</small>
+                                            <a href="mailto:{{ parish.contact.email }}"
+                                               class="text-decoration-none small stretched-link">
+                                                {{ parish.contact.email }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if parish.contact.facebook %}
+                                    <div class="col-12 col-md-6">
+                                        <div class="d-flex align-items-center contact-item py-1">
+                                            <i class="fa-brands fa-facebook text-primary me-2"></i>
+                                            <small class="me-2">Facebook:</small>
+                                            <a href="{{ parish.contact.facebook }}"
+                                               class="text-decoration-none small stretched-link"
+                                               target="_blank">Página</a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if parish.contact.instagram %}
+                                    <div class="col-12 col-md-6">
+                                        <div class="d-flex align-items-center contact-item py-1">
+                                            <i class="fa-brands fa-instagram text-primary me-2"></i>
+                                            <small class="me-2">Instagram:</small>
+                                            <a href="https://instagram.com/{{ parish.contact.instagram }}"
+                                               class="text-decoration-none small stretched-link"
+                                               target="_blank">@{{ parish.contact.instagram }}</a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    <style>
+.hover-shadow {
+    transition: all 0.2s ease-in-out;
+}
+.hover-shadow:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 .25rem .5rem rgba(0,0,0,.1)!important;
+}
+.contact-item {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease-in-out;
+}
+.contact-item:hover {
+    background-color: rgba(var(--bs-primary-rgb), 0.05);
+}
+    </style>
+{% endblock content %}
