@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <title>Missas</title>
@@ -38,28 +38,192 @@
               async>
         <meta name="htmx-config" content='{"getCacheBusterParam":true}'>
         <style>
+            :root {
+                --primary-blue: #1E88E5;
+                --secondary-blue: #1565C0;
+                --light-blue: #E1F5FE;
+                --accent-blue: #90CAF9;
+                --hover-blue: #1565C0;
+                --white: #FFFFFF;
+                --gray-100: #F8F9FA;
+                --gray-200: #E9ECEF;
+                --gray-800: #343A40;
+                --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+                --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+                --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+                --gradient-blue: linear-gradient(135deg, #1E88E5, #1565C0);
+            }
+
             body {
-                background-color: #E1F5FE;
+                background-color: var(--light-blue);
+                background-image: linear-gradient(120deg, #E1F5FE 0%, #B3E5FC 100%);
+                font-family: 'Roboto', sans-serif;
+                line-height: 1.6;
+                color: var(--gray-800);
+                min-height: 100vh;
             }
+
+            .container {
+                background-color: var(--white);
+                border-radius: 20px;
+                box-shadow: var(--shadow-lg);
+                padding: 2.5rem;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .container::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: var(--gradient-blue);
+            }
+
+            h1 {
+                font-family: 'Montserrat', sans-serif;
+                color: var(--primary-blue);
+                font-weight: 700;
+                letter-spacing: -0.5px;
+                margin: 0;
+                font-size: 2.5rem;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+            }
+
+            .breadcrumb {
+                background-color: var(--gray-100);
+                padding: 1rem 1.25rem;
+                border-radius: 12px;
+                margin-bottom: 2rem;
+                box-shadow: var(--shadow-sm);
+                border: 1px solid var(--gray-200);
+            }
+
+            .breadcrumb-item a {
+                color: var(--secondary-blue);
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-weight: 500;
+                padding: 0.25rem 0.5rem;
+                border-radius: 4px;
+            }
+
+            .breadcrumb-item a:hover {
+                color: var(--hover-blue);
+                background-color: var(--light-blue);
+            }
+
+            .breadcrumb-item.active {
+                color: var(--primary-blue);
+                font-weight: 600;
+            }
+
             footer {
-                background-color: #f8f9fa;
-                padding: 1rem;
+                background-color: var(--white);
+                padding: 1.75rem;
                 text-align: center;
+                box-shadow: var(--shadow-md);
+                position: relative;
+                overflow: hidden;
             }
+
+            footer::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: var(--gradient-blue);
+            }
+
             footer a {
-                margin: 0 10px;
+                color: var(--secondary-blue);
+                text-decoration: none;
+                margin: 0 20px;
+                transition: all 0.3s ease;
+                font-weight: 500;
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
             }
+
+            footer a:hover {
+                color: var(--hover-blue);
+                background-color: var(--light-blue);
+                transform: translateY(-2px);
+            }
+
+            footer a i {
+                font-size: 1.1rem;
+            }
+
+            .logo-container img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .separator {
+                color: var(--gray-200);
+                margin: 0 10px;
+                font-weight: 300;
+            }
+
+            /* Estilos responsivos */
+            @media (max-width: 768px) {
+                .container {
+                    padding: 1.5rem;
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                    border-radius: 15px;
+                }
+
+                h1 {
+                    font-size: 1.75rem;
+                }
+
+                footer a {
+                    margin: 0 10px;
+                    padding: 0.4rem 0.8rem;
+                }
+            }
+
+            #content {
+                animation: fadeIn 0.5s ease-in-out;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
             {% block style %}{% endblock %}
         </style>
     </head>
     <body hx-boost="true">
-        <div class="container mt-3">
-            <div class="row mb-3 align-items-center">
+        <div class="container">
+            <div class="row mb-4 align-items-center">
                 <div class="col-2 col-lg-1">
-                    <img src="{% static 'logo.webp' %}" style="max-width: 100%" loading="lazy">
+                    <div class="logo-container">
+                        <img src="{% static 'logo.webp' %}"
+                             alt="Logo Missas.com.br"
+                             loading="lazy">
+                    </div>
                 </div>
                 <div class="col-10 col-lg-11">
-                    <h1 class="fs-1">Missas.com.br</h1>
+                    <h1>Missas.com.br</h1>
                 </div>
             </div>
             <div class="row">
@@ -85,10 +249,14 @@
             </div>
         </div>
         <footer>
-            <a href="/">Início</a> |
+            <a href="/" class="home-link">
+                <i class="fa-solid fa-home"></i> Início
+            </a>
+            <span class="separator">|</span>
             <a href="https://github.com/lucasrcezimbra/missas.com.br"
-               target="_blank">
-                <i class="fa-solid fa-brands fa-github"></i> GitHub
+               target="_blank"
+               class="github-link">
+                <i class="fa-brands fa-github"></i> GitHub
             </a>
         </footer>
         <script src="{% static 'bootstrap.min.js' %}" defer></script>
