@@ -51,6 +51,53 @@
                         </span>
                     </div>
                 </div>
+                {% if schedule.parish.contact %}
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="d-flex align-items-center flex-wrap">
+                                <span class="me-3 text-muted small">Contatos:</span>
+                                {% if schedule.parish.contact.phone %}
+                                    <span class="me-3 d-inline-flex align-items-center">
+                                        <i class="fa-solid fa-phone text-primary me-1"></i>
+                                        <a href="tel:{{ schedule.parish.contact.phone }}"
+                                           class="text-decoration-none">{{ schedule.parish.contact.phone }}</a>
+                                    </span>
+                                {% endif %}
+                                {% if schedule.parish.contact.whatsapp %}
+                                    <a href="https://wa.me/{{ schedule.parish.contact.whatsapp }}"
+                                       target="_blank"
+                                       class="me-3 text-decoration-none d-inline-flex align-items-center">
+                                        <i class="fa-brands fa-whatsapp text-success"></i>
+                                        <span class="ms-1">WhatsApp</span>
+                                    </a>
+                                {% endif %}
+                                {% if schedule.parish.contact.email %}
+                                    <a href="mailto:{{ schedule.parish.contact.email }}"
+                                       class="me-3 text-decoration-none d-inline-flex align-items-center">
+                                        <i class="fa-solid fa-envelope text-secondary"></i>
+                                        <span class="ms-1">E-mail</span>
+                                    </a>
+                                {% endif %}
+                                {% if schedule.parish.contact.facebook %}
+                                    <a href="https://facebook.com/{{ schedule.parish.contact.facebook }}"
+                                       target="_blank"
+                                       class="me-3 text-decoration-none d-inline-flex align-items-center">
+                                        <i class="fa-brands fa-facebook text-primary"></i>
+                                        <span class="ms-1">Facebook</span>
+                                    </a>
+                                {% endif %}
+                                {% if schedule.parish.contact.instagram %}
+                                    <a href="https://instagram.com/{{ schedule.parish.contact.instagram }}"
+                                       target="_blank"
+                                       class="me-3 text-decoration-none d-inline-flex align-items-center">
+                                        <i class="fa-brands fa-instagram" style="color: #E1306C;"></i>
+                                        <span class="ms-1">Instagram</span>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
         </div>
     {% empty %}
