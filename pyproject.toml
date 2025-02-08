@@ -17,6 +17,7 @@ psycopg2-binary = "2.9.10"
 python-decouple = "3.8"
 sentry-sdk = {extras = ["django"], version = "2.19.2"}
 whitenoise = {extras = ["brotli"], version = "6.8.2"}
+beautifulsoup4 = "^4.12.3"
 
 [tool.poetry.group.dev.dependencies]
 freezegun = "1.5.1"
