@@ -357,7 +357,7 @@ def test_schedule_with_source_with_link(client):
 
     html = response.content.decode()
     assert (
-        f'Fonte: <a href="{source.link}" target="_blank">{source.description}</a>'
+        f'Fonte: <a href="{source.link}" target="_blank" rel="noopener noreferrer">{source.description}</a>'
         in html
     )
 
