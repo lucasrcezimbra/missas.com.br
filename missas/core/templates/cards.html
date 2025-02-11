@@ -44,7 +44,9 @@
                         <span>
                             <i class="fa-solid fa-exclamation-circle"></i>
                             {% if schedule.source.link %}
-                                Fonte: <a href="{{ schedule.source.link }}" target="_blank">{{ schedule.source.description }}</a>
+                                Fonte: <a href="{{ schedule.source.link }}"
+    target="_blank"
+    rel="noopener noreferrer">{{ schedule.source.description }}</a>
                             {% else %}
                                 Fonte: {{ schedule.source.description }}
                             {% endif %}
@@ -60,12 +62,15 @@
                                     <span class="me-3 d-inline-flex align-items-center">
                                         <i class="fa-solid fa-phone text-primary me-1"></i>
                                         <a href="tel:{{ schedule.parish.contact.phone }}"
+                                           aria-label="Telefone da paróquia"
                                            class="text-decoration-none">{{ schedule.parish.contact.phone }}</a>
                                     </span>
                                 {% endif %}
                                 {% if schedule.parish.contact.whatsapp %}
                                     <a href="https://wa.me/{{ schedule.parish.contact.whatsapp }}"
                                        target="_blank"
+                                       rel="noopener noreferrer"
+                                       aria-label="WhatsApp da paróquia"
                                        class="me-3 text-decoration-none d-inline-flex align-items-center">
                                         <i class="fa-brands fa-whatsapp text-success"></i>
                                         <span class="ms-1">WhatsApp</span>
@@ -73,6 +78,7 @@
                                 {% endif %}
                                 {% if schedule.parish.contact.email %}
                                     <a href="mailto:{{ schedule.parish.contact.email }}"
+                                       aria-label="E-mail da paróquia"
                                        class="me-3 text-decoration-none d-inline-flex align-items-center">
                                         <i class="fa-solid fa-envelope text-secondary"></i>
                                         <span class="ms-1">E-mail</span>
@@ -81,6 +87,8 @@
                                 {% if schedule.parish.contact.facebook %}
                                     <a href="https://facebook.com/{{ schedule.parish.contact.facebook }}"
                                        target="_blank"
+                                       rel="noopener noreferrer"
+                                       aria-label="Facebook da paróquia"
                                        class="me-3 text-decoration-none d-inline-flex align-items-center">
                                         <i class="fa-brands fa-facebook text-primary"></i>
                                         <span class="ms-1">Facebook</span>
@@ -89,6 +97,8 @@
                                 {% if schedule.parish.contact.instagram %}
                                     <a href="https://instagram.com/{{ schedule.parish.contact.instagram }}"
                                        target="_blank"
+                                       rel="noopener noreferrer"
+                                       aria-label="Instagram da paróquia"
                                        class="me-3 text-decoration-none d-inline-flex align-items-center">
                                         <i class="fa-brands fa-instagram" style="color: #E1306C;"></i>
                                         <span class="ms-1">Instagram</span>
