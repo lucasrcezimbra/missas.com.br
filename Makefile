@@ -32,6 +32,7 @@ install:
 	poetry install
 	poetry run pre-commit install
 	cp contrib/env-sample .env
+        poetry run python manage.py migrate
 	make dbload
 
 lint:
