@@ -44,9 +44,10 @@
                         <span>
                             <i class="fa-solid fa-exclamation-circle"></i>
                             {% if schedule.source.link %}
-                                Fonte: <a href="{{ schedule.source.link }}"
-    target="_blank"
-    rel="noopener noreferrer">{{ schedule.source.description }}</a>
+                                Fonte:
+                                <a href="{{ schedule.source.link }}"
+                                   target="_blank"
+                                   rel="noopener noreferrer">{{ schedule.source.description }}</a>
                             {% else %}
                                 Fonte: {{ schedule.source.description }}
                             {% endif %}

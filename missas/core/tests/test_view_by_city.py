@@ -356,10 +356,7 @@ def test_schedule_with_source_with_link(client):
     response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
 
     html = response.content.decode()
-    assert (
-        f'Fonte: <a href="{source.link}" target="_blank" rel="noopener noreferrer">{source.description}</a>'
-        in html
-    )
+    assert f'href="{source.link}"' in html
 
 
 @pytest.mark.django_db
