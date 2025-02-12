@@ -62,6 +62,7 @@ def by_city(request, state, city):
         schedules = schedules.filter(verified_at__isnull=False)
 
     schedules = schedules.order_by("day", "start_time")
+    schedules = schedules.prefetch_related("parish", "parish__contact", "source")
     template = (
         "cards.html"
         if request.htmx and not request.htmx.boosted
