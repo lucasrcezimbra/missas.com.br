@@ -390,3 +390,16 @@ def test_breadcrumb_to_state(client):
 
     html = response.content.decode()
     assert f'<a href="/{city.state.slug}">{city.state.name}</a>' in html
+
+
+@pytest.mark.django_db
+def test_number_of_queries(client, django_assert_max_num_queries):
+    city = baker.make(City)
+    baker.make(Schedule, parish__city=city, _quantity=100)
+
+    with django_assert_max_num_queries(5):
+        response = client.get(
+            resolve_url("by_city", state=city.state.slug, city=city.slug)
+        )
+
+    assert response.status_code == HTTPStatus.OK
