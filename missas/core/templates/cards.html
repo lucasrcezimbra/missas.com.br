@@ -73,16 +73,16 @@
                                        rel="noopener noreferrer"
                                        aria-label="WhatsApp da paróquia"
                                        class="me-3 text-decoration-none d-inline-flex align-items-center">
-                                        <i class="fa-brands fa-whatsapp text-success"></i>
-                                        <span class="ms-1">WhatsApp</span>
+                                        <i class="fa-brands fa-whatsapp text-success me-1"></i>
+                                        <span class="ms-1">{{ schedule.parish.contact.whatsapp }}</span>
                                     </a>
                                 {% endif %}
                                 {% if schedule.parish.contact.email %}
                                     <a href="mailto:{{ schedule.parish.contact.email }}"
                                        aria-label="E-mail da paróquia"
                                        class="me-3 text-decoration-none d-inline-flex align-items-center">
-                                        <i class="fa-solid fa-envelope text-secondary"></i>
-                                        <span class="ms-1">E-mail</span>
+                                        <i class="fa-solid fa-envelope text-secondary me-1"></i>
+                                        <span class="ms-1">{{ schedule.parish.contact.email }}</span>
                                     </a>
                                 {% endif %}
                                 {% if schedule.parish.contact.facebook %}
@@ -91,8 +91,8 @@
                                        rel="noopener noreferrer"
                                        aria-label="Facebook da paróquia"
                                        class="me-3 text-decoration-none d-inline-flex align-items-center">
-                                        <i class="fa-brands fa-facebook text-primary"></i>
-                                        <span class="ms-1">Facebook</span>
+                                        <i class="fa-brands fa-facebook text-primary me-1"></i>
+                                        <span class="ms-1">{{ schedule.parish.contact.facebook }}</span>
                                     </a>
                                 {% endif %}
                                 {% if schedule.parish.contact.instagram %}
@@ -101,8 +101,8 @@
                                        rel="noopener noreferrer"
                                        aria-label="Instagram da paróquia"
                                        class="me-3 text-decoration-none d-inline-flex align-items-center">
-                                        <i class="fa-brands fa-instagram" style="color: #E1306C;"></i>
-                                        <span class="ms-1">Instagram</span>
+                                        <i class="fa-brands fa-instagram me-1" style="color: #E1306C;"></i>
+                                        <span class="ms-1">{{ schedule.parish.contact.instagram }}</span>
                                     </a>
                                 {% endif %}
                             </div>
