@@ -42,7 +42,7 @@ python_files = "tests.py test_*.py *_tests.py"
 
 
 [tool.ruff]
-select = ["E", "F", "I", "S"]
+select = ["E", "F", "I", "N804", "N805", "S"]
 ignore = ["E501"]
 line-length = 88
 
