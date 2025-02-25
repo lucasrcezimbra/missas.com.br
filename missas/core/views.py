@@ -1,9 +1,10 @@
 from datetime import datetime, time, timedelta
 
 from django.db.models import Q
+from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render, resolve_url
 
-from missas.core.models import City, Schedule, State
+from missas.core.models import City, Contact, Schedule, State
 
 
 def index(request):
@@ -81,3 +82,20 @@ def by_city(request, state, city):
             "Schedule": Schedule,
         },
     )
+
+
+def create_contact(request):
+    if request.method != "POST":
+        return HttpResponseNotAllowed(["POST"])
+
+    ddd = request.POST.get("ddd")
+    number = request.POST.get("number")
+    whatsapp = f"+55{ddd}{number}"
+    # if ddd == '11':
+    #    return HttpResponse(status=404)
+    Contact.objects.create(whatsapp=whatsapp)
+
+    if request.htmx:
+        return HttpResponse(status=201)
+
+    return redirect(request.META.get("HTTP_REFERER", "/"))
