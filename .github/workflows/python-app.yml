@@ -16,4 +16,8 @@ jobs:
           cache: 'poetry'
       - run: make install
       - run: make lint
-      - run: make test
+      - run: make coverage
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
