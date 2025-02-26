@@ -8,7 +8,7 @@ build:
 
 coverage:
 	docker compose up -d
-	poetry run pytest --cov=missas
+	poetry run pytest --cov=missas --cov-branch --cov-report=xml
 
 dbdump:
 	poetry run python manage.py dumpdata --indent 2 core.State > missas/core/fixtures/states.json
