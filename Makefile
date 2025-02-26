@@ -1,10 +1,14 @@
 .DEFAULT_GOAL := dev
-.PHONY: build dbdump dbload dev install lint run test
+.PHONY: build coverage dbdump dbload dev install lint run test
 
 build:
 	poetry install --without=dev --without=scrapers
 	poetry run python manage.py collectstatic --no-input
 	poetry run python manage.py migrate
+
+coverage:
+	docker compose up -d
+	poetry run pytest --cov=missas
 
 dbdump:
 	poetry run python manage.py dumpdata --indent 2 core.State > missas/core/fixtures/states.json
