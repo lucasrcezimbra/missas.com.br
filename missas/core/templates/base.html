@@ -292,7 +292,7 @@
                         <p>Nos envie o contato da paróquia e nós fazemos o resto.</p>
                         <form id="addParishForm"
                               class="mt-3"
-                              hx-post="/contatos"
+                              hx-post="{% url 'create_contact' %}"
                               hx-trigger="submit"
                               hx-indicator="#loading"
                               hx-swap="outerHTML">
