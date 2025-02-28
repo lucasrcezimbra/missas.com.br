@@ -19,6 +19,11 @@ make test
 make dev
 ```
 
+### Coverage
+```bash
+make coverage
+```
+
 #### Scrapers
 ```shell
 poetry run scrapy runspider contrib/scraper_natal.py -o natal.jsonl
