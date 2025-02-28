@@ -143,9 +143,7 @@ def test_filter_by_day_and_order_by_time(client: Client):
     saturday_afternoon = baker.make(
         Schedule, day=Schedule.Day.SATURDAY, start_time=time(14, 12), parish=parish
     )
-    baker.make(
-        Schedule, day=Schedule.Day.SUNDAY, start_time=time(9, 57), parish=parish
-    )
+    baker.make(Schedule, day=Schedule.Day.SUNDAY, start_time=time(9, 57), parish=parish)
     baker.make(
         Schedule, day=Schedule.Day.SUNDAY, start_time=time(14, 12), parish=parish
     )
@@ -178,9 +176,7 @@ def test_no_schedules(client: Client):
 @pytest.mark.django_db
 def test_filter_by_time(client: Client):
     parish = baker.make(Parish)
-    baker.make(
-        Schedule, day=Schedule.Day.SUNDAY, start_time=time(9, 57), parish=parish
-    )
+    baker.make(Schedule, day=Schedule.Day.SUNDAY, start_time=time(9, 57), parish=parish)
     sunday_afternoon = baker.make(
         Schedule, day=Schedule.Day.SUNDAY, start_time=time(14, 12), parish=parish
     )
@@ -380,8 +376,6 @@ def test_number_of_queries(client, django_assert_max_num_queries):
     baker.make(Schedule, parish=parish, _quantity=100)
 
     with django_assert_max_num_queries(5):
-        response = client.get(
-            resolve_url("by_parish", parish=parish.slug)
-        )
+        response = client.get(resolve_url("by_parish", parish=parish.slug))
 
     assert response.status_code == HTTPStatus.OK

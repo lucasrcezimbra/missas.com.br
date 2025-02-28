@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render, resolve_url
 
-from missas.core.models import City, ContactRequest, Schedule, State, Parish
+from missas.core.models import City, ContactRequest, Parish, Schedule, State
 
 
 def index(request):
