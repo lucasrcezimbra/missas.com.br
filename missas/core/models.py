@@ -1,3 +1,5 @@
+import re
+
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from model_utils import FieldTracker
@@ -77,6 +79,19 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.whatsapp or self.phone
+
+
+class ContactRequest(models.Model):
+    whatsapp = models.CharField(max_length=16)
+
+    def clean(self):
+        # TODO: tests
+        super().clean()
+        self.whatsapp = re.sub(r"\D", "", self.whatsapp)
+        self.whatsapp = "+" + self.whatsapp
+
+    def __str__(self):
+        return self.whatsapp
 
 
 class Source(models.Model):
