@@ -88,6 +88,8 @@ def create_contact(request):
     # TODO: tests
     # TODO: handle backend errors in the ui; show a message
     # TODO: "add another" button
+    # TODO: modal to component
+    # TODO: form to component
 
     if request.method != "POST":
         return HttpResponseNotAllowed(["POST"])
