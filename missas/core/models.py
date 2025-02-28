@@ -82,6 +82,8 @@ class Contact(models.Model):
 
 
 class ContactRequest(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     whatsapp = models.CharField(max_length=16)
 
     def clean(self):
