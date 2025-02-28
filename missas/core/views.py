@@ -1,9 +1,10 @@
 from datetime import datetime, time, timedelta
 
 from django.db.models import Q
+from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render, resolve_url
 
-from missas.core.models import City, Schedule, State
+from missas.core.models import City, ContactRequest, Schedule, State
 
 
 def index(request):
@@ -81,3 +82,35 @@ def by_city(request, state, city):
             "Schedule": Schedule,
         },
     )
+
+
+def create_contact(request):
+    # TODO: tests
+    # TODO: handle backend errors in the ui; show a message
+    # TODO: "add another" button
+    # TODO: modal to component
+    # TODO: form to component
+
+    if request.method != "POST":
+        return HttpResponseNotAllowed(["POST"])
+
+    ddd = request.POST.get("ddd")
+    number = request.POST.get("number")
+    whatsapp = f"+55{ddd}{number}"
+
+    contact_request = ContactRequest(whatsapp=whatsapp)
+    contact_request.full_clean()
+    contact_request.save()
+
+    if request.htmx:
+        template = """
+        <div id="successMessage">
+            <div class="alert alert-success" role="alert">
+                <i class="fa-solid fa-check-circle me-2"></i>
+                Obrigado! Em breve entraremos em contato com a paróquia.
+            </div>
+        </div>
+        """
+        return HttpResponse(template)
+
+    return redirect(request.META.get("HTTP_REFERER", "/"))
