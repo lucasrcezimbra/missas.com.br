@@ -5,7 +5,16 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.html import format_html
 
-from missas.core.models import City, Contact, Parish, Schedule, Source, State, User
+from missas.core.models import (
+    City,
+    Contact,
+    ContactRequest,
+    Parish,
+    Schedule,
+    Source,
+    State,
+    User,
+)
 
 admin.site.register(Source)
 admin.site.register(User, UserAdmin)
@@ -45,6 +54,33 @@ class ContactAdmin(admin.ModelAdmin):
        Bom dia.
 
        Aqui é o Lucas do site missas.com.br. Estamos atualizando o nosso site com as informações sobre as paróquias da Arquidiocese de Natal para ajudar os fiéis a encontrar horários de missas e confissões.
+
+       Você poderia me passar os horários de missas e confissões na sua paróquia?
+
+       Desde já obrigado."""
+        )
+        return format_html(
+            '<a href="https://wa.me/{whatsapp}?text={message}" target="_blank">{whatsapp}</a>',
+            whatsapp=obj.whatsapp,
+            message=quote_plus(message),
+        )
+
+    whatsapp_link.short_description = "WhatsApp Link"
+
+
+@admin.register(ContactRequest)
+class ContactRequestAdmin(admin.ModelAdmin):
+    list_display = ("whatsapp_link",)
+    ordering = ("whatsapp",)
+
+    def whatsapp_link(self, obj):
+        message = dedent(
+            """\
+       Bom dia.
+
+       Aqui é o Lucas do site missas.com.br. Somos um site para ajudar os fiéis a encontrar horários de missas e confissões nas paróquias próximas.
+
+       Um usuário do nosso site nos enviou seu contato.
 
        Você poderia me passar os horários de missas e confissões na sua paróquia?
 
