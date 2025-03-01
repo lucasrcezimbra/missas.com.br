@@ -22,6 +22,7 @@
 {% endblock style %}
 
 {% block content %}
+    <h2>{{ parish.name }}</h2>
     <div class="row mb-3">
         <form hx-get="{{ request.path }}"
               hx-indicator="#cards-indicator"
