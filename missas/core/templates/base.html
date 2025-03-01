@@ -2,7 +2,11 @@
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
-        <title>Missas</title>
+        {% if city %}
+            <title>Horários de missas e confissões em {{ city.name }}/{{ city.state.short_name.upper }}</title>
+        {% else %}
+            <title>Horários de missas e confissões no {{ state.name }}</title>
+        {% endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Plataforma que fornece informações sobre horários de missas e confissões em várias paróquias do Brasil, permitindo o filtro por dia e horários.">

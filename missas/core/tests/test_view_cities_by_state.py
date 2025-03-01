@@ -3,7 +3,12 @@ from http import HTTPStatus
 import pytest
 from django.shortcuts import resolve_url
 from model_bakery import baker
-from pytest_django.asserts import assertContains, assertNotContains, assertTemplateUsed
+from pytest_django.asserts import (
+    assertContains,
+    assertInHTML,
+    assertNotContains,
+    assertTemplateUsed,
+)
 
 from missas.core.models import City, Parish, Schedule, State
 
@@ -114,4 +119,16 @@ def test_order_by_cities_with_schedules_and_by_name(client):
         < cityB_with_schedule_index
         < cityA_without_schedule_index
         < cityB_without_schedule_index
+    )
+
+
+@pytest.mark.django_db
+def test_title(client):
+    state = baker.make(State)
+
+    response = client.get(resolve_url("cities_by_state", state=state.slug))
+
+    assertInHTML(
+        f"<title>Horários de missas e confissões no {state.name}</title>",
+        response.content.decode(),
     )
