@@ -1,6 +1,6 @@
 from datetime import datetime, time, timedelta
 
-from django.db.models import Q
+from django.db.models import Count, Q
 from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render, resolve_url
 
@@ -114,3 +114,13 @@ def create_contact(request):
         return HttpResponse(template)
 
     return redirect(request.META.get("HTTP_REFERER", "/"))
+
+
+def states_brazil(request):
+    states = (
+        State.objects.annotate(parishes_count=Count("cities__parishes", distinct=True))
+        .order_by("-parishes_count", "name")
+        .all()
+    )
+
+    return render(request, "states_brazil.html", context={"states": states})

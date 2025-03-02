@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mb-4">Estados do Brasil</h1>
+    <div class="list-group">
+        {% for state in states %}
+            <a href="{% url 'cities_by_state' state=state.slug %}"
+               class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                {{ state.name }} ({{ state.short_name }})
+                {% if state.parishes_count > 0 %}
+                    <span class="badge bg-primary rounded-pill">{{ state.parishes_count }} paróquia{{ state.parishes_count|pluralize }}</span>
+                {% else %}
+                    <span class="badge bg-secondary rounded-pill">Sem paróquias</span>
+                {% endif %}
+            </a>
+        {% endfor %}
+    </div>
+{% endblock content %}
