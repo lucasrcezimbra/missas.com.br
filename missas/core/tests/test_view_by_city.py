@@ -410,9 +410,6 @@ def test_number_of_queries(client, django_assert_max_num_queries):
 def test_title(client):
     city = baker.make(City)
 
-    schedule = baker.make(Schedule)
-
-    city = schedule.parish.city
     response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
 
     assertInHTML(
