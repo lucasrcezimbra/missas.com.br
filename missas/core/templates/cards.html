@@ -109,6 +109,17 @@
                         </div>
                     </div>
                 {% endif %}
+                <div class="row">
+                    <div class="col-auto">
+                        <a href="https://wa.me/+5584991234449?text=Olá. Eu gostaria de relatar um problema na '{{ schedule.parish.name }}' {{ schedule.parish.contact.whatsapp }}. O problema é:"
+                           class="text-decoration-none"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fa-solid fa-flag text-danger"></i>
+                            Relatar problema
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     {% empty %}
