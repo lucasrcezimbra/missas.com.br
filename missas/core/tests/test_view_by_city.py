@@ -404,3 +404,15 @@ def test_number_of_queries(client, django_assert_max_num_queries):
         )
 
     assert response.status_code == HTTPStatus.OK
+
+
+@pytest.mark.django_db
+def test_title(client):
+    city = baker.make(City)
+
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    assertInHTML(
+        f"<title>Horários de missas e confissões em {city.name}/{city.state.short_name.upper()}</title>",
+        response.content.decode(),
+    )
