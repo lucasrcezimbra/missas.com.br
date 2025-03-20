@@ -1,7 +1,7 @@
 const wppconnect = require('@wppconnect-team/wppconnect');
 
 async function main() {
-	const client = await wppconnect.create({ headless: false });
+	const client = await wppconnect.create({ headless: false, whatsappVersion: '2.3000.1019760984-alpha' });
 	const chats = await client.listChats();
 	const unarchivedChats = chats.filter((c) => !c.archive && !c.contact.isMe);
 

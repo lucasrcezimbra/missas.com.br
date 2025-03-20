@@ -53,7 +53,7 @@ if not parish:
 source = Source.objects.get(type=Source.Type.WHATSAPP)
 print(f"{source=}")
 
-model = llm.get_model("gpt-4o")
+model = llm.get_model("o3-mini")
 model.key = config("OPENAI_API_KEY")
 
 ai_response = model.prompt(
