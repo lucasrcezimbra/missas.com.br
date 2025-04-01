@@ -11,6 +11,7 @@ if SENTRY_DSN:
         environment=config("ENV"),
         traces_sample_rate=0.6,
         profiles_sample_rate=0.6,
+        _experiments={"enable_sentry_logs": True},
     )
 
 BASE_DIR = Path(__file__).resolve().parent.parent
