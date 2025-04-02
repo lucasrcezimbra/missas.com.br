@@ -24,7 +24,7 @@ model-bakery = "1.20.4"
 pre-commit = "4.2.0"
 pytest = "8.3.5"
 pytest-cov = "^6.0.0"
-pytest-django = "4.10.0"
+pytest-django = "4.11.0"
 pytest-mock = "3.14.0"
 
 [tool.poetry.group.scrapers.dependencies]
