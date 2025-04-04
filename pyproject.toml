@@ -19,6 +19,7 @@ sentry-sdk = {extras = ["django"], version = "2.25.0"}
 whitenoise = {extras = ["brotli"], version = "6.9.0"}
 
 [tool.poetry.group.dev.dependencies]
+django-test-migrations = "1.4.0"
 freezegun = "1.5.1"
 model-bakery = "1.20.4"
 pre-commit = "4.2.0"
@@ -28,7 +29,7 @@ pytest-django = "4.11.1"
 pytest-mock = "3.14.0"
 
 [tool.poetry.group.scrapers.dependencies]
-llm = "^0.22"
+llm = "0.22"
 scrapy = "2.12.0"
 
 
