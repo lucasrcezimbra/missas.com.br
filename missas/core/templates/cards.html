@@ -3,12 +3,12 @@
         <div class="card mb-3 inverse-indicator">
             <div class="card-body">
                 <span class="fs-5">{{ schedule.parish.name }}</span>
-                {% if schedule.location %}
+                {% if schedule.location_name %}
                     <div class="row">
                         <div class="col-auto">
                             <span>
                                 <i class="fa-solid fa-location-dot"></i>
-                                {{ schedule.location }}
+                                {{ schedule.location_name }}
                             </span>
                         </div>
                     </div>
