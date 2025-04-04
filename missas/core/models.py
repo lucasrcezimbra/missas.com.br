@@ -129,6 +129,13 @@ class Schedule(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     day = models.IntegerField(choices=Day.choices)
+    location = models.ForeignKey(
+        "Location",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="schedules",
+    )
     location_name = models.CharField(max_length=128, blank=True)
     observation = models.TextField(blank=True, default="")
     parish = models.ForeignKey(
@@ -150,3 +157,21 @@ class Schedule(models.Model):
             return f"{self.get_day_display()} {self.start_time} - {self.end_time} at {self.parish}"
         else:
             return f"{self.get_day_display()} {self.start_time} at {self.parish}"
+
+
+class Location(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="locations")
+    name = models.CharField(max_length=128)
+    parish = models.ForeignKey(
+        Parish,
+        on_delete=models.CASCADE,
+        related_name="locations",
+        null=True,
+        blank=True,
+    )
+    slug = models.SlugField(max_length=256)
+
+    class Meta:
+        unique_together = ("slug", "city")
