@@ -9,6 +9,7 @@ from missas.core.models import (
     City,
     Contact,
     ContactRequest,
+    Location,
     Parish,
     Schedule,
     Source,
@@ -16,6 +17,7 @@ from missas.core.models import (
     User,
 )
 
+admin.site.register(Location)
 admin.site.register(Source)
 admin.site.register(User, UserAdmin)
 
