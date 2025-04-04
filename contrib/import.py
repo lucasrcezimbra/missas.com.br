@@ -40,7 +40,7 @@ try:
     contact = Contact.objects.get(whatsapp=phone)
     print(f"{contact=}")
 except Contact.DoesNotExist:
-    phone = phone[:6] + "9" + phone[6:]
+    phone = phone[:5] + "9" + phone[5:]
     contact = Contact.objects.get(whatsapp=phone)
     print(f"{contact=}")
 
@@ -50,7 +50,9 @@ print(f"{parish=}")
 if not parish:
     raise Exception("No parish")
 
-source = Source.objects.get(type=Source.Type.WHATSAPP)
+source = Source.objects.get(
+    type=Source.Type.WHATSAPP, description="WhatsApp da Paróquia"
+)
 print(f"{source=}")
 
 model = llm.get_model("o3-mini")
@@ -251,8 +253,13 @@ for s in data["schedules"]:
         )
 
     schedule.end_time = end_time
-    schedule.location = s["location"]
-    schedule.observation = s["observation"] or ""
+
+    if s["location"].lower() != schedule.location.lower():
+        schedule.location = s["location"]
+
+    if s["observation"].lower() != schedule.observation.lower():
+        schedule.observation = s["observation"]
+
     schedule.source = source
     schedule.verified_at = datetime.strptime(s["verified_at"], "%Y-%m-%d").date()
 
