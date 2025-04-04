@@ -9,6 +9,7 @@ from missas.core.models import (
     City,
     Contact,
     ContactRequest,
+    Location,
     Parish,
     Schedule,
     Source,
@@ -93,6 +94,11 @@ class ContactRequestAdmin(admin.ModelAdmin):
         )
 
     whatsapp_link.short_description = "WhatsApp Link"
+
+
+@admin.register(Location)
+class LocationAdmin(admin.ModelAdmin):
+    autocomplete_fields = ("parish", "schedules")
 
 
 @admin.register(Parish)
