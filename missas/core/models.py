@@ -56,8 +56,8 @@ class Parish(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="parishes")
-    name = models.CharField(max_length=254)
-    slug = models.SlugField(max_length=254)
+    name = models.CharField(max_length=128)
+    slug = models.SlugField(max_length=128)
 
     class Meta:
         unique_together = ("slug", "city")
