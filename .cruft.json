@@ -1,20 +1,20 @@
 {
   "checkout": null,
-  "commit": "2e435b85dae54eaf67da699de04ce3a0f592f4fc",
+  "commit": "5c01cbabfa46d05163b92639c3068d151476e39c",
   "context": {
     "cookiecutter": {
-      "_commit": "2e435b85dae54eaf67da699de04ce3a0f592f4fc",
-      "_template": "https://github.com/lucasrcezimbra/django-template",
-      "api": "No",
-      "css": "Bootstrap",
-      "database": "PostgreSQL",
-      "deploy": "Render",
-      "github_username": "lucasrcezimbra",
-      "html": "HTMX",
       "project_name": "missas.com.br",
       "project_slug": "missas",
+      "github_username": "lucasrcezimbra",
+      "database": "PostgreSQL",
+      "api": "No",
+      "html": "HTMX",
+      "css": "Bootstrap",
+      "deploy": "Render",
+      "use_sentry": true,
       "staticfiles": true,
-      "use_sentry": true
+      "_template": "https://github.com/lucasrcezimbra/django-template",
+      "_commit": "5c01cbabfa46d05163b92639c3068d151476e39c"
     }
   },
   "directory": null,

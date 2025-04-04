@@ -13,8 +13,8 @@
         <meta name="keywords"
               content="missas, confissões, horários, paróquias, Brasil">
         <meta name="author" content="Lucas Rangel Cezimbra">
-        {% load static %}
-        <script src="{% static 'htmx.min.js' %}" defer></script>
+        {% load django_htmx static %}
+        {% htmx_script %}
         <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" async>
         <link rel="apple-touch-icon"
               sizes="180x180"

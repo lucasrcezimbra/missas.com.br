@@ -7,25 +7,25 @@ authors = []
 [tool.poetry.dependencies]
 python = "^3.12"
 dj-database-url = "2.3.0"
-django = "5.1.6"
+django = "5.1.7"
 django-extensions = "3.2.3"
-django-htmx = "1.22.0"
+django-htmx = "1.23.0"
 django-model-utils = "5.0.0"
 fontawesomefree = "6.6.0"
 gunicorn = "23.0.0"
 psycopg2-binary = "2.9.10"
 python-decouple = "3.8"
-sentry-sdk = {extras = ["django"], version = "2.22.0"}
+sentry-sdk = {extras = ["django"], version = "2.25.0"}
 whitenoise = {extras = ["brotli"], version = "6.9.0"}
 
 [tool.poetry.group.dev.dependencies]
 django-test-migrations = "1.4.0"
 freezegun = "1.5.1"
 model-bakery = "1.20.4"
-pre-commit = "4.1.0"
+pre-commit = "4.2.0"
 pytest = "8.3.5"
 pytest-cov = "^6.0.0"
-pytest-django = "4.10.0"
+pytest-django = "4.11.1"
 pytest-mock = "3.14.0"
 
 [tool.poetry.group.scrapers.dependencies]
