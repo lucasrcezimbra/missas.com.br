@@ -470,6 +470,21 @@ files = [
 markers = {dev = "sys_platform == \"win32\"", scrapers = "platform_system == \"Windows\""}
 
 [[package]]
+name = "condense-json"
+version = "0.1.2"
+description = "Python function for condensing JSON using replacement strings"
+optional = false
+python-versions = ">=3.8"
+groups = ["scrapers"]
+files = [
+    {file = "condense_json-0.1.2-py3-none-any.whl", hash = "sha256:bedc4f9de5c626483e57577adfebb9ef655a3b8ad15ab85401e2fdcc27aa37bb"},
+    {file = "condense_json-0.1.2.tar.gz", hash = "sha256:a161e1984122ad35801cc14ecfe2b38d9d638c8c089e04cb545d26300fdc485e"},
+]
+
+[package.extras]
+test = ["mypy", "pytest"]
+
+[[package]]
 name = "constantly"
 version = "23.10.4"
 description = "Symbolic constants in Python"
@@ -1053,24 +1068,25 @@ files = [
 
 [[package]]
 name = "llm"
-version = "0.22"
-description = "A CLI utility and Python library for interacting with Large Language Models, including OpenAI, PaLM and local models installed on your own machine."
+version = "0.24.2"
+description = "CLI utility and Python library for interacting with Large Language Models from organizations like OpenAI, Anthropic and Gemini plus local models installed on your own machine."
 optional = false
 python-versions = ">=3.9"
 groups = ["scrapers"]
 files = [
-    {file = "llm-0.22-py3-none-any.whl", hash = "sha256:ea0448a848e19a0965b04711b97f93173d7ec1c84a1f5d9e352d471d59d9e3f5"},
-    {file = "llm-0.22.tar.gz", hash = "sha256:3b52cfa6048092df3c6ddd375353b636166bf2d1028b454951865eae4c63d38b"},
+    {file = "llm-0.24.2-py3-none-any.whl", hash = "sha256:057f4035560aaf5453dea8758233d83c68be80b8b4bb1bf82babe530c55b52b9"},
+    {file = "llm-0.24.2.tar.gz", hash = "sha256:e14f2722183884ce09692201b54cdd961942492f0d93ca749a62d02b3b8bf43a"},
 ]
 
 [package.dependencies]
 click = "*"
 click-default-group = ">=1.2.3"
+condense-json = ">=0.1.2"
 openai = ">=1.55.3"
 pip = "*"
 pluggy = "*"
 puremagic = "*"
-pydantic = ">=1.10.2"
+pydantic = ">=2.0.0"
 pyreadline3 = {version = "*", markers = "sys_platform == \"win32\""}
 python-ulid = "*"
 PyYAML = "*"
@@ -2429,4 +2445,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "b6883a1245051341e9b8026c6888acf598ae3b14cba36a5fdb8dcc6835a61aea"
+content-hash = "b3e43c8145a988fdddd0ab01513e67a02dd1ae8d51b215ea305ca6b1cb2a9186"
