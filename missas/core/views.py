@@ -8,15 +8,22 @@ from missas.core.models import City, ContactRequest, Schedule, State
 
 
 def index(request):
-    now = datetime.utcnow() - timedelta(hours=3)
-    weekday = ("segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo")[
-        now.weekday()
-    ]  # TODO: encapsulate this logic
-    return redirect(
-        resolve_url("by_city", state="rio-grande-do-norte", city="natal")
-        + f"?dia={weekday}"
-        + f"&horario={now.hour}"
-    )
+    states = State.objects.prefetch_related('cities').all().order_by('name')
+    
+    # Create a list to hold states with their cities
+    states_with_cities = []
+    for state in states:
+        # Get cities with schedules for this state
+        cities = state.cities.annotate_has_schedules().order_by('-has_schedules', 'name').all()
+        if cities:
+            # Create a dict with state info and its cities
+            state_data = {
+                'state': state,
+                'cities': cities,
+            }
+            states_with_cities.append(state_data)
+    
+    return render(request, "home.html", {"states": states_with_cities})
 
 
 def cities_by_state(request, state):

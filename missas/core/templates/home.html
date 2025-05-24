@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <!-- About the project section -->
+        <section class="mb-5">
+            <h2>Sobre o Projeto</h2>
+            <p class="lead">
+                O Missas.com.br é um portal que ajuda os católicos a encontrarem horários de missas e confissões em paróquias de todo o Brasil.
+            </p>
+            <p>
+                Nosso objetivo é facilitar o acesso à informação sobre os horários de celebrações religiosas, permitindo que os fiéis 
+                encontrem facilmente onde e quando participar da Santa Missa ou receber o sacramento da Confissão.
+            </p>
+            <p>
+                Este é um projeto de código aberto, desenvolvido e mantido por voluntários. Se você quiser contribuir, 
+                visite nosso <a href="https://github.com/lucasrcezimbra/missas.com.br" target="_blank">repositório no GitHub</a>.
+            </p>
+        </section>
+
+        <!-- List of states and cities with parishes -->
+        <section>
+            <h2>Estados e Cidades</h2>
+            <p class="mb-4">Selecione um estado e cidade para ver as paróquias e horários disponíveis:</p>
+            
+            <div class="row">
+                {% for state_data in states %}
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <h5>{{ state_data.state.name }}</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    {% for city in state_data.cities %}
+                                        <li class="list-group-item">
+                                            {% if city.has_schedules %}
+                                                <a href="{% url 'by_city' state=state_data.state.slug city=city.slug %}">{{ city.name }}</a>
+                                            {% else %}
+                                                {{ city.name }}
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+{% endblock content %}

@@ -1,11 +1,12 @@
+import pytest
 from http import HTTPStatus
 
-import pytest
 from django.shortcuts import resolve_url
 
 from missas.core.models import City, State
 
 
+@pytest.mark.django_db
 def test_home_page_renders(client):
     response = client.get(resolve_url("index"))
     
