@@ -1,28 +1,32 @@
-from datetime import datetime, time, timedelta
+from datetime import time
 
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotAllowed
-from django.shortcuts import get_object_or_404, redirect, render, resolve_url
+from django.shortcuts import get_object_or_404, redirect, render
 
 from missas.core.models import City, ContactRequest, Schedule, State
 
 
 def index(request):
-    states = State.objects.prefetch_related('cities').all().order_by('name')
-    
+    states = State.objects.prefetch_related("cities").all().order_by("name")
+
     # Create a list to hold states with their cities
     states_with_cities = []
     for state in states:
         # Get cities with schedules for this state
-        cities = state.cities.annotate_has_schedules().order_by('-has_schedules', 'name').all()
+        cities = (
+            state.cities.annotate_has_schedules()
+            .order_by("-has_schedules", "name")
+            .all()
+        )
         if cities:
             # Create a dict with state info and its cities
             state_data = {
-                'state': state,
-                'cities': cities,
+                "state": state,
+                "cities": cities,
             }
             states_with_cities.append(state_data)
-    
+
     return render(request, "home.html", {"states": states_with_cities})
 
 
