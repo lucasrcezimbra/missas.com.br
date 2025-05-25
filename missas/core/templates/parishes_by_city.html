@@ -50,7 +50,8 @@
                        id="verified"
                        name="verificado"
                        type="checkbox"
-                       value="1">
+                       value="1"
+                       {% if request.GET.verificado == "1" %}checked{% endif %}>
                 <label class="btn btn-outline-primary rounded mx-1 my-1" for="verified">
                     <i class="fa-solid fa-circle-check verified"></i>
                 </label>

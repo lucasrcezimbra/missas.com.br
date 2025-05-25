@@ -23,6 +23,12 @@
 
 {% block content %}
     <div class="row mb-3">
+        <div class="mb-3">
+            <a href="{% url 'by_city' parish.city.state.slug parish.city.slug %}" class="text-decoration-none">
+                <i class="fa-solid fa-arrow-left me-1"></i>Voltar para {{ parish.city.name }}
+            </a>
+        </div>
+        
         <h1 class="fs-3">{{ parish.name }}</h1>
         <p class="text-muted">{{ parish.city.name }}/{{ parish.city.state.short_name }}</p>
         
@@ -53,7 +59,8 @@
                        id="verified"
                        name="verificado"
                        type="checkbox"
-                       value="1">
+                       value="1"
+                       {% if request.GET.verificado == "1" %}checked{% endif %}>
                 <label class="btn btn-outline-primary rounded mx-1 my-1" for="verified">
                     <i class="fa-solid fa-circle-check verified"></i>
                 </label>
