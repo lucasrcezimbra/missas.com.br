@@ -29,7 +29,7 @@ pytest-mock = "3.14.1"
 
 [tool.poetry.group.scrapers.dependencies]
 llm = "^0.24"
-scrapy = "2.13.0"
+scrapy = "2.13.1"
 
 
 [tool.djlint]
