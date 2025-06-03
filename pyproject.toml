@@ -22,7 +22,7 @@ whitenoise = {extras = ["brotli"], version = "6.9.0"}
 freezegun = "1.5.2"
 model-bakery = "1.20.4"
 pre-commit = "4.2.0"
-pytest = "8.3.5"
+pytest = "8.4.0"
 pytest-cov = "^6.1.1"
 pytest-django = "4.11.1"
 pytest-mock = "3.14.1"
