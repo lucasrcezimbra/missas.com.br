@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render, resolve_url
 
-from missas.core.models import City, ContactRequest, Schedule, State
+from missas.core.models import City, ContactRequest, Parish, Schedule, State
 
 
 def index(request):
@@ -114,3 +114,57 @@ def create_contact(request):
         return HttpResponse(template)
 
     return redirect(request.META.get("HTTP_REFERER", "/"))
+
+
+def by_parish(request, state, city, parish):
+    parish = get_object_or_404(Parish, slug=parish, city__slug=city, city__state__slug=state)
+    day_name = request.GET.get("dia")
+    hour = request.GET.get("horario")
+    type_name = request.GET.get("tipo")
+    verified_only = request.GET.get("verificado") == "1"
+    day = {
+        "domingo": Schedule.Day.SUNDAY,
+        "segunda": Schedule.Day.MONDAY,
+        "terca": Schedule.Day.TUESDAY,
+        "quarta": Schedule.Day.WEDNESDAY,
+        "quinta": Schedule.Day.THURSDAY,
+        "sexta": Schedule.Day.FRIDAY,
+        "sabado": Schedule.Day.SATURDAY,
+    }.get(day_name)
+    type = {
+        "missas": Schedule.Type.MASS,
+        "confissoes": Schedule.Type.CONFESSION,
+    }.get(type_name, Schedule.Type.MASS)
+    schedules = Schedule.objects.filter(parish=parish, type=type)
+
+    if day is not None:
+        schedules = schedules.filter(day=day)
+
+    if hour is not None:
+        hour = time(int(hour))
+        qs = Q(start_time__gte=hour) | Q(end_time__gte=hour)
+        schedules = schedules.filter(qs)
+
+    if verified_only:
+        schedules = schedules.filter(verified_at__isnull=False)
+
+    schedules = schedules.order_by("day", "start_time")
+    schedules = schedules.prefetch_related("parish", "parish__contact", "source")
+    template = (
+        "cards.html"
+        if request.htmx and not request.htmx.boosted
+        else "parish.html"
+    )
+
+    return render(
+        request,
+        template,
+        {
+            "schedules": schedules,
+            "day": day,
+            "parish": parish,
+            "hour": hour.hour if hour else 0,
+            "type": type,
+            "Schedule": Schedule,
+        },
+    )
