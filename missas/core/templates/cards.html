@@ -2,7 +2,10 @@
     {% for schedule in schedules %}
         <div class="card mb-3 inverse-indicator">
             <div class="card-body">
-                <span class="fs-5">{{ schedule.parish.name }}</span>
+                <a href="/{{ schedule.parish.city.state.slug }}/{{ schedule.parish.city.slug }}/{{ schedule.parish.slug }}/"
+                   class="text-decoration-none">
+                    <span class="fs-5 text-primary">{{ schedule.parish.name }}</span>
+                </a>
                 {% if schedule.location %}
                     <div class="row">
                         <div class="col-auto">
@@ -65,6 +68,14 @@
                                         <a href="tel:{{ schedule.parish.contact.phone }}"
                                            aria-label="Telefone da paróquia"
                                            class="text-decoration-none">{{ schedule.parish.contact.phone }}</a>
+                                    </span>
+                                {% endif %}
+                                {% if schedule.parish.contact.phone2 %}
+                                    <span class="me-3 d-inline-flex align-items-center">
+                                        <i class="fa-solid fa-phone text-primary me-1"></i>
+                                        <a href="tel:{{ schedule.parish.contact.phone2 }}"
+                                           aria-label="Telefone 2 da paróquia"
+                                           class="text-decoration-none">{{ schedule.parish.contact.phone2 }}</a>
                                     </span>
                                 {% endif %}
                                 {% if schedule.parish.contact.whatsapp %}
