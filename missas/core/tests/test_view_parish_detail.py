@@ -115,14 +115,14 @@ def test_parish_detail_shows_schedules(client):
 def test_parish_detail_shows_confessions_separately(client):
     parish = baker.make(Parish)
     source = baker.make(Source)
-    mass_schedule = baker.make(
+    _mass_schedule = baker.make(
         Schedule,
         parish=parish,
         source=source,
         type=Schedule.Type.MASS,
         day=Schedule.Day.SUNDAY,
     )
-    confession_schedule = baker.make(
+    _confession_schedule = baker.make(
         Schedule,
         parish=parish,
         source=source,
@@ -165,7 +165,7 @@ def test_parish_detail_shows_no_schedules_message(client):
 def test_parish_detail_shows_verified_schedule(client):
     parish = baker.make(Parish)
     source = baker.make(Source)
-    schedule = baker.make(
+    _schedule = baker.make(
         Schedule, parish=parish, source=source, verified_at="2023-01-01"
     )
 
