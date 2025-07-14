@@ -1,5 +1,4 @@
 name: "Copilot Setup Steps"
-
 on:
   workflow_dispatch:
   push:
@@ -8,35 +7,27 @@ on:
   pull_request:
     paths:
       - .github/workflows/copilot-setup-steps.yml
-
 jobs:
   copilot-setup-steps:
     runs-on: ubuntu-latest
-
     permissions:
       contents: read
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'poetry'
-
       - name: Install Poetry
         run: pipx install poetry
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
-
       - name: Install JavaScript dependencies
         run: npm ci
-
       - name: Install dependencies
         run: make install
