@@ -22,21 +22,5 @@ jobs:
           cache: 'poetry'
       - name: Install Poetry
         run: pipx install poetry
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - name: Install Python dependencies
-        run: |
-          docker compose up -d
-          poetry install
-      - name: Install pre-commit hooks
-        run: |
-          poetry run pre-commit install
-          poetry run pre-commit install-hooks || echo "Warning: pre-commit install-hooks failed, but continuing setup"
-      - name: Complete setup
-        run: |
-          cp contrib/env-sample .env
-          poetry run python manage.py migrate
-          make dbload
+      - name: Install dependencies and setup environment
+        run: make install
