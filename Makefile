@@ -35,6 +35,7 @@ install:
 	docker compose up -d
 	poetry install
 	poetry run pre-commit install
+	poetry run pre-commit install-hooks
 	cp contrib/env-sample .env
 	poetry run python manage.py migrate
 	make dbload
