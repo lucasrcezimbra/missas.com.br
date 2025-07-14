@@ -35,7 +35,7 @@ State (Brazilian states like RN, SP)
 ## Code Style and Conventions
 
 ### Django Patterns
-- Use class-based views when appropriate
+- Function-based views are prefered
 - Follow Django's model naming conventions
 - Use Django's built-in authentication (extended AbstractUser)
 - Implement proper model managers and querysets
@@ -43,7 +43,7 @@ State (Brazilian states like RN, SP)
 
 ### Python Style
 - Follow ruff linting rules (configured in pyproject.toml)
-- Use type hints where beneficial
+- Avoid type hints
 - Prefer Portuguese for user-facing strings and comments
 - Use English for code identifiers and technical documentation
 
