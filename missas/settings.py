@@ -1,4 +1,5 @@
 import logging
+import re
 from pathlib import Path
 
 import sentry_sdk
@@ -27,7 +28,27 @@ SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", default=[], cast=Csv())
+# Base allowed hosts from environment
+_base_allowed_hosts = config("ALLOWED_HOSTS", default=[], cast=Csv())
+
+
+# Custom allowed hosts handler that includes Render preview deployments
+class CustomAllowedHosts(list):
+    """Custom ALLOWED_HOSTS that allows Render preview deployments (missas-pr-*.onrender.com)."""
+
+    def __init__(self, base_hosts):
+        super().__init__(base_hosts)
+        self.preview_pattern = re.compile(r"^missas-pr-\d+\.onrender\.com$")
+
+    def __contains__(self, host):
+        # Check if host is in base allowed hosts
+        if super().__contains__(host):
+            return True
+        # Check if host matches preview pattern
+        return bool(self.preview_pattern.match(host))
+
+
+ALLOWED_HOSTS = CustomAllowedHosts(_base_allowed_hosts)
 
 
 # Application definition
