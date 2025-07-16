@@ -77,7 +77,7 @@ State (Brazilian states like RN, SP)
 - Every time a PR has UI changes, you must add `[render preview]` to the title
 - This triggers the preview deployment so changes can be reviewed visually
 - Example: `[render preview] Add new parish contact form` or `[WIP] [render preview] Parish page redesign`
-- Every time you make a UI change, run the application, take a screenshot using Playwright MCP using resolution 1920×1080, and add the image to the PR comments
+- Every time you make a UI change, run the application, take a screenshot using Playwright MCP using resolution 1920×1080, and add the image to the PR comments.
 
 ### Testing
 - Write tests in `tests/` directories or `test_*.py` files
