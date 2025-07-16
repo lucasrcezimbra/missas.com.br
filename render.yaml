@@ -3,8 +3,6 @@ databases:
     databaseName: missas
     user: missas
     plan: starter
-previews:
-  generation: manual
 services:
   - type: web
     name: missas
