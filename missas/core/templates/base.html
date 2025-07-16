@@ -2,7 +2,9 @@
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
-        {% if city %}
+        {% if parish %}
+            <title>{{ parish.name }} - {{ parish.city.name }}/{{ parish.city.state.short_name.upper }} - Missas.com.br</title>
+        {% elif city %}
             <title>Horários de missas e confissões em {{ city.name }}/{{ city.state.short_name.upper }}</title>
         {% else %}
             <title>Horários de missas e confissões no {{ state.name }}</title>
@@ -242,7 +244,15 @@
                 <div class="col">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            {% if city %}
+                            {% if parish %}
+                                <li class="breadcrumb-item">
+                                    <a href="/{{ parish.city.state.slug }}">{{ parish.city.state.name }}</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/{{ parish.city.state.slug }}/{{ parish.city.slug }}/">{{ parish.city.name }}</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ parish.name }}</li>
+                            {% elif city %}
                                 <li class="breadcrumb-item">
                                     <a href="/{{ city.state.slug }}">{{ city.state.name }}</a>
                                 </li>
