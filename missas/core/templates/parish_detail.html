@@ -181,7 +181,7 @@
                                 <div class="row mb-2">
                                     <div class="col-auto">
                                         <span>
-                                            <i class="fa-solid fa-location-dot text-primary"></i>
+                                            <i class="fa-solid fa-location-dot"></i>
                                             {{ schedule.location }}
                                         </span>
                                     </div>
@@ -190,13 +190,13 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <span>
-                                        <i class="fa-solid fa-calendar-week text-primary"></i>
+                                        <i class="fa-solid fa-calendar-week"></i>
                                         {{ schedule.get_day_display }}
                                     </span>
                                 </div>
                                 <div class="col-auto">
                                     <span>
-                                        <i class="fa-solid fa-clock text-primary"></i>
+                                        <i class="fa-solid fa-clock"></i>
                                         {{ schedule.start_time|time:"H:i" }}
                                         {% if schedule.end_time %}- {{ schedule.end_time|time:"H:i" }}{% endif %}
                                     </span>
@@ -204,7 +204,7 @@
                                 {% if schedule.observation %}
                                     <div class="col-auto">
                                         <span>
-                                            <i class="fa-solid fa-info-circle text-warning"></i>
+                                            <i class="fa-solid fa-exclamation-circle"></i>
                                             {{ schedule.observation }}
                                         </span>
                                     </div>
@@ -220,7 +220,7 @@
                                 {% if schedule.source %}
                                     <div class="col-auto">
                                         <span>
-                                            <i class="fa-solid fa-source text-secondary"></i>
+                                            <i class="fa-solid fa-source"></i>
                                             {% if schedule.source.link %}
                                                 Fonte:
                                                 <a href="{{ schedule.source.link }}"
