@@ -92,7 +92,7 @@ def parish_detail(request, state, city, parish):
     )
     schedules = (
         Schedule.objects.filter(parish=parish)
-        .order_by("day", "start_time")
+        .order_by("type", "day", "start_time")
         .prefetch_related("source")
     )
 
