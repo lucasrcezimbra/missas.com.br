@@ -4,12 +4,12 @@ from http import HTTPStatus
 from django.shortcuts import resolve_url
 from freezegun import freeze_time
 
-weekdays = ["domingo", "segunda", "terca", "quarta", "quinta", "sexta", "sabado"]
+weekdays = ("segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo")
 
 
 def test_redirect(client):
     now = datetime.utcnow() - timedelta(hours=3)
-    weekday = weekdays[now.weekday() + 1]
+    weekday = weekdays[now.weekday()]
 
     response = client.get(resolve_url("index"))
 
