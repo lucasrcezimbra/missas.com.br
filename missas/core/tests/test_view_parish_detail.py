@@ -180,21 +180,3 @@ def test_parish_detail_shows_verified_schedule(client):
 
     assert response.status_code == HTTPStatus.OK
     assertContains(response, "Verificado por Missas.com.br")
-
-
-@pytest.mark.django_db
-def test_parish_detail_shows_phone2_when_available(client):
-    parish = baker.make(Parish)
-    contact = baker.make("core.Contact", parish=parish, phone2="+5511888888888")
-
-    response = client.get(
-        resolve_url(
-            "parish_detail",
-            state=parish.city.state.slug,
-            city=parish.city.slug,
-            parish=parish.slug,
-        )
-    )
-
-    assert response.status_code == HTTPStatus.OK
-    assertContains(response, contact.phone2)

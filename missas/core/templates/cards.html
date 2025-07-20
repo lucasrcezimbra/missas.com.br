@@ -70,14 +70,6 @@
                                            class="text-decoration-none">{{ schedule.parish.contact.phone }}</a>
                                     </span>
                                 {% endif %}
-                                {% if schedule.parish.contact.phone2 %}
-                                    <span class="me-3 d-inline-flex align-items-center">
-                                        <i class="fa-solid fa-phone text-primary me-1"></i>
-                                        <a href="tel:{{ schedule.parish.contact.phone2 }}"
-                                           aria-label="Telefone 2 da paróquia"
-                                           class="text-decoration-none">{{ schedule.parish.contact.phone2 }}</a>
-                                    </span>
-                                {% endif %}
                                 {% if schedule.parish.contact.whatsapp %}
                                     <a href="https://wa.me/{{ schedule.parish.contact.whatsapp }}"
                                        target="_blank"

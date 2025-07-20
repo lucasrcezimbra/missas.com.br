@@ -104,7 +104,7 @@
     {% if parish.contact %}
         <div class="contact-info">
             <h3>
-                <i class="fa-solid fa-address-book me-2"></i>
+                <i class="fa-solid fa-address-book me-2 text-primary"></i>
                 Informações de Contato
             </h3>
             <div class="d-flex flex-wrap">
@@ -114,14 +114,6 @@
                        aria-label="Telefone da paróquia">
                         <i class="fa-solid fa-phone text-primary"></i>
                         {{ parish.contact.phone }}
-                    </a>
-                {% endif %}
-                {% if parish.contact.phone2 %}
-                    <a href="tel:{{ parish.contact.phone2 }}"
-                       class="contact-item"
-                       aria-label="Telefone 2 da paróquia">
-                        <i class="fa-solid fa-phone text-primary"></i>
-                        {{ parish.contact.phone2 }}
                     </a>
                 {% endif %}
                 {% if parish.contact.whatsapp %}
@@ -167,7 +159,7 @@
     {% endif %}
     <div class="schedules-section">
         <h3>
-            <i class="fa-solid fa-calendar-alt me-2"></i>
+            <i class="fa-solid fa-calendar-alt me-2 text-primary"></i>
             Horários de Missas e Confissões
         </h3>
         {% regroup schedules by type as schedule_groups %}
@@ -175,10 +167,10 @@
             <div class="schedule-type-section">
                 <h4 class="schedule-type-title">
                     {% if group.grouper == Schedule.Type.MASS %}
-                        <i class="fa-solid fa-church"></i>
+                        <i class="fa-solid fa-church text-primary"></i>
                         Missas
                     {% else %}
-                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-heart text-primary"></i>
                         Confissões
                     {% endif %}
                 </h4>
@@ -260,7 +252,7 @@
            class="btn btn-outline-danger"
            target="_blank"
            rel="noopener noreferrer">
-            <i class="fa-solid fa-flag me-2"></i>
+            <i class="fa-solid fa-flag me-2 text-primary"></i>
             Relatar problema com esta paróquia
         </a>
     </div>
