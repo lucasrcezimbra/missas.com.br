@@ -1,99 +1,99 @@
 {% extends "base.html" %}
 
-{% block style %}
+{% block content %}
+    <!-- Parish Detail Styles - included with HTMX requests -->
+    <style type="text/css">
     .parish-header {
-    background: var(--gradient-blue);
-    color: var(--white);
-    padding: 2rem;
-    border-radius: 15px;
-    margin-bottom: 2rem;
-    box-shadow: var(--shadow-md);
+        background: var(--gradient-blue);
+        color: var(--white);
+        padding: 2rem;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow-md);
     }
     .parish-header h2 {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
     }
     .contact-info {
-    background-color: var(--gray-100);
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--gray-200);
+        background-color: var(--gray-100);
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--gray-200);
     }
     .contact-info h3 {
-    color: var(--primary-blue);
-    font-weight: 600;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
+        color: var(--primary-blue);
+        font-weight: 600;
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
     }
     .contact-item {
-    display: inline-flex;
-    align-items: center;
-    margin-right: 1.5rem;
-    margin-bottom: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    background-color: var(--white);
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--gray-200);
+        display: inline-flex;
+        align-items: center;
+        margin-right: 1.5rem;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        background-color: var(--white);
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--gray-200);
     }
     .contact-item:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    background-color: var(--light-blue);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+        background-color: var(--light-blue);
     }
     .contact-item i {
-    margin-right: 0.5rem;
-    width: 16px;
-    text-align: center;
+        margin-right: 0.5rem;
+        width: 16px;
+        text-align: center;
     }
     .schedules-section h3 {
-    color: var(--primary-blue);
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+        color: var(--primary-blue);
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
     .schedule-type-section {
-    margin-bottom: 2rem;
+        margin-bottom: 2rem;
     }
     .schedule-type-title {
-    color: var(--secondary-blue);
-    font-weight: 600;
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--light-blue);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+        color: var(--secondary-blue);
+        font-weight: 600;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--light-blue);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
     .verified {
-    color: #2ecc71;
+        color: #2ecc71;
     }
     @media (max-width: 768px) {
-    .parish-header {
-    padding: 1.5rem;
+        .parish-header {
+            padding: 1.5rem;
+        }
+        .parish-header h2 {
+            font-size: 1.5rem;
+        }
+        .contact-item {
+            margin-right: 1rem;
+            margin-bottom: 0.75rem;
+        }
     }
-    .parish-header h2 {
-    font-size: 1.5rem;
-    }
-    .contact-item {
-    margin-right: 1rem;
-    margin-bottom: 0.75rem;
-    }
-    }
-{% endblock style %}
-
-{% block content %}
+    </style>
     <div class="parish-header">
         <h2>{{ parish.name }}</h2>
         <p class="mb-0">
