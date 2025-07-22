@@ -15,6 +15,7 @@ def index(request):
         .count(),
         "parishes": Parish.objects.count(),
         "schedules": Schedule.objects.count(),
+        # TODO: create queryset to filter verified schedules. 
         "verified_schedules": Schedule.objects.filter(
             verified_at__isnull=False
         ).count(),
