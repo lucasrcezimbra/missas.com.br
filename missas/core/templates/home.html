@@ -4,14 +4,10 @@
     <!-- Explicação sobre o projeto -->
     <div class="row mb-4">
         <div class="col-12">
-            <div class="alert alert-info border-0"
-                 style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
-                        border-left: 4px solid var(--primary-blue)">
+            <div class="alert alert-info border-0 project-explanation">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-8">
-                        <h4 class="alert-heading mb-2"
-                            style="color: var(--primary-blue);
-                                   font-weight: 600">
+                        <h4 class="alert-heading mb-2 project-title">
                             <i class="fa-solid fa-church me-2"></i>
                             Bem-vindo ao Missas.com.br
                         </h4>
@@ -25,72 +21,74 @@
                         </p>
                     </div>
                     <div class="col-12 col-md-4 text-center">
-                        <i class="fa-solid fa-cross"
-                           style="font-size: 3rem;
-                                  color: var(--primary-blue);
-                                  opacity: 0.3"></i>
+                        <i class="fa-solid fa-cross project-icon"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Estatísticas -->
+    <!-- Adicionar Paróquia Form -->
     <div class="row mb-4">
         <div class="col-12">
-            <h3 class="mb-3" style="color: var(--primary-blue); font-weight: 600;">
-                <i class="fa-solid fa-chart-bar me-2"></i>
-                Nossos Números
-            </h3>
-        </div>
-        <div class="col-6 col-md-3 mb-3">
-            <div class="card h-100 border-0 shadow-sm"
-                 style="background: linear-gradient(135deg, #E8F5E8, #C8E6C9)">
-                <div class="card-body text-center">
-                    <i class="fa-solid fa-map-marker-alt"
-                       style="font-size: 2rem;
-                              color: #2E7D32;
-                              margin-bottom: 0.5rem"></i>
-                    <h4 class="card-title mb-1" style="color: #2E7D32; font-weight: 700;">{{ stats.cities_with_parishes }}</h4>
-                    <p class="card-text small text-muted mb-0">Cidades com paróquias</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-md-3 mb-3">
-            <div class="card h-100 border-0 shadow-sm"
-                 style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2)">
-                <div class="card-body text-center">
-                    <i class="fa-solid fa-church"
-                       style="font-size: 2rem;
-                              color: #F57C00;
-                              margin-bottom: 0.5rem"></i>
-                    <h4 class="card-title mb-1" style="color: #F57C00; font-weight: 700;">{{ stats.parishes }}</h4>
-                    <p class="card-text small text-muted mb-0">Paróquias cadastradas</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-md-3 mb-3">
-            <div class="card h-100 border-0 shadow-sm"
-                 style="background: linear-gradient(135deg, #F3E5F5, #E1BEE7)">
-                <div class="card-body text-center">
-                    <i class="fa-solid fa-clock"
-                       style="font-size: 2rem;
-                              color: #7B1FA2;
-                              margin-bottom: 0.5rem"></i>
-                    <h4 class="card-title mb-1" style="color: #7B1FA2; font-weight: 700;">{{ stats.schedules }}</h4>
-                    <p class="card-text small text-muted mb-0">Horários disponíveis</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-md-3 mb-3">
-            <div class="card h-100 border-0 shadow-sm"
-                 style="background: linear-gradient(135deg, #E8F5E8, #A5D6A7)">
-                <div class="card-body text-center">
-                    <i class="fa-solid fa-check-circle"
-                       style="font-size: 2rem;
-                              color: #388E3C;
-                              margin-bottom: 0.5rem"></i>
-                    <h4 class="card-title mb-1" style="color: #388E3C; font-weight: 700;">{{ stats.verified_schedules }}</h4>
-                    <p class="card-text small text-muted mb-0">Horários verificados</p>
+            <div class="card border-0 shadow-sm parish-form-card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8">
+                            <h4 class="card-title parish-form-title">
+                                <i class="fa-solid fa-plus-circle me-2"></i>
+                                Adicione uma Paróquia
+                            </h4>
+                            <p class="card-text mb-3">
+                                Conhece alguma paróquia que não está no nosso site? Nos ajude a expandir nossa base de dados!
+                                Envie o contato da paróquia e nós fazemos o resto.
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <form hx-post="{% url 'create_contact' %}"
+                                  hx-trigger="submit"
+                                  hx-indicator="#loading"
+                                  hx-swap="outerHTML"
+                                  hx-target="#successMessage">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label class="form-label">WhatsApp da paróquia</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </span>
+                                        <input type="tel"
+                                               class="form-control"
+                                               id="ddd"
+                                               name="ddd"
+                                               placeholder="DDD"
+                                               pattern="[0-9]{2}"
+                                               maxlength="2"
+                                               style="max-width: 80px"
+                                               required>
+                                        <input type="tel"
+                                               class="form-control"
+                                               id="number"
+                                               name="number"
+                                               placeholder="Número"
+                                               maxlength="11"
+                                               required>
+                                    </div>
+                                    <div class="form-text">Digite o DDD e o número</div>
+                                </div>
+                                <div class="d-flex justify-content-end gap-2">
+                                    <div id="loading" class="htmx-indicator">
+                                        <div class="spinner-border spinner-border-sm text-primary" role="status">
+                                            <span class="visually-hidden">Enviando...</span>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa-solid fa-paper-plane"></i> Enviar
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="successMessage"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,7 +96,7 @@
     <!-- Estados e Cidades -->
     <div class="row mb-4">
         <div class="col-12">
-            <h3 class="mb-3" style="color: var(--primary-blue); font-weight: 600;">
+            <h3 class="mb-3 section-title">
                 <i class="fa-solid fa-map me-2"></i>
                 Estados e Cidades com Paróquias
             </h3>
@@ -107,19 +105,14 @@
                     <div class="col-12 col-md-6 col-lg-4 mb-3">
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title"
-                                    style="color: var(--primary-blue);
-                                           font-weight: 600">
-                                    <a href="/{{ state.slug }}/"
-                                       class="text-decoration-none"
-                                       style="color: var(--primary-blue)">{{ state.name }}</a>
+                                <h5 class="card-title state-title">
+                                    <a href="/{{ state.slug }}/" class="text-decoration-none state-link">{{ state.name }}</a>
                                 </h5>
                                 <div class="cities-list">
                                     {% for city in state.cities_with_parishes %}
                                         {% if forloop.counter <= 5 %}
                                             <a href="/{{ state.slug }}/{{ city.slug }}/"
-                                               class="badge bg-light text-dark me-1 mb-1 text-decoration-none"
-                                               style="border: 1px solid var(--gray-200)">{{ city.name }}</a>
+                                               class="badge bg-light text-dark me-1 mb-1 text-decoration-none city-badge">{{ city.name }}</a>
                                         {% endif %}
                                     {% endfor %}
                                     {% if state.cities_with_parishes|length > 5 %}
@@ -133,51 +126,58 @@
             </div>
         </div>
     </div>
-    <!-- Projeto Open Source -->
+    <!-- Estatísticas -->
     <div class="row mb-4">
         <div class="col-12">
-            <div class="alert alert-success border-0"
-                 style="background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
-                        border-left: 4px solid #4CAF50">
-                <div class="row align-items-center">
-                    <div class="col-12 col-md-8">
-                        <h4 class="alert-heading mb-2" style="color: #2E7D32; font-weight: 600;">
-                            <i class="fa-brands fa-github me-2"></i>
-                            Projeto Open Source
-                        </h4>
-                        <p class="mb-2">
-                            O Missas.com.br é um projeto <strong>100% gratuito e de código aberto</strong>.
-                            Acreditamos na transparência e na colaboração da comunidade para tornar esta ferramenta cada vez melhor.
-                        </p>
-                        <p class="mb-0">
-                            <i class="fa-solid fa-code me-1"></i>
-                            Contribua conosco, reporte bugs ou sugira melhorias!
-                        </p>
-                    </div>
-                    <div class="col-12 col-md-4 text-center mt-3 mt-md-0">
-                        <a href="https://github.com/lucasrcezimbra/missas.com.br"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="btn btn-success btn-lg">
-                            <i class="fa-brands fa-github me-2"></i>
-                            Ver no GitHub
-                        </a>
-                    </div>
+            <h3 class="mb-3 section-title">
+                <i class="fa-solid fa-chart-bar me-2"></i>
+                Nossos Números
+            </h3>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+            <div class="card h-100 border-0 shadow-sm stats-card">
+                <div class="card-body text-center">
+                    <i class="fa-solid fa-map-marker-alt stats-icon"></i>
+                    <h4 class="card-title mb-1 stats-number">{{ stats.cities_with_parishes }}</h4>
+                    <p class="card-text small text-muted mb-0">Cidades com paróquias</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+            <div class="card h-100 border-0 shadow-sm stats-card">
+                <div class="card-body text-center">
+                    <i class="fa-solid fa-church stats-icon"></i>
+                    <h4 class="card-title mb-1 stats-number">{{ stats.parishes }}</h4>
+                    <p class="card-text small text-muted mb-0">Paróquias cadastradas</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+            <div class="card h-100 border-0 shadow-sm stats-card">
+                <div class="card-body text-center">
+                    <i class="fa-solid fa-clock stats-icon"></i>
+                    <h4 class="card-title mb-1 stats-number">{{ stats.schedules }}</h4>
+                    <p class="card-text small text-muted mb-0">Horários disponíveis</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+            <div class="card h-100 border-0 shadow-sm stats-card">
+                <div class="card-body text-center">
+                    <i class="fa-solid fa-check-circle stats-icon"></i>
+                    <h4 class="card-title mb-1 stats-number">{{ stats.verified_schedules }}</h4>
+                    <p class="card-text small text-muted mb-0">Horários verificados</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contato e Contribuição -->
-    <div class="row">
-        <div class="col-12 col-md-6 mb-3">
-            <div class="card h-100 border-0 shadow-sm"
-                 style="background: linear-gradient(135deg, #E8F5E8, #C8E6C9)">
+    <!-- Contato -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card h-100 border-0 shadow-sm contact-card">
                 <div class="card-body text-center">
-                    <i class="fa-brands fa-whatsapp"
-                       style="font-size: 3rem;
-                              color: #25D366;
-                              margin-bottom: 1rem"></i>
-                    <h5 class="card-title" style="color: #2E7D32; font-weight: 600;">Fale Conosco</h5>
+                    <i class="fa-brands fa-whatsapp contact-icon"></i>
+                    <h5 class="card-title contact-title">Fale Conosco</h5>
                     <p class="card-text mb-3">Tem alguma dúvida ou sugestão? Entre em contato pelo WhatsApp!</p>
                     <a href="https://wa.me/+5584991234449"
                        target="_blank"
@@ -189,25 +189,37 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 mb-3">
-            <div class="card h-100 border-0 shadow-sm"
-                 style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB)">
-                <div class="card-body text-center">
-                    <i class="fa-solid fa-plus-circle"
-                       style="font-size: 3rem;
-                              color: var(--primary-blue);
-                              margin-bottom: 1rem"></i>
-                    <h5 class="card-title"
-                        style="color: var(--primary-blue);
-                               font-weight: 600">Adicione uma Paróquia</h5>
-                    <p class="card-text mb-3">Conhece alguma paróquia que não está no nosso site? Nos ajude a expandir!</p>
-                    <button type="button"
-                            class="btn btn-primary"
-                            data-bs-toggle="modal"
-                            data-bs-target="#addParishModal">
-                        <i class="fa-solid fa-plus me-2"></i>
-                        Adicionar Paróquia
-                    </button>
+    </div>
+    <!-- Projeto Open Source -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm opensource-card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8">
+                            <h4 class="card-title opensource-title">
+                                <i class="fa-brands fa-github me-2"></i>
+                                Projeto Open Source
+                            </h4>
+                            <p class="mb-2">
+                                O Missas.com.br é um projeto <strong>100% gratuito e de código aberto</strong>.
+                                Acreditamos na transparência e na colaboração da comunidade para tornar esta ferramenta cada vez melhor.
+                            </p>
+                            <p class="mb-0">
+                                <i class="fa-solid fa-code me-1"></i>
+                                Contribua conosco, reporte bugs ou sugira melhorias!
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center mt-3 mt-md-0">
+                            <a href="https://github.com/lucasrcezimbra/missas.com.br"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="btn btn-outline-secondary">
+                                <i class="fa-brands fa-github me-2"></i>
+                                Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -8,7 +8,6 @@ from missas.core.models import City, ContactRequest, Parish, Schedule, State
 
 
 def index(request):
-    # Calculate statistics
     stats = {
         "cities_with_parishes": City.objects.annotate_has_schedules()
         .filter(has_schedules=True)
@@ -21,7 +20,6 @@ def index(request):
         ).count(),
     }
 
-    # Get states with cities that have parishes
     states_with_cities = []
     for state in State.objects.all():
         cities_with_parishes = (
@@ -30,12 +28,9 @@ def index(request):
             .order_by("name")
         )
         if cities_with_parishes.exists():
-            state.cities_with_parishes = cities_with_parishes[
-                :10
-            ]  # Limit to first 10 cities
+            state.cities_with_parishes = cities_with_parishes[:10]
             states_with_cities.append(state)
 
-    # Sort states by name
     states_with_cities.sort(key=lambda s: s.name)
 
     return render(

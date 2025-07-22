@@ -58,6 +58,14 @@ State (Brazilian states like RN, SP)
 - Follow Bootstrap 5 component patterns
 - Implement responsive design for mobile users
 - Use FontAwesome icons consistently
+- **Avoid inline CSS** - use CSS classes and external stylesheets instead
+- When styles must be temporarily placed in templates, extract them to base.html with TODO comments
+
+### Code Comments
+- Avoid useless comments that only restate what the code does
+- Comments should explain "why", not "what"
+- Remove comments like "# Calculate statistics" or "# Limit to first 10 cities" where the code is self-explanatory
+- Use TODO comments for future improvements with specific descriptions
 
 ## Development Workflow
 
