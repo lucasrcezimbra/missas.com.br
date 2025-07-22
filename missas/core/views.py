@@ -1,21 +1,49 @@
-from datetime import datetime, time, timedelta
+from datetime import time
 
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotAllowed
-from django.shortcuts import get_object_or_404, redirect, render, resolve_url
+from django.shortcuts import get_object_or_404, redirect, render
 
 from missas.core.models import City, ContactRequest, Parish, Schedule, State
 
 
 def index(request):
-    now = datetime.utcnow() - timedelta(hours=3)
-    weekday = ("segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo")[
-        now.weekday()
-    ]  # TODO: encapsulate this logic
-    return redirect(
-        resolve_url("by_city", state="rio-grande-do-norte", city="natal")
-        + f"?dia={weekday}"
-        + f"&horario={now.hour}"
+    # Calculate statistics
+    stats = {
+        "cities_with_parishes": City.objects.annotate_has_schedules()
+        .filter(has_schedules=True)
+        .count(),
+        "parishes": Parish.objects.count(),
+        "schedules": Schedule.objects.count(),
+        "verified_schedules": Schedule.objects.filter(
+            verified_at__isnull=False
+        ).count(),
+    }
+
+    # Get states with cities that have parishes
+    states_with_cities = []
+    for state in State.objects.all():
+        cities_with_parishes = (
+            state.cities.annotate_has_schedules()
+            .filter(has_schedules=True)
+            .order_by("name")
+        )
+        if cities_with_parishes.exists():
+            state.cities_with_parishes = cities_with_parishes[
+                :10
+            ]  # Limit to first 10 cities
+            states_with_cities.append(state)
+
+    # Sort states by name
+    states_with_cities.sort(key=lambda s: s.name)
+
+    return render(
+        request,
+        "home.html",
+        {
+            "stats": stats,
+            "states_with_cities": states_with_cities,
+        },
     )
 
 

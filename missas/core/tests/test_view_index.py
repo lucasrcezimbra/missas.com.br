@@ -1,35 +1,40 @@
-from datetime import datetime, timedelta
 from http import HTTPStatus
 
+import pytest
 from django.shortcuts import resolve_url
-from freezegun import freeze_time
-
-weekdays = ("segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo")
 
 
-def test_redirect(client):
-    now = datetime.utcnow() - timedelta(hours=3)
-    weekday = weekdays[now.weekday()]
-
+@pytest.mark.django_db
+def test_index_renders_home_page(client):
     response = client.get(resolve_url("index"))
 
-    assert response.status_code == HTTPStatus.FOUND
-    assert (
-        response.url
-        == resolve_url("by_city", state="rio-grande-do-norte", city="natal")
-        + f"?dia={weekday}"
-        + f"&horario={now.hour}"
-    )
+    assert response.status_code == HTTPStatus.OK
+    assert "Bem-vindo ao Missas.com.br" in response.content.decode()
+    assert "Nossos Números" in response.content.decode()
+    assert "Estados e Cidades com Paróquias" in response.content.decode()
+    assert "Projeto Open Source" in response.content.decode()
 
 
-@freeze_time("2023-11-19 10:00:00")
-def test_redirect_sunday(client):
+@pytest.mark.django_db
+def test_index_contains_stats(client):
     response = client.get(resolve_url("index"))
 
-    assert response.status_code == HTTPStatus.FOUND
-    assert (
-        response.url
-        == resolve_url("by_city", state="rio-grande-do-norte", city="natal")
-        + "?dia=domingo"
-        + "&horario=7"
-    )
+    assert response.status_code == HTTPStatus.OK
+    # Check that the template context contains the expected stats
+    assert "stats" in response.context
+    stats = response.context["stats"]
+    assert "cities_with_parishes" in stats
+    assert "parishes" in stats
+    assert "schedules" in stats
+    assert "verified_schedules" in stats
+
+
+@pytest.mark.django_db
+def test_index_contains_states_with_cities(client):
+    response = client.get(resolve_url("index"))
+
+    assert response.status_code == HTTPStatus.OK
+    # Check that the template context contains states with cities
+    assert "states_with_cities" in response.context
+    states_with_cities = response.context["states_with_cities"]
+    assert isinstance(states_with_cities, list)

@@ -6,8 +6,10 @@
             <title>{{ parish.name }} - {{ parish.city.name }}/{{ parish.city.state.short_name.upper }} - Missas.com.br</title>
         {% elif city %}
             <title>Horários de missas e confissões em {{ city.name }}/{{ city.state.short_name.upper }}</title>
-        {% else %}
+        {% elif state %}
             <title>Horários de missas e confissões no {{ state.name }}</title>
+        {% else %}
+            <title>Missas.com.br - Horários de missas e confissões no Brasil</title>
         {% endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
@@ -336,26 +338,31 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            {% if parish %}
+                    {% if parish or city or state %}
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="/{{ parish.city.state.slug }}">{{ parish.city.state.name }}</a>
+                                    <a href="/">Início</a>
                                 </li>
-                                <li class="breadcrumb-item">
-                                    <a href="/{{ parish.city.state.slug }}/{{ parish.city.slug }}/">{{ parish.city.name }}</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ parish.name }}</li>
-                            {% elif city %}
-                                <li class="breadcrumb-item">
-                                    <a href="/{{ city.state.slug }}">{{ city.state.name }}</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ city.name }}</li>
-                            {% elif state %}
-                                <li class="breadcrumb-item active" aria-current="page">{{ state.name }}</li>
-                            {% endif %}
-                        </ol>
-                    </nav>
+                                {% if parish %}
+                                    <li class="breadcrumb-item">
+                                        <a href="/{{ parish.city.state.slug }}">{{ parish.city.state.name }}</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a href="/{{ parish.city.state.slug }}/{{ parish.city.slug }}/">{{ parish.city.name }}</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ parish.name }}</li>
+                                {% elif city %}
+                                    <li class="breadcrumb-item">
+                                        <a href="/{{ city.state.slug }}">{{ city.state.name }}</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ city.name }}</li>
+                                {% elif state %}
+                                    <li class="breadcrumb-item active" aria-current="page">{{ state.name }}</li>
+                                {% endif %}
+                            </ol>
+                        </nav>
+                    {% endif %}
                 </div>
             </div>
             <div id="content">
