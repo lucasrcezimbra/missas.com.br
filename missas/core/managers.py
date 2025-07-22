@@ -17,8 +17,5 @@ class CityQuerySet(models.QuerySet):
 
 
 class ScheduleQuerySet(models.QuerySet):
-    def filter_verified(self, verified=True):
-        if verified:
-            return self.filter(verified_at__isnull=False)
-        else:
-            return self.filter(verified_at__isnull=True)
+    def filter_verified(self):
+        return self.filter(verified_at__isnull=False)
