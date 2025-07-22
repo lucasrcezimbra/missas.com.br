@@ -2,7 +2,10 @@
     {% for schedule in schedules %}
         <div class="card mb-3 inverse-indicator">
             <div class="card-body">
-                <span class="fs-5">{{ schedule.parish.name }}</span>
+                <a href="/{{ schedule.parish.city.state.slug }}/{{ schedule.parish.city.slug }}/{{ schedule.parish.slug }}/"
+                   class="text-decoration-none">
+                    <span class="fs-5 text-primary">{{ schedule.parish.name }}</span>
+                </a>
                 {% if schedule.location %}
                     <div class="row">
                         <div class="col-auto">

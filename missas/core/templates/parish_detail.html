@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="parish-header">
+        <h2>{{ parish.name }}</h2>
+        <p class="mb-0">
+            <i class="fa-solid fa-location-dot me-2"></i>
+            {{ parish.city.name }}, {{ parish.city.state.name }}
+        </p>
+    </div>
+    {% if parish.contact %}
+        <div class="contact-info">
+            <h3>
+                <i class="fa-solid fa-address-book me-2 text-primary"></i>
+                Informações de Contato
+            </h3>
+            <div class="d-flex flex-wrap">
+                {% if parish.contact.phone %}
+                    <a href="tel:{{ parish.contact.phone }}"
+                       class="contact-item"
+                       aria-label="Telefone da paróquia">
+                        <i class="fa-solid fa-phone text-primary"></i>
+                        {{ parish.contact.phone }}
+                    </a>
+                {% endif %}
+                {% if parish.contact.whatsapp %}
+                    <a href="https://wa.me/{{ parish.contact.whatsapp }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="contact-item"
+                       aria-label="WhatsApp da paróquia">
+                        <i class="fa-brands fa-whatsapp text-success"></i>
+                        {{ parish.contact.whatsapp }}
+                    </a>
+                {% endif %}
+                {% if parish.contact.email %}
+                    <a href="mailto:{{ parish.contact.email }}"
+                       class="contact-item"
+                       aria-label="E-mail da paróquia">
+                        <i class="fa-solid fa-envelope text-secondary"></i>
+                        {{ parish.contact.email }}
+                    </a>
+                {% endif %}
+                {% if parish.contact.facebook %}
+                    <a href="https://facebook.com/{{ parish.contact.facebook }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="contact-item"
+                       aria-label="Facebook da paróquia">
+                        <i class="fa-brands fa-facebook text-primary"></i>
+                        {{ parish.contact.facebook }}
+                    </a>
+                {% endif %}
+                {% if parish.contact.instagram %}
+                    <a href="https://instagram.com/{{ parish.contact.instagram }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="contact-item"
+                       aria-label="Instagram da paróquia">
+                        <i class="fa-brands fa-instagram" style="color: #E1306C;"></i>
+                        {{ parish.contact.instagram }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    <div class="schedules-section">
+        <h3>
+            <i class="fa-solid fa-calendar-alt me-2 text-primary"></i>
+            Horários de Missas e Confissões
+        </h3>
+        {% regroup schedules by type as schedule_groups %}
+        {% for group in schedule_groups %}
+            <div class="schedule-type-section">
+                <h4 class="schedule-type-title">
+                    {% if group.grouper == Schedule.Type.MASS %}
+                        <i class="fa-solid fa-church text-primary"></i>
+                        Missas
+                    {% else %}
+                        <i class="fa-solid fa-heart text-primary"></i>
+                        Confissões
+                    {% endif %}
+                </h4>
+                {% for schedule in group.list %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            {% if schedule.location %}
+                                <div class="row mb-2">
+                                    <div class="col-auto">
+                                        <span>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            {{ schedule.location }}
+                                        </span>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            <div class="row">
+                                <div class="col-auto">
+                                    <span>
+                                        <i class="fa-solid fa-calendar-week"></i>
+                                        {{ schedule.get_day_display }}
+                                    </span>
+                                </div>
+                                <div class="col-auto">
+                                    <span>
+                                        <i class="fa-solid fa-clock"></i>
+                                        {{ schedule.start_time|time:"H:i" }}
+                                        {% if schedule.end_time %}- {{ schedule.end_time|time:"H:i" }}{% endif %}
+                                    </span>
+                                </div>
+                                {% if schedule.observation %}
+                                    <div class="col-auto">
+                                        <span>
+                                            <i class="fa-solid fa-exclamation-circle"></i>
+                                            {{ schedule.observation }}
+                                        </span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="row mt-2">
+                                {% if schedule.verified_at %}
+                                    <div class="col-auto">
+                                        <i class="fa-solid fa-circle-check verified"></i>
+                                        Verificado por Missas.com.br em {{ schedule.verified_at|date:"SHORT_DATE_FORMAT" }}
+                                    </div>
+                                {% endif %}
+                                {% if schedule.source %}
+                                    <div class="col-auto">
+                                        <span>
+                                            <i class="fa-solid fa-source"></i>
+                                            {% if schedule.source.link %}
+                                                Fonte:
+                                                <a href="{{ schedule.source.link }}"
+                                                   target="_blank"
+                                                   rel="noopener noreferrer">{{ schedule.source.description }}</a>
+                                            {% else %}
+                                                Fonte: {{ schedule.source.description }}
+                                            {% endif %}
+                                        </span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% empty %}
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <i class="fa-solid fa-calendar-xmark text-muted fa-2x mb-3"></i>
+                    <h5 class="text-muted">Nenhum horário cadastrado</h5>
+                    <p class="text-muted mb-0">Esta paróquia ainda não possui horários cadastrados em nosso sistema.</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="text-center mt-4">
+        <a href="https://wa.me/+5584991234449?text=Olá. Eu gostaria de relatar um problema na '{{ parish.name }}' {% if parish.contact.whatsapp %}{{ parish.contact.whatsapp }}{% endif %}. O problema é:"
+           class="btn btn-outline-danger"
+           target="_blank"
+           rel="noopener noreferrer">
+            <i class="fa-solid fa-flag me-2 text-primary"></i>
+            Relatar problema com esta paróquia
+        </a>
+    </div>
+{% endblock content %}

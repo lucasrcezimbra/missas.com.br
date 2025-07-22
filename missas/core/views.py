@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render, resolve_url
 
-from missas.core.models import City, ContactRequest, Schedule, State
+from missas.core.models import City, ContactRequest, Parish, Schedule, State
 
 
 def index(request):
@@ -63,7 +63,9 @@ def by_city(request, state, city):
         schedules = schedules.filter(verified_at__isnull=False)
 
     schedules = schedules.order_by("day", "start_time")
-    schedules = schedules.prefetch_related("parish", "parish__contact", "source")
+    schedules = schedules.prefetch_related(
+        "parish", "parish__contact", "parish__city", "parish__city__state", "source"
+    )
     template = (
         "cards.html"
         if request.htmx and not request.htmx.boosted
@@ -79,6 +81,27 @@ def by_city(request, state, city):
             "city": city,
             "hour": hour.hour if hour else 0,
             "type": type,
+            "Schedule": Schedule,
+        },
+    )
+
+
+def parish_detail(request, state, city, parish):
+    parish = get_object_or_404(
+        Parish, slug=parish, city__slug=city, city__state__slug=state
+    )
+    schedules = (
+        Schedule.objects.filter(parish=parish)
+        .order_by("type", "day", "start_time")
+        .prefetch_related("source")
+    )
+
+    return render(
+        request,
+        "parish_detail.html",
+        {
+            "parish": parish,
+            "schedules": schedules,
             "Schedule": Schedule,
         },
     )

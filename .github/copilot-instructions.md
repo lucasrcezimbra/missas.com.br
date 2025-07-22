@@ -68,6 +68,17 @@ State (Brazilian states like RN, SP)
 - `make lint`: Run pre-commit hooks and code quality checks
 - `make coverage`: Generate test coverage reports
 
+### Git Commit Process
+- When `git commit` fails due to pre-commit issues, you must fix the reported problems before committing
+- Run `make lint` or the specific pre-commit hooks to identify and fix code style issues
+- Common issues include formatting (ruff), import sorting, and code quality checks
+
+### Pull Request Guidelines
+- Every time a PR has UI changes, you must add `[render preview]` to the title
+- This triggers the preview deployment so changes can be reviewed visually
+- Example: `[render preview] Add new parish contact form` or `[WIP] [render preview] Parish page redesign`
+- Every time you make a UI change, run the application, take a screenshot using Playwright MCP using resolution 1920×1080, and add the image to the PR comments.
+
 ### Testing
 - Write tests in `tests/` directories or `test_*.py` files
 - Use model-bakery for test data generation
