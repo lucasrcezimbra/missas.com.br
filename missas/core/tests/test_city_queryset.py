@@ -21,25 +21,22 @@ class TestFilterWithSchedule:
         assert result.count() == 1
 
     def test_with_multiple_cities_with_schedules(self):
-        # City 1 with schedule
-        city1 = baker.make("core.City")
-        parish1 = baker.make("core.Parish", city=city1)
+        city_with_schedule_1 = baker.make("core.City")
+        parish1 = baker.make("core.Parish", city=city_with_schedule_1)
         baker.make("core.Schedule", parish=parish1)
 
-        # City 2 with schedule
-        city2 = baker.make("core.City")
-        parish2 = baker.make("core.Parish", city=city2)
+        city_with_schedule_2 = baker.make("core.City")
+        parish2 = baker.make("core.Parish", city=city_with_schedule_2)
         baker.make("core.Schedule", parish=parish2)
 
-        # City 3 without schedule
-        city3 = baker.make("core.City")
-        baker.make("core.Parish", city=city3)
+        city_without_schedule = baker.make("core.City")
+        baker.make("core.Parish", city=city_without_schedule)
 
         result = City.objects.filter_with_schedule()
 
-        assert city1 in result
-        assert city2 in result
-        assert city3 not in result
+        assert city_with_schedule_1 in result
+        assert city_with_schedule_2 in result
+        assert city_without_schedule not in result
         assert result.count() == 2
 
     def test_with_no_cities(self):
@@ -48,32 +45,31 @@ class TestFilterWithSchedule:
         assert result.count() == 0
 
     def test_with_no_cities_with_schedules(self):
-        city1 = baker.make("core.City")
-        baker.make("core.Parish", city=city1)  # Parish but no schedule
+        city_with_parish_no_schedule = baker.make("core.City")
+        baker.make(
+            "core.Parish", city=city_with_parish_no_schedule
+        )  # Parish but no schedule
 
-        city2 = baker.make("core.City")  # No parish at all
+        city_without_parish = baker.make("core.City")  # No parish at all
 
         result = City.objects.filter_with_schedule()
 
-        assert city1 not in result
-        assert city2 not in result
+        assert city_with_parish_no_schedule not in result
+        assert city_without_parish not in result
         assert result.count() == 0
 
     def test_chaining_with_other_filters(self):
         state1 = baker.make("core.State", short_name="RN")
         state2 = baker.make("core.State", short_name="SP")
 
-        # City in RN with schedule
         city_rn_with_schedule = baker.make("core.City", state=state1)
         parish_rn = baker.make("core.Parish", city=city_rn_with_schedule)
         baker.make("core.Schedule", parish=parish_rn)
 
-        # City in SP with schedule
         city_sp_with_schedule = baker.make("core.City", state=state2)
         parish_sp = baker.make("core.Parish", city=city_sp_with_schedule)
         baker.make("core.Schedule", parish=parish_sp)
 
-        # City in RN without schedule
         city_rn_without_schedule = baker.make("core.City", state=state1)
         baker.make("core.Parish", city=city_rn_without_schedule)
 
