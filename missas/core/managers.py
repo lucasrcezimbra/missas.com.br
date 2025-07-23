@@ -14,3 +14,8 @@ class CityQuerySet(models.QuerySet):
                 output_field=models.BooleanField(),
             )
         )
+
+
+class ScheduleQuerySet(models.QuerySet):
+    def filter_verified(self):
+        return self.filter(verified_at__isnull=False)
