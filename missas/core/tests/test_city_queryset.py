@@ -59,21 +59,21 @@ class TestFilterWithSchedule:
         assert result.count() == 0
 
     def test_chaining_with_other_filters(self):
-        state1 = baker.make("core.State", short_name="RN")
-        state2 = baker.make("core.State", short_name="SP")
+        state_rn = baker.make("core.State", short_name="RN")
+        state_sp = baker.make("core.State", short_name="SP")
 
-        city_rn_with_schedule = baker.make("core.City", state=state1)
+        city_rn_with_schedule = baker.make("core.City", state=state_rn)
         parish_rn = baker.make("core.Parish", city=city_rn_with_schedule)
         baker.make("core.Schedule", parish=parish_rn)
 
-        city_sp_with_schedule = baker.make("core.City", state=state2)
+        city_sp_with_schedule = baker.make("core.City", state=state_sp)
         parish_sp = baker.make("core.Parish", city=city_sp_with_schedule)
         baker.make("core.Schedule", parish=parish_sp)
 
-        city_rn_without_schedule = baker.make("core.City", state=state1)
+        city_rn_without_schedule = baker.make("core.City", state=state_rn)
         baker.make("core.Parish", city=city_rn_without_schedule)
 
-        result = City.objects.filter_with_schedule().filter(state=state1)
+        result = City.objects.filter_with_schedule().filter(state=state_rn)
 
         assert city_rn_with_schedule in result
         assert city_sp_with_schedule not in result
