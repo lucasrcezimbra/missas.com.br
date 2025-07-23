@@ -15,6 +15,9 @@ class CityQuerySet(models.QuerySet):
             )
         )
 
+    def filter_with_schedule(self):
+        return self.annotate_has_schedules().filter(has_schedules=True)
+
 
 class ScheduleQuerySet(models.QuerySet):
     def filter_verified(self):
