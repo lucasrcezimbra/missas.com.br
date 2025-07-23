@@ -5,7 +5,7 @@ from django.db import models
 from model_utils import FieldTracker
 from model_utils.tracker import FieldInstanceTracker
 
-from missas.core.managers import CityQuerySet
+from missas.core.managers import CityQuerySet, ScheduleQuerySet
 
 
 class MyFieldInstanceTracker(FieldInstanceTracker):
@@ -140,6 +140,7 @@ class Schedule(models.Model):
     type = models.CharField(choices=Type.choices, default=Type.MASS)
     verified_at = models.DateField(blank=True, null=True)
 
+    objects = ScheduleQuerySet.as_manager()
     tracker = MyFieldTracker()
 
     class Meta:
