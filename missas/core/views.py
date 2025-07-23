@@ -9,9 +9,7 @@ from missas.core.models import City, ContactRequest, Parish, Schedule, State
 
 def index(request):
     stats = {
-        "cities_with_parishes": City.objects.annotate_has_schedules()
-        .filter(has_schedules=True)
-        .count(),
+        "cities_with_parishes": City.objects.filter_with_schedule().count(),
         "parishes": Parish.objects.count(),
         "schedules": Schedule.objects.count(),
         "verified_schedules": Schedule.objects.filter_verified().count(),
