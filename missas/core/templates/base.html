@@ -203,18 +203,7 @@
             }
 
             #content {
-                animation: fadeIn 0.5s ease-in-out;
-            }
-
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+                /* Animation removed per user request */
             }
 
             /* Parish Detail Page Styles - Related to parish_detail.html */
@@ -320,21 +309,6 @@
                 position: relative;
                 overflow: hidden;
             }
-            .project-explanation::before {
-                content: '';
-                position: absolute;
-                top: -50%;
-                right: -20px;
-                width: 100px;
-                height: 200%;
-                background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-                transform: rotate(20deg);
-                animation: shimmer 3s infinite;
-            }
-            @keyframes shimmer {
-                0% { transform: translateX(-100%) rotate(20deg); }
-                100% { transform: translateX(300%) rotate(20deg); }
-            }
             .project-title {
                 color: var(--primary-blue);
                 font-weight: 600;
@@ -344,11 +318,6 @@
                 font-size: 4rem;
                 color: var(--primary-blue);
                 opacity: 0.4;
-                animation: float 3s ease-in-out infinite;
-            }
-            @keyframes float {
-                0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-10px); }
             }
             .parish-form-card {
                 background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
@@ -442,11 +411,6 @@
                 font-size: 2.5rem;
                 color: var(--primary-blue);
                 margin-bottom: 0.75rem;
-                animation: pulse 2s infinite;
-            }
-            @keyframes pulse {
-                0%, 100% { opacity: 1; }
-                50% { opacity: 0.7; }
             }
             .stats-number {
                 color: var(--primary-blue);
@@ -467,12 +431,6 @@
                 font-size: 4rem;
                 color: #25D366;
                 margin-bottom: 1rem;
-                animation: bounce 2s infinite;
-            }
-            @keyframes bounce {
-                0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-                40% { transform: translateY(-10px); }
-                60% { transform: translateY(-5px); }
             }
             .contact-title {
                 color: #2E7D32;
@@ -494,17 +452,7 @@
                 font-size: 1.5rem;
             }
             .cities-list {
-                animation: fadeInUp 0.6s ease-out;
-            }
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+                /* Animation removed per user request */
             }
             .btn-success {
                 background: linear-gradient(135deg, #25D366, #128C7E);

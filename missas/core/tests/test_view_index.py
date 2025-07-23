@@ -3,7 +3,6 @@ from http import HTTPStatus
 
 import pytest
 from django.shortcuts import resolve_url
-from django.test import override_settings
 from model_bakery import baker
 from pytest_django.asserts import assertContains, assertTemplateUsed
 
@@ -160,55 +159,65 @@ def test_index_states_with_cities_display(client):
 @pytest.mark.django_db
 def test_index_states_with_many_cities_show_all(client):
     """Test that states show all their cities (no truncation)"""
-    state = baker.make(State, name="São Paulo", slug="sp")
-
-    # Create 8 cities with parishes and schedules
-    cities = []
-    for i in range(8):
-        city = baker.make(City, name=f"Cidade {i+1}", slug=f"cidade-{i+1}", state=state)
-        parish = baker.make(
-            Parish, name=f"Paróquia {i+1}", slug=f"paroquia-{i+1}", city=city
-        )
-        source = baker.make(Source)
-        baker.make(Schedule, parish=parish, source=source)
-        cities.append(city)
+    state = baker.make(State)
+    cities = baker.make(City, state=state, _quantity=8)
+    parishes = [baker.make(Parish, city=c) for c in cities]
+    [baker.make(Schedule, parish=p) for p in parishes]
 
     response = client.get(resolve_url("index"))
 
-    # Should show all 8 cities
-    for i in range(8):
-        assertContains(response, f"Cidade {i+1}")
-
-    # Should not show truncation message
-    assert "... e mais" not in response.content.decode()
+    for c in cities:
+        assertContains(response, c.name)
 
 
 @pytest.mark.django_db
-@override_settings(DEBUG=True)
 def test_index_query_count_optimization(client, django_assert_num_queries):
     """Test that the view doesn't perform excessive database queries"""
-    # Create test data
-    state1 = baker.make(State, name="Rio Grande do Norte", slug="rn")
-    state2 = baker.make(State, name="São Paulo", slug="sp")
+    state1 = baker.make(State)
+    state2 = baker.make(State)
 
-    city1 = baker.make(City, name="Natal", slug="natal", state=state1)
-    city2 = baker.make(City, name="São Paulo", slug="sao-paulo", state=state2)
+    city1 = baker.make(City, state=state1)
+    city2 = baker.make(City, state=state2)
 
-    parish1 = baker.make(Parish, name="Paróquia 1", slug="paroquia-1", city=city1)
-    parish2 = baker.make(Parish, name="Paróquia 2", slug="paroquia-2", city=city2)
+    parish1 = baker.make(Parish, city=city1)
+    parish2 = baker.make(Parish, city=city2)
 
-    source = baker.make(Source)
-    baker.make(Schedule, parish=parish1, source=source)
-    baker.make(Schedule, parish=parish2, source=source)
+    baker.make(Schedule, parish=parish1)
+    baker.make(Schedule, parish=parish2)
 
-    # The view should use optimized queries with prefetch_related:
-    # 1. Count cities with parishes that have schedules
-    # 2. Count parishes
-    # 3. Count schedules
-    # 4. Count verified schedules
-    # 5. Get states that have cities with schedules (efficiently filtered)
-    # 6. Get all cities with schedules for those states (single query via prefetch)
-    with django_assert_num_queries(num=6):  # Optimized from 9 to 6 queries
+    with django_assert_num_queries(num=6):
         response = client.get(resolve_url("index"))
 
     assert response.status_code == HTTPStatus.OK
+
+
+@pytest.mark.django_db
+def test_index_only_shows_states_with_schedules(client):
+    """Test that only states with cities that have parishes with schedules are shown"""
+    # Create state with schedules
+    state_with_schedules = baker.make(State, name="Estado com Horários")
+    city_with_schedules = baker.make(City, state=state_with_schedules)
+    parish_with_schedules = baker.make(Parish, city=city_with_schedules)
+    baker.make(Schedule, parish=parish_with_schedules)
+
+    # Create state with parishes but no schedules
+    state_with_parishes_no_schedules = baker.make(State, name="Estado sem Horários")
+    city_with_parishes_no_schedules = baker.make(
+        City, state=state_with_parishes_no_schedules
+    )
+    baker.make(Parish, city=city_with_parishes_no_schedules)  # Parish without schedules
+
+    # Create state with no parishes
+    state_without_parishes = baker.make(State, name="Estado sem Paróquias")
+    baker.make(City, state=state_without_parishes)  # City without parishes
+
+    response = client.get(resolve_url("index"))
+
+    states_with_cities = response.context["states_with_cities"]
+    state_names = [state.name for state in states_with_cities]
+
+    # Only state with schedules should appear
+    assert "Estado com Horários" in state_names
+    assert "Estado sem Horários" not in state_names
+    assert "Estado sem Paróquias" not in state_names
+    assert len(states_with_cities) == 1

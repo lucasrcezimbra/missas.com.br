@@ -24,7 +24,7 @@ def index(request):
                 to_attr="cities_with_parishes",
             )
         )
-        .filter(cities__isnull=False)
+        .filter(cities__parishes__schedules__isnull=False)
         .distinct()
         .order_by("name")
     )
