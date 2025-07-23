@@ -86,6 +86,7 @@ State (Brazilian states like RN, SP)
 - This triggers the preview deployment so changes can be reviewed visually
 - Example: `[render preview] Add new parish contact form` or `[WIP] [render preview] Parish page redesign`
 - Every time you make a UI change, run the application, take a screenshot using Playwright MCP using resolution 1920×1080, and add the image to the PR comments.
+- When working on PR suggestions/comments, use resolved threads as context to understand the history and avoid repeating changes that have already been addressed
 
 ### Testing
 - Write tests in `tests/` directories or `test_*.py` files
