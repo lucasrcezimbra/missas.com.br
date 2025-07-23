@@ -109,14 +109,9 @@
                                 </h5>
                                 <div class="cities-list">
                                     {% for city in state.cities_with_parishes %}
-                                        {% if forloop.counter <= 5 %}
-                                            <a href="/{{ state.slug }}/{{ city.slug }}/"
-                                               class="badge bg-light text-dark me-1 mb-1 text-decoration-none city-badge">{{ city.name }}</a>
-                                        {% endif %}
+                                        <a href="/{{ state.slug }}/{{ city.slug }}/"
+                                           class="badge bg-light text-dark me-1 mb-1 text-decoration-none city-badge">{{ city.name }}</a>
                                     {% endfor %}
-                                    {% if state.cities_with_parishes|length > 5 %}
-                                        <span class="text-muted small">... e mais {{ state.cities_with_parishes|length|add:"-5" }}</span>
-                                    {% endif %}
                                 </div>
                             </div>
                         </div>

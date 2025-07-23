@@ -158,8 +158,8 @@ def test_index_states_with_cities_display(client):
 
 
 @pytest.mark.django_db
-def test_index_states_with_many_cities_truncation(client):
-    """Test that states with more than 5 cities show 'e mais X' message"""
+def test_index_states_with_many_cities_show_all(client):
+    """Test that states show all their cities (no truncation)"""
     state = baker.make(State, name="São Paulo", slug="sp")
 
     # Create 8 cities with parishes and schedules
@@ -175,15 +175,12 @@ def test_index_states_with_many_cities_truncation(client):
 
     response = client.get(resolve_url("index"))
 
-    # Should show first 5 cities + "e mais 3" message
-    for i in range(5):
+    # Should show all 8 cities
+    for i in range(8):
         assertContains(response, f"Cidade {i+1}")
 
-    assertContains(response, "... e mais 3")
-
-    # Cities 6-8 should not be displayed
-    for i in range(5, 8):
-        assert f"Cidade {i+1}" not in response.content.decode()
+    # Should not show truncation message
+    assert "... e mais" not in response.content.decode()
 
 
 @pytest.mark.django_db
