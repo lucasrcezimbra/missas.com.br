@@ -52,6 +52,7 @@ State (Brazilian states like RN, SP)
 - Implement unique_together constraints for business logic
 - Use slug fields for URL-friendly identifiers
 - Include created_at/updated_at timestamps on main models
+- **NEVER do queries inside loops** - this creates N+1 query problems. Use proper Django ORM techniques like select_related, prefetch_related, or bulk operations instead
 
 ### Frontend Patterns
 - Use HTMX for dynamic interactions

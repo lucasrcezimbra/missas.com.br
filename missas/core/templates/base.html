@@ -317,67 +317,219 @@
             .project-explanation {
                 background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
                 border-left: 4px solid var(--primary-blue);
+                position: relative;
+                overflow: hidden;
+            }
+            .project-explanation::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -20px;
+                width: 100px;
+                height: 200%;
+                background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+                transform: rotate(20deg);
+                animation: shimmer 3s infinite;
+            }
+            @keyframes shimmer {
+                0% { transform: translateX(-100%) rotate(20deg); }
+                100% { transform: translateX(300%) rotate(20deg); }
             }
             .project-title {
                 color: var(--primary-blue);
                 font-weight: 600;
+                font-size: 1.75rem;
             }
             .project-icon {
-                font-size: 3rem;
+                font-size: 4rem;
                 color: var(--primary-blue);
-                opacity: 0.3;
+                opacity: 0.4;
+                animation: float 3s ease-in-out infinite;
+            }
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
             }
             .parish-form-card {
-                background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+                background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+                border: 1px solid rgba(76, 175, 80, 0.2);
+                transition: all 0.3s ease;
+            }
+            .parish-form-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(76, 175, 80, 0.15);
             }
             .parish-form-title {
-                color: var(--primary-blue);
+                color: #2E7D32;
                 font-weight: 600;
+                font-size: 1.5rem;
             }
             .section-title {
                 color: var(--primary-blue);
                 font-weight: 600;
+                font-size: 1.75rem;
+                position: relative;
+                padding-bottom: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .section-title::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background: var(--gradient-blue);
+                border-radius: 2px;
+            }
+            .state-card {
+                transition: all 0.3s ease;
+                background: linear-gradient(135deg, #FFFFFF, #F8FDFF);
+                border: 1px solid rgba(30, 136, 229, 0.1);
+            }
+            .state-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(30, 136, 229, 0.15);
+                border-color: rgba(30, 136, 229, 0.3);
             }
             .state-title {
                 color: var(--primary-blue);
                 font-weight: 600;
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
             }
             .state-link {
                 color: var(--primary-blue);
+                transition: all 0.3s ease;
+            }
+            .state-link:hover {
+                color: var(--hover-blue);
+                text-decoration: underline;
             }
             .city-badge {
-                border: 1px solid var(--gray-200);
+                border: 1px solid rgba(30, 136, 229, 0.2);
+                transition: all 0.3s ease;
+                background: rgba(30, 136, 229, 0.05);
+                color: var(--primary-blue);
+                font-weight: 500;
+            }
+            .city-badge:hover {
+                background: var(--primary-blue);
+                color: white;
+                transform: scale(1.05);
             }
             .stats-card {
                 background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+                transition: all 0.3s ease;
+                border: 1px solid rgba(30, 136, 229, 0.1);
+                position: relative;
+                overflow: hidden;
+            }
+            .stats-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: var(--gradient-blue);
+            }
+            .stats-card:hover {
+                transform: translateY(-3px) scale(1.02);
+                box-shadow: 0 10px 25px rgba(30, 136, 229, 0.2);
             }
             .stats-icon {
-                font-size: 2rem;
+                font-size: 2.5rem;
                 color: var(--primary-blue);
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.75rem;
+                animation: pulse 2s infinite;
+            }
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.7; }
             }
             .stats-number {
                 color: var(--primary-blue);
                 font-weight: 700;
+                font-size: 2.25rem;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
             }
             .contact-card {
                 background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+                transition: all 0.3s ease;
+                border: 1px solid rgba(76, 175, 80, 0.2);
+            }
+            .contact-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 25px rgba(76, 175, 80, 0.2);
             }
             .contact-icon {
-                font-size: 3rem;
+                font-size: 4rem;
                 color: #25D366;
                 margin-bottom: 1rem;
+                animation: bounce 2s infinite;
+            }
+            @keyframes bounce {
+                0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+                40% { transform: translateY(-10px); }
+                60% { transform: translateY(-5px); }
             }
             .contact-title {
                 color: #2E7D32;
                 font-weight: 600;
+                font-size: 1.5rem;
             }
             .opensource-card {
-                background-color: var(--gray-100);
+                background: linear-gradient(135deg, #F5F5F5, #EEEEEE);
+                border: 1px solid rgba(158, 158, 158, 0.2);
+                transition: all 0.3s ease;
+            }
+            .opensource-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(158, 158, 158, 0.15);
             }
             .opensource-title {
                 color: var(--gray-800);
                 font-weight: 600;
+                font-size: 1.5rem;
+            }
+            .cities-list {
+                animation: fadeInUp 0.6s ease-out;
+            }
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .btn-success {
+                background: linear-gradient(135deg, #25D366, #128C7E);
+                border: none;
+                padding: 0.75rem 1.5rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+            .btn-success:hover {
+                background: linear-gradient(135deg, #128C7E, #25D366);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            }
+            .btn-outline-secondary {
+                border: 2px solid var(--gray-800);
+                color: var(--gray-800);
+                font-weight: 600;
+                padding: 0.75rem 1.5rem;
+                transition: all 0.3s ease;
+            }
+            .btn-outline-secondary:hover {
+                background: var(--gray-800);
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(52, 58, 64, 0.3);
             }
 
             {% block style %}{% endblock %}

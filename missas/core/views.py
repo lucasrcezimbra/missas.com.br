@@ -1,5 +1,6 @@
 from datetime import time
 
+from django.db import models
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render
@@ -15,18 +16,18 @@ def index(request):
         "verified_schedules": Schedule.objects.filter_verified().count(),
     }
 
-    states_with_cities = []
-    for state in State.objects.all():
-        cities_with_parishes = (
-            state.cities.annotate_has_schedules()
-            .filter(has_schedules=True)
-            .order_by("name")
+    states_with_cities = (
+        State.objects.prefetch_related(
+            models.Prefetch(
+                "cities",
+                queryset=City.objects.filter_with_schedule().order_by("name"),
+                to_attr="cities_with_parishes",
+            )
         )
-        if cities_with_parishes.exists():
-            state.cities_with_parishes = cities_with_parishes[:10]
-            states_with_cities.append(state)
-
-    states_with_cities.sort(key=lambda s: s.name)
+        .filter(cities__isnull=False)
+        .distinct()
+        .order_by("name")
+    )
 
     return render(
         request,

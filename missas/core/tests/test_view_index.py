@@ -201,15 +201,14 @@ def test_index_query_count_optimization(client, django_assert_num_queries):
     baker.make(Schedule, parish=parish1, source=source)
     baker.make(Schedule, parish=parish2, source=source)
 
-    # The view should use a reasonable number of queries:
+    # The view should use optimized queries with prefetch_related:
     # 1. Count cities with parishes that have schedules
     # 2. Count parishes
     # 3. Count schedules
     # 4. Count verified schedules
-    # 5. Get all states
-    # 6-7. For each state, check if it has cities with schedules (exists query)
-    # 8-9. For each state with cities, get the actual cities (annotated query)
-    with django_assert_num_queries(num=9):  # Actual number based on test output
+    # 5. Get states that have cities with schedules (efficiently filtered)
+    # 6. Get all cities with schedules for those states (single query via prefetch)
+    with django_assert_num_queries(num=6):  # Optimized from 9 to 6 queries
         response = client.get(resolve_url("index"))
 
     assert response.status_code == HTTPStatus.OK
