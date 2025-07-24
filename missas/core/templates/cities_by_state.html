@@ -11,7 +11,7 @@
                             <i class="fa-solid fa-map-marker-alt me-2"></i>
                             Cidades no {{ state.name }}
                         </h4>
-                        <p>
+                        <p class="mb-0">
                             Selecione uma cidade para ver os <strong>horários de missas e confissões</strong> das paróquias disponíveis.
                         </p>
                     </div>
@@ -34,19 +34,13 @@
                             <div class="col-12 col-md-6 col-lg-3 mb-3">
                                 <div class="card h-100 border-0 shadow-sm state-card">
                                     <div class="card-body">
-                                        <h5 class="card-title state-title">
+                                        <h5 class="card-title state-title mb-0">
                                             <a href="{% url 'by_city' state=state.slug city=city.slug %}"
                                                class="text-decoration-none state-link">
                                                 <i class="fa-solid fa-map-marker-alt me-2"></i>
                                                 {{ city.name }}
                                             </a>
                                         </h5>
-                                        <p class="card-text text-muted mb-0">
-                                            <small>
-                                                <i class="fa-solid fa-clock me-1"></i>
-                                                Horários disponíveis
-                                            </small>
-                                        </p>
                                     </div>
                                 </div>
                             </div>
