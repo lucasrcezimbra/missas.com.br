@@ -27,7 +27,8 @@
               hx-indicator="#cards-indicator"
               hx-push-url="true"
               hx-target="#cards"
-              hx-trigger="change">
+              hx-trigger="change"
+              hx-swap="outerHTML">
             <div class="btn-group flex-wrap" role="group">
                 <input class="btn-check"
                        id="missas"
@@ -140,6 +141,6 @@
                 </div>
             </div>
         {% endfor %}
-        {% include 'cards.html' %}
     </div>
+    {% include 'cards.html' %}
 {% endblock content %}
