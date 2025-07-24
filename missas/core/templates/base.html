@@ -488,7 +488,18 @@
                 box-shadow: 0 8px 20px rgba(52, 58, 64, 0.3);
             }
 
-            /* Global Loading Indicator for HTMX Page Transitions */
+            /* HTMX Loading Indicator - Global */
+            .htmx-indicator {
+                opacity: 0;
+                transition: opacity 500ms ease-in;
+            }
+            .htmx-request .htmx-indicator {
+                opacity: 1;
+            }
+            .htmx-request.htmx-indicator {
+                opacity: 1;
+            }
+
             #global-loading-indicator {
                 position: fixed;
                 top: 0;
@@ -498,15 +509,11 @@
                 background-color: rgba(255, 255, 255, 0.9);
                 backdrop-filter: blur(2px);
                 z-index: 9999;
-                display: none;
+                display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-            }
-
-            /* Show loading indicator when any HTMX request is in progress */
-            body.htmx-request #global-loading-indicator {
-                display: flex;
+                pointer-events: none;
             }
 
             .loading-spinner {
@@ -533,9 +540,9 @@
             {% block style %}{% endblock %}
         </style>
     </head>
-    <body hx-boost="true">
-        <!-- Global Loading Indicator for HTMX Page Transitions -->
-        <div id="global-loading-indicator">
+    <body hx-boost="true" hx-indicator="#global-loading-indicator">
+        <!-- Global Loading Indicator -->
+        <div id="global-loading-indicator" class="htmx-indicator">
             <div class="loading-spinner"></div>
             <div class="loading-text">Carregando...</div>
         </div>
@@ -613,30 +620,6 @@
             </a>
         </footer>
         <script src="{% static 'bootstrap.min.js' %}" defer></script>
-        <script>
-            // Global loading indicator for HTMX page transitions with minimum display duration
-            let loadingStartTime = null;
-            const MINIMUM_LOADING_DURATION = 300; // Minimum 300ms display time
-
-            document.addEventListener('htmx:beforeRequest', function(evt) {
-                loadingStartTime = Date.now();
-                document.body.classList.add('htmx-request');
-            });
-
-            document.addEventListener('htmx:afterRequest', function(evt) {
-                if (loadingStartTime) {
-                    const elapsedTime = Date.now() - loadingStartTime;
-                    const remainingTime = Math.max(0, MINIMUM_LOADING_DURATION - elapsedTime);
-
-                    setTimeout(() => {
-                        document.body.classList.remove('htmx-request');
-                        loadingStartTime = null;
-                    }, remainingTime);
-                } else {
-                    document.body.classList.remove('htmx-request');
-                }
-            });
-        </script>
         <script defer
                 src='https://static.cloudflareinsights.com/beacon.min.js'
                 data-cf-beacon='{"token": "b300d389869f4fac95d6c34ac8ea2d0d"}'></script>
