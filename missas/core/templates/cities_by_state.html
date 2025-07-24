@@ -1,15 +1,127 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <ul>
-        {% for city in cities %}
-            <li>
-                {% if city.has_schedules %}
-                    <a href="{% url 'by_city' state=state.slug city=city.slug %}">{{ city.name }}</a>
-                {% else %}
-                    {{ city.name }}
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+    <!-- Page Title Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="alert alert-info border-0 project-explanation">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <h4 class="alert-heading mb-2 project-title">
+                            <i class="fa-solid fa-map-marker-alt me-2"></i>
+                            Cidades no {{ state.name }}
+                        </h4>
+                        <p class="mb-2">
+                            Selecione uma cidade para ver os <strong>horários de missas e confissões</strong> das paróquias disponíveis.
+                        </p>
+                        <p class="mb-0">
+                            <small class="text-muted">
+                                <i class="fa-solid fa-church me-1"></i>
+                                Cidades destacadas possuem paróquias cadastradas com horários disponíveis.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cities with Schedules Section -->
+    {% regroup cities by has_schedules as cities_grouped %}
+    {% for group in cities_grouped %}
+        {% if group.grouper %}
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h3 class="mb-3 section-title">
+                        <i class="fa-solid fa-church me-2"></i>
+                        Cidades com Paróquias Cadastradas
+                    </h3>
+                    <div class="row">
+                        {% for city in group.list %}
+                            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                <div class="card h-100 border-0 shadow-sm state-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title state-title">
+                                            <a href="{% url 'by_city' state=state.slug city=city.slug %}"
+                                               class="text-decoration-none state-link">
+                                                <i class="fa-solid fa-map-marker-alt me-2"></i>
+                                                {{ city.name }}
+                                            </a>
+                                        </h5>
+                                        <p class="card-text text-muted mb-0">
+                                            <small>
+                                                <i class="fa-solid fa-clock me-1"></i>
+                                                Horários disponíveis
+                                            </small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <!-- Cities without Schedules Section -->
+    {% for group in cities_grouped %}
+        {% if not group.grouper and group.list %}
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h3 class="mb-3 section-title">
+                        <i class="fa-solid fa-exclamation-triangle me-2 text-warning"></i>
+                        Outras Cidades do {{ state.name }}
+                    </h3>
+                    <div class="alert alert-warning border-0 mb-3">
+                        <p class="mb-2">
+                            <i class="fa-solid fa-info-circle me-2"></i>
+                            <strong>Estas cidades ainda não possuem paróquias cadastradas em nosso sistema.</strong>
+                        </p>
+                        <p class="mb-0">
+                            <small>
+                                Conhece alguma paróquia nestas cidades?
+                                <button type="button"
+                                        class="btn btn-sm btn-primary ms-1"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#addParishModal">
+                                    <i class="fa-solid fa-plus me-1"></i>
+                                    Adicione uma paróquia
+                                </button>
+                            </small>
+                        </p>
+                    </div>
+                    <div class="row">
+                        {% for city in group.list %}
+                            <div class="col-6 col-md-4 col-lg-3 mb-2">
+                                <div class="badge bg-light text-dark border city-badge-inactive">
+                                    <i class="fa-solid fa-map-marker-alt me-1 text-muted"></i>
+                                    {{ city.name }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <!-- Empty State -->
+    {% if not cities %}
+        <div class="row">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body text-center py-5">
+                        <i class="fa-solid fa-map-marker-alt text-muted fa-3x mb-3"></i>
+                        <h5 class="text-muted">Nenhuma cidade encontrada</h5>
+                        <p class="text-muted mb-3">Não encontramos cidades cadastradas para {{ state.name }}.</p>
+                        <button type="button"
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#addParishModal">
+                            <i class="fa-solid fa-plus me-2"></i>
+                            Adicionar primeira paróquia
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock content %}
