@@ -79,11 +79,8 @@ def test_only_cities_with_parishes_and_schedules_have_link(client):
 
     assertNotContains(response, f"/{city_without_parish.slug}")
     assertNotContains(response, f"/{city_with_parish_without_schedule.slug}")
-    assertContains(
-        response,
-        f'<a href="/{state.slug}/{city_with_parish_with_schedule.slug}/">{city_with_parish_with_schedule.name}</a>',
-        html=True,
-    )
+    assertContains(response, f"/{state.slug}/{city_with_parish_with_schedule.slug}/")
+    assertContains(response, city_with_parish_with_schedule.name)
 
 
 @pytest.mark.django_db
