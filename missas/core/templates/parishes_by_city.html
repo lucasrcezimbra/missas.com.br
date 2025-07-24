@@ -2,16 +2,16 @@
 
 {% block style %}
     .my-indicator {
-    display: none;
+    display: none !important;
     }
     .htmx-request .my-indicator {
-    display: block;
+    display: block !important;
     }
     .inverse-indicator {
-    display: block;
+    display: block !important;
     }
     .htmx-request .inverse-indicator {
-    display: none;
+    display: none !important;
     }
     .form-range::-moz-range-track {
     background-color: #2a3142;
@@ -27,8 +27,7 @@
               hx-indicator="#cards-indicator"
               hx-push-url="true"
               hx-target="#cards"
-              hx-trigger="change"
-              hx-swap="outerHTML">
+              hx-trigger="change">
             <div class="btn-group flex-wrap" role="group">
                 <input class="btn-check"
                        id="missas"
@@ -141,6 +140,6 @@
                 </div>
             </div>
         {% endfor %}
+        {% include 'cards.html' %}
     </div>
-    {% include 'cards.html' %}
 {% endblock content %}
