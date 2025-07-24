@@ -6,8 +6,10 @@
             <title>{{ parish.name }} - {{ parish.city.name }}/{{ parish.city.state.short_name.upper }} - Missas.com.br</title>
         {% elif city %}
             <title>Horários de missas e confissões em {{ city.name }}/{{ city.state.short_name.upper }}</title>
-        {% else %}
+        {% elif state %}
             <title>Horários de missas e confissões no {{ state.name }}</title>
+        {% else %}
+            <title>Missas.com.br - Horários de missas e confissões no Brasil</title>
         {% endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
@@ -309,6 +311,183 @@
                 }
             }
 
+            /* Home Page Styles - Related to home.html */
+            /* TODO: Extract these styles to a separate CSS file in the future to improve maintainability */
+            /* These styles are temporarily placed here to avoid inline CSS */
+            .project-explanation {
+                background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+                border-left: 4px solid var(--primary-blue);
+                position: relative;
+                overflow: hidden;
+            }
+            .project-title {
+                color: var(--primary-blue);
+                font-weight: 600;
+                font-size: 1.75rem;
+            }
+            .project-icon {
+                font-size: 4rem;
+                color: var(--primary-blue);
+                opacity: 0.4;
+            }
+            .parish-form-card {
+                background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+                border: 1px solid rgba(76, 175, 80, 0.2);
+                transition: all 0.3s ease;
+            }
+            .parish-form-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(76, 175, 80, 0.15);
+            }
+            .parish-form-title {
+                color: #2E7D32;
+                font-weight: 600;
+                font-size: 1.5rem;
+            }
+            .section-title {
+                color: var(--primary-blue);
+                font-weight: 600;
+                font-size: 1.75rem;
+                position: relative;
+                padding-bottom: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .section-title::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background: var(--gradient-blue);
+                border-radius: 2px;
+            }
+            .state-card {
+                transition: all 0.3s ease;
+                background: linear-gradient(135deg, #FFFFFF, #F8FDFF);
+                border: 1px solid rgba(30, 136, 229, 0.1);
+            }
+            .state-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(30, 136, 229, 0.15);
+                border-color: rgba(30, 136, 229, 0.3);
+            }
+            .state-title {
+                color: var(--primary-blue);
+                font-weight: 600;
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+            .state-link {
+                color: var(--primary-blue);
+                transition: all 0.3s ease;
+            }
+            .state-link:hover {
+                color: var(--hover-blue);
+                text-decoration: underline;
+            }
+            .city-badge {
+                border: 1px solid rgba(30, 136, 229, 0.2);
+                transition: all 0.3s ease;
+                background: rgba(30, 136, 229, 0.05);
+                color: var(--primary-blue);
+                font-weight: 500;
+            }
+            .city-badge:hover {
+                background: var(--primary-blue);
+                color: white;
+                transform: scale(1.05);
+            }
+            .stats-card {
+                background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+                transition: all 0.3s ease;
+                border: 1px solid rgba(30, 136, 229, 0.1);
+                position: relative;
+                overflow: hidden;
+            }
+            .stats-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: var(--gradient-blue);
+            }
+            .stats-card:hover {
+                transform: translateY(-3px) scale(1.02);
+                box-shadow: 0 10px 25px rgba(30, 136, 229, 0.2);
+            }
+            .stats-icon {
+                font-size: 2.5rem;
+                color: var(--primary-blue);
+                margin-bottom: 0.75rem;
+            }
+            .stats-number {
+                color: var(--primary-blue);
+                font-weight: 700;
+                font-size: 2.25rem;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            }
+            .contact-card {
+                background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+                transition: all 0.3s ease;
+                border: 1px solid rgba(76, 175, 80, 0.2);
+            }
+            .contact-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 25px rgba(76, 175, 80, 0.2);
+            }
+            .contact-icon {
+                font-size: 4rem;
+                color: #25D366;
+                margin-bottom: 1rem;
+            }
+            .contact-title {
+                color: #2E7D32;
+                font-weight: 600;
+                font-size: 1.5rem;
+            }
+            .opensource-card {
+                background: linear-gradient(135deg, #F5F5F5, #EEEEEE);
+                border: 1px solid rgba(158, 158, 158, 0.2);
+                transition: all 0.3s ease;
+            }
+            .opensource-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(158, 158, 158, 0.15);
+            }
+            .opensource-title {
+                color: var(--gray-800);
+                font-weight: 600;
+                font-size: 1.5rem;
+            }
+            .btn-success {
+                background: linear-gradient(135deg, #25D366, #128C7E);
+                border: none;
+                padding: 0.75rem 1.5rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+            .btn-success:hover {
+                background: linear-gradient(135deg, #128C7E, #25D366);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            }
+            .btn-outline-secondary {
+                border: 2px solid var(--gray-800);
+                color: var(--gray-800);
+                font-weight: 600;
+                padding: 0.75rem 1.5rem;
+                transition: all 0.3s ease;
+            }
+            .btn-outline-secondary:hover {
+                background: var(--gray-800);
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(52, 58, 64, 0.3);
+            }
+
             {% block style %}{% endblock %}
         </style>
     </head>
@@ -336,26 +515,31 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            {% if parish %}
+                    {% if parish or city or state %}
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="/{{ parish.city.state.slug }}">{{ parish.city.state.name }}</a>
+                                    <a href="/">Início</a>
                                 </li>
-                                <li class="breadcrumb-item">
-                                    <a href="/{{ parish.city.state.slug }}/{{ parish.city.slug }}/">{{ parish.city.name }}</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ parish.name }}</li>
-                            {% elif city %}
-                                <li class="breadcrumb-item">
-                                    <a href="/{{ city.state.slug }}">{{ city.state.name }}</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ city.name }}</li>
-                            {% elif state %}
-                                <li class="breadcrumb-item active" aria-current="page">{{ state.name }}</li>
-                            {% endif %}
-                        </ol>
-                    </nav>
+                                {% if parish %}
+                                    <li class="breadcrumb-item">
+                                        <a href="/{{ parish.city.state.slug }}">{{ parish.city.state.name }}</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a href="/{{ parish.city.state.slug }}/{{ parish.city.slug }}/">{{ parish.city.name }}</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ parish.name }}</li>
+                                {% elif city %}
+                                    <li class="breadcrumb-item">
+                                        <a href="/{{ city.state.slug }}">{{ city.state.name }}</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ city.name }}</li>
+                                {% elif state %}
+                                    <li class="breadcrumb-item active" aria-current="page">{{ state.name }}</li>
+                                {% endif %}
+                            </ol>
+                        </nav>
+                    {% endif %}
                 </div>
             </div>
             <div id="content">

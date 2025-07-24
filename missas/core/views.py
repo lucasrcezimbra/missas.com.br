@@ -1,21 +1,41 @@
-from datetime import datetime, time, timedelta
+from datetime import time
 
+from django.db import models
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotAllowed
-from django.shortcuts import get_object_or_404, redirect, render, resolve_url
+from django.shortcuts import get_object_or_404, redirect, render
 
 from missas.core.models import City, ContactRequest, Parish, Schedule, State
 
 
 def index(request):
-    now = datetime.utcnow() - timedelta(hours=3)
-    weekday = ("segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo")[
-        now.weekday()
-    ]  # TODO: encapsulate this logic
-    return redirect(
-        resolve_url("by_city", state="rio-grande-do-norte", city="natal")
-        + f"?dia={weekday}"
-        + f"&horario={now.hour}"
+    stats = {
+        "cities_with_parishes": City.objects.filter_with_schedule().count(),
+        "parishes": Parish.objects.count(),
+        "schedules": Schedule.objects.count(),
+        "verified_schedules": Schedule.objects.filter_verified().count(),
+    }
+
+    states_with_cities = (
+        State.objects.prefetch_related(
+            models.Prefetch(
+                "cities",
+                queryset=City.objects.filter_with_schedule().order_by("name"),
+                to_attr="cities_with_parishes",
+            )
+        )
+        .filter(cities__parishes__schedules__isnull=False)
+        .distinct()
+        .order_by("name")
+    )
+
+    return render(
+        request,
+        "home.html",
+        {
+            "stats": stats,
+            "states_with_cities": states_with_cities,
+        },
     )
 
 

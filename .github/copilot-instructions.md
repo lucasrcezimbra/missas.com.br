@@ -52,12 +52,21 @@ State (Brazilian states like RN, SP)
 - Implement unique_together constraints for business logic
 - Use slug fields for URL-friendly identifiers
 - Include created_at/updated_at timestamps on main models
+- **NEVER do queries inside loops** - this creates N+1 query problems. Use proper Django ORM techniques like select_related, prefetch_related, or bulk operations instead
 
 ### Frontend Patterns
 - Use HTMX for dynamic interactions
 - Follow Bootstrap 5 component patterns
 - Implement responsive design for mobile users
 - Use FontAwesome icons consistently
+- **Avoid inline CSS** - use CSS classes and external stylesheets instead
+- When styles must be temporarily placed in templates, extract them to base.html with TODO comments
+
+### Code Comments
+- Avoid useless comments that only restate what the code does
+- Comments should explain "why", not "what"
+- Remove comments like "# Calculate statistics" or "# Limit to first 10 cities" where the code is self-explanatory
+- Use TODO comments for future improvements with specific descriptions
 
 ## Development Workflow
 
@@ -78,6 +87,7 @@ State (Brazilian states like RN, SP)
 - This triggers the preview deployment so changes can be reviewed visually
 - Example: `[render preview] Add new parish contact form` or `[WIP] [render preview] Parish page redesign`
 - Every time you make a UI change, run the application, take a screenshot using Playwright MCP using resolution 1920×1080, and add the image to the PR comments.
+- When working on PR suggestions/comments, use resolved threads as context to understand the history and avoid repeating changes that have already been addressed
 
 ### Testing
 - Write tests in `tests/` directories or `test_*.py` files
