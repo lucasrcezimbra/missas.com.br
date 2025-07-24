@@ -537,6 +537,27 @@
                 100% { transform: rotate(360deg); }
             }
 
+            /* Cities List Page Styles - Related to cities_by_state.html */
+            /* TODO: Extract these styles to a separate CSS file in the future to improve maintainability */
+            /* These styles are temporarily placed here to fix UI consistency issues */
+            .city-badge-inactive {
+                transition: all 0.3s ease;
+                font-weight: 500;
+                padding: 0.5rem 0.75rem;
+                margin-bottom: 0.5rem;
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+                border: 1px solid var(--gray-200) !important;
+                background-color: var(--gray-100) !important;
+                color: var(--gray-800) !important;
+            }
+            .city-badge-inactive:hover {
+                background-color: var(--gray-200) !important;
+                transform: scale(1.02);
+                border-color: var(--gray-300) !important;
+            }
+
             {% block style %}{% endblock %}
         </style>
     </head>
