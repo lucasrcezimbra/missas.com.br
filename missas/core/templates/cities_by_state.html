@@ -25,9 +25,7 @@
         {% if group.grouper %}
             <div class="row mb-4">
                 <div class="col-12">
-                    <h3 class="mb-3 section-title">
-                        Cidades com paróquias cadastradas
-                    </h3>
+                    <h3 class="mb-3 section-title">Cidades com paróquias cadastradas</h3>
                     <div class="row">
                         {% for city in group.list %}
                             <div class="col-12 col-md-6 col-lg-3 mb-3">
@@ -54,9 +52,7 @@
         {% if not group.grouper and group.list %}
             <div class="row mb-4">
                 <div class="col-12">
-                    <h3 class="mb-3 section-title">
-                        Outras cidades do {{ state.name }}
-                    </h3>
+                    <h3 class="mb-3 section-title">Outras cidades do {{ state.name }}</h3>
                     <div class="alert alert-warning border-0 mb-3">
                         <p class="mb-2">
                             <i class="fa-solid fa-info-circle me-2"></i>
