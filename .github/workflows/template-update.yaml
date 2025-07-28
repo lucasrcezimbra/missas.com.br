@@ -30,7 +30,7 @@ jobs:
         if: steps.cruft-check.outputs.template-updated == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ "{{ secrets.GITHUB_TOKEN }}" }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: update template with cruft"
           title: "Update Django template with cruft"
           body: |
