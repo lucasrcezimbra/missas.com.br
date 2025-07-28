@@ -16,10 +16,10 @@ jobs:
         id: cruft-check
         run: |
           if cruft check; then
-            echo "template-updated=false" >> ${{ "{{ env.GITHUB_OUTPUT }}" }}
+            echo "template-updated=false" >> $GITHUB_OUTPUT
             echo "No template updates available"
           else
-            echo "template-updated=true" >> ${{ "{{ env.GITHUB_OUTPUT }}" }}
+            echo "template-updated=true" >> $GITHUB_OUTPUT
             echo "Template updates available"
           fi
       - name: Update template
