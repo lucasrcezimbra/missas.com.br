@@ -1,10 +1,14 @@
 .DEFAULT_GOAL := dev
-.PHONY: build coverage dbdump dbload dev install lint run test
+.PHONY: build check-template coverage dbdump dbload dev install lint run test update-template
 
 build:
 	poetry install --without=dev --without=scrapers
 	poetry run python manage.py collectstatic --no-input
 	poetry run python manage.py migrate
+
+check-template:
+	pip install cruft
+	cruft check
 
 coverage:
 	docker compose up -d
@@ -49,3 +53,7 @@ run:
 test:
 	docker compose up -d
 	poetry run pytest
+
+update-template:
+	pip install cruft
+	cruft update --skip-apply-ask
