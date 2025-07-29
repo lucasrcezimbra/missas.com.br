@@ -1,0 +1,10 @@
+diff a/pyproject.toml b/pyproject.toml	(rejected hunks)
+@@ -11,7 +11,7 @@ django = "5.0.6"
+ django-extensions = "3.2.3"
+ django-htmx = "1.23.0"
+ gunicorn = "23.0.0"
+-psycopg2-binary = "2.9.9"
++psycopg = "3.2.9"
+ python-decouple = "3.8"
+ sentry-sdk = {extras = ["django"], version = "2.7.1"}
+ whitenoise = {extras = ["brotli"], version = "6.7.0"}
