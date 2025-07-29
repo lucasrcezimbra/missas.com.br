@@ -5,7 +5,7 @@ This is a Django web application that manages Catholic parishes and their Mass/c
 
 ## Technology Stack
 - **Backend**: Django 5.2.4 with Python 3.12+
-- **Database**: PostgreSQL with psycopg2-binary
+- **Database**: PostgreSQL with psycopg
 - **Frontend**: Bootstrap 5, HTMX, FontAwesome
 - **Package Management**: Poetry
 - **Testing**: pytest with pytest-django
