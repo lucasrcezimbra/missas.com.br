@@ -5,10 +5,8 @@ name: Cruft Update
     - cron: '0 2 * * *'
   workflow_dispatch:
 permissions:
-  actions: write
   contents: write
   pull-requests: write
-  workflows: write
 jobs:
   cruft-update:
     runs-on: ubuntu-latest
