@@ -6,9 +6,6 @@ build:
 	poetry run python manage.py collectstatic --no-input
 	poetry run python manage.py migrate
 
-check-template:
-	poetry run cruft check
-
 coverage:
 	docker compose up -d
 	poetry run pytest --cov=missas --cov-branch --cov-report=xml
