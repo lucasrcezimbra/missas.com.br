@@ -4,8 +4,8 @@ name: Cruft Update
     # Run daily at 2:00 AM UTC
     - cron: '0 2 * * *'
   workflow_dispatch:
+  pull-request:
 permissions:
-  actions: write
   contents: write
   pull-requests: write
 jobs:
@@ -31,6 +31,8 @@ jobs:
           cruft update --skip-apply-ask
       - name: Create Pull Request
         if: steps.cruft-check.outputs.template-updated == 'true'
+        permissions:
+          actions: write
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
