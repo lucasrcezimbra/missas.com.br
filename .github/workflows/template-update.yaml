@@ -5,7 +5,7 @@ name: Cruft Update
     - cron: '0 2 * * *'
   workflow_dispatch:
 permissions:
-  actins: write
+  actions: write
   contents: write
   pull-requests: write
 jobs:
