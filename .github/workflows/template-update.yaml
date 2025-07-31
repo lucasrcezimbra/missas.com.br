@@ -31,8 +31,6 @@ jobs:
           cruft update --skip-apply-ask
       - name: Create Pull Request
         if: steps.cruft-check.outputs.template-updated == 'true'
-        permissions:
-          actions: write
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
