@@ -9,6 +9,7 @@ permissions:
   actions: write
   contents: write
   pull-requests: write
+  workflows: write
 jobs:
   cruft-update:
     runs-on: ubuntu-latest
