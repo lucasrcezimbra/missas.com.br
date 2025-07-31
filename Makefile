@@ -54,4 +54,4 @@ test:
 	poetry run pytest
 
 update-template:
-	cruft update --skip-apply-ask
+	poetry run cruft update --skip-apply-ask
