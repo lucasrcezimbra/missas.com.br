@@ -6,10 +6,6 @@ build:
 	poetry run python manage.py collectstatic --no-input
 	poetry run python manage.py migrate
 
-check-template:
-	pip install cruft
-	cruft check
-
 coverage:
 	docker compose up -d
 	poetry run pytest --cov=missas --cov-branch --cov-report=xml
@@ -55,5 +51,4 @@ test:
 	poetry run pytest
 
 update-template:
-	pip install cruft
-	cruft update --skip-apply-ask
+	poetry run cruft update --skip-apply-ask
