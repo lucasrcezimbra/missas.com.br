@@ -4,7 +4,6 @@ name: Cruft Update
     # Run daily at 2:00 AM UTC
     - cron: '0 2 * * *'
   workflow_dispatch:
-  pull_request:
 permissions:
   actions: write
   contents: write
