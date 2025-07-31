@@ -7,8 +7,7 @@ build:
 	poetry run python manage.py migrate
 
 check-template:
-	pip install cruft
-	cruft check
+	poetry run cruft check
 
 coverage:
 	docker compose up -d
@@ -55,5 +54,4 @@ test:
 	poetry run pytest
 
 update-template:
-	pip install cruft
-	cruft update --skip-apply-ask
+	poetry run cruft update --skip-apply-ask

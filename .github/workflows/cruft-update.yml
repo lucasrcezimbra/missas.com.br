@@ -1,0 +1,46 @@
+name: Cruft Update
+"on":
+  schedule:
+    # Run daily at 2:00 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  cruft-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - run: pip install cruft
+      - name: Check for template updates
+        id: cruft-check
+        run: |
+          if cruft check; then
+            echo "template-updated=false" >> "$GITHUB_OUTPUT"
+            echo "No template updates available"
+          else
+            echo "template-updated=true" >> "$GITHUB_OUTPUT"
+            echo "Template updates available"
+          fi
+      - name: Update template
+        if: steps.cruft-check.outputs.template-updated == 'true'
+        run: |
+          cruft update --skip-apply-ask
+      - name: Create Pull Request
+        if: steps.cruft-check.outputs.template-updated == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update template with cruft"
+          title: "Update Django template with cruft"
+          body: |
+            This PR updates the project with the latest changes from the Django template.
+
+            Changes were automatically applied using `cruft update`.
+
+            Please review the changes carefully before merging.
+          branch: cruft-update
+          delete-branch: true
+          base: master
