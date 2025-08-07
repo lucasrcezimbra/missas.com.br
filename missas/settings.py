@@ -84,7 +84,7 @@ _db_config = config("DATABASE_URL", cast=dburl)
 _db_config["OPTIONS"] = {"pool": True}
 
 DATABASES = {
-    "default": _db_config,
+    "default": {**config("DATABASE_URL", cast=dburl), "OPTIONS": {"pool": True}}
 }
 
 
