@@ -13,7 +13,7 @@ django-htmx = "1.23.2"
 django-model-utils = "5.0.0"
 fontawesomefree = "6.6.0"
 gunicorn = "23.0.0"
-psycopg = "3.2.9"
+psycopg = {extras = ["pool"], version = "3.2.9"}
 python-decouple = "3.8"
 sentry-sdk = {extras = ["django"], version = "2.34.1"}
 whitenoise = {extras = ["brotli"], version = "6.9.0"}
