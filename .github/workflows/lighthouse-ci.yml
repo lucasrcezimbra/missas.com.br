@@ -14,8 +14,7 @@ jobs:
     # Only run if the triggering workflow succeeded (for workflow_run)
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Wait for deployment and verify site is up
         run: |
           echo "Waiting for deployment to be fully ready..."
