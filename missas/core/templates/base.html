@@ -64,23 +64,23 @@
                 border-color: #0d6efd;
             }
         </style>
-        <!-- Preload critical CSS resources -->
-        <link rel="preload"
+        <!-- Async CSS loading with improved technique -->
+        <link rel="stylesheet"
               href="{% static 'bootstrap.min.css' %}"
-              as="style"
-              onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload"
+              media="print"
+              onload="this.media='all'; this.onload=null;">
+        <link rel="stylesheet"
               href="{% static 'fontawesomefree/css/fontawesome.min.css' %}"
-              as="style"
-              onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload"
+              media="print"
+              onload="this.media='all'; this.onload=null;">
+        <link rel="stylesheet"
               href="{% static 'fontawesomefree/css/solid.min.css' %}"
-              as="style"
-              onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload"
+              media="print"
+              onload="this.media='all'; this.onload=null;">
+        <link rel="stylesheet"
               href="{% static 'fontawesomefree/css/brands.min.css' %}"
-              as="style"
-              onload="this.onload=null;this.rel='stylesheet'">
+              media="print"
+              onload="this.media='all'; this.onload=null;">
         <!-- Fallback for browsers without JavaScript -->
         <noscript>
             <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
