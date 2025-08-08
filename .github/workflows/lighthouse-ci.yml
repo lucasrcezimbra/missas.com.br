@@ -10,31 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Wait for deployment and verify site is up
-        run: |
-          echo "Waiting for deployment to be fully ready..."
-          echo "Checking if site is accessible..."
-
-          # Wait up to 5 minutes for the site to be available
-          max_attempts=30
-          attempt=1
-
-          while [ $attempt -le $max_attempts ]; do
-            echo "Attempt $attempt/$max_attempts"
-            if curl -f -s https://missas.com.br/ > /dev/null; then
-              echo "Site is accessible!"
-              # Wait additional 30 seconds for full deployment stabilization
-              sleep 30
-              break
-            fi
-            echo "Site not accessible yet, waiting 10 seconds..."
-            sleep 10
-            attempt=$((attempt + 1))
-          done
-
-          if [ $attempt -gt $max_attempts ]; then
-            echo "Site is not accessible after 5 minutes, but proceeding with Lighthouse CI"
-          fi
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v12
         with:
