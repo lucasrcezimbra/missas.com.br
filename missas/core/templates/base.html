@@ -19,14 +19,79 @@
         <meta name="author" content="Lucas Rangel Cezimbra">
         {% load django_htmx static %}
         {% htmx_script %}
-        <!-- Load CSS asynchronously to prevent render blocking -->
-        <link rel="preload"
+        <!-- Critical CSS inlined to prevent FOUC -->
+        <style>
+            /* Critical CSS for immediate rendering */
+            body {
+                margin: 0;
+                font-family: system-ui, -apple-system, sans-serif;
+                line-height: 1.6;
+                background-color: #E1F5FE;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 1rem;
+                background-color: white;
+                border-radius: 20px;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+            h1 {
+                color: #1E88E5;
+                margin: 0;
+                font-size: 2.5rem;
+                font-weight: 700;
+            }
+            .btn {
+                display: inline-block;
+                padding: 0.375rem 0.75rem;
+                margin-bottom: 0;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                cursor: pointer;
+                border: 1px solid transparent;
+                border-radius: 0.375rem;
+                text-decoration: none;
+            }
+            .btn-primary {
+                color: #fff;
+                background-color: #0d6efd;
+                border-color: #0d6efd;
+            }
+        </style>
+        <!-- Load CSS asynchronously using media query technique -->
+        <link rel="stylesheet"
               href="{% static 'bootstrap.min.css' %}"
-              as="style"
-              onload="this.onload=null;this.rel='stylesheet'">
+              media="print"
+              onload="this.media='all'; this.onload=null;">
+        <link rel="stylesheet"
+              href="{% static 'fontawesomefree/css/fontawesome.min.css' %}"
+              media="print"
+              onload="this.media='all'; this.onload=null;">
+        <link rel="stylesheet"
+              href="{% static 'fontawesomefree/css/solid.min.css' %}"
+              media="print"
+              onload="this.media='all'; this.onload=null;">
+        <link rel="stylesheet"
+              href="{% static 'fontawesomefree/css/brands.min.css' %}"
+              media="print"
+              onload="this.media='all'; this.onload=null;">
+        <!-- Fallback for browsers without JavaScript -->
         <noscript>
             <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+            <link rel="stylesheet"
+                  href="{% static 'fontawesomefree/css/fontawesome.min.css' %}">
+            <link rel="stylesheet"
+                  href="{% static 'fontawesomefree/css/solid.min.css' %}">
+            <link rel="stylesheet"
+                  href="{% static 'fontawesomefree/css/brands.min.css' %}">
         </noscript>
+        <!-- Favicon and manifest -->
         <link rel="apple-touch-icon"
               sizes="180x180"
               href="{% static 'apple-touch-icon.png' %}">
@@ -39,103 +104,7 @@
               sizes="16x16"
               href="{% static 'favicon-16x16.png' %}">
         <link rel="manifest" href="{% static 'site.webmanifest' %}">
-        <!-- Load FontAwesome CSS asynchronously to prevent render blocking -->
-        <link rel="preload"
-              href="{% static 'fontawesomefree/css/fontawesome.min.css' %}"
-              as="style"
-              onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload"
-              href="{% static 'fontawesomefree/css/solid.min.css' %}"
-              as="style"
-              onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload"
-              href="{% static 'fontawesomefree/css/brands.min.css' %}"
-              as="style"
-              onload="this.onload=null;this.rel='stylesheet'">
-        <noscript>
-            <link rel="stylesheet"
-                  href="{% static 'fontawesomefree/css/fontawesome.min.css' %}">
-            <link rel="stylesheet"
-                  href="{% static 'fontawesomefree/css/solid.min.css' %}">
-            <link rel="stylesheet"
-                  href="{% static 'fontawesomefree/css/brands.min.css' %}">
-        </noscript>
         <meta name="htmx-config" content='{"getCacheBusterParam":true}'>
-        <!-- Polyfill for browsers that don't support onload on link elements -->
-        <script>
-            (function() {
-                'use strict';
-                // Function to load CSS asynchronously
-                function loadCSS(href, before, media) {
-                    var doc = window.document;
-                    var ss = doc.createElement("link");
-                    var ref;
-                    if (before) {
-                        ref = before;
-                    } else {
-                        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
-                        ref = refs[refs.length - 1];
-                    }
-                    var sheets = doc.styleSheets;
-                    ss.rel = "stylesheet";
-                    ss.href = href;
-                    ss.media = "only x";
-                    function ready(cb) {
-                        if (doc.body) {
-                            return cb();
-                        }
-                        setTimeout(function() {
-                            ready(cb);
-                        });
-                    }
-                    ready(function() {
-                        ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
-                    });
-                    function onloadcssdefined(cb) {
-                        var resolvedHref = ss.href;
-                        var i = sheets.length;
-                        while (i--) {
-                            if (sheets[i].href === resolvedHref) {
-                                return cb();
-                            }
-                        }
-                        setTimeout(function() {
-                            onloadcssdefined(cb);
-                        });
-                    }
-                    function loadCB() {
-                        if (ss.addEventListener) {
-                            ss.removeEventListener("load", loadCB);
-                        }
-                        ss.media = media || "all";
-                    }
-                    if (ss.addEventListener) {
-                        ss.addEventListener("load", loadCB);
-                    }
-                    ss.onloadcssdefined = onloadcssdefined;
-                    onloadcssdefined(loadCB);
-                    return ss;
-                }
-
-                // Polyfill for preload CSS fallback
-                var preloadSupported = (function() {
-                    var link = document.createElement('link');
-                    var relList = link.relList;
-                    if (!relList || !relList.supports) {
-                        return false;
-                    }
-                    return relList.supports('preload');
-                })();
-
-                if (!preloadSupported) {
-                    var links = document.querySelectorAll('link[rel="preload"][as="style"]');
-                    for (var i = 0; i < links.length; i++) {
-                        var link = links[i];
-                        loadCSS(link.href);
-                    }
-                }
-            })();
-        </script>
         <style>
             :root {
                 --primary-blue: #1E88E5;
