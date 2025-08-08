@@ -1,4 +1,5 @@
 import logging
+import sys
 from pathlib import Path
 
 import sentry_sdk
@@ -123,6 +124,22 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = "/static/"
+
+# Use different storage backends for testing vs production
+# In testing, we use StaticFilesStorage to avoid needing a manifest
+# In production, we use CompressedManifestStaticFilesStorage for hashed file names
+if "test" in sys.argv or "pytest" in sys.modules:
+    STORAGES = {
+        "staticfiles": {
+            "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        },
+    }
+else:
+    STORAGES = {
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
 
 
 # Cache
