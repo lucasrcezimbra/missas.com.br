@@ -125,7 +125,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = "/static/"
 STORAGES = {
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "django.contrib.staticfiles.storage. ManifestStaticFilesStorage",
     },
 }
 
