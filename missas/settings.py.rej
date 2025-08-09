@@ -1,7 +1,7 @@
 diff a/missas/settings.py b/missas/settings.py	(rejected hunks)
 @@ -64,8 +64,12 @@ WSGI_APPLICATION = "missas.wsgi.application"
- 
- 
+
+
  # Database
 +default_db = config("DATABASE_URL", cast=dburl)
 +
@@ -11,5 +11,5 @@ diff a/missas/settings.py b/missas/settings.py	(rejected hunks)
 -    "default": config("DATABASE_URL", cast=dburl),
 +    "default": default_db,
  }
- 
- 
+
+
