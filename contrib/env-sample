@@ -5,3 +5,4 @@ ENV=local
 OPENAI_API_KEY=
 SECRET_KEY=THIS_IS_NOT_A_GOOD_SECRET
 SENTRY_DSN=
+STORAGE_STATIC_BACKEND=django.contrib.staticfiles.storage.StaticFilesStorage
