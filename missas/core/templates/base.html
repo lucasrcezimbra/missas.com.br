@@ -19,7 +19,67 @@
         <meta name="author" content="Lucas Rangel Cezimbra">
         {% load django_htmx static %}
         {% htmx_script %}
-        <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" async>
+        <!-- Critical CSS inlined to prevent FOUC -->
+        <style>
+            /* Critical CSS for immediate rendering */
+            body {
+                margin: 0;
+                font-family: system-ui, -apple-system, sans-serif;
+                line-height: 1.6;
+                background-color: #E1F5FE;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 1rem;
+                background-color: white;
+                border-radius: 20px;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+            h1 {
+                color: #1E88E5;
+                margin: 0;
+                font-size: 2.5rem;
+                font-weight: 700;
+            }
+            .btn {
+                display: inline-block;
+                padding: 0.375rem 0.75rem;
+                margin-bottom: 0;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                cursor: pointer;
+                border: 1px solid transparent;
+                border-radius: 0.375rem;
+                text-decoration: none;
+            }
+            .btn-primary {
+                color: #fff;
+                background-color: #0d6efd;
+                border-color: #0d6efd;
+            }
+        </style>
+        <link rel="stylesheet"
+              href="{% static 'bootstrap.min.css' %}"
+              media="print"
+              onload="this.media='all'; this.onload=null;">
+        <link rel="stylesheet"
+              href="{% static 'fontawesomefree/css/fontawesome.min.css' %}"
+              media="print"
+              onload="this.media='all'; this.onload=null;">
+        <link rel="stylesheet"
+              href="{% static 'fontawesomefree/css/solid.min.css' %}"
+              media="print"
+              onload="this.media='all'; this.onload=null;">
+        <link rel="stylesheet"
+              href="{% static 'fontawesomefree/css/brands.min.css' %}"
+              media="print"
+              onload="this.media='all'; this.onload=null;">
         <link rel="apple-touch-icon"
               sizes="180x180"
               href="{% static 'apple-touch-icon.png' %}">
@@ -32,18 +92,6 @@
               sizes="16x16"
               href="{% static 'favicon-16x16.png' %}">
         <link rel="manifest" href="{% static 'site.webmanifest' %}">
-        <link href="{% static 'fontawesomefree/css/fontawesome.css' %}"
-              rel="stylesheet"
-              type="text/css"
-              async>
-        <link href="{% static 'fontawesomefree/css/solid.css' %}"
-              rel="stylesheet"
-              type="text/css"
-              async>
-        <link href="{% static 'fontawesomefree/css/brands.css' %}"
-              rel="stylesheet"
-              type="text/css"
-              async>
         <meta name="htmx-config" content='{"getCacheBusterParam":true}'>
         <style>
             :root {

@@ -61,6 +61,7 @@ State (Brazilian states like RN, SP)
 - Use FontAwesome icons consistently
 - **Avoid inline CSS** - use CSS classes and external stylesheets instead
 - When styles must be temporarily placed in templates, extract them to base.html with TODO comments
+- **JavaScript is required** - this project does not support browsers without JavaScript enabled
 
 ### Code Comments
 - Avoid useless comments that only restate what the code does
