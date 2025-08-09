@@ -79,7 +79,225 @@
                 transition: none; /* Prevent transition flashes during icon replacement */
             }
 
-            /* FontAwesome loads synchronously now - no fallbacks needed */
+            /* Specific icon reservations for common icons to prevent layout shifts */
+            /* Using consistent text-based fallbacks instead of emoji to reduce layout shifts */
+            .fa-plus::before, .fa-solid.fa-plus::before {
+                content: "+";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+            }
+            .fa-church::before, .fa-solid.fa-church::before {
+                content: "⌂";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-map::before, .fa-solid.fa-map::before {
+                content: "▦";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+            }
+            .fa-plus-circle::before, .fa-solid.fa-plus-circle::before {
+                content: "⊕";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+            }
+            .fa-chart-bar::before, .fa-solid.fa-chart-bar::before {
+                content: "▦";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-map-marker-alt::before, .fa-solid.fa-map-marker-alt::before {
+                content: "▲";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-clock::before, .fa-solid.fa-clock::before {
+                content: "○";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-check-circle::before, .fa-solid.fa-check-circle::before {
+                content: "✓";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+            }
+            .fa-circle-check::before, .fa-solid.fa-circle-check::before {
+                content: "✓";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+            }
+            .fa-home::before, .fa-solid.fa-home::before {
+                content: "⌂";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-paper-plane::before, .fa-solid.fa-paper-plane::before {
+                content: "✈";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-location-dot::before, .fa-solid.fa-location-dot::before {
+                content: "●";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+            }
+            .fa-calendar-week::before, .fa-solid.fa-calendar-week::before {
+                content: "▦";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-exclamation-circle::before, .fa-solid.fa-exclamation-circle::before {
+                content: "!";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+            }
+            .fa-phone::before, .fa-solid.fa-phone::before {
+                content: "☎";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-envelope::before, .fa-solid.fa-envelope::before {
+                content: "@";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+            }
+            .fa-flag::before, .fa-solid.fa-flag::before {
+                content: "⚑";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-code::before, .fa-solid.fa-code::before {
+                content: "<>";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-size: 0.9em;
+            }
+
+            /* Brand icons with symbol fallbacks */
+            .fa-whatsapp::before, .fa-brands.fa-whatsapp::before {
+                content: "W";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+                color: #25D366;
+            }
+            .fa-github::before, .fa-brands.fa-github::before {
+                content: "⚬";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-facebook::before, .fa-brands.fa-facebook::before {
+                content: "f";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+                color: #1877F2;
+            }
+            .fa-instagram::before, .fa-brands.fa-instagram::before {
+                content: "◉";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                color: #E1306C;
+            }
+
+            /* Additional icons found in templates */
+            .fa-address-book::before, .fa-solid.fa-address-book::before {
+                content: "▦";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-heart::before, .fa-solid.fa-heart::before {
+                content: "♥";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-source::before, .fa-solid.fa-source::before {
+                content: "◉";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-calendar-xmark::before, .fa-solid.fa-calendar-xmark::before {
+                content: "✕";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+            }
+            .fa-calendar-alt::before, .fa-solid.fa-calendar-alt::before {
+                content: "▦";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+            }
+            .fa-info-circle::before, .fa-solid.fa-info-circle::before {
+                content: "i";
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+            }
+
             /* Ensure consistent spacing for icon containers */
             .contact-item i, .stats-icon, .contact-icon, .project-icon {
                 min-width: 1.25em;
@@ -101,12 +319,10 @@
               as="font"
               type="font/woff2"
               crossorigin>
-        <link rel="stylesheet"
-              href="{% static 'fontawesomefree/css/fontawesome.min.css' %}">
-        <link rel="stylesheet"
-              href="{% static 'fontawesomefree/css/solid.min.css' %}">
-        <link rel="stylesheet"
-              href="{% static 'fontawesomefree/css/brands.min.css' %}">
+        <!-- Load FontAwesome CSS synchronously to prevent layout shifts -->
+        <link rel="stylesheet" href="{% static 'fontawesomefree/css/fontawesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'fontawesomefree/css/solid.min.css' %}">
+        <link rel="stylesheet" href="{% static 'fontawesomefree/css/brands.min.css' %}">
         <link rel="apple-touch-icon"
               sizes="180x180"
               href="{% static 'apple-touch-icon.png' %}">
