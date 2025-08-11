@@ -19,7 +19,7 @@ sentry-sdk = {extras = ["django"], version = "2.34.1"}
 whitenoise = {extras = ["brotli"], version = "6.9.0"}
 
 [tool.poetry.group.dev.dependencies]
-freezegun = "1.5.4"
+freezegun = "1.5.5"
 model-bakery = "1.20.5"
 pre-commit = "4.3.0"
 pytest = "8.4.1"
