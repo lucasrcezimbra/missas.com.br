@@ -63,67 +63,6 @@
                 background-color: #0d6efd;
                 border-color: #0d6efd;
             }
-
-            /* FontAwesome font-display override will be handled by additional CSS below */
-
-            /* Critical FontAwesome icon base styles to prevent layout shifts */
-            .fa, .fas, .far, .fab, .fal, .fad, .fa-solid, .fa-regular, .fa-brands {
-                display: inline-block;
-                width: 1.25em;
-                text-align: center;
-                font-style: normal;
-                font-variant: normal;
-                text-rendering: auto;
-                line-height: 1;
-                font-weight: 900;
-                min-height: 1em;
-                vertical-align: -0.125em;
-                transition: none; /* Prevent transition flashes during icon replacement */
-                /* Fallback content for when font hasn't loaded yet */
-                content: attr(data-icon) " ";
-            }
-
-            /* Specific fallbacks for different icon contexts to ensure consistent spacing */
-            .fa::before, .fas::before, .far::before, .fab::before, .fal::before, .fad::before,
-            .fa-solid::before, .fa-regular::before, .fa-brands::before {
-                display: inline-block;
-                width: 1.25em;
-                text-align: center;
-                min-width: 1.25em;
-            }
-
-            /* Ensure consistent spacing for icon containers */
-            .contact-item i, .stats-icon, .contact-icon, .project-icon {
-                min-width: 1.25em;
-                text-align: center;
-                display: inline-block;
-            }
-
-            /* Reserve space for larger icons to prevent layout shifts */
-            .stats-icon {
-                width: 2.5rem;
-                height: 2.5rem;
-                font-size: 2.5rem;
-                display: inline-block;
-                text-align: center;
-                line-height: 2.5rem;
-            }
-            .contact-icon {
-                width: 4rem;
-                height: 4rem;
-                font-size: 4rem;
-                display: inline-block;
-                text-align: center;
-                line-height: 4rem;
-            }
-            .project-icon {
-                width: 4rem;
-                height: 4rem;
-                font-size: 4rem;
-                display: inline-block;
-                text-align: center;
-                line-height: 4rem;
-            }
         </style>
         <link rel="stylesheet"
               href="{% static 'bootstrap.min.css' %}"
