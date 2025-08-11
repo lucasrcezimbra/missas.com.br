@@ -85,23 +85,6 @@
               href="{% static 'fontawesomefree/css/solid.min.css' %}">
         <link rel="stylesheet"
               href="{% static 'fontawesomefree/css/brands.min.css' %}">
-        <!-- Override FontAwesome font-display to prevent layout shifts -->
-        <style>
-            @font-face {
-                font-family: 'Font Awesome 6 Free';
-                font-style: normal;
-                font-weight: 900;
-                font-display: swap !important; /* Override default 'block' to 'swap' */
-                src: url("{% static 'fontawesomefree/webfonts/fa-solid-900.woff2' %}") format("woff2");
-            }
-            @font-face {
-                font-family: 'Font Awesome 6 Brands';
-                font-style: normal;
-                font-weight: 400;
-                font-display: swap !important; /* Override default 'block' to 'swap' */
-                src: url("{% static 'fontawesomefree/webfonts/fa-brands-400.woff2' %}") format("woff2");
-            }
-        </style>
         <link rel="apple-touch-icon"
               sizes="180x180"
               href="{% static 'apple-touch-icon.png' %}">
