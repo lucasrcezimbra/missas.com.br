@@ -10,7 +10,7 @@ from missas.core.models import City, Parish, Schedule, Source, State
 
 
 @pytest.mark.django_db
-def test_index_status_code_and_template(client):
+def test_status_code_and_template(client):
     response = client.get(resolve_url("index"))
 
     assert response.status_code == HTTPStatus.OK
@@ -18,7 +18,7 @@ def test_index_status_code_and_template(client):
 
 
 @pytest.mark.django_db
-def test_index_page_title_and_content(client):
+def test_page_title_and_content(client):
     response = client.get(resolve_url("index"))
 
     assertContains(
@@ -34,7 +34,7 @@ def test_index_page_title_and_content(client):
 
 
 @pytest.mark.django_db
-def test_index_statistics_with_no_data(client):
+def test_statistics_with_no_data(client):
     response = client.get(resolve_url("index"))
 
     stats = response.context["stats"]
@@ -47,7 +47,7 @@ def test_index_statistics_with_no_data(client):
 
 
 @pytest.mark.django_db
-def test_index_statistics_with_data(client):
+def test_statistics_with_data(client):
     # Create test data
     state1 = baker.make(State, name="Rio Grande do Norte", slug="rn")
     state2 = baker.make(State, name="São Paulo", slug="sp")
@@ -118,7 +118,7 @@ def test_index_statistics_with_data(client):
 
 
 @pytest.mark.django_db
-def test_index_states_with_cities_display(client):
+def test_states_with_cities_display(client):
     # Create test data
     state1 = baker.make(State, name="Rio Grande do Norte", slug="rn")
     state2 = baker.make(State, name="São Paulo", slug="sp")
@@ -157,7 +157,7 @@ def test_index_states_with_cities_display(client):
 
 
 @pytest.mark.django_db
-def test_index_states_with_many_cities_show_all(client):
+def test_states_with_many_cities_show_all(client):
     """Test that states show all their cities (no truncation)"""
     state = baker.make(State)
     cities = baker.make(City, state=state, _quantity=8)
@@ -171,7 +171,7 @@ def test_index_states_with_many_cities_show_all(client):
 
 
 @pytest.mark.django_db
-def test_index_query_count_optimization(client, django_assert_num_queries):
+def test_query_count_optimization(client, django_assert_num_queries):
     """Test that the view doesn't perform excessive database queries"""
     state1 = baker.make(State)
     state2 = baker.make(State)
@@ -192,7 +192,7 @@ def test_index_query_count_optimization(client, django_assert_num_queries):
 
 
 @pytest.mark.django_db
-def test_index_only_shows_states_with_schedules(client):
+def test_only_shows_states_with_schedules(client):
     """Test that only states with cities that have parishes with schedules are shown"""
     # Create state with schedules
     state_with_schedules = baker.make(State, name="Estado com Horários")
