@@ -1209,14 +1209,14 @@ files = [
 
 [[package]]
 name = "llm"
-version = "0.26"
+version = "0.27.1"
 description = "CLI utility and Python library for interacting with Large Language Models from organizations like OpenAI, Anthropic and Gemini plus local models installed on your own machine."
 optional = false
 python-versions = ">=3.9"
 groups = ["scrapers"]
 files = [
-    {file = "llm-0.26-py3-none-any.whl", hash = "sha256:93dc331facbfb909f946df8812fb1d627ec9ce764aab2ebd29f9011ed647339c"},
-    {file = "llm-0.26.tar.gz", hash = "sha256:c2e9ddbc582da10c61112c0f983383fa0dc7bee3ca7d6f2ade1a2d003771eb1b"},
+    {file = "llm-0.27.1-py3-none-any.whl", hash = "sha256:a884a575062fbea8c2b129708a80e146fa9682bd1c444d8d7b028196107de727"},
+    {file = "llm-0.27.1.tar.gz", hash = "sha256:02b0b393e31cf0e0ee1f2a6006c451c74ec18c7ec3973218de56e76fd72baa80"},
 ]
 
 [package.dependencies]
@@ -2776,4 +2776,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "7c9ae22ccf3b0d75abd7a6459e51083c67b039e992cc04ae562bc2244cbdd7c0"
+content-hash = "e77a5a5e0728e881e8e03eb3d692f1743f636df4249bdff75aa8b36bb9908d13"
