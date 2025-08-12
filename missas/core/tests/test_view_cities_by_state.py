@@ -29,7 +29,6 @@ def test_404_if_state_doesnt_exist(client):
     assert response.status_code == HTTPStatus.NOT_FOUND
 
 
-@pytest.mark.skip("TODO: Cache doesn't workin with CSRF token")
 @pytest.mark.django_db
 def test_cache(client):
     state = baker.make(State)

@@ -40,7 +40,6 @@ def test_view_by_city(client):
     assert response.status_code == HTTPStatus.OK
 
 
-@pytest.mark.skip("TODO: Cache doesn't workin with CSRF token")
 @pytest.mark.django_db
 def test_cache(client):
     city = baker.make(City)

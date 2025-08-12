@@ -4,6 +4,7 @@ from django.db import models
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.csrf import csrf_exempt
 
 from missas.core.models import City, ContactRequest, Parish, Schedule, State
 
@@ -127,6 +128,7 @@ def parish_detail(request, state, city, parish):
     )
 
 
+@csrf_exempt
 def create_contact(request):
     # TODO: tests
     # TODO: handle backend errors in the ui; show a message
