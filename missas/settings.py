@@ -80,8 +80,12 @@ WSGI_APPLICATION = "missas.wsgi.application"
 
 
 # Database
+default_db = config("DATABASE_URL", cast=dburl)
+
+default_db["OPTIONS"] = {**default_db.get("OPTIONS", {}), "pool": True}
+
 DATABASES = {
-    "default": {**config("DATABASE_URL", cast=dburl), "OPTIONS": {"pool": True}}
+    "default": default_db,
 }
 
 
