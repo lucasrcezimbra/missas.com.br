@@ -1,0 +1,23 @@
+name: Lighthouse CI
+on:
+  # Run on pull requests to test changes
+  pull_request:
+    branches: [master]
+  # Allow manual trigger
+  workflow_dispatch:
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://missas.com.br/
+            https://missas.com.br/rio-grande-do-norte
+            https://missas.com.br/rio-grande-do-norte/natal
+            https://missas.com.br/rio-grande-do-norte/natal/paroquia-do-bom-jesus-das-dores/
+          configPath: './.lighthouserc.json'
+          uploadArtifacts: true
+          temporaryPublicStorage: true
