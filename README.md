@@ -1,8 +1,22 @@
 # Missas
 
+<!--toc:start-->
+- [Contributing](#contributing)
+  - [Installation](#installation)
+  - [Test](#test)
+  - [Run](#run)
+  - [Coverage](#coverage)
+  - [Scrapers](#scrapers)
+  - [WhatsApp Automation](#whatsapp-automation)
+<!--toc:end-->
+
+Website brings together Mass and confession times for Catholic parishes
+throughout Brazil (maybe others in the future). 
+
 ![](./contrib/screenshot.png)
 
-## Installation
+## Contributing
+### Installation
 ```bash
 git clone git@github.com:lucasrcezimbra/missas.com.br.git
 cd missas.com.br
@@ -24,12 +38,12 @@ make dev
 make coverage
 ```
 
-#### Scrapers
+### Scrapers
 ```shell
 poetry run scrapy runspider contrib/scraper_natal.py -o natal.jsonl
 ```
 
-#### WhatsApp Automation
+### WhatsApp Automation
 The WhatsApp automation is still a very manual process. There are two scripts:
 - `contrib/whats-extract.js`: extracts the messages from WhatsApp, format them,
   and output to the stdout
