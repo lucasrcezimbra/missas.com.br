@@ -11,9 +11,11 @@
 <!--toc:end-->
 
 Website brings together Mass and confession times for Catholic parishes
-throughout Brazil (maybe others in the future). 
+throughout Brazil (maybe others in the future).
 
-![](./contrib/screenshot.png)
+![](./contrib/screenshot-homepage.png)
+
+![](./contrib/screenshot-schedules.png)
 
 ## Contributing
 ### Installation
