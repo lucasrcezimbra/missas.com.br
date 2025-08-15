@@ -8,6 +8,7 @@
   - [Coverage](#coverage)
   - [Scrapers](#scrapers)
   - [WhatsApp Automation](#whatsapp-automation)
+- [Sponsorship](#sponsorship)
 <!--toc:end-->
 
 Website brings together Mass and confession times for Catholic parishes
@@ -79,3 +80,10 @@ Running:
     Horários de missas na Igreja Matriz: 07h 19h (domigos)
     17h30 (terça, quinta e sexta)'
     ```
+
+
+## Sponsorship
+
+Sentry supports this project with their [Open-Source Sponsorship Plan](https://sentry.io/for/open-source/)
+
+![](./contrib/sentry.png)
