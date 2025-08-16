@@ -1,0 +1,8 @@
+diff a/contrib/env-sample b/contrib/env-sample	(rejected hunks)
+@@ -3,5 +3,5 @@ DATABASE_URL=postgres://missas:p4ssw0rd@localhost:5432/missas
+ DEBUG=True
+ ENV=local
+ SECRET_KEY=THIS_IS_NOT_A_GOOD_SECRET
+-STORAGE_STATIC_BACKEND=django.contrib.staticfiles.storage.StaticFilesStorage
+ SENTRY_DSN=
++STORAGE_STATIC_BACKEND=django.contrib.staticfiles.storage.StaticFilesStorage
