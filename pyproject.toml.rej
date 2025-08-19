@@ -1,0 +1,9 @@
+diff a/pyproject.toml b/pyproject.toml	(rejected hunks)
+@@ -10,6 +10,7 @@ dj-database-url = "2.2.0"
+ django = "5.0.6"
+ django-extensions = "3.2.3"
+ django-htmx = "1.23.0"
++django-migration-linter = "5.1.0"
+ gunicorn = "23.0.0"
+ psycopg = {extras = ["pool"], version = "3.2.9"}
+ python-decouple = "3.8"
