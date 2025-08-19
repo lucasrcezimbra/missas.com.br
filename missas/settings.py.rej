@@ -6,4 +6,4 @@ diff a/missas/settings.py b/missas/settings.py	(rejected hunks)
 +    "django_migration_linter",
      "django_htmx",
  ]
- 
+
