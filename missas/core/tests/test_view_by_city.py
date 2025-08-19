@@ -397,11 +397,7 @@ def test_number_of_queries(client, django_assert_max_num_queries):
     city = baker.make(City)
     baker.make(Schedule, parish__city=city, _quantity=100)
 
-    # With database cache backend, expect slightly more queries than with in-memory cache
-    # The view uses prefetch_related which should keep N+1 problems under control
-    with django_assert_max_num_queries(
-        25
-    ):  # Increased to account for database cache and realistic query patterns
+    with django_assert_max_num_queries(8):
         response = client.get(
             resolve_url("by_city", state=city.state.slug, city=city.slug)
         )
