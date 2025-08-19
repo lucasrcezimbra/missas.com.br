@@ -143,7 +143,7 @@ STORAGES = {
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.db.DatabaseCache",
-        "LOCATION": "missas_cache_table",
+        "LOCATION": "missas_cache",
     }
 }
 CACHE_MIDDLEWARE_SECONDS = 60 * 60 * 24
