@@ -140,8 +140,6 @@ STORAGES = {
 }
 
 # Cache
-# Using database cache for persistence across deployments and memory efficiency
-# Cache table created with: python manage.py createcachetable
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.db.DatabaseCache",
