@@ -69,6 +69,11 @@ State (Brazilian states like RN, SP)
 - Remove comments like "# Calculate statistics" or "# Limit to first 10 cities" where the code is self-explanatory
 - Use TODO comments for future improvements with specific descriptions
 
+### Constants and Choices
+- **Always use model constants instead of magic numbers** for choices fields
+- Use `LocationSchedule.Day.SUNDAY` instead of `day=0  # Sunday`
+- Use `LocationSchedule.Type.MASS` instead of `type="mass"`
+
 ## Development Workflow
 
 ### Commands
@@ -91,10 +96,15 @@ State (Brazilian states like RN, SP)
 - When working on PR suggestions/comments, use resolved threads as context to understand the history and avoid repeating changes that have already been addressed
 
 ### Testing
-- Write tests in `tests/` directories or `test_*.py` files
+- **Use pytest with pytest-django** - This project uses pytest, not Django's default unittest
+- Run tests with `poetry run pytest` or `make test`
+- Write tests in `tests/` directories.
+- Name the test files `test_*.py`.
 - Use model-bakery for test data generation
 - Mock external services and APIs
 - Test both happy path and edge cases
+- Follow TDD (Test-Driven Development) approach when implementing new features
+- Do not run makemigrations when doing TDD. Use `poetry run pytest --no-migrations` to run the tests. Run makemigrations in the end.
 
 ### Database Management
 - Use Django migrations for schema changes
