@@ -14,7 +14,7 @@ django-migration-linter = "5.2.0"
 django-model-utils = "5.0.0"
 fontawesomefree = "6.6.0"
 gunicorn = "23.0.0"
-psycopg = {extras = ["pool"], version = "3.2.9"}
+psycopg = {extras = ["pool"], version = "3.2.10"}
 python-decouple = "3.8"
 sentry-sdk = {extras = ["django"], version = "2.37.0"}
 whitenoise = {extras = ["brotli"], version = "6.9.0"}
