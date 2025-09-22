@@ -5,6 +5,7 @@ from missas.core import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("search/", views.search_parishes, name="search_parishes"),
     path("", views.index, name="index"),
     path("contatos/", views.create_contact, name="create_contact"),
     path(

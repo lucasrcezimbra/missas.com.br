@@ -54,6 +54,25 @@
             </div>
         </div>
     </div>
+    <!-- Barra de pequisa -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="alert alert-info border-0 project-explanation">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-8">
+                        <h4 class="alert-heading mb-2 project-title">
+                            <i class="fa-solid fa-church me-2"></i>
+                            Procurar Paróquias
+                        </h4>
+                        <form action="{% url 'search_parishes' %}" method="get">
+                            <input type="text" name="q" placeholder="Procure por uma paróquia..." />
+                            <button type="submit">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Adicionar Paróquia Form -->
     <div class="row mb-4">
         <div class="col-12">

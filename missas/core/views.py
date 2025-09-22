@@ -1,10 +1,12 @@
 from datetime import time
 
+from django.core.paginator import Paginator
 from django.db import models
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.csrf import csrf_exempt
+from unidecode import unidecode
 
 from missas.core.models import City, ContactRequest, Parish, Schedule, State
 
@@ -159,3 +161,30 @@ def create_contact(request):
         return HttpResponse(template)
 
     return redirect(request.META.get("HTTP_REFERER", "/"))
+
+
+def search_parishes(request):
+    q = request.GET.get("q")
+    if q:
+        # Get the search term and normalize it
+        search_term = unidecode(q).lower()
+
+        # Filter the database using the normalized term
+        parishes_list = Parish.objects.all()
+        parishes = [
+            p for p in parishes_list if search_term in unidecode(p.name).lower()
+        ]
+
+    else:
+        parishes = Parish.objects.none()
+
+    # Add pagination logic
+    paginator = Paginator(parishes, 10)  # Show 10 results per page
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    return render(
+        request,
+        "search_results.html",
+        {"page_obj": page_obj, "q": q},
+    )

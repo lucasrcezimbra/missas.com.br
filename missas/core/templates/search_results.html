@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="section-title mb-5">Resultados da pesquisa para "{{ q }}"</h2>
+    <a href="{% url 'index' %}" class="btn btn-outline-secondary mb-4">
+        <i class="fa-solid fa-arrow-left me-2"></i> Voltar
+    </a>
+    {% if page_obj %}
+        {% for parish in page_obj %}
+            <div class="state-card p-4 mb-3 d-flex align-items-center">
+                <div>
+                    <h3 class="state-title mb-1">
+                        <a href="{% url 'parish_detail' state=parish.city.state.slug city=parish.city.slug parish=parish.slug %}"
+                           class="state-link">{{ parish.name }}</a>
+                    </h3>
+                    <p class="mb-0">{{ parish.city.name }}, {{ parish.city.state.name }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No churches found.</p>
+    {% endif %}
+    <div class="pagination mt-4">
+        {% if page_obj.has_previous %}
+            <a href="?q={{ q }}&page={{ page_obj.previous_page_number }}"
+               class="btn btn-primary me-2">Anterior</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+            <a href="?q={{ q }}&page={{ page_obj.next_page_number }}"
+               class="btn btn-primary me-2">Próxima</a>
+        {% endif %}
+    </div>
+{% endblock content %}
