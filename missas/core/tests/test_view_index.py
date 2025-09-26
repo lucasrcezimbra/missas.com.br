@@ -185,7 +185,7 @@ def test_query_count_optimization(client, django_assert_num_queries):
     baker.make(Schedule, parish=parish1)
     baker.make(Schedule, parish=parish2)
 
-    with django_assert_num_queries(num=8):  # Increased for database cache queries
+    with django_assert_num_queries(num=6):
         response = client.get(resolve_url("index"))
 
     assert response.status_code == HTTPStatus.OK

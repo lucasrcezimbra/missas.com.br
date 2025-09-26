@@ -140,10 +140,19 @@ STORAGES = {
 }
 
 # Cache
-CACHES = {
-    "default": {
-        "BACKEND": "django.core.cache.backends.db.DatabaseCache",
-        "LOCATION": "django_cache",
+import sys
+if "test" in sys.argv or "pytest" in sys.modules:
+    # Use dummy cache during testing to avoid database queries
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.dummy.DummyCache",
+        }
     }
-}
+else:
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+            "LOCATION": "django_cache",
+        }
+    }
 CACHE_MIDDLEWARE_SECONDS = 60 * 60 * 24
