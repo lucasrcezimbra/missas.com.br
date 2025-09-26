@@ -141,6 +141,7 @@ STORAGES = {
 
 # Cache
 import sys
+
 if "test" in sys.argv or "pytest" in sys.modules:
     # Use dummy cache during testing to avoid database queries
     CACHES = {
