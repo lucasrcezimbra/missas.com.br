@@ -1,15 +1,21 @@
 # Migration to create database cache table
 
-from django.core.management.commands.createcachetable import Command
+import sys
+from io import StringIO
+
+from django.core.management import call_command
 from django.db import migrations
 
 
 def create_cache_table(apps, schema_editor):
     """Create cache table using Django's createcachetable command"""
-    command = Command()
-    sql = command.sql_create_cache_table("missas_cache_table")
-    with schema_editor.connection.cursor() as cursor:
-        cursor.execute(sql)
+    # Capture output to prevent it from being printed
+    old_stdout = sys.stdout
+    sys.stdout = StringIO()
+    try:
+        call_command('createcachetable', 'missas_cache_table', verbosity=0)
+    finally:
+        sys.stdout = old_stdout
 
 
 def delete_cache_table(apps, schema_editor):
