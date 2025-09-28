@@ -1,6 +1,21 @@
 # Migration to create database cache table
 
+from django.core.management.commands.createcachetable import Command
 from django.db import migrations
+
+
+def create_cache_table(apps, schema_editor):
+    """Create cache table using Django's createcachetable command"""
+    command = Command()
+    sql = command.sql_create_cache_table("missas_cache_table")
+    with schema_editor.connection.cursor() as cursor:
+        cursor.execute(sql)
+
+
+def delete_cache_table(apps, schema_editor):
+    """Drop cache table"""
+    with schema_editor.connection.cursor() as cursor:
+        cursor.execute("DROP TABLE IF EXISTS missas_cache_table;")
 
 
 class Migration(migrations.Migration):
@@ -10,18 +25,8 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunSQL(
-            """
-            CREATE TABLE missas_cache_table (
-                cache_key VARCHAR(255) NOT NULL PRIMARY KEY,
-                value TEXT NOT NULL,
-                expires TIMESTAMP NOT NULL
-            );
-            """,
-            reverse_sql="DROP TABLE IF EXISTS missas_cache_table;",
-        ),
-        migrations.RunSQL(
-            "CREATE INDEX missas_cache_table_expires ON missas_cache_table (expires);",
-            reverse_sql="DROP INDEX IF EXISTS missas_cache_table_expires;",
+        migrations.RunPython(
+            create_cache_table,
+            reverse_code=delete_cache_table,
         ),
     ]
