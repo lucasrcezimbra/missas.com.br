@@ -64,9 +64,15 @@
                             <i class="fa-solid fa-church me-2"></i>
                             Procurar Paróquias
                         </h4>
-                        <form action="{% url 'search_parishes' %}" method="get">
-                            <input type="text" name="q" placeholder="Procure por uma paróquia..." />
-                            <button type="submit">Buscar</button>
+                        <form action="{% url 'search_parishes' %}" method="get" class="mt-2" role="search">
+                            <label for="q" class="visually-hidden">Pesquisar paróquias</label>
+                            <div class="input-group">
+                                <input type="search" id="q" name="q" class="form-control"
+                                       placeholder="Procure por uma paróquia..." required>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa-solid fa-magnifying-glass me-1"></i> Buscar
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
