@@ -7,7 +7,6 @@ def create_cache_table(apps, schema_editor):
 
 
 def drop_cache_table(apps, schema_editor):
-    db_alias = schema_editor.connection.alias
     with schema_editor.connection.cursor() as cursor:
         cursor.execute('DROP TABLE IF EXISTS "django_cache"')
 
