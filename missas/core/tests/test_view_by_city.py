@@ -397,7 +397,29 @@ def test_number_of_queries(client, django_assert_max_num_queries):
     city = baker.make(City)
     baker.make(Schedule, parish__city=city, _quantity=100)
 
-    with django_assert_max_num_queries(7):
+    with django_assert_max_num_queries(15):
+        # 5 are from the endpoint and 10 are from the caching
+        response = client.get(
+            resolve_url("by_city", state=city.state.slug, city=city.slug)
+        )
+
+    assert response.status_code == HTTPStatus.OK
+
+
+@pytest.mark.django_db
+def test_number_of_queries_without_cache(
+    client, django_assert_max_num_queries, settings
+):
+    settings.CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.dummy.DummyCache",
+        }
+    }
+
+    city = baker.make(City)
+    baker.make(Schedule, parish__city=city, _quantity=100)
+
+    with django_assert_max_num_queries(5):
         response = client.get(
             resolve_url("by_city", state=city.state.slug, city=city.slug)
         )
