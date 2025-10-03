@@ -142,7 +142,8 @@ STORAGES = {
 # Cache
 CACHES = {
     "default": {
-        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+        "LOCATION": "django_cache",
     }
 }
 CACHE_MIDDLEWARE_SECONDS = 60 * 60 * 24
