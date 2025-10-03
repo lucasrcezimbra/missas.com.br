@@ -1,4 +1,4 @@
-from datetime import time
+from datetime import datetime, time, timedelta, timezone
 
 from django.db import models
 from django.db.models import Q
@@ -50,13 +50,44 @@ def cities_by_state(request, state):
     )
 
 
+def _get_brazilian_now():
+    brazilian_tz = timezone(timedelta(hours=-3))
+    utc_now = datetime.now(timezone.utc)
+    return utc_now.astimezone(brazilian_tz)
+
+
 # @vary_on_headers("HX-Request")  # TODO: Cloudflare ignores Vary header
 def by_city(request, state, city):
     city = get_object_or_404(City, slug=city, state__slug=state)
+
+    now_brazilian = _get_brazilian_now()
+
+    day_to_name = {
+        0: "segunda",
+        1: "terca",
+        2: "quarta",
+        3: "quinta",
+        4: "sexta",
+        5: "sabado",
+        6: "domingo",
+    }
+
     day_name = request.GET.get("dia")
-    hour = request.GET.get("horario")
+    hour_param = request.GET.get("horario")
     type_name = request.GET.get("tipo")
     verified_only = request.GET.get("verificado") == "1"
+
+    has_missing_params = day_name is None or hour_param is None or type_name is None
+
+    if day_name is None:
+        day_name = day_to_name[now_brazilian.weekday()]
+
+    if hour_param is None:
+        hour_param = str(now_brazilian.hour)
+
+    if type_name is None:
+        type_name = "missas"
+
     day = {
         "domingo": Schedule.Day.SUNDAY,
         "segunda": Schedule.Day.MONDAY,
@@ -75,8 +106,8 @@ def by_city(request, state, city):
     if day is not None:
         schedules = schedules.filter(day=day)
 
-    if hour is not None:
-        hour = time(int(hour))
+    if hour_param is not None:
+        hour = time(int(hour_param))
         qs = Q(start_time__gte=hour) | Q(end_time__gte=hour)
         schedules = schedules.filter(qs)
 
@@ -93,18 +124,31 @@ def by_city(request, state, city):
         else "parishes_by_city.html"
     )
 
-    return render(
+    response = render(
         request,
         template,
         {
             "schedules": schedules,
             "day": day,
             "city": city,
-            "hour": hour.hour if hour else 0,
+            "hour": int(hour_param) if hour_param else 0,
             "type": type,
             "Schedule": Schedule,
         },
     )
+
+    if has_missing_params:
+        from django.http import QueryDict
+
+        query = QueryDict(mutable=True)
+        query["tipo"] = type_name
+        query["dia"] = day_name
+        query["horario"] = hour_param
+        if verified_only:
+            query["verificado"] = "1"
+        response["HX-Replace-Url"] = f"{request.path}?{query.urlencode()}"
+
+    return response
 
 
 def parish_detail(request, state, city, parish):
