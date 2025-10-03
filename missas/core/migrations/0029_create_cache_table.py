@@ -8,7 +8,8 @@ def create_cache_table(apps, schema_editor):
 
 def drop_cache_table(apps, schema_editor):
     with schema_editor.connection.cursor() as cursor:
-        cursor.execute('DROP TABLE IF EXISTS "django_cache"')
+        table_name = schema_editor.quote_name("django_cache")
+        cursor.execute(f'DROP TABLE IF EXISTS {table_name}')
 
 
 class Migration(migrations.Migration):
