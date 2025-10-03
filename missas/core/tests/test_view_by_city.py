@@ -397,7 +397,8 @@ def test_number_of_queries(client, django_assert_max_num_queries):
     city = baker.make(City)
     baker.make(Schedule, parish__city=city, _quantity=100)
 
-    with django_assert_max_num_queries(7):
+    with django_assert_max_num_queries(18):
+        # 8 are from the endpoint and 10 are from the caching
         response = client.get(
             resolve_url("by_city", state=city.state.slug, city=city.slug)
         )
