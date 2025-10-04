@@ -42,6 +42,7 @@ install:
 
 lint:
 	poetry run pre-commit run -a
+	docker compose up -d
 	poetry run python manage.py lintmigrations
 	poetry run pytest --dead-fixtures
 
