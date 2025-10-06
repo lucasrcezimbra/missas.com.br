@@ -35,7 +35,7 @@ pytest-django = "4.11.1"
 pytest-mock = "3.15.1"
 
 [tool.poetry.group.scrapers.dependencies]
-llm = "0.27"
+llm = "0.27.1"
 scrapy = "2.13.3"
 
 
