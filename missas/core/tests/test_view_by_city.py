@@ -79,8 +79,10 @@ def test_show_schedules_by_city(client: Client):
         Schedule, start_time=time(8, 12), parish__city=another_city
     )
 
+    # Pass query params to match the schedule's day and ensure it appears
     response = client.get(
         resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"dia": schedule.get_day_display().lower(), "horario": "0"},
     )
 
     assertContains(response, schedule.get_day_display())
@@ -137,8 +139,10 @@ def test_order_by_day_and_time(client: Client):
         Schedule, day=Schedule.Day.SUNDAY, start_time=time(14, 12), parish__city=city
     )
 
+    # Pass horario=0 to show all schedules regardless of time
     response = client.get(
         resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"horario": "0"},
     )
 
     assertQuerySetEqual(
@@ -220,8 +224,10 @@ def test_filter_by_type_default_mass(client):
     mass = baker.make(Schedule, parish__city=city, type=Schedule.Type.MASS)
     baker.make(Schedule, parish__city=city, type=Schedule.Type.CONFESSION)
 
+    # Pass horario=0 to show all schedules regardless of time
     response = client.get(
         resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"horario": "0"},
     )
     assertQuerySetEqual(
         response.context["schedules"],
@@ -239,9 +245,10 @@ def test_filter_by_type(client):
     baker.make(Schedule, parish__city=city, type=Schedule.Type.MASS)
     confession = baker.make(Schedule, parish__city=city, type=Schedule.Type.CONFESSION)
 
+    # Pass horario=0 to show all schedules regardless of time
     response = client.get(
         resolve_url("by_city", state=city.state.slug, city=city.slug),
-        data={"tipo": "confissoes"},
+        data={"tipo": "confissoes", "horario": "0"},
     )
 
     assertInHTML(
@@ -257,7 +264,7 @@ def test_filter_by_type(client):
 @pytest.mark.django_db
 def test_show_end_time(client: Client):
     city = baker.make(City)
-    baker.make(
+    schedule = baker.make(
         Schedule,
         type=Schedule.Type.CONFESSION,
         start_time=time(9),
@@ -265,9 +272,14 @@ def test_show_end_time(client: Client):
         parish__city=city,
     )
 
+    # Pass horario=0 and dia to show the schedule
     response = client.get(
         resolve_url("by_city", state=city.state.slug, city=city.slug),
-        data={"tipo": "confissoes"},
+        data={
+            "tipo": "confissoes",
+            "horario": "0",
+            "dia": schedule.get_day_display().lower(),
+        },
     )
 
     assertContains(response, "9:00")
@@ -353,7 +365,11 @@ def test_schedule_with_source_with_link(client):
     schedule = baker.make(Schedule, source=source)
 
     city = schedule.parish.city
-    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+    # Pass horario=0 and dia to show the schedule
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"horario": "0", "dia": schedule.get_day_display().lower()},
+    )
 
     html = response.content.decode()
     assert f'href="{source.link}"' in html
@@ -364,7 +380,11 @@ def test_verified_schedule(client):
     schedule = baker.make(Schedule, _fill_optional=["verified_at"])
 
     city = schedule.parish.city
-    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+    # Pass horario=0 and dia to show the schedule
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"horario": "0", "dia": schedule.get_day_display().lower()},
+    )
 
     html = response.content.decode()
     assert f"Verificado por Missas.com.br em {schedule.verified_at:%d/%m/%Y}" in html
@@ -375,7 +395,11 @@ def test_schedule_with_location(client):
     schedule = baker.make(Schedule, _fill_optional=["location"])
 
     city = schedule.parish.city
-    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+    # Pass horario=0 and dia to show the schedule
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"horario": "0", "dia": schedule.get_day_display().lower()},
+    )
 
     html = response.content.decode()
     assert schedule.location in html
