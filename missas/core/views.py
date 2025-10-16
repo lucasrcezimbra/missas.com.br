@@ -1,5 +1,4 @@
 from datetime import datetime, time
-
 from zoneinfo import ZoneInfo
 
 from django.db import models
@@ -9,7 +8,6 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.csrf import csrf_exempt
 
 from missas.core.models import City, ContactRequest, Parish, Schedule, State
-
 
 BRAZIL_TZ = ZoneInfo("America/Sao_Paulo")
 

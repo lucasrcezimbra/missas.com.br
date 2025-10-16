@@ -1,5 +1,6 @@
 from datetime import datetime, time
 from http import HTTPStatus
+from zoneinfo import ZoneInfo
 
 import pytest
 from django.shortcuts import resolve_url
@@ -12,8 +13,6 @@ from pytest_django.asserts import (
     assertQuerySetEqual,
     assertTemplateUsed,
 )
-
-from zoneinfo import ZoneInfo
 
 from missas.core.models import City, Schedule, Source, State
 
