@@ -1,9 +1,11 @@
 from datetime import time
+from zoneinfo import ZoneInfo
 
 from django.db import models
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 
 from missas.core.models import City, ContactRequest, Parish, Schedule, State
@@ -53,10 +55,48 @@ def cities_by_state(request, state):
 # @vary_on_headers("HX-Request")  # TODO: Cloudflare ignores Vary header
 def by_city(request, state, city):
     city = get_object_or_404(City, slug=city, state__slug=state)
+
+    # Get query params
     day_name = request.GET.get("dia")
     hour = request.GET.get("horario")
     type_name = request.GET.get("tipo")
     verified_only = request.GET.get("verificado") == "1"
+
+    # Determine if we should add default params
+    # Add defaults if: no params at all, OR only tipo is provided without dia/horario
+    has_no_params = not any([day_name, hour, type_name, verified_only])
+    has_only_tipo = type_name and not any([day_name, hour, verified_only])
+    should_add_defaults = has_no_params or has_only_tipo
+
+    query_params = request.GET.copy()
+
+    if should_add_defaults:
+        # Get current time in Brazilian timezone
+        brazil_tz = ZoneInfo("America/Sao_Paulo")
+        now = timezone.now().astimezone(brazil_tz)
+
+        if not type_name:
+            query_params["tipo"] = "missas"
+            type_name = "missas"
+
+        if not day_name:
+            # Map Python weekday (0=Monday) to Portuguese day names
+            weekday_map = {
+                0: "segunda",  # Monday
+                1: "terca",  # Tuesday
+                2: "quarta",  # Wednesday
+                3: "quinta",  # Thursday
+                4: "sexta",  # Friday
+                5: "sabado",  # Saturday
+                6: "domingo",  # Sunday
+            }
+            query_params["dia"] = weekday_map[now.weekday()]
+            day_name = query_params["dia"]
+
+        if not hour:
+            query_params["horario"] = str(now.hour)
+            hour = str(now.hour)
+
     day = {
         "domingo": Schedule.Day.SUNDAY,
         "segunda": Schedule.Day.MONDAY,
@@ -76,9 +116,12 @@ def by_city(request, state, city):
         schedules = schedules.filter(day=day)
 
     if hour is not None:
-        hour = time(int(hour))
-        qs = Q(start_time__gte=hour) | Q(end_time__gte=hour)
+        hour_int = int(hour)
+        hour_time = time(hour_int)
+        qs = Q(start_time__gte=hour_time) | Q(end_time__gte=hour_time)
         schedules = schedules.filter(qs)
+    else:
+        hour_int = 0
 
     if verified_only:
         schedules = schedules.filter(verified_at__isnull=False)
@@ -93,18 +136,25 @@ def by_city(request, state, city):
         else "parishes_by_city.html"
     )
 
-    return render(
+    response = render(
         request,
         template,
         {
             "schedules": schedules,
             "day": day,
             "city": city,
-            "hour": hour.hour if hour else 0,
+            "hour": hour_int,
             "type": type,
             "Schedule": Schedule,
         },
     )
+
+    # If we added default params, set HX-Replace-Url header to update browser URL
+    if should_add_defaults:
+        new_url = f"{request.path}?{query_params.urlencode()}"
+        response["HX-Replace-Url"] = new_url
+
+    return response
 
 
 def parish_detail(request, state, city, parish):
