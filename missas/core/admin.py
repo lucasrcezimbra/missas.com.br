@@ -111,7 +111,7 @@ class ScheduleAdmin(admin.ModelAdmin):
         "type",
         "day",
         "start_time",
-        "location",
+        "location_name",
         "observation",
         "verified_at",
     )

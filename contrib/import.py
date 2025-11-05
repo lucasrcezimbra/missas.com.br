@@ -84,7 +84,7 @@ ai_response = model.prompt(
             created_at = models.DateTimeField(auto_now_add=True)
             updated_at = models.DateTimeField(auto_now=True)
             day = models.IntegerField(choices=Day.choices)
-            location = models.CharField(max_length=128, blank=True)
+            location_name = models.CharField(max_length=128, blank=True)
             observation = models.TextField(null=True, blank=True)
             parish = models.ForeignKey(
                 Parish, on_delete=models.CASCADE, related_name="schedules"
@@ -138,7 +138,7 @@ ai_response = model.prompt(
             "schedules": [
                 {
                     "day": 2,
-                    "location": "",
+                    "location_name": "",
                     "observation": "",
                     "start_time": "17:30",
                     "end_time": null,
@@ -147,7 +147,7 @@ ai_response = model.prompt(
                 },
                 {
                     "day": 3,
-                    "location": "",
+                    "location_name": "",
                     "observation": "",
                     "start_time": "17:30",
                     "end_time": null,
@@ -156,7 +156,7 @@ ai_response = model.prompt(
                 },
                 {
                     "day": 4,
-                    "location": "",
+                    "location_name": "",
                     "observation": "Missa de Cura e Libertação na primeira quinta-feira do mês",
                     "start_time": "17:30",
                     "end_time": null,
@@ -165,7 +165,7 @@ ai_response = model.prompt(
                 },
                 {
                     "day": 5,
-                    "location": "",
+                    "location_name": "",
                     "observation": "Missa do Sagrado Coração de Jesus na primeira sexta-feira do mês",
                     "start_time": "17:30",
                     "end_time": null,
@@ -174,7 +174,7 @@ ai_response = model.prompt(
                 },
                 {
                     "day": 6,
-                    "location": "",
+                    "location_name": "",
                     "observation": "",
                     "start_time": "17:30",
                     "end_time": null,
@@ -183,7 +183,7 @@ ai_response = model.prompt(
                 },
                 {
                     "day": 0,
-                    "location": "",
+                    "location_name": "",
                     "observation": "",
                     "start_time": "09:00",
                     "end_time": null,
@@ -192,7 +192,7 @@ ai_response = model.prompt(
                 },
                 {
                     "day": 0,
-                    "location": "",
+                    "location_name": "",
                     "observation": "",
                     "start_time": "19:00",
                     "end_time": null,
@@ -201,7 +201,7 @@ ai_response = model.prompt(
                 },
                 {
                     "day": 2,
-                    "location": "",
+                    "location_name": "",
                     "observation": "",
                     "start_time": "16:00",
                     "end_time": null,
@@ -210,7 +210,7 @@ ai_response = model.prompt(
                 },
                 {
                     "day": 3,
-                    "location": "",
+                    "location_name": "",
                     "observation": "",
                     "start_time": "16:00",
                     "end_time": null,
@@ -219,7 +219,7 @@ ai_response = model.prompt(
                 },
                 {
                     "day": 4,
-                    "location": "",
+                    "location_name": "",
                     "observation": "",
                     "start_time": "18:00",
                     "end_time": null,
@@ -254,8 +254,8 @@ for s in data["schedules"]:
 
     schedule.end_time = end_time
 
-    if s["location"].lower() != schedule.location.lower():
-        schedule.location = s["location"]
+    if s["location_name"].lower() != schedule.location_name.lower():
+        schedule.location_name = s["location_name"]
 
     if s["observation"].lower() != schedule.observation.lower():
         schedule.observation = s["observation"]

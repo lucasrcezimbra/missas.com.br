@@ -371,14 +371,14 @@ def test_verified_schedule(client):
 
 
 @pytest.mark.django_db
-def test_schedule_with_location(client):
-    schedule = baker.make(Schedule, _fill_optional=["location"])
+def test_schedule_with_location_name(client):
+    schedule = baker.make(Schedule, _fill_optional=["location_name"])
 
     city = schedule.parish.city
     response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
 
     html = response.content.decode()
-    assert schedule.location in html
+    assert schedule.location_name in html
 
 
 @pytest.mark.django_db
