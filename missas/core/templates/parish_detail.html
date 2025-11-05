@@ -84,12 +84,16 @@
                 {% for schedule in group.list %}
                     <div class="card mb-3">
                         <div class="card-body">
-                            {% if schedule.location_name %}
+                            {% if schedule.location_name or schedule.address %}
                                 <div class="row mb-2">
                                     <div class="col-auto">
                                         <span>
                                             <i class="fa-solid fa-location-dot"></i>
-                                            {{ schedule.location_name }}
+                                            {% if schedule.location_name %}{{ schedule.location_name }}{% endif %}
+                                            {% if schedule.address %}
+                                                {% if schedule.location_name %}-{% endif %}
+                                                <span class="text-muted">{{ schedule.address }}</span>
+                                            {% endif %}
                                         </span>
                                     </div>
                                 </div>

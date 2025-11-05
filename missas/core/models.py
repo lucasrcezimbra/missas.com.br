@@ -2,6 +2,7 @@ import re
 
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils.functional import cached_property
 from model_utils import FieldTracker
 from model_utils.tracker import FieldInstanceTracker
 
@@ -151,3 +152,9 @@ class Schedule(models.Model):
             return f"{self.get_day_display()} {self.start_time} - {self.end_time} at {self.parish}"
         else:
             return f"{self.get_day_display()} {self.start_time} at {self.parish}"
+
+    @cached_property
+    def address(self):
+        from missas.core.facades.google_maps import get_schedule_address
+
+        return get_schedule_address(self)

@@ -147,3 +147,6 @@ CACHES = {
     }
 }
 CACHE_MIDDLEWARE_SECONDS = 60 * 60 * 24
+
+# Google Maps
+GOOGLE_MAPS_API_KEY = config("GOOGLE_MAPS_API_KEY", default="")
