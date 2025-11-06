@@ -127,7 +127,7 @@ class Location(models.Model):
         unique_together = [("name", "address"), ("lat", "long")]
 
     def __str__(self):
-        return f"{self.name} ({self.city})"
+        return self.name
 
 
 class Schedule(models.Model):
@@ -148,6 +148,9 @@ class Schedule(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     day = models.IntegerField(choices=Day.choices)
+    location = models.ForeignKey(
+        Location, on_delete=models.RESTRICT, blank=True, null=True
+    )
     location_name = models.CharField(max_length=128, blank=True)
     observation = models.TextField(blank=True, default="")
     parish = models.ForeignKey(
