@@ -55,10 +55,9 @@ def get_schedule_address(schedule):
             result = data["results"][0]
             formatted_address = result["formatted_address"]
             place_name = result.get("name", "")
-            geometry = result.get("geometry", {})
-            location = geometry.get("location", {})
-            lat = location.get("lat")
-            lng = location.get("lng")
+            location = result["geometry"]["location"]
+            lat = location["lat"]
+            lng = location["lng"]
 
             logger.debug(
                 f"Found place: {place_name} at address: {formatted_address} ({lat}, {lng})"
@@ -68,6 +67,7 @@ def get_schedule_address(schedule):
                 "address": formatted_address,
                 "lat": lat,
                 "lng": lng,
+                "url": f"https://www.google.com/maps/place/?q=place_id:{result['place_id']}",
             }
 
         logger.info(

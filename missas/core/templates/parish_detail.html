@@ -91,9 +91,9 @@
                                         {% if schedule.location_name %}{{ schedule.location_name }}{% endif %}
                                         {% if schedule.address %}
                                             {% if schedule.location_name %}-{% endif %}
-                                            {% if schedule.address.lat and schedule.address.lng %}
-                                                <a href="geo:{{ schedule.address.lat }},{{ schedule.address.lng }}?q={{ schedule.address.lat }},{{ schedule.address.lng }}({{ schedule.location_name|default:schedule.parish.name|urlencode }})"
-                                                   onclick="if(!navigator.userAgent.match(/Android|iPhone|iPad/i)){window.open('https://www.google.com/maps/search/?api=1&query={{ schedule.address.lat }},{{ schedule.address.lng }}','_blank');return false;}"
+                                            {% if schedule.address.url %}
+                                                <a href="{{ schedule.address.url }}"
+                                                   onclick="if(navigator.userAgent.match(/Android|iPhone|iPad/i)){window.location.href='geo:{{ schedule.address.lat }},{{ schedule.address.lng }}?q={{ schedule.address.lat }},{{ schedule.address.lng }}({{ schedule.location_name|default:schedule.parish.name|urlencode }})';return false;}"
                                                    target="_blank"
                                                    rel="noopener noreferrer"
                                                    class="text-muted">{{ schedule.address.address }}</a>
