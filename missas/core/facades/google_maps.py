@@ -8,13 +8,13 @@ logger = logging.getLogger(__name__)
 
 def get_schedule_address(schedule):
     """
-    Fetch address for a Schedule using Google Places API Text Search.
+    Fetch address and coordinates for a Schedule using Google Places API Text Search.
 
     Builds a search query from the schedule's location_name, parish name,
     city, and state, then queries Google Places API to find the specific place
-    and get its formatted address.
+    and get its formatted address and coordinates.
 
-    Returns the formatted address as a string, or None if not found.
+    Returns a dict with 'address', 'lat', and 'lng' keys, or None if not found.
     """
     if not settings.GOOGLE_MAPS_API_KEY:
         logger.warning("GOOGLE_MAPS_API_KEY not configured")
@@ -52,10 +52,23 @@ def get_schedule_address(schedule):
         logger.debug(f"Google Places API response for query '{search_query}': {data}")
 
         if data.get("status") == "OK" and data.get("results"):
-            formatted_address = data["results"][0]["formatted_address"]
-            place_name = data["results"][0].get("name", "")
-            logger.debug(f"Found place: {place_name} at address: {formatted_address}")
-            return formatted_address
+            result = data["results"][0]
+            formatted_address = result["formatted_address"]
+            place_name = result.get("name", "")
+            geometry = result.get("geometry", {})
+            location = geometry.get("location", {})
+            lat = location.get("lat")
+            lng = location.get("lng")
+
+            logger.debug(
+                f"Found place: {place_name} at address: {formatted_address} ({lat}, {lng})"
+            )
+
+            return {
+                "address": formatted_address,
+                "lat": lat,
+                "lng": lng,
+            }
 
         logger.info(
             f"No address found for query: {search_query} (status: {data.get('status')})"
