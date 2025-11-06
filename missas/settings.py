@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_extensions",
-    "django_migration_linter",
     "django_htmx",
     "fontawesomefree",
 ]
