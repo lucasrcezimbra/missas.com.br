@@ -92,7 +92,19 @@
                                             {% if schedule.location_name %}{{ schedule.location_name }}{% endif %}
                                             {% if schedule.address %}
                                                 {% if schedule.location_name %}-{% endif %}
-                                                <span class="text-muted">{{ schedule.address }}</span>
+                                                {% if schedule.address.latitude and schedule.address.longitude %}
+                                                    <a href="geo:{{ schedule.address.latitude }},{{ schedule.address.longitude }}"
+                                                       onclick="if (!window.navigator.userAgent.match(/Android|iPhone|iPad/)) { this.href='https://www.google.com/maps/search/?api=1&query={{ schedule.address.latitude }},{{ schedule.address.longitude }}'; return true; }"
+                                                       class="text-muted"
+                                                       target="_blank"
+                                                       rel="noopener noreferrer">{{ schedule.address.address }}</a>
+                                                {% elif schedule.address.address %}
+                                                    <a href="geo:0,0?q={{ schedule.address.address|urlencode }}"
+                                                       onclick="if (!window.navigator.userAgent.match(/Android|iPhone|iPad/)) { this.href='https://www.google.com/maps/search/?api=1&query={{ schedule.address.address|urlencode }}'; return true; }"
+                                                       class="text-muted"
+                                                       target="_blank"
+                                                       rel="noopener noreferrer">{{ schedule.address.address }}</a>
+                                                {% endif %}
                                             {% endif %}
                                         </span>
                                     </div>
