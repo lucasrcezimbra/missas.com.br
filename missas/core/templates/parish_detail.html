@@ -87,14 +87,20 @@
                             {% if schedule.location_name or schedule.address %}
                                 <div class="row mb-2">
                                     <div class="col-auto">
-                                        <span>
-                                            <i class="fa-solid fa-location-dot"></i>
-                                            {% if schedule.location_name %}{{ schedule.location_name }}{% endif %}
-                                            {% if schedule.address %}
-                                                {% if schedule.location_name %}-{% endif %}
-                                                <span class="text-muted">{{ schedule.address }}</span>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        {% if schedule.location_name %}{{ schedule.location_name }}{% endif %}
+                                        {% if schedule.address %}
+                                            {% if schedule.location_name %}-{% endif %}
+                                            {% if schedule.address.lat and schedule.address.lng %}
+                                                <a href="geo:{{ schedule.address.lat }},{{ schedule.address.lng }}?q={{ schedule.address.lat }},{{ schedule.address.lng }}({{ schedule.location_name|default:schedule.parish.name|urlencode }})"
+                                                   onclick="if(!navigator.userAgent.match(/Android|iPhone|iPad/i)){window.open('https://www.google.com/maps/search/?api=1&query={{ schedule.address.lat }},{{ schedule.address.lng }}','_blank');return false;}"
+                                                   target="_blank"
+                                                   rel="noopener noreferrer"
+                                                   class="text-muted">{{ schedule.address.address }}</a>
+                                            {% else %}
+                                                <span class="text-muted">{{ schedule.address.address }}</span>
                                             {% endif %}
-                                        </span>
+                                        {% endif %}
                                     </div>
                                 </div>
                             {% endif %}
