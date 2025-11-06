@@ -6,6 +6,7 @@ from django.utils.functional import cached_property
 from model_utils import FieldTracker
 from model_utils.tracker import FieldInstanceTracker
 
+from missas.core.facades.google_maps import get_schedule_address
 from missas.core.managers import CityQuerySet, ScheduleQuerySet
 
 
@@ -155,6 +156,4 @@ class Schedule(models.Model):
 
     @cached_property
     def address(self):
-        from missas.core.facades.google_maps import get_schedule_address
-
         return get_schedule_address(self)
