@@ -21,9 +21,12 @@ def copy_location_name_to_location(apps, schema_editor):
         location_map[location_name] = location
 
     # Update all schedules with their corresponding location
+    schedules_to_update = []
     for schedule in Schedule.objects.exclude(location_name=""):
         schedule.location = location_map[schedule.location_name]
-        schedule.save(update_fields=["location"])
+        schedules_to_update.append(schedule)
+    if schedules_to_update:
+        Schedule.objects.bulk_update(schedules_to_update, ["location"])
 
 
 def reverse_copy_location_name_to_location(apps, schema_editor):
