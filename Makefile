@@ -16,7 +16,6 @@ dbdump:
 	poetry run python manage.py dumpdata --indent 2 core.Source > missas/core/fixtures/sources.json
 	poetry run python manage.py dumpdata --indent 2 core.Parish > missas/core/fixtures/parishes_natal.json
 	poetry run python manage.py dumpdata --indent 2 core.Contact > missas/core/fixtures/contacts_natal.json
-	poetry run python manage.py dumpdata --indent 2 core.Location > missas/core/fixtures/locations.json
 	poetry run python manage.py dumpdata --indent 2 core.Schedule > missas/core/fixtures/schedules_natal.json
 
 dbload:
@@ -25,7 +24,6 @@ dbload:
 	poetry run python manage.py loaddata ./missas/core/fixtures/sources.json
 	poetry run python manage.py loaddata ./missas/core/fixtures/parishes_natal.json
 	poetry run python manage.py loaddata ./missas/core/fixtures/contacts_natal.json
-	poetry run python manage.py loaddata ./missas/core/fixtures/locations.json
 	poetry run python manage.py loaddata ./missas/core/fixtures/schedules_natal.json
 
 dev:

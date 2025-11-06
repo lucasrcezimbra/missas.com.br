@@ -9,7 +9,6 @@ from missas.core.models import (
     City,
     Contact,
     ContactRequest,
-    Location,
     Parish,
     Schedule,
     Source,
@@ -19,12 +18,6 @@ from missas.core.models import (
 
 admin.site.register(Source)
 admin.site.register(User, UserAdmin)
-
-
-@admin.register(Location)
-class LocationAdmin(admin.ModelAdmin):
-    list_display = ("name", "created_at", "updated_at")
-    search_fields = ("name",)
 
 
 @admin.register(City)
