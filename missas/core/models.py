@@ -111,6 +111,21 @@ class Source(models.Model):
         return self.description
 
 
+class Location(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    name = models.CharField(max_length=254)
+    address = models.CharField(max_length=512)
+    google_maps_url = models.URLField()
+    google_maps_response = models.JSONField()
+
+    class Meta:
+        unique_together = [("name", "address")]
+
+    def __str__(self):
+        return self.name
+
+
 class Schedule(models.Model):
     class Day(models.IntegerChoices):
         # It's integer to make the ordering easier
@@ -129,6 +144,9 @@ class Schedule(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     day = models.IntegerField(choices=Day.choices)
+    location = models.ForeignKey(
+        Location, on_delete=models.SET_NULL, blank=True, null=True
+    )
     location_name = models.CharField(max_length=128, blank=True)
     observation = models.TextField(blank=True, default="")
     parish = models.ForeignKey(

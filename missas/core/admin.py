@@ -1,3 +1,4 @@
+from collections import defaultdict
 from textwrap import dedent
 from urllib.parse import quote_plus
 
@@ -5,10 +6,12 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.html import format_html
 
+from missas.core.facades.google_maps import get_schedule_address
 from missas.core.models import (
     City,
     Contact,
     ContactRequest,
+    Location,
     Parish,
     Schedule,
     Source,
@@ -18,6 +21,25 @@ from missas.core.models import (
 
 admin.site.register(Source)
 admin.site.register(User, UserAdmin)
+
+
+@admin.register(Location)
+class LocationAdmin(admin.ModelAdmin):
+    list_display = ("name", "address", "maps_link")
+    list_filter = (("schedule", admin.RelatedOnlyFieldListFilter),)
+    ordering = ("name",)
+    readonly_fields = ("google_maps_response", "maps_link")
+    search_fields = ("name", "address")
+
+    def maps_link(self, obj):
+        if obj.google_maps_url:
+            return format_html(
+                '<a href="{url}" target="_blank">Ver no Google Maps</a>',
+                url=obj.google_maps_url,
+            )
+        return "-"
+
+    maps_link.short_description = "Google Maps"
 
 
 @admin.register(City)
@@ -111,6 +133,7 @@ class ScheduleAdmin(admin.ModelAdmin):
         "type",
         "day",
         "start_time",
+        "location_link",
         "location_name",
         "observation",
         "verified_at",
@@ -122,6 +145,106 @@ class ScheduleAdmin(admin.ModelAdmin):
         ("observation", admin.EmptyFieldListFilter),
     )
     search_fields = ("parish__name", "day", "start_time")
+    actions = ["create_locations_from_addresses"]
+
+    def location_link(self, obj):
+        if obj.location:
+            from django.urls import reverse
+
+            url = reverse("admin:core_location_change", args=[obj.location.pk])
+            return format_html(
+                '<a href="{url}">{name}</a>',
+                url=url,
+                name=obj.location.name,
+            )
+        return "-"
+
+    location_link.short_description = "Location"
+
+    def create_locations_from_addresses(self, request, queryset):
+        schedules_to_process = queryset.filter(location__isnull=True)
+
+        if not schedules_to_process.exists():
+            self.message_user(
+                request,
+                "Nenhum horário sem localização encontrado.",
+                level="warning",
+            )
+            return
+
+        schedules_by_parish_location = defaultdict(list)
+        for schedule in schedules_to_process.select_related(
+            "parish", "parish__city", "parish__city__state"
+        ):
+            key = (schedule.parish_id, schedule.location_name)
+            schedules_by_parish_location[key].append(schedule)
+
+        total_updated = 0
+        total_failed = 0
+
+        for (
+            parish_id,
+            location_name,
+        ), schedules in schedules_by_parish_location.items():
+            first_schedule = schedules[0]
+
+            existing_location = (
+                Location.objects.filter(
+                    schedule__parish_id=parish_id,
+                    schedule__location_name=location_name,
+                )
+                .exclude(schedule__location__isnull=True)
+                .first()
+            )
+
+            if existing_location:
+                for schedule in schedules:
+                    schedule.location = existing_location
+                Schedule.objects.bulk_update(schedules, ["location"])
+                total_updated += len(schedules)
+            else:
+                address_data = get_schedule_address(first_schedule)
+
+                if address_data is None:
+                    parish_name = first_schedule.parish.name
+                    self.message_user(
+                        request,
+                        f"Aviso: Não foi possível obter endereço para {parish_name} - {location_name}",
+                        level="warning",
+                    )
+                    total_failed += len(schedules)
+                    continue
+
+                location, _ = Location.objects.get_or_create(
+                    name=address_data["name"],
+                    address=address_data["address"],
+                    defaults={
+                        "google_maps_url": address_data["url"],
+                        "google_maps_response": address_data["full_response"],
+                    },
+                )
+
+                for schedule in schedules:
+                    schedule.location = location
+                Schedule.objects.bulk_update(schedules, ["location"])
+                total_updated += len(schedules)
+
+        if total_updated > 0:
+            self.message_user(
+                request,
+                f"Sucesso: {total_updated} horário(s) atualizado(s) com localização.",
+                level="success",
+            )
+        if total_failed > 0:
+            self.message_user(
+                request,
+                f"Aviso: {total_failed} horário(s) não puderam ser processados.",
+                level="warning",
+            )
+
+    create_locations_from_addresses.short_description = (
+        "Criar localizações a partir de endereços"
+    )
 
 
 @admin.register(State)

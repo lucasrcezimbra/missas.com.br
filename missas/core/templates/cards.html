@@ -6,13 +6,18 @@
                    class="text-decoration-none">
                     <span class="fs-5 text-primary">{{ schedule.parish.name }}</span>
                 </a>
-                {% if schedule.location_name %}
+                {% if schedule.location_name or schedule.location %}
                     <div class="row">
                         <div class="col-auto">
-                            <span>
-                                <i class="fa-solid fa-location-dot"></i>
-                                {{ schedule.location_name }}
-                            </span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            {% if schedule.location_name %}{{ schedule.location_name }}{% endif %}
+                            {% if schedule.location %}
+                                {% if schedule.location_name %}-{% endif %}
+                                <a href="{{ schedule.location.google_maps_url }}"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="text-muted">{{ schedule.location.address }}</a>
+                            {% endif %}
                         </div>
                     </div>
                 {% endif %}

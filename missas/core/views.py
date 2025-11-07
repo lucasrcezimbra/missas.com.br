@@ -85,7 +85,7 @@ def by_city(request, state, city):
 
     schedules = schedules.order_by("day", "start_time")
     schedules = schedules.select_related(
-        "parish", "parish__city", "parish__city__state", "source"
+        "parish", "parish__city", "parish__city__state", "source", "location"
     ).prefetch_related("parish__contact")
     template = (
         "cards.html"
