@@ -1,4 +1,5 @@
 import logging
+from urllib.parse import quote_plus
 
 import googlemaps
 from django.conf import settings
@@ -39,7 +40,15 @@ def get_schedule_address(schedule):
         logger.debug(f"Google Places API response for query '{search_query}': {data}")
 
         if data.get("status") == "OK" and data.get("results"):
-            result = data["results"][0]
+            results = data["results"]
+
+            if len(results) > 1:
+                raise ValueError(
+                    f"Multiple results found for query '{search_query}'. "
+                    f"Found {len(results)} results. Please refine the search query."
+                )
+
+            result = results[0]
             formatted_address = result["formatted_address"]
             place_name = result.get("name", "")
 
@@ -48,7 +57,7 @@ def get_schedule_address(schedule):
             return {
                 "address": formatted_address,
                 "name": place_name,
-                "url": f"https://www.google.com/maps/place/?q=place_id:{result['place_id']}",
+                "url": f"https://www.google.com/maps/search/?api=1&query={quote_plus(place_name + ' ' + formatted_address)}",
                 "full_response": data,
             }
 
@@ -57,6 +66,8 @@ def get_schedule_address(schedule):
         )
         return None
 
+    except ValueError:
+        raise
     except Exception as e:
         logger.error(f"Error fetching address from Google Places API: {e}")
         return None

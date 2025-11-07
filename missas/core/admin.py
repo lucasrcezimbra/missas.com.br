@@ -26,7 +26,6 @@ admin.site.register(User, UserAdmin)
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
     list_display = ("name", "address", "maps_link")
-    list_filter = (("schedule", admin.RelatedOnlyFieldListFilter),)
     ordering = ("name",)
     readonly_fields = ("google_maps_response", "maps_link")
     search_fields = ("name", "address")
@@ -143,6 +142,7 @@ class ScheduleAdmin(admin.ModelAdmin):
         ("day", admin.ChoicesFieldListFilter),
         ("verified_at", admin.EmptyFieldListFilter),
         ("observation", admin.EmptyFieldListFilter),
+        ("location", admin.EmptyFieldListFilter),
     )
     search_fields = ("parish__name", "day", "start_time")
     actions = ["create_locations_from_addresses"]
