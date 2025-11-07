@@ -92,7 +92,6 @@
                                         {% if schedule.location %}
                                             {% if schedule.location_name %}-{% endif %}
                                             <a href="{{ schedule.location.google_maps_url }}"
-                                               onclick="if(navigator.userAgent.match(/Android|iPhone|iPad/i)){window.location.href='geo:{{ schedule.location.lat }},{{ schedule.location.long }}?q={{ schedule.location.lat }},{{ schedule.location.long }}({{ schedule.location.name|urlencode }})';return false;}"
                                                target="_blank"
                                                rel="noopener noreferrer"
                                                class="text-muted">{{ schedule.location.address }}</a>

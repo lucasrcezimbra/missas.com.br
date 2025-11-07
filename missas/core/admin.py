@@ -25,7 +25,7 @@ admin.site.register(User, UserAdmin)
 
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ("name", "address", "lat", "long", "maps_link")
+    list_display = ("name", "address", "maps_link")
     list_filter = (("schedule", admin.RelatedOnlyFieldListFilter),)
     ordering = ("name",)
     readonly_fields = ("google_maps_response", "maps_link")
@@ -215,12 +215,10 @@ class ScheduleAdmin(admin.ModelAdmin):
                     total_failed += len(schedules)
                     continue
 
-                location, created = Location.objects.get_or_create(
+                location, _ = Location.objects.get_or_create(
                     name=address_data["name"],
                     address=address_data["address"],
                     defaults={
-                        "lat": address_data["lat"],
-                        "long": address_data["lng"],
                         "google_maps_url": address_data["url"],
                         "google_maps_response": address_data["full_response"],
                     },
