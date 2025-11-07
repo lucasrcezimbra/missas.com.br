@@ -215,13 +215,15 @@ class ScheduleAdmin(admin.ModelAdmin):
                     total_failed += len(schedules)
                     continue
 
-                location = Location.objects.create(
+                location, created = Location.objects.get_or_create(
                     name=address_data["name"],
                     address=address_data["address"],
-                    lat=address_data["lat"],
-                    long=address_data["lng"],
-                    google_maps_url=address_data["url"],
-                    google_maps_response=address_data["full_response"],
+                    defaults={
+                        "lat": address_data["lat"],
+                        "long": address_data["lng"],
+                        "google_maps_url": address_data["url"],
+                        "google_maps_response": address_data["full_response"],
+                    },
                 )
 
                 for schedule in schedules:
