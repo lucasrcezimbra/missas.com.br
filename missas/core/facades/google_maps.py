@@ -1,6 +1,6 @@
 import logging
 
-import requests
+import googlemaps
 from django.conf import settings
 
 logger = logging.getLogger(__name__)
@@ -36,20 +36,15 @@ def get_schedule_address(schedule):
     search_query = " ".join(location_parts)
 
     try:
-        response = requests.get(
-            "https://maps.googleapis.com/maps/api/place/textsearch/json",
-            params={
-                "query": search_query,
-                "key": settings.GOOGLE_MAPS_API_KEY,
-                "language": "pt-BR",
-                "region": "br",
-                "type": "church",
-            },
-            timeout=5,
-        )
-        response.raise_for_status()
+        gmaps = googlemaps.Client(key=settings.GOOGLE_MAPS_API_KEY)
 
-        data = response.json()
+        data = gmaps.places(
+            query=search_query,
+            language="pt-BR",
+            region="br",
+            type="church",
+        )
+
         logger.debug(f"Google Places API response for query '{search_query}': {data}")
 
         if data.get("status") == "OK" and data.get("results"):
@@ -78,6 +73,6 @@ def get_schedule_address(schedule):
         )
         return None
 
-    except requests.exceptions.RequestException as e:
+    except Exception as e:
         logger.error(f"Error fetching address from Google Places API: {e}")
         return None
