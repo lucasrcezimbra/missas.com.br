@@ -41,6 +41,7 @@ def get_schedule_address(schedule):
             params={
                 "query": search_query,
                 "key": settings.GOOGLE_MAPS_API_KEY,
+                "language": "pt-BR",
                 "region": "br",
                 "type": "church",
             },
@@ -67,7 +68,9 @@ def get_schedule_address(schedule):
                 "address": formatted_address,
                 "lat": lat,
                 "lng": lng,
+                "name": place_name,
                 "url": f"https://www.google.com/maps/place/?q=place_id:{result['place_id']}",
+                "full_response": data,
             }
 
         logger.info(

@@ -149,7 +149,7 @@ class Schedule(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     day = models.IntegerField(choices=Day.choices)
     location = models.ForeignKey(
-        Location, on_delete=models.RESTRICT, blank=True, null=True
+        Location, on_delete=models.SET_NULL, blank=True, null=True
     )
     location_name = models.CharField(max_length=128, blank=True)
     observation = models.TextField(blank=True, default="")
