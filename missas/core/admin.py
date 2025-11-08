@@ -31,12 +31,10 @@ class LocationAdmin(admin.ModelAdmin):
     search_fields = ("name", "address")
 
     def maps_link(self, obj):
-        if obj.google_place_id:
-            return format_html(
-                '<a href="{url}" target="_blank">Ver no Google Maps</a>',
-                url=obj.url,
-            )
-        return "-"
+        return format_html(
+            '<a href="{url}" target="_blank">Ver no Google Maps</a>',
+            url=obj.url,
+        )
 
     maps_link.short_description = "Google Maps"
 
