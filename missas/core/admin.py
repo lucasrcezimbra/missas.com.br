@@ -1,3 +1,4 @@
+import json
 from collections import defaultdict
 from textwrap import dedent
 from urllib.parse import quote_plus
@@ -5,6 +6,7 @@ from urllib.parse import quote_plus
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 
 from missas.core.facades.google_maps import get_schedule_address
 from missas.core.models import (
@@ -27,8 +29,23 @@ admin.site.register(User, UserAdmin)
 class LocationAdmin(admin.ModelAdmin):
     list_display = ("name", "address", "maps_link")
     ordering = ("name",)
-    readonly_fields = ("google_maps_response", "google_maps_place_id", "maps_link")
+    readonly_fields = (
+        "google_maps_place_id",
+        "maps_link",
+        "formatted_google_maps_response",
+    )
     search_fields = ("name", "address")
+
+    def formatted_google_maps_response(self, obj):
+        if obj.google_maps_response:
+            formatted_json = json.dumps(
+                obj.google_maps_response, indent=2, ensure_ascii=False
+            )
+            html = f'<pre style="padding: 10px; border-radius: 5px; overflow-x: auto;">{formatted_json}</pre>'
+            return mark_safe(html)  # noqa
+        return "-"
+
+    formatted_google_maps_response.short_description = "Google Maps Response"
 
     def maps_link(self, obj):
         return format_html(
