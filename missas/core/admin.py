@@ -213,17 +213,6 @@ class ScheduleAdmin(admin.ModelAdmin):
                     total_failed += len(schedules)
                     continue
 
-                # Ensure place_id is present before creating location
-                if not address_data.get("place_id"):
-                    parish_name = first_schedule.parish.name
-                    self.message_user(
-                        request,
-                        f"Aviso: Google Place ID não encontrado para {parish_name} - {location_name}",
-                        level="warning",
-                    )
-                    total_failed += len(schedules)
-                    continue
-
                 location, _ = Location.objects.get_or_create(
                     name=address_data["name"],
                     address=address_data["address"],
