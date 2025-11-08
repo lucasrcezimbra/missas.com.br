@@ -119,6 +119,8 @@ class Location(models.Model):
     address = models.CharField(max_length=512)
     google_maps_response = models.JSONField()
     google_maps_place_id = models.CharField(max_length=255, blank=False, null=False)
+    latitude = models.FloatField(blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
 
     class Meta:
         unique_together = [("name", "address")]

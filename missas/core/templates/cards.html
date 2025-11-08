@@ -32,6 +32,14 @@
                             {% if schedule.end_time %}- {{ schedule.end_time|time:"H:i" }}{% endif %}
                         </span>
                     </div>
+                    {% if schedule.distance %}
+                        <div class="col-auto">
+                            <span>
+                                <i class="fa-solid fa-map-marker-alt"></i>
+                                {{ schedule.distance|floatformat:1 }} km
+                            </span>
+                        </div>
+                    {% endif %}
                     {% if schedule.observation %}
                         <div class="col-auto">
                             <span>

@@ -22,6 +22,14 @@
                             <strong>Selecione uma cidade abaixo para ver os horários.</strong>
                         </p>
                     </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <button type="button"
+                                class="btn btn-success"
+                                onclick="requestLocationAndRedirect()">
+                            <i class="fa-solid fa-location-arrow me-2"></i>
+                            Paróquias perto de mim
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -215,4 +223,38 @@
             </div>
         </div>
     </div>
+    <script>
+        function requestLocationAndRedirect() {
+            if (!navigator.geolocation) {
+                alert('Geolocalização não é suportada pelo seu navegador.');
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    const lat = position.coords.latitude;
+                    const long = position.coords.longitude;
+                    window.location.href = `/proximas?lat=${lat}&long=${long}`;
+                },
+                function(error) {
+                    let message = 'Não foi possível obter sua localização. ';
+                    switch(error.code) {
+                        case error.PERMISSION_DENIED:
+                            message += 'Por favor, permita o acesso à sua localização.';
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            message += 'Localização indisponível.';
+                            break;
+                        case error.TIMEOUT:
+                            message += 'A requisição expirou.';
+                            break;
+                        default:
+                            message += 'Erro desconhecido.';
+                            break;
+                    }
+                    alert(message);
+                }
+            );
+        }
+    </script>
 {% endblock content %}
