@@ -6,7 +6,6 @@ from urllib.parse import quote_plus
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.html import format_html
-from django.utils.safestring import mark_safe
 
 from missas.core.facades.google_maps import get_schedule_address
 from missas.core.models import (
@@ -41,8 +40,10 @@ class LocationAdmin(admin.ModelAdmin):
             formatted_json = json.dumps(
                 obj.google_maps_response, indent=2, ensure_ascii=False
             )
-            html = f'<pre style="padding: 10px; border-radius: 5px; overflow-x: auto;">{formatted_json}</pre>'
-            return mark_safe(html)  # noqa
+            return format_html(
+                '<pre style="padding: 10px; border-radius: 5px; overflow-x: auto;">{}</pre>',
+                formatted_json,
+            )
         return "-"
 
     formatted_google_maps_response.short_description = "Google Maps Response"
