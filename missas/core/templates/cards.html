@@ -13,7 +13,7 @@
                             {% if schedule.location_name %}{{ schedule.location_name }}{% endif %}
                             {% if schedule.location %}
                                 {% if schedule.location_name %}-{% endif %}
-                                <a href="{{ schedule.location.google_maps_url }}"
+                                <a href="{{ schedule.location.url }}"
                                    target="_blank"
                                    rel="noopener noreferrer"
                                    class="text-muted">{{ schedule.location.address }}</a>

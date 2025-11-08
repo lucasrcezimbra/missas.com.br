@@ -32,10 +32,9 @@ class LocationAdmin(admin.ModelAdmin):
 
     def maps_link(self, obj):
         if obj.google_place_id:
-            url = obj.get_google_maps_url()
             return format_html(
                 '<a href="{url}" target="_blank">Ver no Google Maps</a>',
-                url=url,
+                url=obj.url,
             )
         return "-"
 
@@ -227,20 +226,10 @@ class ScheduleAdmin(admin.ModelAdmin):
                     total_failed += len(schedules)
                     continue
 
-                # Build URL using place_id
-                from urllib.parse import quote_plus
-
-                google_maps_url = (
-                    f"https://www.google.com/maps/search/?api=1&"
-                    f"query={quote_plus(address_data['name'])}&"
-                    f"query_place_id={address_data['place_id']}"
-                )
-
                 location, _ = Location.objects.get_or_create(
                     name=address_data["name"],
                     address=address_data["address"],
                     defaults={
-                        "google_maps_url": google_maps_url,
                         "google_maps_response": address_data["full_response"],
                         "google_place_id": address_data["place_id"],
                     },

@@ -1,4 +1,5 @@
 import re
+from urllib.parse import quote_plus
 
 from django.contrib.auth.models import AbstractUser
 from django.db import models
@@ -116,7 +117,6 @@ class Location(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=254)
     address = models.CharField(max_length=512)
-    google_maps_url = models.URLField()
     google_maps_response = models.JSONField()
     google_place_id = models.CharField(max_length=255, blank=False, null=False)
 
@@ -126,10 +126,8 @@ class Location(models.Model):
     def __str__(self):
         return self.name
 
-    def get_google_maps_url(self):
-        """Build Google Maps URL using place_id with search query format."""
-        from urllib.parse import quote_plus
-
+    @property
+    def url(self):
         return f"https://www.google.com/maps/search/?api=1&query={quote_plus(self.name)}&query_place_id={self.google_place_id}"
 
 
