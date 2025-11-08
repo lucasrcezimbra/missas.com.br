@@ -59,6 +59,7 @@ def get_schedule_address(schedule):
                 "name": place_name,
                 "url": f"https://www.google.com/maps/search/?api=1&query={quote_plus(place_name + ' ' + formatted_address)}",
                 "full_response": data,
+                "place_id": result.get("place_id"),
             }
 
         logger.info(

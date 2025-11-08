@@ -66,6 +66,7 @@ class TestGetScheduleAddress:
         assert "google.com/maps/search/?api=1&query=" in result["url"]
         assert "place_id" not in result["url"]
         assert "Igreja+Matriz" in result["url"]
+        assert result["place_id"] == "place1"
 
     @patch("missas.core.facades.google_maps.googlemaps.Client")
     @patch("missas.core.facades.google_maps.settings")
