@@ -1,0 +1,189 @@
+[
+{
+  "model": "core.location",
+  "pk": 1,
+  "fields": {
+    "created_at": "2025-11-07T21:29:08.812Z",
+    "updated_at": "2025-11-07T21:29:08.812Z",
+    "name": "Igreja Matriz De Sant'Ana",
+    "address": "Santana do Matos, RN, 59520-000",
+    "google_maps_response": {
+      "status": "OK",
+      "results": [
+        {
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "name": "Igreja Matriz De Sant'Ana",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "photos": [
+            {
+              "width": 4000,
+              "height": 1868,
+              "photo_reference": "AWn5SU5PVrbPA8zCXr3iM76bxURZkFAEvBZAMyKeMicQet8S_PCbOF85A9o_Tdvr92p7ZMwOiBpjBowZ7PFV74HQW_zFuq1Iz07GnvPOd3kz0NYRQnf9r_bI7tVGvd3nnGMsnuwBXDecREwpSS5mUFVwDC9K0t_zJLcMIV1JFWCHyeeQ1_jCaFtbyBm1pkosDyyKxvqxujO9eimgGS-8BLQuYYfuLAbsvjce03zSWpn--IUiLhFU9e4TPSjflEvflhBuVEkM8PpOc5o_Vl7juOtMtXUonOIHtxXkmH2ullEyGynHKs6kHTLStg-hzWX792JnG0QqcODSmYIKLJ0s2VDazCXiDUGQauRCh97fUqayoOrammM_AnLDB_eomToXjEEOtcngYOG60NSNT4truM8V9VNtBhmRNXVN4acGLtcC0xc8hPmcNOyJ9yzfrUUt2AG0NHHHVEcHmiPxkRr9uPRdFpjE6QdmOXO-rdE0Pw6iftud6ICr13_CTfkcHYBZvBUC-Nz2q7OUfb_aM-2krlQeYX4xQVZrWdnymsobVoOxsLsiyDTKQBfFDZGpaa47skF1uVVFraOP",
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/101726895476058562380\">Jackson Oliveira (Dumundu)</a>"
+              ]
+            }
+          ],
+          "rating": 4.8,
+          "geometry": {
+            "location": {
+              "lat": -5.959930399999999,
+              "lng": -36.6553998
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.958504720107278,
+                "lng": -36.65400602010727
+              },
+              "southwest": {
+                "lat": -5.961204379892722,
+                "lng": -36.65670567989272
+              }
+            }
+          },
+          "place_id": "ChIJNd49U15KsAcR7mWxiSWl5mA",
+          "plus_code": {
+            "global_code": "696528RV+2R",
+            "compound_code": "28RV+2R Santana do Matos, Rio Grande do Norte"
+          },
+          "reference": "ChIJNd49U15KsAcR7mWxiSWl5mA",
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Santana do Matos, RN, 59520-000",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "user_ratings_total": 45,
+          "icon_background_color": "#7B9EB0"
+        }
+      ],
+      "html_attributions": []
+    },
+    "google_maps_place_id": "ChIJNd49U15KsAcR7mWxiSWl5mA"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 2,
+  "fields": {
+    "created_at": "2025-11-07T21:29:09.528Z",
+    "updated_at": "2025-11-07T21:29:09.528Z",
+    "name": "Capela de Santa Luzia",
+    "address": "Santana do Matos, RN, 59520-000",
+    "google_maps_response": {
+      "status": "OK",
+      "results": [
+        {
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "name": "Capela de Santa Luzia",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "photos": [
+            {
+              "width": 552,
+              "height": 414,
+              "photo_reference": "AWn5SU7Pq8AmgcIeG1B4ZWvsQRomCqT3zXg_U_SwqsZMhdoTqiAaCi4TquE_o2_bPM6MXv0u1et6Yg9QT6WyRWQGN8LP_5GrFteWprMfMTdTsS7CsKZgBzt413TDKUCjXJE79M3dgz71a58r67Y3YQ2CUy0YS8Uj0onX2sjE_IhlsJ_Ex4ulum0ecUccPurzb84TK0Tdd3gRLOhtmqIEV8T30gOE77icI-ZomPKrquJytzNzBMZZCLWZQDl4FrDyLzaB2zWoiTF5wyjdDst6dQW2STZamP-xoMYh5QPaJAfiC9ncs3jgPrLa_82t2t3fDs8LqhilSRsQT-7S00vZwcliJiJxpyTJvZN0q3aPf1l-ZjE4dwJ0OHx4dUX9sH7_yyiSHO4gN8SYv_y6_wO3Jk-LlY6doFxuP_BRicOuSYC-yp5yTDETv4Z3JBECWdALnIQbYj7ifYDMnIFlnf5DP4iiOMMG1BWYbXbDhKKfgMYAWHFUzD5FYaEuBbyoJRLqCR0UD8A-1SAGKsIHdwHEGBkt-wstPTtG6QhgB3GLAu8G4iyQ7pBs2yhOdXP6M9HucRVmii1BjMrj",
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/116538910281336496019\">A Google User</a>"
+              ]
+            }
+          ],
+          "rating": 4.3,
+          "geometry": {
+            "location": {
+              "lat": -5.9473408,
+              "lng": -36.65172090000001
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.945985570107277,
+                "lng": -36.65038247010727
+              },
+              "southwest": {
+                "lat": -5.948685229892721,
+                "lng": -36.65308212989272
+              }
+            }
+          },
+          "place_id": "ChIJZb3dbv9KsAcR_iXE5BUcebA",
+          "reference": "ChIJZb3dbv9KsAcR_iXE5BUcebA",
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Santana do Matos, RN, 59520-000",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "user_ratings_total": 7,
+          "icon_background_color": "#7B9EB0"
+        }
+      ],
+      "html_attributions": []
+    },
+    "google_maps_place_id": "ChIJZb3dbv9KsAcR_iXE5BUcebA"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 3,
+  "fields": {
+    "created_at": "2025-11-07T21:29:21.202Z",
+    "updated_at": "2025-11-07T21:29:21.202Z",
+    "name": "Capela de Santo Antônio de Santana Galvão (Frei Galvão)",
+    "address": "RN-041, 195 - Santana do Matos, RN, 59520-000",
+    "google_maps_response": {
+      "status": "OK",
+      "results": [
+        {
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "name": "Capela de Santo Antônio de Santana Galvão (Frei Galvão)",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "photos": [
+            {
+              "width": 1536,
+              "height": 2048,
+              "photo_reference": "AWn5SU4t0f0B8ucwJUT7YvcEzzn95AMqgColChj7584Ai0iE2vBlj4G8tMZaK7Jd05rUZtQHerC65TNO44Jf1PICn2PzHvYqncDenS1_3R-fFsajlGuFG6OFOAM3Yv2jTEaOYqtnXgoIrBt_uZPiYKmlKCwa3JjZzlvLKclzCDMqie874KYngcmQnvkBIvqHFBfyWjyGEYIQZLECOLmU31H7yfGhLkTfCdR6ffynMoDLMo3b71Kdmo1Bw3XO7V3B6MpzOLttceZJ3wIRah0ucvphPkAY4jXnp80dsT7i0izqBojkiwKRIl97m3vnd0opyIQsm3MwdiI4vQZ-1sWe5m9ZkEzyTq84WxOFw4j1Wrw7KmqD455f67RkLlKBIPJRrlDp0vyuTDLPBigrWHTQCg-8-aVqm8_jKG_840ZcncX2LQUJbXunwTuPiP1rOTmPrqSJsN2GxWvcuclebpAzLCe3wxrPd2CVHM08mSiqmZue6-VoGlSYu7kIDbAabUHYe87IE0R15dWbsyqixirKWAD2RqWsHUcFg2oUuYIPcS336-zXOXuCc9hqkQMdHV1GcpJyYUklDR07",
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/109318367351779611684\">Sergio Falcetti</a>"
+              ]
+            }
+          ],
+          "rating": 4.7,
+          "geometry": {
+            "location": {
+              "lat": -5.9534508,
+              "lng": -36.6561225
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.952084870107277,
+                "lng": -36.65479732010727
+              },
+              "southwest": {
+                "lat": -5.954784529892721,
+                "lng": -36.65749697989271
+              }
+            }
+          },
+          "place_id": "ChIJAQ2xR1hKsAcRRDY6lAc1L-Y",
+          "reference": "ChIJAQ2xR1hKsAcRRDY6lAc1L-Y",
+          "business_status": "OPERATIONAL",
+          "formatted_address": "RN-041, 195 - Santana do Matos, RN, 59520-000",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "user_ratings_total": 7,
+          "icon_background_color": "#7B9EB0"
+        }
+      ],
+      "html_attributions": []
+    },
+    "google_maps_place_id": "ChIJAQ2xR1hKsAcRRDY6lAc1L-Y"
+  }
+}
+]
