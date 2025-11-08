@@ -9,12 +9,13 @@ def populate_google_place_id(apps, schema_editor):
         if location.google_maps_response:
             try:
                 results = location.google_maps_response.get("results", [])
-                if results and len(results) > 0:
+                if results:
                     place_id = results[0].get("place_id")
                     if place_id:
                         location.google_place_id = place_id
                         location.save(update_fields=["google_place_id"])
-            except (AttributeError, KeyError, IndexError):
+            except (AttributeError, KeyError):
+                # Skip locations with malformed google_maps_response data
                 pass
 
 

@@ -31,10 +31,11 @@ class LocationAdmin(admin.ModelAdmin):
     search_fields = ("name", "address")
 
     def maps_link(self, obj):
-        if obj.google_maps_url:
+        if obj.google_place_id:
+            url = obj.get_google_maps_url()
             return format_html(
                 '<a href="{url}" target="_blank">Ver no Google Maps</a>',
-                url=obj.google_maps_url,
+                url=url,
             )
         return "-"
 
@@ -215,13 +216,33 @@ class ScheduleAdmin(admin.ModelAdmin):
                     total_failed += len(schedules)
                     continue
 
+                # Ensure place_id is present before creating location
+                if not address_data.get("place_id"):
+                    parish_name = first_schedule.parish.name
+                    self.message_user(
+                        request,
+                        f"Aviso: Google Place ID não encontrado para {parish_name} - {location_name}",
+                        level="warning",
+                    )
+                    total_failed += len(schedules)
+                    continue
+
+                # Build URL using place_id
+                from urllib.parse import quote_plus
+
+                google_maps_url = (
+                    f"https://www.google.com/maps/search/?api=1&"
+                    f"query={quote_plus(address_data['name'])}&"
+                    f"query_place_id={address_data['place_id']}"
+                )
+
                 location, _ = Location.objects.get_or_create(
                     name=address_data["name"],
                     address=address_data["address"],
                     defaults={
-                        "google_maps_url": address_data["url"],
+                        "google_maps_url": google_maps_url,
                         "google_maps_response": address_data["full_response"],
-                        "google_place_id": address_data.get("place_id"),
+                        "google_place_id": address_data["place_id"],
                     },
                 )
 
