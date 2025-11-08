@@ -118,7 +118,7 @@ class Location(models.Model):
     name = models.CharField(max_length=254)
     address = models.CharField(max_length=512)
     google_maps_response = models.JSONField()
-    google_place_id = models.CharField(max_length=255, blank=False, null=False)
+    google_maps_place_id = models.CharField(max_length=255, blank=False, null=False)
 
     class Meta:
         unique_together = [("name", "address")]
@@ -128,7 +128,7 @@ class Location(models.Model):
 
     @property
     def url(self):
-        return f"https://www.google.com/maps/search/?api=1&query={quote_plus(self.name)}&query_place_id={self.google_place_id}"
+        return f"https://www.google.com/maps/search/?api=1&query={quote_plus(self.name)}&query_place_id={self.google_maps_place_id}"
 
 
 class Schedule(models.Model):

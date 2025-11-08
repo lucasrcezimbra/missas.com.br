@@ -27,7 +27,7 @@ admin.site.register(User, UserAdmin)
 class LocationAdmin(admin.ModelAdmin):
     list_display = ("name", "address", "maps_link")
     ordering = ("name",)
-    readonly_fields = ("google_maps_response", "google_place_id", "maps_link")
+    readonly_fields = ("google_maps_response", "google_maps_place_id", "maps_link")
     search_fields = ("name", "address")
 
     def maps_link(self, obj):
@@ -218,7 +218,7 @@ class ScheduleAdmin(admin.ModelAdmin):
                     address=address_data["address"],
                     defaults={
                         "google_maps_response": address_data["full_response"],
-                        "google_place_id": address_data["place_id"],
+                        "google_maps_place_id": address_data["place_id"],
                     },
                 )
 
