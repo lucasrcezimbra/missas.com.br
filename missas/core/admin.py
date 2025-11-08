@@ -1,3 +1,4 @@
+import json
 from collections import defaultdict
 from textwrap import dedent
 from urllib.parse import quote_plus
@@ -26,18 +27,32 @@ admin.site.register(User, UserAdmin)
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
     list_display = ("name", "address", "maps_link")
-    list_filter = (("schedule", admin.RelatedOnlyFieldListFilter),)
     ordering = ("name",)
-    readonly_fields = ("google_maps_response", "maps_link")
+    readonly_fields = (
+        "google_maps_place_id",
+        "maps_link",
+        "formatted_google_maps_response",
+    )
     search_fields = ("name", "address")
 
-    def maps_link(self, obj):
-        if obj.google_maps_url:
+    def formatted_google_maps_response(self, obj):
+        if obj.google_maps_response:
+            formatted_json = json.dumps(
+                obj.google_maps_response, indent=2, ensure_ascii=False
+            )
             return format_html(
-                '<a href="{url}" target="_blank">Ver no Google Maps</a>',
-                url=obj.google_maps_url,
+                '<pre style="padding: 10px; border-radius: 5px; overflow-x: auto;">{}</pre>',
+                formatted_json,
             )
         return "-"
+
+    formatted_google_maps_response.short_description = "Google Maps Response"
+
+    def maps_link(self, obj):
+        return format_html(
+            '<a href="{url}" target="_blank">Ver no Google Maps</a>',
+            url=obj.url,
+        )
 
     maps_link.short_description = "Google Maps"
 
@@ -143,6 +158,7 @@ class ScheduleAdmin(admin.ModelAdmin):
         ("day", admin.ChoicesFieldListFilter),
         ("verified_at", admin.EmptyFieldListFilter),
         ("observation", admin.EmptyFieldListFilter),
+        ("location", admin.EmptyFieldListFilter),
     )
     search_fields = ("parish__name", "day", "start_time")
     actions = ["create_locations_from_addresses"]
@@ -203,7 +219,17 @@ class ScheduleAdmin(admin.ModelAdmin):
                 Schedule.objects.bulk_update(schedules, ["location"])
                 total_updated += len(schedules)
             else:
-                address_data = get_schedule_address(first_schedule)
+                try:
+                    address_data = get_schedule_address(first_schedule)
+                except ValueError:
+                    parish_name = first_schedule.parish.name
+                    self.message_user(
+                        request,
+                        f"Aviso: Multiplos endereços encontrados para {parish_name} - {location_name}",
+                        level="warning",
+                    )
+                    total_failed += len(schedules)
+                    continue
 
                 if address_data is None:
                     parish_name = first_schedule.parish.name
@@ -219,8 +245,8 @@ class ScheduleAdmin(admin.ModelAdmin):
                     name=address_data["name"],
                     address=address_data["address"],
                     defaults={
-                        "google_maps_url": address_data["url"],
                         "google_maps_response": address_data["full_response"],
+                        "google_maps_place_id": address_data["place_id"],
                     },
                 )
 
