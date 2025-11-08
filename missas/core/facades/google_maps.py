@@ -1,5 +1,4 @@
 import logging
-from urllib.parse import quote_plus
 
 import googlemaps
 from django.conf import settings
@@ -57,7 +56,6 @@ def get_schedule_address(schedule):
             return {
                 "address": formatted_address,
                 "name": place_name,
-                "url": f"https://www.google.com/maps/search/?api=1&query={quote_plus(place_name + ' ' + formatted_address)}",
                 "full_response": data,
                 "place_id": result.get("place_id"),
             }
