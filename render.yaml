@@ -1,8 +1,3 @@
-databases:
-  - name: missas
-    databaseName: missas
-    user: missas
-    plan: starter
 services:
   - type: web
     name: missas
@@ -12,11 +7,13 @@ services:
     startCommand: "make run"
     domains:
       - missas.com.br
+    disk:
+      name: missas-db
+      mountPath: /var/data
+      sizeGB: 1
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: missas
-          property: connectionString
+        value: sqlite:////var/data/db.sqlite3
       - key: SECRET_KEY
         generateValue: true
       - key: WEB_CONCURRENCY
