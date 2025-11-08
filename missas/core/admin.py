@@ -201,7 +201,17 @@ class ScheduleAdmin(admin.ModelAdmin):
                 Schedule.objects.bulk_update(schedules, ["location"])
                 total_updated += len(schedules)
             else:
-                address_data = get_schedule_address(first_schedule)
+                try:
+                    address_data = get_schedule_address(first_schedule)
+                except ValueError:
+                    parish_name = first_schedule.parish.name
+                    self.message_user(
+                        request,
+                        f"Aviso: Multiplos endereços encontrados para {parish_name} - {location_name}",
+                        level="warning",
+                    )
+                    total_failed += len(schedules)
+                    continue
 
                 if address_data is None:
                     parish_name = first_schedule.parish.name
