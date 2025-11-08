@@ -5,22 +5,19 @@ from django.db import migrations
 
 def populate_google_place_id(apps, schema_editor):
     Location = apps.get_model("core", "Location")
+
     for location in Location.objects.all():
-        if location.google_maps_response:
-            try:
-                results = location.google_maps_response.get("results", [])
-                if results:
-                    place_id = results[0].get("place_id")
-                    if place_id:
-                        location.google_place_id = place_id
-                        location.save(update_fields=["google_place_id"])
-            except (AttributeError, KeyError):
-                # Skip locations with malformed google_maps_response data
-                pass
+        first_result = location.google_maps_response["results"][0]
+        location.google_place_id = first_result["place_id"]
+        location.save(update_fields=["google_place_id"])
 
 
 def reverse_populate_google_place_id(apps, schema_editor):
-    pass
+    Location = apps.get_model("core", "Location")
+
+    for location in Location.objects.all():
+        location.google_place_id = None
+        location.save(update_fields=["google_place_id"])
 
 
 class Migration(migrations.Migration):
