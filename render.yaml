@@ -17,6 +17,8 @@ services:
         fromDatabase:
           name: missas
           property: connectionString
+      - key: NEW_DATABASE_URL
+        value: sqlite:////var/data/db.sqlite3
       - key: SECRET_KEY
         generateValue: true
       - key: WEB_CONCURRENCY
@@ -32,3 +34,7 @@ services:
         sync: false
       - key: ENV
         value: prod
+    disk:
+      name: data-disk
+      mountPath: /var/data
+      sizeGB: 1
