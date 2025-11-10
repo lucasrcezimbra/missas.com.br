@@ -2044,18 +2044,18 @@ testing = ["process-tests", "pytest-xdist", "virtualenv"]
 
 [[package]]
 name = "pytest-deadfixtures"
-version = "2.2.1"
+version = "3.0.0"
 description = "A simple plugin to list unused fixtures in pytest"
 optional = false
 python-versions = "*"
 groups = ["dev"]
 files = [
-    {file = "pytest-deadfixtures-2.2.1.tar.gz", hash = "sha256:ca15938a4e8330993ccec9c6c847383d88b3cd574729530647dc6b492daa9c1e"},
-    {file = "pytest_deadfixtures-2.2.1-py2.py3-none-any.whl", hash = "sha256:db71533f2d9456227084e00a1231e732973e299ccb7c37ab92e95032ab6c083e"},
+    {file = "pytest_deadfixtures-3.0.0-py2.py3-none-any.whl", hash = "sha256:f4b1484faec373b1f3b2be698d99a7c85be55f6473edcb6a110ff5217cf8753c"},
+    {file = "pytest_deadfixtures-3.0.0.tar.gz", hash = "sha256:08704a1301ee4c631d33f70af4c48ac5904ee4d48656161fa66e6eca07491492"},
 ]
 
 [package.dependencies]
-pytest = ">=3.0.0"
+pytest = ">=7.0.0"
 
 [[package]]
 name = "pytest-django"
@@ -2831,4 +2831,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "~=3.12"
-content-hash = "b1455edb304728892a1a1a41bee77819e0ae437ccbf9096131f8899e28f601cc"
+content-hash = "fa1167c9e11b96d27ed7ffa824f8a01ca826abaec45d906672a44f9bec9e9f73"
