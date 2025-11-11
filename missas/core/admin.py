@@ -7,7 +7,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.html import format_html
 
-from missas.core.facades.google_maps import get_schedule_address
+from missas.core.facades.google_maps import get_location_by_name, get_schedule_address
 from missas.core.models import (
     City,
     Contact,
@@ -28,12 +28,49 @@ admin.site.register(User, UserAdmin)
 class LocationAdmin(admin.ModelAdmin):
     list_display = ("name", "address", "maps_link")
     ordering = ("name",)
-    readonly_fields = (
-        "google_maps_place_id",
-        "maps_link",
-        "formatted_google_maps_response",
-    )
     search_fields = ("name", "address")
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj:
+            return (
+                "address",
+                "google_maps_place_id",
+                "maps_link",
+                "formatted_google_maps_response",
+            )
+        return (
+            "google_maps_place_id",
+            "maps_link",
+            "formatted_google_maps_response",
+        )
+
+    def save_model(self, request, obj, form, change):
+        if not change:
+            try:
+                location_data = get_location_by_name(obj.name)
+
+                if location_data is None:
+                    from django.contrib import messages
+
+                    messages.error(
+                        request,
+                        f"Não foi possível encontrar localização para '{obj.name}'. "
+                        "Por favor, tente com um nome mais específico.",
+                    )
+                    return
+
+                obj.name = location_data["name"]
+                obj.address = location_data["address"]
+                obj.google_maps_response = location_data["full_response"]
+                obj.google_maps_place_id = location_data["place_id"]
+
+            except ValueError as e:
+                from django.contrib import messages
+
+                messages.error(request, str(e))
+                return
+
+        super().save_model(request, obj, form, change)
 
     def formatted_google_maps_response(self, obj):
         if obj.google_maps_response:
