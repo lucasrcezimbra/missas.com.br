@@ -1,0 +1,90 @@
+{% extends "admin/base_site.html" %}
+
+{% load admin_urls i18n static %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <style>
+    .location-option {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .location-option:hover {
+        background-color: #f0f0f0;
+    }
+    .location-option label {
+        display: block;
+        cursor: pointer;
+        font-weight: normal;
+    }
+    .location-option input[type="radio"] {
+        margin-right: 10px;
+    }
+    .location-name {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-bottom: 5px;
+    }
+    .location-address {
+        color: #666;
+        margin-bottom: 5px;
+    }
+    .schedule-info {
+        background-color: #e8f4f8;
+        padding: 10px;
+        margin: 15px 0;
+        border-left: 4px solid #2e7d32;
+        border-radius: 3px;
+    }
+    .schedule-info h3 {
+        margin-top: 0;
+        color: #2e7d32;
+    }
+    </style>
+{% endblock extrahead %}
+
+{% block content %}
+    <h1>Selecionar Localização</h1>
+    <div class="schedule-info">
+        <h3>Informações do Horário</h3>
+        <p>
+            <strong>Paróquia:</strong> {{ parish_name }}
+        </p>
+        <p>
+            <strong>Local:</strong> {{ location_name }}
+        </p>
+        <p>
+            <strong>Horários afetados:</strong> {{ schedule_count }}
+        </p>
+    </div>
+    <p>Múltiplas localizações foram encontradas no Google Maps. Por favor, selecione a localização correta:</p>
+    <form method="post" action="">
+        {% csrf_token %}
+        <input type="hidden" name="parish_id" value="{{ parish_id }}">
+        <input type="hidden" name="location_name" value="{{ location_name }}">
+        <input type="hidden" name="schedule_ids" value="{{ schedule_ids }}">
+        {% for option in options %}
+            <div class="location-option">
+                <label>
+                    <input type="radio"
+                           name="selected_option"
+                           value="{{ forloop.counter0 }}"
+                           {% if forloop.first %}checked{% endif %}>
+                    <div class="location-name">{{ option.name }}</div>
+                    <div class="location-address">{{ option.address }}</div>
+                    <div class="location-place-id">
+                        <small>Place ID: {{ option.place_id }}</small>
+                    </div>
+                </label>
+            </div>
+        {% endfor %}
+        <div class="submit-row">
+            <input type="submit" value="Confirmar Seleção" class="default" name="_save">
+            <a href="{% url 'admin:core_schedule_changelist' %}"
+               class="button cancel-link">Cancelar</a>
+        </div>
+    </form>
+{% endblock content %}
