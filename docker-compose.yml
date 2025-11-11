@@ -1,6 +1,6 @@
 services:
   database:
-    image: postgres
+    image: postgis/postgis:17-3.5
     environment:
       - LC_ALL=C.UTF-8
       - POSTGRES_USER=missas

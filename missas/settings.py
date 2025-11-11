@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
+    "django.contrib.gis",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
@@ -84,6 +85,8 @@ WSGI_APPLICATION = "missas.wsgi.application"
 # Database
 default_db = config("DATABASE_URL", cast=dburl)
 
+# Use PostGIS backend for GIS support
+default_db["ENGINE"] = "django.contrib.gis.db.backends.postgis"
 default_db["OPTIONS"] = {**default_db.get("OPTIONS", {}), "pool": True}
 
 DATABASES = {
