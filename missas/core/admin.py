@@ -30,6 +30,17 @@ class LocationAdmin(admin.ModelAdmin):
     ordering = ("name",)
     search_fields = ("name", "address")
 
+    def get_fields(self, request, obj=None):
+        if obj:
+            return (
+                "name",
+                "address",
+                "google_maps_place_id",
+                "maps_link",
+                "formatted_google_maps_response",
+            )
+        return ("name",)
+
     def get_readonly_fields(self, request, obj=None):
         if obj:
             return (
@@ -38,11 +49,7 @@ class LocationAdmin(admin.ModelAdmin):
                 "maps_link",
                 "formatted_google_maps_response",
             )
-        return (
-            "google_maps_place_id",
-            "maps_link",
-            "formatted_google_maps_response",
-        )
+        return ()
 
     def save_model(self, request, obj, form, change):
         if not change:
@@ -57,6 +64,7 @@ class LocationAdmin(admin.ModelAdmin):
                         f"Não foi possível encontrar localização para '{obj.name}'. "
                         "Por favor, tente com um nome mais específico.",
                     )
+                    request._location_save_failed = True
                     return
 
                 obj.name = location_data["name"]
@@ -68,9 +76,18 @@ class LocationAdmin(admin.ModelAdmin):
                 from django.contrib import messages
 
                 messages.error(request, str(e))
+                request._location_save_failed = True
                 return
 
         super().save_model(request, obj, form, change)
+
+    def response_add(self, request, obj, post_url_continue=None):
+        if hasattr(request, "_location_save_failed") and request._location_save_failed:
+            from django.http import HttpResponseRedirect
+            from django.urls import reverse
+
+            return HttpResponseRedirect(reverse("admin:core_location_add"))
+        return super().response_add(request, obj, post_url_continue)
 
     def formatted_google_maps_response(self, obj):
         if obj.google_maps_response:

@@ -33,6 +33,31 @@ def location_admin(admin_site):
 
 @pytest.mark.django_db
 class TestLocationAdminReadonlyFields:
+    def test_get_fields_for_new_object(
+        self, location_admin, request_factory, admin_user
+    ):
+        request = request_factory.get("/admin/core/location/add/")
+        request.user = admin_user
+
+        fields = location_admin.get_fields(request, obj=None)
+
+        assert fields == ("name",)
+
+    def test_get_fields_for_existing_object(
+        self, location_admin, request_factory, admin_user
+    ):
+        request = request_factory.get("/admin/core/location/1/change/")
+        request.user = admin_user
+        location = baker.make(Location)
+
+        fields = location_admin.get_fields(request, obj=location)
+
+        assert "name" in fields
+        assert "address" in fields
+        assert "google_maps_place_id" in fields
+        assert "maps_link" in fields
+        assert "formatted_google_maps_response" in fields
+
     def test_get_readonly_fields_for_new_object(
         self, location_admin, request_factory, admin_user
     ):
@@ -41,10 +66,7 @@ class TestLocationAdminReadonlyFields:
 
         readonly_fields = location_admin.get_readonly_fields(request, obj=None)
 
-        assert "address" not in readonly_fields
-        assert "google_maps_place_id" in readonly_fields
-        assert "maps_link" in readonly_fields
-        assert "formatted_google_maps_response" in readonly_fields
+        assert readonly_fields == ()
 
     def test_get_readonly_fields_for_existing_object(
         self, location_admin, request_factory, admin_user
@@ -113,6 +135,8 @@ class TestLocationAdminSaveModel:
         messages = list(request._messages)
         assert len(messages) == 1
         assert "Não foi possível encontrar localização" in str(messages[0])
+        assert hasattr(request, "_location_save_failed")
+        assert request._location_save_failed is True
 
     def test_save_model_shows_error_when_multiple_results(
         self, location_admin, request_factory, admin_user, mocker
@@ -136,6 +160,8 @@ class TestLocationAdminSaveModel:
         messages = list(request._messages)
         assert len(messages) == 1
         assert "Multiple results found" in str(messages[0])
+        assert hasattr(request, "_location_save_failed")
+        assert request._location_save_failed is True
 
     def test_save_model_does_not_call_api_on_update(
         self, location_admin, request_factory, admin_user, mocker
@@ -153,3 +179,17 @@ class TestLocationAdminSaveModel:
         location_admin.save_model(request, location, form, change=True)
 
         mock_get_location.assert_not_called()
+
+    def test_response_add_redirects_when_save_failed(
+        self, location_admin, request_factory, admin_user
+    ):
+        request = request_factory.post("/admin/core/location/add/")
+        request.user = admin_user
+        request._location_save_failed = True
+
+        location = Location(name="Test")
+
+        response = location_admin.response_add(request, location)
+
+        assert response.status_code == 302
+        assert "/admin/core/location/add/" in response.url
