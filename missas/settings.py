@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.gis",
     "django_extensions",
     "django_htmx",
     "fontawesomefree",
@@ -82,12 +83,11 @@ WSGI_APPLICATION = "missas.wsgi.application"
 
 
 # Database
-default_db = config("DATABASE_URL", cast=dburl)
-default_db["OPTIONS"] = {**default_db.get("OPTIONS", {}), "pool": True}
-
 DATABASES = {
-    "old": default_db,
-    "default": config("NEW_DATABASE_URL", cast=dburl),
+    "default": {
+        **config("NEW_DATABASE_URL", cast=dburl),
+        "ENGINE": "django.contrib.gis.db.backends.spatialite",
+    },
 }
 
 
