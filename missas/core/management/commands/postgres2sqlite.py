@@ -161,11 +161,7 @@ class Command(BaseCommand):
 
     def convert_value_for_sqlite(self, value):
         """Convert PostgreSQL values to SQLite-compatible format."""
-        if isinstance(value, datetime.time):
-            return value.isoformat()
-        elif isinstance(value, datetime.date):
-            return value.isoformat()
-        elif isinstance(value, datetime.datetime):
+        if isinstance(value, (datetime.datetime, datetime.date, datetime.time)):
             return value.isoformat()
         return value
 
