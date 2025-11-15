@@ -4,7 +4,6 @@
 build:
 	poetry install --without=dev --without=scrapers
 	poetry run python manage.py collectstatic --no-input
-	make dbmigrate
 
 coverage:
 	docker compose up -d
@@ -52,6 +51,7 @@ lint:
 	poetry run pytest --dead-fixtures
 
 run:
+	make dbmigrate
 	poetry run gunicorn missas.wsgi:application
 
 test:
