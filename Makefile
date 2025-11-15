@@ -30,6 +30,7 @@ dbload:
 
 dbmigrate:
 	poetry run python manage.py migrate
+	poetry run python manage.py postgres2sqlite --no-input
 
 dev:
 	docker compose up -d
