@@ -4,8 +4,7 @@
 build:
 	poetry install --without=dev --without=scrapers
 	poetry run python manage.py collectstatic --no-input
-	poetry run python manage.py migrate --database=default
-	poetry run python manage.py migrate --database=new
+	make dbmigrate
 
 coverage:
 	docker compose up -d
@@ -29,9 +28,13 @@ dbload:
 	poetry run python manage.py loaddata ./missas/core/fixtures/locations_natal.json
 	poetry run python manage.py loaddata ./missas/core/fixtures/schedules_natal.json
 
+dbmigrate:
+	poetry run python manage.py migrate --database=default
+	poetry run python manage.py migrate --database=new
+
 dev:
 	docker compose up -d
-	poetry run python manage.py migrate
+	make dbmigrate
 	poetry run python manage.py runserver
 
 install:
@@ -40,7 +43,7 @@ install:
 	poetry run pre-commit install
 	poetry run pre-commit install-hooks
 	cp contrib/env-sample .env
-	poetry run python manage.py migrate
+	make dbmigrate
 	make dbload
 
 lint:
