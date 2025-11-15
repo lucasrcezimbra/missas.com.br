@@ -51,6 +51,7 @@ lint:
 	poetry run pytest --dead-fixtures
 
 run:
+	make dbmigrate
 	poetry run gunicorn missas.wsgi:application
 
 test:
