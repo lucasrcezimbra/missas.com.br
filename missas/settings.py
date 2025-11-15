@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.gis",
     "django_extensions",
     "django_htmx",
     "fontawesomefree",
@@ -87,7 +88,10 @@ default_db["OPTIONS"] = {**default_db.get("OPTIONS", {}), "pool": True}
 
 DATABASES = {
     "old": default_db,
-    "default": config("NEW_DATABASE_URL", cast=dburl),
+    "default": {
+        "ENGINE": "django.contrib.gis.db.backends.spatialite",
+        **config("NEW_DATABASE_URL", cast=dburl),
+    },
 }
 
 
