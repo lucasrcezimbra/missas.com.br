@@ -1,3 +1,5 @@
+import datetime
+
 from django.core.management.base import BaseCommand
 from django.db import connections, transaction
 
@@ -88,7 +90,7 @@ class Command(BaseCommand):
     def get_table_count(self, table_name, db_alias):
         """Get row count for a table."""
         with connections[db_alias].cursor() as cursor:
-            cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+            cursor.execute(f"SELECT COUNT(*) FROM {table_name}")  # noqa: S608
             return cursor.fetchone()[0]
 
     def get_foreign_keys(self, table_name, db_alias):
@@ -157,6 +159,16 @@ class Command(BaseCommand):
             )
             raise
 
+    def convert_value_for_sqlite(self, value):
+        """Convert PostgreSQL values to SQLite-compatible format."""
+        if isinstance(value, datetime.time):
+            return value.isoformat()
+        elif isinstance(value, datetime.date):
+            return value.isoformat()
+        elif isinstance(value, datetime.datetime):
+            return value.isoformat()
+        return value
+
     def clear_target_database(self, tables, target_db):
         """Clear all data from target database tables."""
         self.stdout.write("\nClearing target database...")
@@ -167,7 +179,7 @@ class Command(BaseCommand):
             cursor.execute("PRAGMA foreign_keys = OFF")
 
             for table in reversed_tables:
-                cursor.execute(f"DELETE FROM {table}")
+                cursor.execute(f"DELETE FROM {table}")  # noqa: S608
 
             cursor.execute("PRAGMA foreign_keys = ON")
 
@@ -184,7 +196,7 @@ class Command(BaseCommand):
         self.stdout.write(f"  Copying {table_name} ({count} rows)...", ending="")
 
         with connections[source_db].cursor() as source_cursor:
-            source_cursor.execute(f"SELECT * FROM {table_name}")
+            source_cursor.execute(f"SELECT * FROM {table_name}")  # noqa: S608
             columns = [col[0] for col in source_cursor.description]
             rows = source_cursor.fetchall()
 
@@ -194,16 +206,16 @@ class Command(BaseCommand):
 
         column_names = ", ".join(columns)
         placeholders = ", ".join(["?" for _ in columns])
-        insert_sql = (
-            f"INSERT INTO {table_name} ({column_names}) VALUES ({placeholders})"
-        )
+        insert_sql = f"INSERT INTO {table_name} ({column_names}) VALUES ({placeholders})"  # noqa: S608
+
+        converted_rows = [
+            tuple(self.convert_value_for_sqlite(val) for val in row) for row in rows
+        ]
 
         with connections[target_db].cursor() as target_cursor:
             target_cursor.execute("PRAGMA foreign_keys = OFF")
-
-            for row in rows:
-                target_cursor.execute(insert_sql, row)
-
+            raw_cursor = target_cursor.cursor
+            raw_cursor.executemany(insert_sql, converted_rows)
             target_cursor.execute("PRAGMA foreign_keys = ON")
 
         self.stdout.write(self.style.SUCCESS(" ✓"))
