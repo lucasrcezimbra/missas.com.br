@@ -86,6 +86,7 @@ WSGI_APPLICATION = "missas.wsgi.application"
 DATABASES = {
     "default": {
         **config("NEW_DATABASE_URL", cast=dburl),
+        "ENGINE": "django.contrib.gis.db.backends.spatialite",
     },
 }
 
