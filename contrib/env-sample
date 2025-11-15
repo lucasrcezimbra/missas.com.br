@@ -1,5 +1,6 @@
 ALLOWED_HOSTS=127.0.0.1, .localhost
-DATABASE_URL=postgres://missas:p4ssw0rd@localhost:5432/missas
+DATABASE_URL=postgres://missas:p4ssw0rd@localhost:5439/missas
+NEW_DATABASE_URL=sqlite:///db.sqlite3
 DEBUG=True
 ENV=local
 GOOGLE_MAPS_API_KEY=

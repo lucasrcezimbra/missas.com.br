@@ -71,6 +71,16 @@ State (Brazilian states like RN, SP)
 
 ## Development Workflow
 
+### Package Management with Poetry
+- **IMPORTANT**: This project uses Poetry for dependency management
+- **All Python/Django commands must be run through Poetry**: Use `poetry run <command>` to execute Python scripts, Django management commands, pytest, etc.
+- Examples:
+  - `poetry run python manage.py migrate`
+  - `poetry run python manage.py runserver`
+  - `poetry run pytest`
+  - `poetry run python -m py_compile <file>`
+- Never run Python commands directly without `poetry run` prefix
+
 ### Commands
 - `make install`: Set up development environment
 - `make dev`: Start development server with Docker PostgreSQL

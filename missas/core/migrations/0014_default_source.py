@@ -5,8 +5,9 @@ from django.db import migrations
 
 def create_source(apps, schema_editor):
     Source = apps.get_model("core", "Source")
+    db_alias = schema_editor.connection.alias
 
-    Source.objects.create(
+    Source.objects.using(db_alias).create(
         link="https://www.arquidiocesedenatal.org.br/c%C3%B3pia-hor%C3%A1rios-de-missa-2",
         description="Arquidiocese de Natal",
     )
