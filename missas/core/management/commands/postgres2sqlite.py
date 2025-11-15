@@ -5,9 +5,21 @@ from django.db import connections, transaction
 
 
 class Command(BaseCommand):
-    help = "Copy all data from PostgreSQL (default) to SQLite (new) database"
+    help = "Copy all data from one database to another"
 
     def add_arguments(self, parser):
+        parser.add_argument(
+            "--source",
+            type=str,
+            required=True,
+            help="Source database alias",
+        )
+        parser.add_argument(
+            "--target",
+            type=str,
+            required=True,
+            help="Target database alias",
+        )
         parser.add_argument(
             "--dry-run",
             action="store_true",
@@ -22,14 +34,24 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         dry_run = options["dry_run"]
         no_input = options["no_input"]
+        source_db = options["source"]
+        target_db = options["target"]
 
-        source_db = "default"
-        target_db = "new"
+        if source_db not in connections:
+            self.stdout.write(
+                self.style.ERROR(f"Source database '{source_db}' not found in settings")
+            )
+            return
+
+        if target_db not in connections:
+            self.stdout.write(
+                self.style.ERROR(f"Target database '{target_db}' not found in settings")
+            )
+            return
 
         self.stdout.write(
             self.style.WARNING(
-                f"\nThis will copy all data from '{source_db}' (PostgreSQL) "
-                f"to '{target_db}' (SQLite)"
+                f"\nThis will copy all data from '{source_db}' to '{target_db}'"
             )
         )
 
