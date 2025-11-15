@@ -28,9 +28,9 @@ dbload:
 	poetry run python manage.py loaddata ./missas/core/fixtures/schedules_natal.json
 
 dbmigrate:
+	poetry run python manage.py migrate --database=old
 	poetry run python manage.py migrate --database=default
-	poetry run python manage.py migrate --database=new
-	poetry run python manage.py postgres2sqlite --source=default --target=new --no-input
+	poetry run python manage.py postgres2sqlite --source=old --target=default --no-input
 
 dev:
 	docker compose up -d
