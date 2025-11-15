@@ -23,8 +23,8 @@ class Command(BaseCommand):
         dry_run = options["dry_run"]
         no_input = options["no_input"]
 
-        source_db = "default"
-        target_db = "new"
+        source_db = "old"
+        target_db = "default"
 
         self.stdout.write(
             self.style.WARNING(
