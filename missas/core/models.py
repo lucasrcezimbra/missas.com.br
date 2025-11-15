@@ -2,6 +2,7 @@ import re
 from urllib.parse import quote_plus
 
 from django.contrib.auth.models import AbstractUser
+from django.contrib.gis.db import models as gis_models
 from django.db import models
 from model_utils import FieldTracker
 from model_utils.tracker import FieldInstanceTracker
@@ -119,6 +120,7 @@ class Location(models.Model):
     address = models.CharField(max_length=512)
     google_maps_response = models.JSONField()
     google_maps_place_id = models.CharField(max_length=255, blank=False, null=False)
+    point = gis_models.PointField(null=True, blank=True, srid=4326)
 
     class Meta:
         unique_together = [("name", "address")]
