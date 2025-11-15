@@ -10,19 +10,21 @@ from django.db import migrations, models
 
 def populate_google_place_id(apps, schema_editor):
     Location = apps.get_model("core", "Location")
+    db_alias = schema_editor.connection.alias
 
-    for location in Location.objects.all():
+    for location in Location.objects.using(db_alias).all():
         first_result = location.google_maps_response["results"][0]
         location.google_place_id = first_result["place_id"]
-        location.save(update_fields=["google_place_id"])
+        location.save(using=db_alias, update_fields=["google_place_id"])
 
 
 def reverse_populate_google_place_id(apps, schema_editor):
     Location = apps.get_model("core", "Location")
+    db_alias = schema_editor.connection.alias
 
-    for location in Location.objects.all():
+    for location in Location.objects.using(db_alias).all():
         location.google_place_id = None
-        location.save(update_fields=["google_place_id"])
+        location.save(using=db_alias, update_fields=["google_place_id"])
 
 
 class Migration(migrations.Migration):
