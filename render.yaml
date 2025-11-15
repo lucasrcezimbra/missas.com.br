@@ -6,7 +6,7 @@ databases:
 services:
   - type: web
     name: missas
-    plan: free
+    plan: starter
     runtime: python
     buildCommand: "make build"
     startCommand: "make run"
