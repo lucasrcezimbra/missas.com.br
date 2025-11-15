@@ -9,6 +9,7 @@ services:
     plan: starter
     runtime: python
     buildCommand: "make build"
+    preDeployCommand: "make dbmigrate"
     startCommand: "make run"
     domains:
       - missas.com.br
