@@ -27,12 +27,6 @@ def reverse_populate_latitude_longitude(apps, schema_editor):
 
 class Migration(migrations.Migration):
 
-    replaces = [
-        ("core", "0037_add_latitude_longitude_to_location"),
-        ("core", "0038_populate_latitude_longitude"),
-        ("core", "0039_make_latitude_longitude_required"),
-    ]
-
     dependencies = [
         (
             "core",
