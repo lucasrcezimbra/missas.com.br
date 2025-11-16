@@ -26,7 +26,7 @@ admin.site.register(User, UserAdmin)
 
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ("name", "address", "maps_link")
+    list_display = ("name", "address", "latitude", "longitude", "maps_link")
     ordering = ("name",)
     readonly_fields = (
         "google_maps_place_id",
@@ -247,6 +247,8 @@ class ScheduleAdmin(admin.ModelAdmin):
                     defaults={
                         "google_maps_response": address_data["full_response"],
                         "google_maps_place_id": address_data["place_id"],
+                        "latitude": address_data["latitude"],
+                        "longitude": address_data["longitude"],
                     },
                 )
 
