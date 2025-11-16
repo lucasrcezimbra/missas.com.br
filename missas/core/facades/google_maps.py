@@ -50,6 +50,7 @@ def get_schedule_address(schedule):
             result = results[0]
             formatted_address = result["formatted_address"]
             place_name = result.get("name", "")
+            geometry = result["geometry"]["location"]
 
             logger.debug(f"Found place: {place_name} at address: {formatted_address}")
 
@@ -58,6 +59,8 @@ def get_schedule_address(schedule):
                 "name": place_name,
                 "full_response": data,
                 "place_id": result.get("place_id"),
+                "latitude": geometry["lat"],
+                "longitude": geometry["lng"],
             }
 
         logger.info(
