@@ -31,8 +31,8 @@ The decision is based on the following factors:
 
 ### 1. Low contributor friction
 The project prioritizes a simple “clone → install → run” setup.
-Spatialite introduces:
 
+SpatiaLite introduces:
 - OS-specific installation steps
 - Native library dependencies
 - Compilation requirements on some platforms
