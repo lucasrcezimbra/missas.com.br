@@ -20,7 +20,11 @@ The geocoding use case for the project will be modest: Find nearby parishes and 
 
 Instead, we will:
 
-- Store coordinates as simple `latitude` and `longitude` float fields.
+- Store coordinates as simple `latitude` and `longitude` DecimalField fields.
+  - `latitude`: DecimalField(max_digits=10, decimal_places=8) - supports ±90° with 8 decimal places
+  - `longitude`: DecimalField(max_digits=11, decimal_places=8) - supports ±180° with 8 decimal places
+  - **Why DecimalField instead of FloatField**: DecimalField provides exact decimal precision without floating-point rounding errors, ensuring consistent and predictable coordinate values. This is important for geographic coordinates where we need exact representation of values like -5.94734080.
+  - **Precision**: 8 decimal places provides approximately 1.1mm accuracy (worst case at the equator; better precision at higher latitudes). This is more than sufficient for locating parishes.
 - Perform distance calculations in Python (e.g., Haversine or approximate deltas).
 - Filter and sort in Python after querying only nearby rows.
 - Enforce a maximum radius in the API to avoid returning excessive data.
