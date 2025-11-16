@@ -4,7 +4,7 @@ Date: 2025-11-16
 
 ## Status
 
-Accepted
+Superseded - Decision reverted, continuing with PostgreSQL
 
 ## Context
 
