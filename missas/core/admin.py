@@ -7,7 +7,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.html import format_html
 
-from missas.core.facades.google_maps import get_schedule_address
+from missas.core.facades.google_maps import get_location_by_name, get_schedule_address
 from missas.core.models import (
     City,
     Contact,
@@ -28,12 +28,66 @@ admin.site.register(User, UserAdmin)
 class LocationAdmin(admin.ModelAdmin):
     list_display = ("name", "address", "latitude", "longitude", "maps_link")
     ordering = ("name",)
-    readonly_fields = (
-        "google_maps_place_id",
-        "maps_link",
-        "formatted_google_maps_response",
-    )
     search_fields = ("name", "address")
+
+    def get_fields(self, request, obj=None):
+        if obj:
+            return (
+                "name",
+                "address",
+                "google_maps_place_id",
+                "maps_link",
+                "formatted_google_maps_response",
+            )
+        return ("name",)
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj:
+            return (
+                "address",
+                "google_maps_place_id",
+                "maps_link",
+                "formatted_google_maps_response",
+            )
+        return ()
+
+    def save_model(self, request, obj, form, change):
+        if not change:
+            try:
+                location_data = get_location_by_name(obj.name)
+
+                if location_data is None:
+                    from django.contrib import messages
+
+                    messages.error(
+                        request,
+                        f"Não foi possível encontrar localização para '{obj.name}'. "
+                        "Por favor, tente com um nome mais específico.",
+                    )
+                    request._location_save_failed = True
+                    return
+
+                obj.name = location_data["name"]
+                obj.address = location_data["address"]
+                obj.google_maps_response = location_data["full_response"]
+                obj.google_maps_place_id = location_data["place_id"]
+
+            except ValueError as e:
+                from django.contrib import messages
+
+                messages.error(request, str(e))
+                request._location_save_failed = True
+                return
+
+        super().save_model(request, obj, form, change)
+
+    def response_add(self, request, obj, post_url_continue=None):
+        if hasattr(request, "_location_save_failed") and request._location_save_failed:
+            from django.http import HttpResponseRedirect
+            from django.urls import reverse
+
+            return HttpResponseRedirect(reverse("admin:core_location_add"))
+        return super().response_add(request, obj, post_url_continue)
 
     def formatted_google_maps_response(self, obj):
         if obj.google_maps_response:
