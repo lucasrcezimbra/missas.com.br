@@ -142,7 +142,10 @@ class ParishAdmin(admin.ModelAdmin):
 
 @admin.register(Schedule)
 class ScheduleAdmin(admin.ModelAdmin):
-    autocomplete_fields = ("parish",)
+    autocomplete_fields = (
+        "location",
+        "parish",
+    )
     list_display = (
         "parish",
         "type",
