@@ -437,3 +437,47 @@ def test_title(client):
         f"<title>Horários de missas e confissões em {city.name}/{city.state.short_name.upper()}</title>",
         response.content.decode(),
     )
+
+
+@pytest.mark.django_db
+def test_filter_by_type_other(client):
+    city = baker.make(City)
+    baker.make(Schedule, parish__city=city, type=Schedule.Type.MASS)
+    other = baker.make(
+        Schedule,
+        parish__city=city,
+        type=Schedule.Type.OTHER,
+        other_type_description="Adoração ao Santíssimo",
+    )
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"tipo": "outros"},
+    )
+
+    assertInHTML(
+        '<input class="btn-check" id="outros" name="tipo" type="radio" value="outros" checked>',
+        response.content.decode(),
+    )
+    assertQuerySetEqual(
+        response.context["schedules"],
+        [other],
+    )
+
+
+@pytest.mark.django_db
+def test_show_other_type_description(client):
+    city = baker.make(City)
+    other = baker.make(
+        Schedule,
+        parish__city=city,
+        type=Schedule.Type.OTHER,
+        other_type_description="Adoração ao Santíssimo",
+    )
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"tipo": "outros"},
+    )
+
+    assertContains(response, "Adoração ao Santíssimo")

@@ -147,6 +147,7 @@ class Schedule(models.Model):
     class Type(models.TextChoices):
         MASS = ("mass", "Missa")
         CONFESSION = ("confession", "Confissão")
+        OTHER = ("other", "Outro")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -163,6 +164,11 @@ class Schedule(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField(null=True, blank=True)
     type = models.CharField(choices=Type.choices, default=Type.MASS)
+    other_type_description = models.CharField(
+        max_length=100,
+        blank=True,
+        help_text="Tipo de celebração quando 'Outro' for selecionado",
+    )
     verified_at = models.DateField(blank=True, null=True)
 
     objects = ScheduleQuerySet.as_manager()
@@ -170,6 +176,19 @@ class Schedule(models.Model):
 
     class Meta:
         unique_together = ("parish", "day", "start_time")
+
+    def clean(self):
+        from django.core.exceptions import ValidationError
+
+        super().clean()
+        if self.type == self.Type.OTHER and not self.other_type_description:
+            raise ValidationError(
+                {"other_type_description": "Este campo é obrigatório quando o tipo é 'Outro'."}
+            )
+        if self.type != self.Type.OTHER and self.other_type_description:
+            raise ValidationError(
+                {"other_type_description": "Este campo deve estar vazio quando o tipo não é 'Outro'."}
+            )
 
     def __str__(self):
         if self.end_time:

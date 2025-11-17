@@ -69,6 +69,7 @@ def by_city(request, state, city):
     type = {
         "missas": Schedule.Type.MASS,
         "confissoes": Schedule.Type.CONFESSION,
+        "outros": Schedule.Type.OTHER,
     }.get(type_name, Schedule.Type.MASS)
     schedules = Schedule.objects.filter(parish__city=city, type=type)
 

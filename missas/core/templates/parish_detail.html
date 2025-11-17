@@ -67,7 +67,7 @@
     <div class="schedules-section">
         <h3>
             <i class="fa-solid fa-calendar-alt me-2 text-primary"></i>
-            Horários de Missas e Confissões
+            Horários
         </h3>
         {% regroup schedules by type as schedule_groups %}
         {% for group in schedule_groups %}
@@ -76,9 +76,12 @@
                     {% if group.grouper == Schedule.Type.MASS %}
                         <i class="fa-solid fa-church text-primary"></i>
                         Missas
-                    {% else %}
+                    {% elif group.grouper == Schedule.Type.CONFESSION %}
                         <i class="fa-solid fa-heart text-primary"></i>
                         Confissões
+                    {% elif group.grouper == Schedule.Type.OTHER %}
+                        <i class="fa-solid fa-calendar text-primary"></i>
+                        Outros
                     {% endif %}
                 </h4>
                 {% for schedule in group.list %}
@@ -96,6 +99,16 @@
                                                rel="noopener noreferrer"
                                                class="text-muted">{{ schedule.location.address }}</a>
                                         {% endif %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                            {% if schedule.type == Schedule.Type.OTHER and schedule.other_type_description %}
+                                <div class="row mb-2">
+                                    <div class="col-auto">
+                                        <strong>
+                                            <i class="fa-solid fa-tag"></i>
+                                            {{ schedule.other_type_description }}
+                                        </strong>
                                     </div>
                                 </div>
                             {% endif %}

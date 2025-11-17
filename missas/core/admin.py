@@ -149,6 +149,7 @@ class ScheduleAdmin(admin.ModelAdmin):
     list_display = (
         "parish",
         "type",
+        "other_type_description",
         "day",
         "start_time",
         "location_link",
@@ -163,7 +164,7 @@ class ScheduleAdmin(admin.ModelAdmin):
         ("observation", admin.EmptyFieldListFilter),
         ("location", admin.EmptyFieldListFilter),
     )
-    search_fields = ("parish__name", "day", "start_time")
+    search_fields = ("parish__name", "day", "start_time", "other_type_description")
     actions = ["create_locations_from_addresses"]
 
     def location_link(self, obj):
