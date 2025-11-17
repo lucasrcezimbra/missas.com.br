@@ -183,11 +183,15 @@ class Schedule(models.Model):
         super().clean()
         if self.type == self.Type.OTHER and not self.other_type_description:
             raise ValidationError(
-                {"other_type_description": "Este campo é obrigatório quando o tipo é 'Outro'."}
+                {
+                    "other_type_description": "Este campo é obrigatório quando o tipo é 'Outro'."
+                }
             )
         if self.type != self.Type.OTHER and self.other_type_description:
             raise ValidationError(
-                {"other_type_description": "Este campo deve estar vazio quando o tipo não é 'Outro'."}
+                {
+                    "other_type_description": "Este campo deve estar vazio quando o tipo não é 'Outro'."
+                }
             )
 
     def __str__(self):

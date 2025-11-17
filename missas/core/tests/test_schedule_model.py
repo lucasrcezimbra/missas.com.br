@@ -7,7 +7,9 @@ from missas.core.models import Schedule
 
 @pytest.mark.django_db
 def test_other_type_requires_description():
-    schedule = baker.prepare(Schedule, type=Schedule.Type.OTHER, other_type_description="")
+    schedule = baker.prepare(
+        Schedule, type=Schedule.Type.OTHER, other_type_description=""
+    )
 
     with pytest.raises(ValidationError) as exc_info:
         schedule.full_clean()
@@ -22,7 +24,9 @@ def test_other_type_requires_description():
 @pytest.mark.django_db
 def test_other_type_with_description_is_valid():
     schedule = baker.prepare(
-        Schedule, type=Schedule.Type.OTHER, other_type_description="Adoração ao Santíssimo"
+        Schedule,
+        type=Schedule.Type.OTHER,
+        other_type_description="Adoração ao Santíssimo",
     )
 
     schedule.full_clean()
@@ -46,7 +50,9 @@ def test_non_other_type_should_not_have_description():
 
 @pytest.mark.django_db
 def test_mass_type_without_description_is_valid():
-    schedule = baker.prepare(Schedule, type=Schedule.Type.MASS, other_type_description="")
+    schedule = baker.prepare(
+        Schedule, type=Schedule.Type.MASS, other_type_description=""
+    )
 
     schedule.full_clean()
 
