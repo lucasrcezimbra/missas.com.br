@@ -6,7 +6,7 @@ from django.shortcuts import resolve_url
 from model_bakery import baker
 from pytest_django.asserts import assertContains, assertTemplateUsed
 
-from missas.core.models import City, Parish, Schedule, Source, State
+from missas.core.models import City, Location, Parish, Schedule, Source, State
 
 
 @pytest.mark.django_db
@@ -40,10 +40,11 @@ def test_statistics_with_no_data(client):
     stats = response.context["stats"]
     assert stats["cities_with_parishes"] == 0
     assert stats["parishes"] == 0
+    assert stats["locations"] == 0
     assert stats["schedules"] == 0
     assert stats["verified_schedules"] == 0
 
-    assertContains(response, ">0</h4>", count=4)
+    assertContains(response, ">0</h4>", count=5)
 
 
 @pytest.mark.django_db
@@ -64,6 +65,10 @@ def test_statistics_with_data(client):
     parish2 = baker.make(Parish, name="Paróquia São José", slug="sao-jose", city=city2)
     parish3 = baker.make(Parish, name="Catedral da Sé", slug="catedral-se", city=city3)
 
+    # Create locations
+    location1 = baker.make(Location, name="Igreja Matriz")
+    location2 = baker.make(Location, name="Capela São Pedro")
+
     source = baker.make(Source)
 
     # Create schedules (some verified, some not)
@@ -73,6 +78,7 @@ def test_statistics_with_data(client):
         type=Schedule.Type.MASS,
         verified_at=date.today(),
         source=source,
+        location=location1,
     )
     baker.make(
         Schedule,
@@ -87,6 +93,7 @@ def test_statistics_with_data(client):
         type=Schedule.Type.MASS,
         verified_at=date.today(),
         source=source,
+        location=location2,
     )
     baker.make(
         Schedule,
@@ -108,12 +115,14 @@ def test_statistics_with_data(client):
     stats = response.context["stats"]
     assert stats["cities_with_parishes"] == 3  # city4 has no parishes with schedules
     assert stats["parishes"] == 3
+    assert stats["locations"] == 2
     assert stats["schedules"] == 5
     assert stats["verified_schedules"] == 3
 
     assertContains(
         response, "3</h4>"
     )  # Should appear for cities, parishes, and verified schedules
+    assertContains(response, "2</h4>")  # Should appear for locations
     assertContains(response, "5</h4>")  # Should appear for total schedules
 
 
@@ -185,7 +194,7 @@ def test_query_count_optimization(client, django_assert_num_queries):
     baker.make(Schedule, parish=parish1)
     baker.make(Schedule, parish=parish2)
 
-    with django_assert_num_queries(num=7):
+    with django_assert_num_queries(num=8):
         response = client.get(resolve_url("index"))
 
     assert response.status_code == HTTPStatus.OK
