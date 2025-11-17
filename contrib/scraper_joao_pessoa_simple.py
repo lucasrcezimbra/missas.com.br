@@ -40,25 +40,21 @@ def main():
     scripts = soup.find_all("script")
     print(f"Found {len(scripts)} script tags")
 
-    ninja_scripts = [
-        s for s in scripts if s.string and "ninja" in s.string.lower()
-    ]
+    ninja_scripts = [s for s in scripts if s.string and "ninja" in s.string.lower()]
     if ninja_scripts:
         print(f"\nFound {len(ninja_scripts)} scripts mentioning 'ninja'")
         for script in ninja_scripts[:2]:
             print(f"Script preview: {str(script)[:200]}...")
 
     print("\n=== Recommendation ===")
-    print(
-        "The table data is loaded via JavaScript (Ninja Tables plugin)."
-    )
+    print("The table data is loaded via JavaScript (Ninja Tables plugin).")
     print("To extract the data, you can:")
     print("1. Use the Playwright-based scraper (scraper_joao_pessoa.py)")
     print("2. Manually open the page in a browser and copy the table data")
     print("3. Use browser DevTools to inspect the AJAX requests")
     print("4. Contact the diocese for a data export")
 
-    print(f"\nHTML saved to /tmp/joao_pessoa.html for manual inspection")
+    print("\nHTML saved to /tmp/joao_pessoa.html for manual inspection")
     with open("/tmp/joao_pessoa.html", "w", encoding="utf-8") as f:
         f.write(response.text)
 
