@@ -1,8 +1,9 @@
-# João Pessoa (PB) Scraper
+# João Pessoa (PB) Scrapers
 
-Scrapers for extracting parish Mass and confession schedules from Arquidiocese da Paraíba.
+Scrapers for extracting parish information and Mass/confession schedules from Arquidiocese da Paraíba.
 
 **Website:** https://arquidiocesepb.org.br/
+**Digital Annual:** http://162.241.101.195/~lumenpastoral/anuario/paroquias
 **Schedule Page:** https://arquidiocesepb.org.br/horario-de-missas-e-confissoes/
 
 ## Challenge
@@ -11,9 +12,49 @@ The website uses **Ninja Tables** WordPress plugin (table ID: 770) which loads d
 
 ## Available Scrapers
 
-### 1. scraper_joao_pessoa.py (Recommended)
+### 1. scraper_joao_pessoa_anuario.py (Recommended - Working!)
 
-Full-featured scraper using **scrapy-playwright** for JavaScript rendering.
+**Parish data scraper using the Digital Annual directory (Anuário Digital).**
+
+This scraper extracts parish information from the HTTP-based digital annual directory, which contains comprehensive data about all parishes in the Archdiocese.
+
+**Data Source:** http://162.241.101.195/~lumenpastoral/anuario/paroquias
+
+**Setup:**
+```bash
+poetry install --with scrapers
+```
+
+**Usage:**
+```bash
+poetry run python contrib/scraper_joao_pessoa_anuario.py > parishes.jsonl
+```
+
+**Extracted Data:**
+- Parish name and type (Paróquia, Capelania, Santuário)
+- Forania (regional grouping)
+- City and state (all in Paraíba - PB)
+- Year of creation
+- Complete address with zip code
+- Contact information (phones, emails)
+- Active clergy (priests and deacons)
+
+**Output:** JSONL format with ~105 parishes
+
+**Advantages:**
+- ✅ Works without JavaScript rendering
+- ✅ Fast and reliable
+- ✅ Comprehensive parish data
+- ✅ No authentication required
+- ✅ HTTP endpoint (not HTTPS issues)
+
+### 2. scraper_joao_pessoa.py (For Mass Schedules - Experimental)
+
+**Status:** Not fully functional - requires JavaScript rendering for Ninja Tables plugin.
+
+Full-featured scraper using **scrapy-playwright** for JavaScript rendering to extract Mass schedules from the main schedule page.
+
+**Data Source:** https://arquidiocesepb.org.br/horario-de-missas-e-confissoes/
 
 **Setup:**
 ```bash
@@ -26,15 +67,19 @@ poetry run playwright install chromium
 poetry run scrapy runspider contrib/scraper_joao_pessoa.py -o output.jsonl
 ```
 
-**Features:**
-- Renders JavaScript to access dynamic table content
-- Automatically extracts table headers and data
-- Identifies parish names from table content
-- Outputs structured JSONL format
+**Intended Features:**
+- Renders JavaScript to access dynamic Ninja Tables content
+- Extracts Mass and confession schedules
+- Automatically parses table data
 
-**Note:** May timeout in some environments due to network/proxy issues. If this happens, use the simple scraper or manual extraction.
+**Current Limitations:**
+- May timeout in restricted network environments
+- Requires proper browser automation setup
+- Ninja Tables uses complex JavaScript rendering
 
-### 2. scraper_joao_pessoa_simple.py (Fallback)
+**Alternative:** Use the anuario scraper for parish contact information, then manually collect Mass schedules.
+
+### 3. scraper_joao_pessoa_simple.py (Investigation Tool)
 
 Simple scraper for investigating the page structure without JavaScript rendering.
 
