@@ -1,5 +1,6 @@
-import scrapy
 import json
+
+import scrapy
 
 
 class MaceioSpider(scrapy.Spider):
