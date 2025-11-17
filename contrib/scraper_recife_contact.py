@@ -28,12 +28,12 @@ class RecifeSpider(scrapy.Spider):
 
     custom_settings = {
         "USER_AGENT": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                      "(KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
+        "(KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
     }
 
     def parse(self, response):
-        content = response.css('div.entry-content')[0]
-        text_elements = content.css('::text')
+        content = response.css("div.entry-content")[0]
+        text_elements = content.css("::text")
         content_text = "\n".join((e.get() for e in text_elements))
 
         vicariate_name = response.css("h1.entry-title::text").get()
