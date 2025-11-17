@@ -29,9 +29,7 @@ class FortalezaSpider(scrapy.Spider):
 
     def parse_parishes_list(self, response):
         """
-        Parse the parishes list page and extract parish information.
-
-        @scrapes parish_name location region_url
+        Parse the parishes list page and follow links to individual parishes.
         """
         region_name = response.url.split("/regiao-")[1].split("/")[0]
 
@@ -50,10 +48,54 @@ class FortalezaSpider(scrapy.Spider):
             parish_name = parts[0] if parts else parish_text
             location = parts[1] if len(parts) > 1 else ""
 
-            yield {
-                "parish_name": parish_name,
-                "location": location,
-                "region": region_name,
-                "parish_url": response.urljoin(parish_url),
-                "region_url": response.url,
-            }
+            yield response.follow(
+                parish_url,
+                self.parse_parish_page,
+                meta={
+                    "parish_name": parish_name,
+                    "location": location,
+                    "region": region_name,
+                    "region_url": response.url,
+                },
+            )
+
+    def parse_parish_page(self, response):
+        """
+        Parse individual parish page to extract schedules and contact information.
+
+        @scrapes parish_name location region schedule address phone email
+        """
+        parish_name = response.meta["parish_name"]
+        location = response.meta["location"]
+        region = response.meta["region"]
+        region_url = response.meta["region_url"]
+
+        content_area = response.css("article, .entry-content, main")
+
+        schedules_text = []
+        for section in content_area:
+            text_content = section.css("::text").getall()
+            schedules_text.extend([t.strip() for t in text_content if t.strip()])
+
+        phone_numbers = []
+        for link in response.css('a[href*="tel:"]'):
+            phone = link.css("::text").get()
+            if phone:
+                phone_numbers.append(phone.strip())
+
+        emails = []
+        for link in response.css('a[href*="mailto:"]'):
+            email = link.attrib.get("href", "").replace("mailto:", "")
+            if email:
+                emails.append(email.strip())
+
+        yield {
+            "parish_name": parish_name,
+            "location": location,
+            "region": region,
+            "parish_url": response.url,
+            "region_url": region_url,
+            "schedule_text": "\n".join(schedules_text),
+            "phones": ", ".join(phone_numbers),
+            "emails": ", ".join(emails),
+        }
