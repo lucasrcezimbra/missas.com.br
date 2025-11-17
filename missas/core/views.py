@@ -1,4 +1,5 @@
 from datetime import time
+from math import asin, cos, radians, sin, sqrt
 
 from django.db import models
 from django.db.models import Q
@@ -123,6 +124,112 @@ def parish_detail(request, state, city, parish):
         {
             "parish": parish,
             "schedules": schedules,
+            "Schedule": Schedule,
+        },
+    )
+
+
+def haversine_distance(lat1, lon1, lat2, lon2):
+    """Calculate the great circle distance in kilometers between two points on Earth."""
+    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    c = 2 * asin(sqrt(a))
+    km = 6371 * c
+    return km
+
+
+def nearby_schedules(request):
+    try:
+        user_lat = float(request.GET.get("lat"))
+        user_lon = float(request.GET.get("long"))
+    except (TypeError, ValueError):
+        return render(
+            request,
+            "nearby_schedules.html",
+            {
+                "error": "Coordenadas inválidas. Por favor, permita o acesso à sua localização."
+            },
+        )
+
+    day_name = request.GET.get("dia")
+    hour = request.GET.get("horario")
+    type_name = request.GET.get("tipo")
+    verified_only = request.GET.get("verificado") == "1"
+    max_distance = request.GET.get("distancia", "50")
+
+    try:
+        max_distance = float(max_distance)
+    except ValueError:
+        max_distance = 50.0
+
+    day = {
+        "domingo": Schedule.Day.SUNDAY,
+        "segunda": Schedule.Day.MONDAY,
+        "terca": Schedule.Day.TUESDAY,
+        "quarta": Schedule.Day.WEDNESDAY,
+        "quinta": Schedule.Day.THURSDAY,
+        "sexta": Schedule.Day.FRIDAY,
+        "sabado": Schedule.Day.SATURDAY,
+    }.get(day_name)
+
+    type = {
+        "missas": Schedule.Type.MASS,
+        "confissoes": Schedule.Type.CONFESSION,
+    }.get(type_name, Schedule.Type.MASS)
+
+    schedules = Schedule.objects.filter(
+        location__isnull=False,
+        type=type,
+    )
+
+    if day is not None:
+        schedules = schedules.filter(day=day)
+
+    if hour is not None:
+        hour = time(int(hour))
+        qs = Q(start_time__gte=hour) | Q(end_time__gte=hour)
+        schedules = schedules.filter(qs)
+
+    if verified_only:
+        schedules = schedules.filter(verified_at__isnull=False)
+
+    schedules = schedules.select_related(
+        "parish", "parish__city", "parish__city__state", "source", "location"
+    ).prefetch_related("parish__contact")
+
+    schedules_with_distance = []
+    for schedule in schedules:
+        distance = haversine_distance(
+            user_lat,
+            user_lon,
+            float(schedule.location.latitude),
+            float(schedule.location.longitude),
+        )
+        if distance <= max_distance:
+            schedule.distance = distance
+            schedules_with_distance.append(schedule)
+
+    schedules_with_distance.sort(key=lambda s: s.distance)
+
+    template = (
+        "cards.html"
+        if request.htmx and not request.htmx.boosted
+        else "nearby_schedules.html"
+    )
+
+    return render(
+        request,
+        template,
+        {
+            "schedules": schedules_with_distance,
+            "day": day,
+            "hour": hour.hour if hour else 0,
+            "type": type,
+            "max_distance": max_distance,
+            "user_lat": user_lat,
+            "user_lon": user_lon,
             "Schedule": Schedule,
         },
     )
