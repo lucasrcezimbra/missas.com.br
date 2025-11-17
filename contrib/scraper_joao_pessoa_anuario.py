@@ -24,7 +24,6 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
-
 BASE_URL = "http://162.241.101.195/~lumenpastoral/anuario"
 PARISHES_URL = f"{BASE_URL}/paroquias"
 
@@ -42,7 +41,9 @@ def get_forania_links():
         if "paroquias/list?forania_description=" in href:
             forania_name = link.get_text(strip=True)
             # Clean up the forania name (remove extra text like "label_important")
-            forania_name = re.sub(r"label_important|Forania|Cidade\(s\):.*", "", forania_name).strip()
+            forania_name = re.sub(
+                r"label_important|Forania|Cidade\(s\):.*", "", forania_name
+            ).strip()
 
             if not href.startswith("http"):
                 href = BASE_URL + href.replace("~lumenpastoral/anuario", "")
