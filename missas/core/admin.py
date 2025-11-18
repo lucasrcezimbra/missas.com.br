@@ -21,8 +21,14 @@ from missas.core.models import (
     User,
 )
 
-admin.site.register(Source)
 admin.site.register(User, UserAdmin)
+
+
+@admin.register(Source)
+class SourceAdmin(admin.ModelAdmin):
+    list_display = ("description", "type", "link")
+    list_filter = (("type", admin.ChoicesFieldListFilter),)
+    search_fields = ("description", "link")
 
 
 @admin.register(Location)
