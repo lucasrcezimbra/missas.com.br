@@ -6,7 +6,15 @@ from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.csrf import csrf_exempt
 
-from missas.core.models import City, ContactRequest, Location, Parish, Schedule, State
+from missas.core.models import (
+    City,
+    ContactRequest,
+    Feedback,
+    Location,
+    Parish,
+    Schedule,
+    State,
+)
 
 
 def index(request):
@@ -154,6 +162,52 @@ def create_contact(request):
             <div class="alert alert-success" role="alert">
                 <i class="fa-solid fa-check-circle me-2"></i>
                 Obrigado! Em breve entraremos em contato com a paróquia.
+            </div>
+        </div>
+        """
+        return HttpResponse(template)
+
+    return redirect(request.META.get("HTTP_REFERER", "/"))
+
+
+@csrf_exempt
+def create_feedback(request):
+    if request.method != "POST":
+        return HttpResponseNotAllowed(["POST"])
+
+    message = request.POST.get("message", "").strip()
+    contact = request.POST.get("contact", "").strip()
+    parish_id = request.POST.get("parish_id")
+
+    if not message:
+        if request.htmx:
+            template = """
+            <div id="feedbackMessage">
+                <div class="alert alert-danger" role="alert">
+                    <i class="fa-solid fa-exclamation-circle me-2"></i>
+                    Por favor, descreva o problema.
+                </div>
+            </div>
+            """
+            return HttpResponse(template)
+        return redirect(request.META.get("HTTP_REFERER", "/"))
+
+    parish = None
+    if parish_id:
+        try:
+            parish = Parish.objects.get(id=parish_id)
+        except Parish.DoesNotExist:
+            pass
+
+    feedback = Feedback(message=message, contact=contact, parish=parish)
+    feedback.save()
+
+    if request.htmx:
+        template = """
+        <div id="feedbackMessage">
+            <div class="alert alert-success" role="alert">
+                <i class="fa-solid fa-check-circle me-2"></i>
+                Obrigado pelo seu feedback! Vamos analisar e tomar as medidas necessárias.
             </div>
         </div>
         """

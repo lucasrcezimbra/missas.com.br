@@ -176,3 +176,22 @@ class Schedule(models.Model):
             return f"{self.get_day_display()} {self.start_time} - {self.end_time} at {self.parish}"
         else:
             return f"{self.get_day_display()} {self.start_time} at {self.parish}"
+
+
+class Feedback(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    parish = models.ForeignKey(
+        Parish,
+        on_delete=models.CASCADE,
+        related_name="feedbacks",
+        blank=True,
+        null=True,
+    )
+    message = models.TextField()
+    contact = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        if self.parish:
+            return f"Feedback sobre {self.parish.name} - {self.message[:50]}"
+        return f"Feedback - {self.message[:50]}"

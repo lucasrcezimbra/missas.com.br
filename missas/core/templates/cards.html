@@ -119,10 +119,11 @@
                 {% endif %}
                 <div class="row">
                     <div class="col-auto">
-                        <a href="https://wa.me/+5584991234449?text=Olá. Eu gostaria de relatar um problema na '{{ schedule.parish.name }}' {{ schedule.parish.contact.whatsapp }}. O problema é:"
+                        <a href="javascript:void(0)"
                            class="text-decoration-none"
-                           target="_blank"
-                           rel="noopener noreferrer">
+                           data-bs-toggle="modal"
+                           data-bs-target="#feedbackModal"
+                           onclick="document.getElementById('feedback_parish_id').value='{{ schedule.parish.id }}'">
                             <i class="fa-solid fa-flag text-danger"></i>
                             Relatar problema
                         </a>

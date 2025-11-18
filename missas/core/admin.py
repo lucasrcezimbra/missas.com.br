@@ -12,6 +12,7 @@ from missas.core.models import (
     City,
     Contact,
     ContactRequest,
+    Feedback,
     Location,
     Parish,
     Schedule,
@@ -283,3 +284,18 @@ class StateAdmin(admin.ModelAdmin):
     list_display = ("name", "short_name", "slug")
     ordering = ("name",)
     search_fields = ("name", "short_name", "slug")
+
+
+@admin.register(Feedback)
+class FeedbackAdmin(admin.ModelAdmin):
+    autocomplete_fields = ("parish",)
+    list_display = ("created_at", "parish", "message_preview", "contact")
+    list_filter = (("parish", admin.EmptyFieldListFilter),)
+    ordering = ("-created_at",)
+    readonly_fields = ("created_at", "updated_at")
+    search_fields = ("message", "contact", "parish__name")
+
+    def message_preview(self, obj):
+        return obj.message[:100] if obj.message else ""
+
+    message_preview.short_description = "Message"

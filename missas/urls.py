@@ -7,6 +7,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
     path("contatos/", views.create_contact, name="create_contact"),
+    path("feedbacks/", views.create_feedback, name="create_feedback"),
     path(
         "<slug:state>/<slug:city>/<slug:parish>/",
         views.parish_detail,
