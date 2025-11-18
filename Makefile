@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := dev
-.PHONY: build check-template coverage dbdump dbload dev install lint run test update-template
+.PHONY: build check-template coverage dbdump dbload dev install lint run test update-template worktree
 
 build:
 	poetry install --without=dev --without=scrapers
@@ -61,3 +61,12 @@ test:
 
 update-template:
 	poetry run cruft update --skip-apply-ask
+
+worktree:
+	@if [ -z "$(NAME)" ]; then \
+		echo "Error: NAME is required. Usage: make worktree NAME=branch-name"; \
+		exit 1; \
+	fi
+	git worktree add $(NAME) -b $(NAME)
+	cp -r .claude $(NAME)/.claude
+	cd $(NAME) && make install

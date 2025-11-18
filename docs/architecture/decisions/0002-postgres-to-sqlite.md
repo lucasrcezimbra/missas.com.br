@@ -34,10 +34,11 @@ Migrate the project’s primary database from PostgreSQL to SQLite.
 * **Cost reduction:** PostgreSQL on Render costs approximately $7/month. For a non‑commercial side project, this expense accumulates with little benefit.
 * **Low migration effort thanks to AI:** Normally, switching databases would not justify the effort, but AI tooling (scripts, code generation) reduced migration time significantly, making the cost-benefit tradeoff favorable.
 * **Operational simplicity:** SQLite is a single-file database with zero administration. It removes the need to manage PostgreSQL on a future VPS.
-* **Compatible with project needs:** The project does not use any PostgreSQL-specific features and relies mostly on simple CRUD operations. Django’s support for SpatiaLite makes geospatial features possible without PostGIS.
+* **Compatible with project needs:** The project does not use any PostgreSQL-specific features and relies mostly on simple CRUD operations. Django's support for SpatiaLite makes geospatial features possible without PostGIS.
 * **Workload characteristics:** Traffic is low, read-heavy, and cacheable. SQLite performs well under these conditions.
 * **Future-proof for planned hosting changes:** If migrating from Render to a VPS, SQLite keeps the stack lightweight and avoids the overhead of running a database server.
 * **Backups remain straightforward:** Render persistent disks provide automatic backups, and VPS environments can mirror this with standard filesystem snapshot tools.
+* **Better development experience:** SQLite runs easily in any Cloud AI agent (Claude Code, OpenAI Codex, etc.), in Git worktrees with different databases (configuring separate PostgreSQL instances for each worktree is more complex), inside containers, and other development environments. PostgreSQL requires additional setup and configuration in these scenarios.
 
 ## Consequences
 

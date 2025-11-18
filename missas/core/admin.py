@@ -20,8 +20,14 @@ from missas.core.models import (
     User,
 )
 
-admin.site.register(Source)
 admin.site.register(User, UserAdmin)
+
+
+@admin.register(Source)
+class SourceAdmin(admin.ModelAdmin):
+    list_display = ("description", "type", "link")
+    list_filter = (("type", admin.ChoicesFieldListFilter),)
+    search_fields = ("description", "link")
 
 
 @admin.register(Location)
@@ -107,8 +113,10 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(ContactRequest)
 class ContactRequestAdmin(admin.ModelAdmin):
-    list_display = ("whatsapp_link",)
-    ordering = ("whatsapp",)
+    list_display = ("whatsapp_link", "created_at", "is_archived")
+    list_filter = ("is_archived",)
+    ordering = ("-created_at",)
+    actions = ["archive_contact_requests"]
 
     def whatsapp_link(self, obj):
         message = dedent(
@@ -131,6 +139,18 @@ class ContactRequestAdmin(admin.ModelAdmin):
 
     whatsapp_link.short_description = "WhatsApp Link"
 
+    def archive_contact_requests(self, request, queryset):
+        updated = queryset.update(is_archived=True)
+        self.message_user(
+            request,
+            f"{updated} solicitação(ões) de contato arquivada(s) com sucesso.",
+            level="success",
+        )
+
+    archive_contact_requests.short_description = (
+        "Arquivar solicitações de contato selecionadas"
+    )
+
 
 @admin.register(Parish)
 class ParishAdmin(admin.ModelAdmin):
@@ -142,7 +162,10 @@ class ParishAdmin(admin.ModelAdmin):
 
 @admin.register(Schedule)
 class ScheduleAdmin(admin.ModelAdmin):
-    autocomplete_fields = ("parish",)
+    autocomplete_fields = (
+        "location",
+        "parish",
+    )
     list_display = (
         "parish",
         "type",

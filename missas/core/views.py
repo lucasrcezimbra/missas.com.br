@@ -6,13 +6,14 @@ from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.csrf import csrf_exempt
 
-from missas.core.models import City, ContactRequest, Parish, Schedule, State
+from missas.core.models import City, ContactRequest, Location, Parish, Schedule, State
 
 
 def index(request):
     stats = {
         "cities_with_parishes": City.objects.filter_with_schedule().count(),
         "parishes": Parish.objects.count(),
+        "locations": Location.objects.count(),
         "schedules": Schedule.objects.count(),
         "verified_schedules": Schedule.objects.filter_verified().count(),
     }
