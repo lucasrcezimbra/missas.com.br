@@ -162,7 +162,9 @@ class SaoPauloSpider(scrapy.Spider):
             "address": address,
             "parish_priest": parish_priest,
             "mass_schedule": " | ".join(mass_schedule) if mass_schedule else None,
-            "confession_schedule": " | ".join(confession_schedule) if confession_schedule else None,
+            "confession_schedule": (
+                " | ".join(confession_schedule) if confession_schedule else None
+            ),
             "url": response.url,
         }
 
