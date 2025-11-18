@@ -29,17 +29,23 @@ class SalvadorSpider(scrapy.Spider):
 
     def parse(self, response):
         # Extract parish links from Elementor posts
-        parish_links = response.css('a.elementor-post__thumbnail__link::attr(href)').getall()
+        parish_links = response.css(
+            "a.elementor-post__thumbnail__link::attr(href)"
+        ).getall()
 
         # Also get from text links
-        text_links = response.css('div.elementor-post__text a::attr(href)').getall()
+        text_links = response.css("div.elementor-post__text a::attr(href)").getall()
         parish_links.extend(text_links)
 
         # Remove duplicates while preserving order
         seen = set()
         unique_links = []
         for link in parish_links:
-            if link and link not in seen and ("paroquia-" in link or "basilica-" in link):
+            if (
+                link
+                and link not in seen
+                and ("paroquia-" in link or "basilica-" in link)
+            ):
                 seen.add(link)
                 unique_links.append(link)
 
@@ -53,22 +59,31 @@ class SalvadorSpider(scrapy.Spider):
 
         # Extract all text from Elementor content or main content area
         # Try Elementor content first
-        post_body = response.css("div.elementor-widget-container, div.entry-content, article.post, main")
+        post_body = response.css(
+            "div.elementor-widget-container, div.entry-content, article.post, main"
+        )
 
         if post_body:
             text_elements = post_body.css("::text")
-            post_text = "\n".join((e.get().strip() for e in text_elements if e.get().strip()))
+            post_text = "\n".join(
+                (e.get().strip() for e in text_elements if e.get().strip())
+            )
         else:
             # Fallback: get all text from body
             text_elements = response.css("body ::text")
-            post_text = "\n".join((e.get().strip() for e in text_elements if e.get().strip()))
+            post_text = "\n".join(
+                (e.get().strip() for e in text_elements if e.get().strip())
+            )
 
         if not post_text or len(post_text) < 50:
             self.logger.warning("No sufficient content found for %s", parish_name)
             return
 
         if not OPENAI_API_KEY:
-            self.logger.warning("OPENAI_API_KEY not configured, skipping LLM processing for %s", parish_name)
+            self.logger.warning(
+                "OPENAI_API_KEY not configured, skipping LLM processing for %s",
+                parish_name,
+            )
             return
 
         model = llm.get_model("gpt-4o")
