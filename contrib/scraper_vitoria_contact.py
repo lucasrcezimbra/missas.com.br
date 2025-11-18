@@ -20,11 +20,11 @@ class VitoriaSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        parish_links = response.css('h2 a')
+        parish_links = response.css("h2 a")
 
         for link in parish_links:
-            parish_url = link.css('::attr(href)').get()
-            parish_name = link.css('::text').get()
+            parish_url = link.css("::attr(href)").get()
+            parish_name = link.css("::text").get()
 
             if parish_url and parish_name:
                 if "area-pastoral" not in parish_url.lower():
@@ -39,9 +39,11 @@ class VitoriaSpider(scrapy.Spider):
         if parish_name:
             parish_name = parish_name.split(" - ")[0].strip()
 
-        main_content = response.css('main, article, div.elementor-widget-container')
+        main_content = response.css("main, article, div.elementor-widget-container")
         text_elements = main_content.css("::text")
-        post_text = "\n".join((e.get().strip() for e in text_elements if e.get().strip()))
+        post_text = "\n".join(
+            (e.get().strip() for e in text_elements if e.get().strip())
+        )
 
         model = llm.get_model("gpt-4o")
         model.key = OPENAI_API_KEY
