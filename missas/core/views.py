@@ -172,6 +172,19 @@ def create_contact(request):
 
 @csrf_exempt
 def create_feedback(request):
+    """
+    Handle feedback submission from users reporting issues with parishes.
+
+    Accepts POST requests with 'message' (required), 'contact' (optional),
+    and 'parish_id' (optional) fields. Returns HTMX-compatible responses
+    for dynamic UI updates or redirects for non-HTMX requests.
+
+    Parameters:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: An HTMX partial or a redirect response.
+    """
     if request.method != "POST":
         return HttpResponseNotAllowed(["POST"])
 
@@ -197,9 +210,11 @@ def create_feedback(request):
         try:
             parish = Parish.objects.get(id=parish_id)
         except Parish.DoesNotExist:
+            # If the parish does not exist, leave parish as None
             pass
 
     feedback = Feedback(message=message, contact=contact, parish=parish)
+    feedback.full_clean()
     feedback.save()
 
     if request.htmx:

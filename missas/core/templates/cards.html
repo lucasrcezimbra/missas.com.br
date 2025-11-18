@@ -119,14 +119,14 @@
                 {% endif %}
                 <div class="row">
                     <div class="col-auto">
-                        <a href="javascript:void(0)"
-                           class="text-decoration-none"
-                           data-bs-toggle="modal"
-                           data-bs-target="#feedbackModal"
-                           onclick="document.getElementById('feedback_parish_id').value='{{ schedule.parish.id }}'">
+                        <button type="button"
+                                class="btn btn-link text-decoration-none p-0"
+                                data-bs-toggle="modal"
+                                data-bs-target="#feedbackModal"
+                                onclick="document.getElementById('feedback_parish_id').value='{{ schedule.parish.id }}'">
                             <i class="fa-solid fa-flag text-danger"></i>
                             Relatar problema
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -332,5 +332,22 @@
                 </div>
             </div>
         </div>
+        <script>
+            (function() {
+                var feedbackModal = document.getElementById('feedbackModal');
+                if (feedbackModal) {
+                    var modalBody = feedbackModal.querySelector('.modal-body');
+                    if (modalBody) {
+                        var originalBody = modalBody.innerHTML;
+                        feedbackModal.addEventListener('hidden.bs.modal', function () {
+                            // Only reset if the form is missing (i.e., replaced by success message)
+                            if (!modalBody.querySelector('form')) {
+                                modalBody.innerHTML = originalBody;
+                            }
+                        });
+                    }
+                }
+            })();
+        </script>
     </body>
 </html>
