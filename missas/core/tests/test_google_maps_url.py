@@ -64,6 +64,11 @@ class TestUnshortenUrl:
         result = _unshorten_url("https://maps.app.goo.gl/short")
         assert result == "https://maps.app.goo.gl/short"
 
+    def test_unshorten_url_only_accepts_google_maps_urls(self):
+        # Should not attempt to unshorten non-Google Maps URLs
+        result = _unshorten_url("https://evil.com/malicious")
+        assert result == "https://evil.com/malicious"
+
 
 class TestGetLocationFromGoogleMapsUrl:
     @pytest.mark.django_db

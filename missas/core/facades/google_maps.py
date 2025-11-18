@@ -79,6 +79,14 @@ def get_schedule_address(schedule):
 
 
 def _unshorten_url(short_url):
+    # Only unshorten URLs from known Google Maps domains
+    if not (
+        short_url.startswith("https://maps.app.goo.gl/")
+        or short_url.startswith("https://goo.gl/maps/")
+    ):
+        logger.warning(f"URL is not a Google Maps short URL: {short_url}")
+        return short_url
+
     try:
         req = Request(short_url, headers={"User-Agent": "Mozilla/5.0"})  # noqa: S310
         with urlopen(req, timeout=10) as response:  # noqa: S310
