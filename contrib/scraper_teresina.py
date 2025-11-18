@@ -4,9 +4,7 @@ import scrapy
 class TeresinaSpider(scrapy.Spider):
     name = "teresina"
     allowed_domains = ["arquidiocesedetersina.org.br"]
-    start_urls = [
-        "https://arquidiocesedetersina.org.br/"
-    ]
+    start_urls = ["https://arquidiocesedetersina.org.br/"]
 
     def parse(self, response):
         """
