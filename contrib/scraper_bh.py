@@ -16,9 +16,7 @@ import scrapy
 class BeloHorizonteSpider(scrapy.Spider):
     name = "bh"
     allowed_domains = ["arquidiocesebh.org.br"]
-    start_urls = [
-        "https://arquidiocesebh.org.br/para-voce/missas/"
-    ]
+    start_urls = ["https://arquidiocesebh.org.br/para-voce/missas/"]
 
     def parse(self, response):
         """
