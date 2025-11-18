@@ -184,7 +184,7 @@ class ScheduleAdmin(admin.ModelAdmin):
         ("location", admin.EmptyFieldListFilter),
     )
     search_fields = ("parish__name", "day", "start_time")
-    actions = ["create_locations_from_addresses"]
+    actions = ["create_locations_from_addresses", "reuse_existing_locations"]
 
     def location_link(self, obj):
         if obj.location:
@@ -295,6 +295,63 @@ class ScheduleAdmin(admin.ModelAdmin):
 
     create_locations_from_addresses.short_description = (
         "Criar localizações a partir de endereços"
+    )
+
+    def reuse_existing_locations(self, request, queryset):
+        schedules_to_process = queryset.filter(location__isnull=True)
+
+        if not schedules_to_process.exists():
+            self.message_user(
+                request,
+                "Nenhum horário sem localização encontrado.",
+                level="warning",
+            )
+            return
+
+        schedules_by_parish_location = defaultdict(list)
+        for schedule in schedules_to_process.select_related("parish"):
+            key = (schedule.parish_id, schedule.location_name)
+            schedules_by_parish_location[key].append(schedule)
+
+        total_updated = 0
+        total_skipped = 0
+
+        for (
+            parish_id,
+            location_name,
+        ), schedules in schedules_by_parish_location.items():
+            existing_location = (
+                Location.objects.filter(
+                    schedule__parish_id=parish_id,
+                    schedule__location_name=location_name,
+                )
+                .exclude(schedule__location__isnull=True)
+                .first()
+            )
+
+            if existing_location:
+                for schedule in schedules:
+                    schedule.location = existing_location
+                Schedule.objects.bulk_update(schedules, ["location"])
+                total_updated += len(schedules)
+            else:
+                total_skipped += len(schedules)
+
+        if total_updated > 0:
+            self.message_user(
+                request,
+                f"Sucesso: {total_updated} horário(s) atualizado(s) com localização existente.",
+                level="success",
+            )
+        if total_skipped > 0:
+            self.message_user(
+                request,
+                f"Aviso: {total_skipped} horário(s) não possuem localização correspondente para reutilizar.",
+                level="warning",
+            )
+
+    reuse_existing_locations.short_description = (
+        "Reutilizar localizações de outros horários"
     )
 
 
