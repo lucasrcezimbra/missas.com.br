@@ -25,9 +25,7 @@ class TestLocationAdminForm:
     def test_google_maps_url_hidden_for_existing_instances(self):
         location = baker.make(Location)
         form = LocationAdminForm(instance=location)
-        assert isinstance(
-            form.fields["google_maps_url"].widget, forms.HiddenInput
-        )
+        assert isinstance(form.fields["google_maps_url"].widget, forms.HiddenInput)
 
     @pytest.mark.django_db
     @patch("missas.core.admin.get_place_from_url")

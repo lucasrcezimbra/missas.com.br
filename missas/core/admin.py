@@ -71,7 +71,9 @@ class LocationAdminForm(forms.ModelForm):
                 cleaned_data["longitude"] = place_data["longitude"]
 
             except ValueError as e:
-                raise forms.ValidationError(f"Erro ao processar a URL do Google Maps: {str(e)}")
+                raise forms.ValidationError(
+                    f"Erro ao processar a URL do Google Maps: {str(e)}"
+                )
 
         return cleaned_data
 

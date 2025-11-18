@@ -111,7 +111,9 @@ def get_place_from_url(maps_url):
             region="br",
         )
 
-        logger.debug(f"Google Place Details API response for place_id '{place_id}': {result}")
+        logger.debug(
+            f"Google Place Details API response for place_id '{place_id}': {result}"
+        )
 
         if result.get("status") == "OK" and result.get("result"):
             place_data = result["result"]
@@ -130,7 +132,9 @@ def get_place_from_url(maps_url):
                 "longitude": geometry["lng"],
             }
 
-        logger.info(f"No place found for place_id: {place_id} (status: {result.get('status')})")
+        logger.info(
+            f"No place found for place_id: {place_id} (status: {result.get('status')})"
+        )
         return None
 
     except ValueError:
