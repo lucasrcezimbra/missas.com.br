@@ -28,7 +28,9 @@ class SaoLuisContactSpider(scrapy.Spider):
         """
         Parse the foranias (deaneries) page to extract parish links.
         """
-        parish_links = response.css('a[href*="/paroquia?paroquiaid="]::attr(href)').getall()
+        parish_links = response.css(
+            'a[href*="/paroquia?paroquiaid="]::attr(href)'
+        ).getall()
 
         for link in set(parish_links):
             yield response.follow(link, self.parse_parish_contact)
@@ -49,7 +51,11 @@ class SaoLuisContactSpider(scrapy.Spider):
             if parish_name:
                 parish_name = parish_name.replace("–", "-").split("-")[0].strip()
 
-        post_body = response.css(".paroquia-page")[0] if response.css(".paroquia-page") else response.css("#content-wrapper")
+        post_body = (
+            response.css(".paroquia-page")[0]
+            if response.css(".paroquia-page")
+            else response.css("#content-wrapper")
+        )
 
         if not post_body:
             self.logger.warning(

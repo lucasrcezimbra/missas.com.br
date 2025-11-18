@@ -25,7 +25,9 @@ class SaoLuisSpider(scrapy.Spider):
         @url https://arquislz.org.br/foranias/
         @returns requests 60 70
         """
-        parish_links = response.css('a[href*="/paroquia?paroquiaid="]::attr(href)').getall()
+        parish_links = response.css(
+            'a[href*="/paroquia?paroquiaid="]::attr(href)'
+        ).getall()
 
         for link in set(parish_links):
             yield response.follow(link, self.parse_parish_schedule)
