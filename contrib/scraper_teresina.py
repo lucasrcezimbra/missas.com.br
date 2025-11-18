@@ -3,8 +3,10 @@ import scrapy
 
 class TeresinaSpider(scrapy.Spider):
     name = "teresina"
-    allowed_domains = ["arquidiocesedetersina.org.br"]
-    start_urls = ["https://arquidiocesedetersina.org.br/"]
+    allowed_domains = ["arquidiocesedeteresina.org.br"]
+    start_urls = [
+        "https://arquidiocesedeteresina.org.br/"
+    ]
 
     def parse(self, response):
         """
@@ -14,7 +16,7 @@ class TeresinaSpider(scrapy.Spider):
         TODO: Verificar a URL correta da página de horários de missas
         TODO: Atualizar os seletores CSS baseado na estrutura real do site
 
-        @url https://arquidiocesedetersina.org.br/
+        @url https://arquidiocesedeteresina.org.br/
         @returns items 0 100
         @returns requests 0 10
         @scrapes parish_name times
