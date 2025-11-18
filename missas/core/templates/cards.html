@@ -21,6 +21,16 @@
                         </div>
                     </div>
                 {% endif %}
+                {% if schedule.other_type_description %}
+                    <div class="row">
+                        <div class="col-auto">
+                            <strong>
+                                <i class="fa-solid fa-tag"></i>
+                                {{ schedule.other_type_description }}
+                            </strong>
+                        </div>
+                    </div>
+                {% endif %}
                 <div class="row">
                     <div class="col-auto">
                         <span><i class="fa-solid fa-calendar-week"></i> {{ schedule.get_day_display }}</span>

@@ -80,6 +80,7 @@ ai_response = model.prompt(
             class Type(models.TextChoices):
                 MASS = ("mass", "Missa")
                 CONFESSION = ("confession", "Confissão")
+                OTHER = ("other", "Outro")
 
             created_at = models.DateTimeField(auto_now_add=True)
             updated_at = models.DateTimeField(auto_now=True)
@@ -93,6 +94,11 @@ ai_response = model.prompt(
             start_time = models.TimeField()
             end_time = models.TimeField(null=True, blank=True)
             type = models.CharField(choices=Type.choices, default=Type.MASS)
+            other_type_description = models.CharField(
+                max_length=100,
+                blank=True,
+                help_text="Tipo de celebração quando 'Outro' for selecionado",
+            )
             verified_at = models.DateField(blank=True, null=True)
 
             class Meta:

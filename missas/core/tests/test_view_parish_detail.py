@@ -106,7 +106,7 @@ def test_parish_detail_shows_schedules(client):
     )
 
     assert response.status_code == HTTPStatus.OK
-    assertContains(response, "Horários de Missas e Confissões")
+    assertContains(response, "Horários")
     assertContains(response, "Missas")
     assertContains(response, schedule.get_day_display())
 
@@ -180,3 +180,29 @@ def test_parish_detail_shows_verified_schedule(client):
 
     assert response.status_code == HTTPStatus.OK
     assertContains(response, "Verificado por Missas.com.br")
+
+
+@pytest.mark.django_db
+def test_parish_detail_shows_other_type_with_description(client):
+    parish = baker.make(Parish)
+    source = baker.make(Source)
+    _schedule = baker.make(
+        Schedule,
+        parish=parish,
+        source=source,
+        type=Schedule.Type.OTHER,
+        other_type_description="Adoração ao Santíssimo",
+    )
+
+    response = client.get(
+        resolve_url(
+            "parish_detail",
+            state=parish.city.state.slug,
+            city=parish.city.slug,
+            parish=parish.slug,
+        )
+    )
+
+    assert response.status_code == HTTPStatus.OK
+    assertContains(response, "Outros")
+    assertContains(response, "Adoração ao Santíssimo")
