@@ -44,16 +44,21 @@ class LocationAdminForm(forms.ModelForm):
     class Meta:
         model = Location
         fields = "__all__"
+        exclude = ["google_maps_place_id"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if not self.instance.pk:
-            self.fields["name"].required = False
-            self.fields["address"].required = False
-            self.fields["google_maps_response"].required = False
-            self.fields["google_maps_place_id"].required = False
-            self.fields["latitude"].required = False
-            self.fields["longitude"].required = False
+            if "name" in self.fields:
+                self.fields["name"].required = False
+            if "address" in self.fields:
+                self.fields["address"].required = False
+            if "google_maps_response" in self.fields:
+                self.fields["google_maps_response"].required = False
+            if "latitude" in self.fields:
+                self.fields["latitude"].required = False
+            if "longitude" in self.fields:
+                self.fields["longitude"].required = False
 
     def clean(self):
         cleaned_data = super().clean()
@@ -67,7 +72,7 @@ class LocationAdminForm(forms.ModelForm):
                 cleaned_data["name"] = location_data["name"]
                 cleaned_data["address"] = location_data["address"]
                 cleaned_data["google_maps_response"] = location_data["full_response"]
-                cleaned_data["google_maps_place_id"] = location_data["place_id"]
+                self._google_maps_place_id = location_data["place_id"]
                 cleaned_data["latitude"] = Decimal(str(location_data["latitude"]))
                 cleaned_data["longitude"] = Decimal(str(location_data["longitude"]))
             else:
@@ -78,7 +83,6 @@ class LocationAdminForm(forms.ModelForm):
             required_fields = [
                 "name",
                 "address",
-                "google_maps_place_id",
                 "latitude",
                 "longitude",
             ]
@@ -92,6 +96,14 @@ class LocationAdminForm(forms.ModelForm):
                 )
 
         return cleaned_data
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        if hasattr(self, "_google_maps_place_id"):
+            instance.google_maps_place_id = self._google_maps_place_id
+        if commit:
+            instance.save()
+        return instance
 
 
 @admin.register(Location)
@@ -115,7 +127,6 @@ class LocationAdmin(admin.ModelAdmin):
                 "latitude",
                 "longitude",
                 "google_maps_response",
-                "google_maps_place_id",
             ]
         return None
 

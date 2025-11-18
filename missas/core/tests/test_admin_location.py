@@ -100,9 +100,11 @@ class TestLocationAdminForm:
         assert form.is_valid(), f"Form errors: {form.errors}"
         assert form.cleaned_data["name"] == "Igreja Matriz"
         assert form.cleaned_data["address"] == "Rua Principal, 123 - Centro, Natal - RN"
-        assert form.cleaned_data["google_maps_place_id"] == "ChIJ123ABC"
         assert float(form.cleaned_data["latitude"]) == -5.79
         assert float(form.cleaned_data["longitude"]) == -35.21
+
+        location = form.save()
+        assert location.google_maps_place_id == "ChIJ123ABC"
 
     @pytest.mark.django_db
     @patch("missas.core.admin.get_location_from_google_maps_url")
