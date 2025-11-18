@@ -3,11 +3,12 @@ from collections import defaultdict
 from textwrap import dedent
 from urllib.parse import quote_plus
 
+from django import forms
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.html import format_html
 
-from missas.core.facades.google_maps import get_schedule_address
+from missas.core.facades.google_maps import get_place_from_url, get_schedule_address
 from missas.core.models import (
     City,
     Contact,
@@ -30,8 +31,54 @@ class SourceAdmin(admin.ModelAdmin):
     search_fields = ("description", "link")
 
 
+class LocationAdminForm(forms.ModelForm):
+    google_maps_url = forms.URLField(
+        required=False,
+        label="Google Maps URL",
+        help_text="Cole uma URL do Google Maps para preencher automaticamente os campos abaixo",
+        widget=forms.URLInput(attrs={"placeholder": "https://maps.app.goo.gl/..."}),
+        assume_scheme="https",
+    )
+
+    class Meta:
+        model = Location
+        fields = "__all__"
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.instance.pk:
+            self.fields["google_maps_url"].widget = forms.HiddenInput()
+            self.fields["google_maps_url"].help_text = ""
+
+    def clean(self):
+        cleaned_data = super().clean()
+        google_maps_url = cleaned_data.get("google_maps_url")
+
+        if google_maps_url and not self.instance.pk:
+            try:
+                place_data = get_place_from_url(google_maps_url)
+
+                if place_data is None:
+                    raise forms.ValidationError(
+                        "Não foi possível obter informações do local a partir da URL fornecida."
+                    )
+
+                cleaned_data["name"] = place_data["name"]
+                cleaned_data["address"] = place_data["address"]
+                cleaned_data["google_maps_response"] = place_data["full_response"]
+                cleaned_data["google_maps_place_id"] = place_data["place_id"]
+                cleaned_data["latitude"] = place_data["latitude"]
+                cleaned_data["longitude"] = place_data["longitude"]
+
+            except ValueError as e:
+                raise forms.ValidationError(f"Erro ao processar a URL do Google Maps: {str(e)}")
+
+        return cleaned_data
+
+
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
+    form = LocationAdminForm
     list_display = ("name", "address", "latitude", "longitude", "maps_link")
     ordering = ("name",)
     readonly_fields = (
@@ -40,6 +87,30 @@ class LocationAdmin(admin.ModelAdmin):
         "formatted_google_maps_response",
     )
     search_fields = ("name", "address")
+
+    def get_fields(self, request, obj=None):
+        if obj is None:
+            return [
+                "google_maps_url",
+                "name",
+                "address",
+                "latitude",
+                "longitude",
+                "google_maps_place_id",
+                "google_maps_response",
+                "maps_link",
+                "formatted_google_maps_response",
+            ]
+        return [
+            "name",
+            "address",
+            "latitude",
+            "longitude",
+            "google_maps_place_id",
+            "google_maps_response",
+            "maps_link",
+            "formatted_google_maps_response",
+        ]
 
     def formatted_google_maps_response(self, obj):
         if obj.google_maps_response:
