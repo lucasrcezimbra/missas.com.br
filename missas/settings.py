@@ -83,7 +83,8 @@ WSGI_APPLICATION = "missas.wsgi.application"
 
 # Database
 default_db = config("DATABASE_URL", cast=dburl)
-default_db["OPTIONS"] = {**default_db.get("OPTIONS", {}), "pool": True}
+if default_db.get("ENGINE") == "django.db.backends.postgresql":
+    default_db["OPTIONS"] = {**default_db.get("OPTIONS", {}), "pool": True}
 
 DATABASES = {
     "default": default_db,

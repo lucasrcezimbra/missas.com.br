@@ -124,17 +124,22 @@ def test_filter_by_sunday(client: Client):
 @pytest.mark.django_db
 def test_order_by_day_and_time(client: Client):
     city = baker.make(City)
+    parish_a = baker.make("Parish", name="Parish A", city=city)
+    parish_b = baker.make("Parish", name="Parish B", city=city)
+    parish_c = baker.make("Parish", name="Parish C", city=city)
+    parish_d = baker.make("Parish", name="Parish D", city=city)
+
     saturday_morning = baker.make(
-        Schedule, day=Schedule.Day.SATURDAY, start_time=time(9, 57), parish__city=city
+        Schedule, day=Schedule.Day.SATURDAY, start_time=time(9, 57), parish=parish_a
     )
     saturday_afternoon = baker.make(
-        Schedule, day=Schedule.Day.SATURDAY, start_time=time(14, 12), parish__city=city
+        Schedule, day=Schedule.Day.SATURDAY, start_time=time(14, 12), parish=parish_b
     )
     sunday_morning = baker.make(
-        Schedule, day=Schedule.Day.SUNDAY, start_time=time(9, 57), parish__city=city
+        Schedule, day=Schedule.Day.SUNDAY, start_time=time(9, 57), parish=parish_c
     )
     sunday_afternoon = baker.make(
-        Schedule, day=Schedule.Day.SUNDAY, start_time=time(14, 12), parish__city=city
+        Schedule, day=Schedule.Day.SUNDAY, start_time=time(14, 12), parish=parish_d
     )
 
     response = client.get(
@@ -144,10 +149,10 @@ def test_order_by_day_and_time(client: Client):
     assertQuerySetEqual(
         response.context["schedules"],
         [
-            sunday_morning,
-            sunday_afternoon,
             saturday_morning,
             saturday_afternoon,
+            sunday_morning,
+            sunday_afternoon,
         ],
     )
 
@@ -155,11 +160,14 @@ def test_order_by_day_and_time(client: Client):
 @pytest.mark.django_db
 def test_filter_by_day_and_order_by_time(client: Client):
     city = baker.make(City)
+    parish_a = baker.make("Parish", name="Parish A", city=city)
+    parish_b = baker.make("Parish", name="Parish B", city=city)
+
     saturday_morning = baker.make(
-        Schedule, day=Schedule.Day.SATURDAY, start_time=time(9, 57), parish__city=city
+        Schedule, day=Schedule.Day.SATURDAY, start_time=time(9, 57), parish=parish_a
     )
     saturday_afternoon = baker.make(
-        Schedule, day=Schedule.Day.SATURDAY, start_time=time(14, 12), parish__city=city
+        Schedule, day=Schedule.Day.SATURDAY, start_time=time(14, 12), parish=parish_b
     )
     baker.make(
         Schedule, day=Schedule.Day.SUNDAY, start_time=time(9, 57), parish__city=city
@@ -436,4 +444,60 @@ def test_title(client):
     assertInHTML(
         f"<title>Horários de missas e confissões em {city.name}/{city.state.short_name.upper()}</title>",
         response.content.decode(),
+    )
+
+
+@pytest.mark.django_db
+def test_order_by_verified_at_and_parish_name(client: Client):
+    from datetime import datetime
+
+    city = baker.make(City)
+
+    # Create parishes with specific names for ordering
+    parish_alpha = baker.make("Parish", name="Alpha Parish", city=city)
+    parish_beta = baker.make("Parish", name="Beta Parish", city=city)
+    parish_charlie = baker.make("Parish", name="Charlie Parish", city=city)
+    parish_delta = baker.make("Parish", name="Delta Parish", city=city)
+
+    # Create schedules with different verification statuses
+    # Verified more recently (Beta)
+    schedule_verified_recent = baker.make(
+        Schedule,
+        parish=parish_beta,
+        verified_at=datetime(2025, 1, 15),
+    )
+
+    # Verified less recently (Charlie)
+    schedule_verified_older = baker.make(
+        Schedule,
+        parish=parish_charlie,
+        verified_at=datetime(2025, 1, 10),
+    )
+
+    # Not verified (Alpha - should come after verified, ordered by name)
+    schedule_unverified_alpha = baker.make(
+        Schedule,
+        parish=parish_alpha,
+        verified_at=None,
+    )
+
+    # Not verified (Delta - should come after Alpha alphabetically)
+    schedule_unverified_delta = baker.make(
+        Schedule,
+        parish=parish_delta,
+        verified_at=None,
+    )
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+    )
+
+    assertQuerySetEqual(
+        response.context["schedules"],
+        [
+            schedule_verified_recent,  # Most recent verification
+            schedule_verified_older,  # Older verification
+            schedule_unverified_alpha,  # Unverified, alphabetically first
+            schedule_unverified_delta,  # Unverified, alphabetically second
+        ],
     )

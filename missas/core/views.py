@@ -84,7 +84,7 @@ def by_city(request, state, city):
     if verified_only:
         schedules = schedules.filter(verified_at__isnull=False)
 
-    schedules = schedules.order_by("day", "start_time")
+    schedules = schedules.order_by("-verified_at", "parish__name")
     schedules = schedules.select_related(
         "parish", "parish__city", "parish__city__state", "source", "location"
     ).prefetch_related("parish__contact")
