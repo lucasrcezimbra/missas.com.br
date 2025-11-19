@@ -191,7 +191,23 @@ class Command(BaseCommand):
         """Clear all data from target database tables."""
         self.stdout.write("\nClearing target database...")
 
-        reversed_tables = list(reversed(tables))
+        # Get tables that exist in the target database
+        target_tables = set(self.get_all_tables(target_db))
+        
+        # Filter to only include tables that exist in both source and target
+        tables_to_clear = [table for table in tables if table in target_tables]
+        
+        # Find tables that exist in source but not in target (to skip)
+        skipped_tables = [table for table in tables if table not in target_tables]
+        
+        if skipped_tables:
+            self.stdout.write(
+                self.style.WARNING(
+                    f"  Skipping tables not in target database: {', '.join(sorted(skipped_tables))}"
+                )
+            )
+
+        reversed_tables = list(reversed(tables_to_clear))
 
         with connections[target_db].cursor() as cursor:
             cursor.execute("PRAGMA foreign_keys = OFF")
