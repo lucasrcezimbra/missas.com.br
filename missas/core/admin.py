@@ -3,11 +3,15 @@ from collections import defaultdict
 from textwrap import dedent
 from urllib.parse import quote_plus
 
+from django import forms
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.html import format_html
 
-from missas.core.facades.google_maps import get_schedule_address
+from missas.core.facades.google_maps import (
+    get_location_from_google_maps_url,
+    get_schedule_address,
+)
 from missas.core.models import (
     City,
     Contact,
@@ -30,8 +34,81 @@ class SourceAdmin(admin.ModelAdmin):
     search_fields = ("description", "link")
 
 
+class LocationAdminForm(forms.ModelForm):
+    google_maps_url = forms.URLField(
+        required=False,
+        label="Google Maps URL",
+        help_text="Cole a URL do Google Maps (curta ou longa) para preencher automaticamente os campos",
+    )
+
+    class Meta:
+        model = Location
+        fields = "__all__"
+        exclude = ["google_maps_place_id"]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if not self.instance.pk:
+            if "name" in self.fields:
+                self.fields["name"].required = False
+            if "address" in self.fields:
+                self.fields["address"].required = False
+            if "google_maps_response" in self.fields:
+                self.fields["google_maps_response"].required = False
+            if "latitude" in self.fields:
+                self.fields["latitude"].required = False
+            if "longitude" in self.fields:
+                self.fields["longitude"].required = False
+
+    def clean(self):
+        cleaned_data = super().clean()
+        google_maps_url = cleaned_data.get("google_maps_url")
+
+        if google_maps_url:
+            location_data = get_location_from_google_maps_url(google_maps_url)
+            if location_data:
+                from decimal import Decimal
+
+                cleaned_data["name"] = location_data["name"]
+                cleaned_data["address"] = location_data["address"]
+                cleaned_data["google_maps_response"] = location_data["full_response"]
+                self._google_maps_place_id = location_data["place_id"]
+                cleaned_data["latitude"] = Decimal(str(location_data["latitude"]))
+                cleaned_data["longitude"] = Decimal(str(location_data["longitude"]))
+            else:
+                raise forms.ValidationError(
+                    "Não foi possível obter informações da URL do Google Maps. Verifique se a URL está correta."
+                )
+        else:
+            required_fields = [
+                "name",
+                "address",
+                "latitude",
+                "longitude",
+            ]
+            missing_fields = [
+                field for field in required_fields if not cleaned_data.get(field)
+            ]
+
+            if missing_fields and not self.instance.pk:
+                raise forms.ValidationError(
+                    "Preencha a URL do Google Maps ou preencha manualmente todos os campos obrigatórios."
+                )
+
+        return cleaned_data
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        if hasattr(self, "_google_maps_place_id"):
+            instance.google_maps_place_id = self._google_maps_place_id
+        if commit:
+            instance.save()
+        return instance
+
+
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
+    form = LocationAdminForm
     list_display = ("name", "address", "latitude", "longitude", "maps_link")
     ordering = ("name",)
     readonly_fields = (
@@ -40,6 +117,18 @@ class LocationAdmin(admin.ModelAdmin):
         "formatted_google_maps_response",
     )
     search_fields = ("name", "address")
+
+    def get_fields(self, request, obj=None):
+        if obj is None:
+            return [
+                "google_maps_url",
+                "name",
+                "address",
+                "latitude",
+                "longitude",
+                "google_maps_response",
+            ]
+        return None
 
     def formatted_google_maps_response(self, obj):
         if obj.google_maps_response:
@@ -184,7 +273,7 @@ class ScheduleAdmin(admin.ModelAdmin):
         ("location", admin.EmptyFieldListFilter),
     )
     search_fields = ("parish__name", "day", "start_time")
-    actions = ["create_locations_from_addresses"]
+    actions = ["create_locations_from_addresses", "set_locations_from_same_parish"]
 
     def location_link(self, obj):
         if obj.location:
@@ -295,6 +384,65 @@ class ScheduleAdmin(admin.ModelAdmin):
 
     create_locations_from_addresses.short_description = (
         "Criar localizações a partir de endereços"
+    )
+
+    def set_locations_from_same_parish(self, request, queryset):
+        schedules_to_process = queryset.filter(location__isnull=True)
+
+        if not schedules_to_process.exists():
+            self.message_user(
+                request,
+                "Nenhum horário sem localização encontrado.",
+                level="warning",
+            )
+            return
+
+        schedules_by_parish_location = defaultdict(list)
+        for schedule in schedules_to_process.select_related(
+            "parish", "parish__city", "parish__city__state"
+        ):
+            key = (schedule.parish_id, schedule.location_name)
+            schedules_by_parish_location[key].append(schedule)
+
+        total_updated = 0
+        total_skipped = 0
+
+        for (
+            parish_id,
+            location_name,
+        ), schedules in schedules_by_parish_location.items():
+            existing_location = (
+                Location.objects.filter(
+                    schedule__parish_id=parish_id,
+                    schedule__location_name=location_name,
+                )
+                .exclude(schedule__location__isnull=True)
+                .first()
+            )
+
+            if existing_location:
+                for schedule in schedules:
+                    schedule.location = existing_location
+                Schedule.objects.bulk_update(schedules, ["location"])
+                total_updated += len(schedules)
+            else:
+                total_skipped += len(schedules)
+
+        if total_updated > 0:
+            self.message_user(
+                request,
+                f"Sucesso: {total_updated} horário(s) atualizado(s) com localização.",
+                level="success",
+            )
+        if total_skipped > 0:
+            self.message_user(
+                request,
+                f"Aviso: {total_skipped} horário(s) não possuem localização correspondente na mesma paróquia.",
+                level="warning",
+            )
+
+    set_locations_from_same_parish.short_description = (
+        "Definir localizações da mesma paróquia"
     )
 
 
