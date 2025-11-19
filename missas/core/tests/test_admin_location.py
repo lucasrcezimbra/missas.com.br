@@ -64,13 +64,63 @@ class TestLocationAdmin:
         admin = LocationAdmin(Location, AdminSite())
         fields = admin.get_fields(Mock(), obj=None)
         assert "google_maps_url" in fields
+        assert "name" in fields
+        assert "address" in fields
+        assert "latitude" in fields
+        assert "longitude" in fields
+        assert "google_maps_response" in fields
 
     @pytest.mark.django_db
-    def test_get_fields_returns_none_for_existing_objects(self):
+    def test_get_fields_compatible_with_django_flatten(self):
+        """Test that get_fields return value is compatible with Django's flatten utility.
+
+        This test verifies the fix for MISSAS-SERVER-1J where get_fields returned None,
+        causing TypeError when Django tried to flatten the fields for the admin form.
+        """
+        from django.contrib.admin.utils import flatten_fieldsets
+
+        admin = LocationAdmin(Location, AdminSite())
+        location = baker.make(Location)
+
+        # Get fields for an existing object
+        fields = admin.get_fields(Mock(), obj=location)
+
+        # Django's flatten utility should be able to process the result
+        # This would raise TypeError if fields is None
+        try:
+            flattened = flatten_fieldsets([(None, {"fields": fields})])
+            assert isinstance(flattened, list)
+            assert len(flattened) > 0
+        except TypeError as e:
+            pytest.fail(f"Django's flatten utility failed with get_fields result: {e}")
+
+    @pytest.mark.django_db
+    def test_get_fields_returns_field_list_for_existing_objects(self):
+        """Test that get_fields returns a list of fields for existing objects.
+
+        This verifies the fix for MISSAS-SERVER-1J where get_fields was returning None,
+        causing Django's flatten utility to fail when editing Location objects.
+        """
         admin = LocationAdmin(Location, AdminSite())
         location = baker.make(Location)
         fields = admin.get_fields(Mock(), obj=location)
-        assert fields is None
+
+        # Should return a list of fields, not None
+        assert fields is not None
+        assert isinstance(fields, list)
+
+        # Verify it contains the expected fields for editing
+        assert "name" in fields
+        assert "address" in fields
+        assert "latitude" in fields
+        assert "longitude" in fields
+        assert "google_maps_response" in fields
+        assert "google_maps_place_id" in fields
+        assert "maps_link" in fields
+        assert "formatted_google_maps_response" in fields
+
+        # Should not include google_maps_url (only for new objects)
+        assert "google_maps_url" not in fields
 
 
 class TestLocationAdminForm:
