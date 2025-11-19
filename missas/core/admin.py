@@ -128,7 +128,16 @@ class LocationAdmin(admin.ModelAdmin):
                 "longitude",
                 "google_maps_response",
             ]
-        return None
+        return [
+            "name",
+            "address",
+            "latitude",
+            "longitude",
+            "google_maps_response",
+            "google_maps_place_id",
+            "maps_link",
+            "formatted_google_maps_response",
+        ]
 
     def formatted_google_maps_response(self, obj):
         if obj.google_maps_response:
