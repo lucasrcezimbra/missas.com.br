@@ -191,5 +191,276 @@
     "latitude": "-5.95345080",
     "longitude": "-36.65612250"
   }
+},
+{
+  "model": "core.location",
+  "pk": 4,
+  "fields": {
+    "created_at": "2025-11-18T18:55:42.025Z",
+    "updated_at": "2025-11-18T18:55:42.025Z",
+    "name": "Paróquia de Nossa Senhora Auxiliadora",
+    "address": "Rua Arco-Íris, 99 - Felipe Camarão, Natal - RN, 59072-150",
+    "google_maps_response": {
+      "status": "OK",
+      "results": [
+        {
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "name": "Paróquia de Nossa Senhora Auxiliadora",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "photos": [
+            {
+              "width": 2322,
+              "height": 4128,
+              "photo_reference": "AWn5SU4IBOv1ZpGaCNzqaWH6p9jK6eVfLYzcFLChepIx3ElfG-1NJy4_KuvQIRjR3fq7jO-xqYzBAJYW1sjb_TKoD5wbBKFZof4TEo3qClwi7d9O3hrt_jS0BZwst8ngagYui6KxnXNdDP2-ym3D6f0xsc1kp6oUfUFjQhm6Z1VUDxbMDcjobFOb6TCtQvKXuYZYChAdF4bGPuFG-d2lPo3iSMuwjwX1Jg6j6nqS8v74PxuzGcEBRke0eGAkWuQXysYYr-wDWJa78-9NKVMQYCi8PCaApLwya5b5It2NCLwXCAOaf0yMfVoCoyCA_Ew3AdqyuvKGkyAieWniEvHnoVWAjexMHZ7W4BJ1uEuzO19si9ekCjBuniCP4fGqWISElHIcLpO_cyITa4v-BjNvE10ZxpEEpOGRIiJcGuWjQi8O6eNYYrYdrf8MGFu-vFp15HEgiqo9wE3c7dSMddU1cbo1jH5QPlhZclZuCwTKbUHRy2SfUdQR1uq3nKnGOqnA5lK9FL62244HlbehqmQ2dME27OOyVDzDmYOLOdY37niB3K-aJOITWQV4L7Gktm6vpLLMaxJnelmn4VJsdA",
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/117876686528922757746\">irisalves26@yahoo.com.br</a>"
+              ]
+            }
+          ],
+          "rating": 4.9,
+          "geometry": {
+            "location": {
+              "lat": -5.8228276,
+              "lng": -35.260515
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.821504120107278,
+                "lng": -35.25914612010728
+              },
+              "southwest": {
+                "lat": -5.824203779892722,
+                "lng": -35.26184577989272
+              }
+            }
+          },
+          "place_id": "ChIJq_h9keFUsgcRPFX6eXsDT0A",
+          "plus_code": {
+            "global_code": "69665PGQ+VQ",
+            "compound_code": "5PGQ+VQ Felipe Camarão, Natal - RN"
+          },
+          "reference": "ChIJq_h9keFUsgcRPFX6eXsDT0A",
+          "opening_hours": {
+            "open_now": true
+          },
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Rua Arco-Íris, 99 - Felipe Camarão, Natal - RN, 59072-150",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "user_ratings_total": 207,
+          "icon_background_color": "#7B9EB0"
+        }
+      ],
+      "html_attributions": []
+    },
+    "google_maps_place_id": "ChIJq_h9keFUsgcRPFX6eXsDT0A",
+    "latitude": "-5.82282760",
+    "longitude": "-35.26051500"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 5,
+  "fields": {
+    "created_at": "2025-11-18T18:55:45.048Z",
+    "updated_at": "2025-11-18T18:55:45.048Z",
+    "name": "Capela Nossa Senhora de Nazaré",
+    "address": "R. Expedicionário Aderbal da Câmara - Nossa Sra. de Nazaré, Natal - RN, 59060-390",
+    "google_maps_response": {
+      "status": "OK",
+      "results": [
+        {
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "name": "Capela Nossa Senhora de Nazaré",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "photos": [
+            {
+              "width": 2590,
+              "height": 2782,
+              "photo_reference": "AWn5SU48VUCrDf9cDKUHMN7FpNQavsEgAnjr4OD5goUZduvj6Tz_p61c1Wub11sItCfEUwRR3UKqfIRbOzlt6p_nzQz8BM4YThw8CaC8AvW86M-ElEFDrzv2t6e3wpm64xS-2s1210GWaAMB6_4oPpKWIZ5kKlCRe6KX4Gxgin-4Z_4glXGYoit2WczZ_yglKunsxi617qTFc4j4zXf4K0SjPu4WYA0rHRYKPmX1VD9EQQhLfp8oQNv_ACPQkyfBb2pnl-X3MYWMlLkxTOJGxITPRke4mIH3tXsUlMMhhqkgZk9O_zT_IjRssyFpkFYOM8DkJyBapN93FPX5heL9-A9pDEEAISEAI5gWcIZxeEOzHa7HDfIxaIIb00osUwVLOb6U7Z7ztKXGUKsX6EVOoKF2LP0DbCyGBzwW3f6KRiXEjDOutKIwoNeWjRr-obAsA4Zsodep7GJGz3RGKhBate3RLu3jyoeaU1Kdfh13DxRNPKf4PlNnBNgyS8XHwDzc183mryeID1Tb5AUVVB8FLTI2XyunZevmX3-c2xaLhXM7hBvXO-l2UbvtmNRchEzAU-4WlFdMlZuP",
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/104058949500535340740\">Jailson Gomes</a>"
+              ]
+            }
+          ],
+          "rating": 4.7,
+          "geometry": {
+            "location": {
+              "lat": -5.8179905,
+              "lng": -35.234407
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.816633270107277,
+                "lng": -35.23307407010729
+              },
+              "southwest": {
+                "lat": -5.819332929892721,
+                "lng": -35.23577372989273
+              }
+            }
+          },
+          "place_id": "ChIJAYH240BVsgcRN1qALePkku8",
+          "plus_code": {
+            "global_code": "69665QJ8+R6",
+            "compound_code": "5QJ8+R6 Nossa Sra. de Nazaré, Natal - RN"
+          },
+          "reference": "ChIJAYH240BVsgcRN1qALePkku8",
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Expedicionário Aderbal da Câmara - Nossa Sra. de Nazaré, Natal - RN, 59060-390",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "user_ratings_total": 23,
+          "icon_background_color": "#7B9EB0"
+        }
+      ],
+      "html_attributions": []
+    },
+    "google_maps_place_id": "ChIJAYH240BVsgcRN1qALePkku8",
+    "latitude": "-5.81799050",
+    "longitude": "-35.23440700"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 6,
+  "fields": {
+    "created_at": "2025-11-18T18:55:46.558Z",
+    "updated_at": "2025-11-18T18:55:46.558Z",
+    "name": "Igreja Católica - Capela de Santo Agostinho",
+    "address": "Av. Prof. João Machado, 209 - Capim Macio, Natal - RN, 59078-340",
+    "google_maps_response": {
+      "status": "OK",
+      "results": [
+        {
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "name": "Igreja Católica - Capela de Santo Agostinho",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "photos": [
+            {
+              "width": 2448,
+              "height": 3264,
+              "photo_reference": "AWn5SU7ihqILfrScuX43asSP6OamH31XYpXdICfrLbMC73bZl9vglda2r9DQTyQCZyCj9mhkFoggszpDalLtdM4wLJ62DMH4fk9EQMjwrRlZw0wqWYW1BFyfw-X75Tv54t6rvNiNdwbHKq1kZWZ5rSwcjjWzp3XKR24hh0z7muNIevAHlR7FbilUKAAV0ms6nTzG46VbfwFUi2v0y2PMdHVAXUaQZFs3TLK3d8_ec9vf6l4hHArTAicKQ8WFyFrCkCQzJh3EAxsrZ_mHgTkJ1Vd74I-iIeoC6S_XYgqs3qNYyVfSqg6hsR-PA7KJQoWEnoBaVoQuojJn1NvQzYcjRL5RRbWQ55TQyzD_wtsLTyLEtBLNBXaavjH6W47CJTzrypGzLoMjuFw0HCqgNK_vF469CmDWFHGVMvv65YCkYfJS4cb49QrIxLNZvF0Qow8CVUGZSDNID_UezjHhwSge4XtTFGG81CaOhcav1p5dL8NCsASYKcVCXosrH3CoXpKSRLThBMd42T67l968qfQdg5lFEGTghvKMhbj52PygnO7HDq-Gf796m33K5sLuHi6yvT5T-lEycNZ-",
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/109499862244677417763\">Lidyane Araujo</a>"
+              ]
+            }
+          ],
+          "rating": 4.8,
+          "geometry": {
+            "location": {
+              "lat": -5.8481443,
+              "lng": -35.1991992
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.846854520107278,
+                "lng": -35.19780767010727
+              },
+              "southwest": {
+                "lat": -5.849554179892722,
+                "lng": -35.20050732989272
+              }
+            }
+          },
+          "place_id": "ChIJTTYBm3H_sgcRTtUCcmK4PjI",
+          "plus_code": {
+            "global_code": "69665R22+P8",
+            "compound_code": "5R22+P8 Capim Macio, Natal - RN"
+          },
+          "reference": "ChIJTTYBm3H_sgcRTtUCcmK4PjI",
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Av. Prof. João Machado, 209 - Capim Macio, Natal - RN, 59078-340",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "user_ratings_total": 447,
+          "icon_background_color": "#7B9EB0"
+        }
+      ],
+      "html_attributions": []
+    },
+    "google_maps_place_id": "ChIJTTYBm3H_sgcRTtUCcmK4PjI",
+    "latitude": "-5.84814430",
+    "longitude": "-35.19919920"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 7,
+  "fields": {
+    "created_at": "2025-11-18T18:55:47.343Z",
+    "updated_at": "2025-11-18T18:55:47.343Z",
+    "name": "Paróquia São Tomé",
+    "address": "R. Saturno, 58 - Cj - Igapó, Natal - RN, 59106-220",
+    "google_maps_response": {
+      "status": "OK",
+      "results": [
+        {
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "name": "Paróquia São Tomé",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "photos": [
+            {
+              "width": 1080,
+              "height": 1080,
+              "photo_reference": "AWn5SU7nJl8gfilxyhtcnRYkLRhQojRVQDzPFOcF8Cd_SGq8KthOrLSZUPEaszFE3KsjGyTLafnx4TxpGPw_S2SD3wl3ACAwO9q4Vx29Nu3bI6qRpfjnuzTQexniRYs4kzTMa0LbN_FwbF0wsCDDH_LtDEXmSTtWWJGf-bZrOUtb7HZSc8a2hsNMrPVx3ykUIsS1Zfn7sJyG2dHTkvIZcQXhF_cpa-dA4hzhtTb-16NL0lgaIZtbMmfL0wN-8Ogl4rfVbXCA146IB4E8seBJ_qkVi0B5klFmB0lkLCu6PabPG3WrF3YLx-iG5UM3W06dwA_EvyLx6c-75iJwTK98l3biue8JFl2f0fA9Zv3OGBWpJvswacq6Zu8LGPWGxneftl8Or_0NGBfF50hnBG9IhGs2mAzw65qKe3do8WnoHRrBnYbuK86TatL2X-0V9d9SC1S9Q5B8BeAiMl26nN0L7I4BjQYey6uGPQBYSOYgS0QS5c7zp3B6PCiH_BEZ3SGxIwzYRd-x5ysRFwkYEHOF54bM9MOBhMsVyhMdMojOjTr2ND7gcxIDn-FuZf5Fj--tw8-JPJJE9HfN",
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/100917263032434957091\">Lara Gabriela</a>"
+              ]
+            }
+          ],
+          "rating": 4.9,
+          "geometry": {
+            "location": {
+              "lat": -5.769709199999999,
+              "lng": -35.2690067
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.768390170107277,
+                "lng": -35.26766862010728
+              },
+              "southwest": {
+                "lat": -5.771089829892721,
+                "lng": -35.27036827989272
+              }
+            }
+          },
+          "place_id": "ChIJH4mTCAarswcRzqx5mEpDbGg",
+          "plus_code": {
+            "global_code": "69666PJJ+49",
+            "compound_code": "6PJJ+49 Natal, RN"
+          },
+          "reference": "ChIJH4mTCAarswcRzqx5mEpDbGg",
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Saturno, 58 - Cj - Igapó, Natal - RN, 59106-220",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "user_ratings_total": 88,
+          "icon_background_color": "#7B9EB0"
+        }
+      ],
+      "html_attributions": []
+    },
+    "google_maps_place_id": "ChIJH4mTCAarswcRzqx5mEpDbGg",
+    "latitude": "-5.76970920",
+    "longitude": "-35.26900670"
+  }
 }
 ]
