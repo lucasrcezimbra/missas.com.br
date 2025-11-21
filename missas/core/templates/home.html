@@ -19,13 +19,101 @@
                             Nosso objetivo é facilitar a vida dos fiéis católicos, oferecendo informações atualizadas e verificadas.
                         </p>
                         <p class="mb-2">
-                            <strong>Selecione uma cidade abaixo para ver os horários.</strong>
+                            <strong>Selecione uma cidade abaixo para ver os horários ou encontre paróquias perto de você.</strong>
                         </p>
+                        <div class="mt-3">
+                            <button onclick="getNearbyParishes()" class="btn btn-success">
+                                <i class="fa-solid fa-location-arrow me-2"></i>
+                                Paróquias perto de mim
+                            </button>
+                            <div id="location-error"
+                                 class="alert alert-danger mt-2"
+                                 style="display: none">
+                                <i class="fa-solid fa-exclamation-triangle me-2"></i>
+                                <span id="location-error-message"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        function getNearbyParishes() {
+            if (!navigator.geolocation) {
+                document.getElementById('location-error-message').textContent = 'Geolocalização não é suportada pelo seu navegador.';
+                document.getElementById('location-error').style.display = 'block';
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+
+                    // Create a form and submit via POST
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = '/proximas/';
+
+                    const latInput = document.createElement('input');
+                    latInput.type = 'hidden';
+                    latInput.name = 'lat';
+                    latInput.value = lat;
+                    form.appendChild(latInput);
+
+                    const lonInput = document.createElement('input');
+                    lonInput.type = 'hidden';
+                    lonInput.name = 'long';
+                    lonInput.value = lon;
+                    form.appendChild(lonInput);
+
+                    const csrfInput = document.createElement('input');
+                    csrfInput.type = 'hidden';
+                    csrfInput.name = 'csrfmiddlewaretoken';
+                    csrfInput.value = getCookie('csrftoken');
+                    form.appendChild(csrfInput);
+
+                    document.body.appendChild(form);
+                    form.submit();
+                },
+                function(error) {
+                    let message = 'Erro ao obter localização. ';
+                    switch(error.code) {
+                        case error.PERMISSION_DENIED:
+                            message += 'Você negou a permissão de localização. Por favor, permita o acesso para usar esta funcionalidade.';
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            message += 'Informações de localização não disponíveis.';
+                            break;
+                        case error.TIMEOUT:
+                            message += 'Tempo esgotado para obter localização.';
+                            break;
+                        default:
+                            message += 'Ocorreu um erro desconhecido.';
+                            break;
+                    }
+                    document.getElementById('location-error-message').textContent = message;
+                    document.getElementById('location-error').style.display = 'block';
+                }
+            );
+        }
+    </script>
     <!-- Estados e Cidades -->
     <div class="row mb-4">
         <div class="col-12">
