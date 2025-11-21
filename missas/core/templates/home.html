@@ -39,6 +39,21 @@
         </div>
     </div>
     <script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
         function getNearbyParishes() {
             if (!navigator.geolocation) {
                 document.getElementById('location-error-message').textContent = 'Geolocalização não é suportada pelo seu navegador.';
@@ -50,7 +65,32 @@
                 function(position) {
                     const lat = position.coords.latitude;
                     const lon = position.coords.longitude;
-                    window.location.href = `/proximas/?lat=${lat}&long=${lon}`;
+
+                    // Create a form and submit via POST
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = '/proximas/';
+
+                    const latInput = document.createElement('input');
+                    latInput.type = 'hidden';
+                    latInput.name = 'lat';
+                    latInput.value = lat;
+                    form.appendChild(latInput);
+
+                    const lonInput = document.createElement('input');
+                    lonInput.type = 'hidden';
+                    lonInput.name = 'long';
+                    lonInput.value = lon;
+                    form.appendChild(lonInput);
+
+                    const csrfInput = document.createElement('input');
+                    csrfInput.type = 'hidden';
+                    csrfInput.name = 'csrfmiddlewaretoken';
+                    csrfInput.value = getCookie('csrftoken');
+                    form.appendChild(csrfInput);
+
+                    document.body.appendChild(form);
+                    form.submit();
                 },
                 function(error) {
                     let message = 'Erro ao obter localização. ';

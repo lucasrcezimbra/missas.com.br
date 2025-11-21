@@ -19,7 +19,9 @@ def test_nearby_schedules_requires_lat_and_long(client):
 
 @pytest.mark.django_db
 def test_nearby_schedules_with_invalid_coordinates(client):
-    response = client.get(resolve_url("nearby_schedules") + "?lat=invalid&long=invalid")
+    response = client.post(
+        resolve_url("nearby_schedules"), data={"lat": "invalid", "long": "invalid"}
+    )
 
     assert response.status_code == HTTPStatus.OK
     assertContains(response, "Coordenadas inválidas")
@@ -30,8 +32,8 @@ def test_nearby_schedules_shows_schedules_with_location(client):
     location = baker.make(Location, latitude=-5.795399, longitude=-35.211336)
     schedule = baker.make(Schedule, location=location, start_time=time(9, 0))
 
-    response = client.get(
-        resolve_url("nearby_schedules") + "?lat=-5.795399&long=-35.211336"
+    response = client.post(
+        resolve_url("nearby_schedules"), data={"lat": -5.795399, "long": -35.211336}
     )
 
     assert response.status_code == HTTPStatus.OK
@@ -46,9 +48,12 @@ def test_nearby_schedules_filters_by_max_distance(client):
     close_schedule = baker.make(Schedule, location=location_close)
     far_schedule = baker.make(Schedule, location=location_far)
 
-    response = client.get(
-        resolve_url("nearby_schedules") + "?lat=-5.795399&long=-35.211336&distancia=5"
+    # POST to set coordinates
+    client.post(
+        resolve_url("nearby_schedules"), data={"lat": -5.795399, "long": -35.211336}
     )
+    # Then GET with distance filter
+    response = client.get(resolve_url("nearby_schedules") + "?distancia=5")
 
     assertContains(response, close_schedule.parish.name)
     assertNotContains(response, far_schedule.parish.name)
@@ -63,8 +68,10 @@ def test_nearby_schedules_orders_by_distance(client):
     schedule2 = baker.make(Schedule, location=location2)
     schedule3 = baker.make(Schedule, location=location3)
 
-    response = client.get(
-        resolve_url("nearby_schedules") + "?lat=-5.795399&long=-35.211336&distancia=50"
+    response = client.post(
+        resolve_url("nearby_schedules"),
+        data={"lat": -5.795399, "long": -35.211336},
+        follow=True,
     )
 
     schedules = response.context["schedules"]
@@ -78,8 +85,8 @@ def test_nearby_schedules_shows_distance(client):
     location = baker.make(Location, latitude=-5.795399, longitude=-35.211336)
     baker.make(Schedule, location=location)
 
-    response = client.get(
-        resolve_url("nearby_schedules") + "?lat=-5.795399&long=-35.211336"
+    response = client.post(
+        resolve_url("nearby_schedules"), data={"lat": -5.795399, "long": -35.211336}
     )
 
     assertContains(response, "km")
@@ -92,9 +99,12 @@ def test_nearby_schedules_filters_by_day(client):
     sunday_schedule = baker.make(Schedule, location=location1, day=Schedule.Day.SUNDAY)
     monday_schedule = baker.make(Schedule, location=location2, day=Schedule.Day.MONDAY)
 
-    response = client.get(
-        resolve_url("nearby_schedules") + "?lat=-5.795399&long=-35.211336&dia=domingo"
+    # POST to set coordinates
+    client.post(
+        resolve_url("nearby_schedules"), data={"lat": -5.795399, "long": -35.211336}
     )
+    # Then GET with day filter
+    response = client.get(resolve_url("nearby_schedules") + "?dia=domingo")
 
     assertContains(response, sunday_schedule.parish.name)
     assertNotContains(response, monday_schedule.parish.name)
@@ -107,10 +117,12 @@ def test_nearby_schedules_filters_by_type(client):
     mass = baker.make(Schedule, location=location1, type=Schedule.Type.MASS)
     confession = baker.make(Schedule, location=location2, type=Schedule.Type.CONFESSION)
 
-    response = client.get(
-        resolve_url("nearby_schedules")
-        + "?lat=-5.795399&long=-35.211336&tipo=confissoes"
+    # POST to set coordinates
+    client.post(
+        resolve_url("nearby_schedules"), data={"lat": -5.795399, "long": -35.211336}
     )
+    # Then GET with type filter
+    response = client.get(resolve_url("nearby_schedules") + "?tipo=confissoes")
 
     assertContains(response, confession.parish.name)
     assertNotContains(response, mass.parish.name)
@@ -123,9 +135,12 @@ def test_nearby_schedules_filters_by_verified(client):
     verified = baker.make(Schedule, location=location1, _fill_optional=["verified_at"])
     unverified = baker.make(Schedule, location=location2)
 
-    response = client.get(
-        resolve_url("nearby_schedules") + "?lat=-5.795399&long=-35.211336&verificado=1"
+    # POST to set coordinates
+    client.post(
+        resolve_url("nearby_schedules"), data={"lat": -5.795399, "long": -35.211336}
     )
+    # Then GET with verified filter
+    response = client.get(resolve_url("nearby_schedules") + "?verificado=1")
 
     assertContains(response, verified.parish.name)
     assertNotContains(response, unverified.parish.name)
@@ -138,9 +153,12 @@ def test_nearby_schedules_filters_by_time(client):
     morning = baker.make(Schedule, location=location1, start_time=time(9, 0))
     afternoon = baker.make(Schedule, location=location2, start_time=time(14, 0))
 
-    response = client.get(
-        resolve_url("nearby_schedules") + "?lat=-5.795399&long=-35.211336&horario=12"
+    # POST to set coordinates
+    client.post(
+        resolve_url("nearby_schedules"), data={"lat": -5.795399, "long": -35.211336}
     )
+    # Then GET with time filter
+    response = client.get(resolve_url("nearby_schedules") + "?horario=12")
 
     assertContains(response, afternoon.parish.name)
     assertNotContains(response, morning.parish.name)
@@ -152,8 +170,8 @@ def test_nearby_schedules_excludes_schedules_without_location(client):
     with_location = baker.make(Schedule, location=location)
     without_location = baker.make(Schedule, location=None)
 
-    response = client.get(
-        resolve_url("nearby_schedules") + "?lat=-5.795399&long=-35.211336"
+    response = client.post(
+        resolve_url("nearby_schedules"), data={"lat": -5.795399, "long": -35.211336}
     )
 
     assertContains(response, with_location.parish.name)
@@ -162,8 +180,8 @@ def test_nearby_schedules_excludes_schedules_without_location(client):
 
 @pytest.mark.django_db
 def test_nearby_schedules_no_schedules(client):
-    response = client.get(
-        resolve_url("nearby_schedules") + "?lat=-5.795399&long=-35.211336"
+    response = client.post(
+        resolve_url("nearby_schedules"), data={"lat": -5.795399, "long": -35.211336}
     )
 
     assertContains(response, "Nenhum horário cadastrado próximo à sua localização.")

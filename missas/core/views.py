@@ -141,17 +141,37 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 
 
 def nearby_schedules(request):
-    try:
-        user_lat = float(request.GET.get("lat"))
-        user_lon = float(request.GET.get("long"))
-    except (TypeError, ValueError):
-        return render(
-            request,
-            "nearby_schedules.html",
-            {
-                "error": "Coordenadas inválidas. Por favor, permita o acesso à sua localização."
-            },
-        )
+    if request.method == "POST":
+        try:
+            user_lat = float(request.POST.get("lat"))
+            user_lon = float(request.POST.get("long"))
+        except (TypeError, ValueError):
+            return render(
+                request,
+                "parishes_by_city.html",
+                {
+                    "error": "Coordenadas inválidas. Por favor, permita o acesso à sua localização.",
+                    "show_distance": True,
+                },
+            )
+
+        # Store coordinates in session for subsequent GET requests (filters)
+        request.session["user_lat"] = user_lat
+        request.session["user_lon"] = user_lon
+    else:
+        # GET request - retrieve from session
+        try:
+            user_lat = float(request.session.get("user_lat"))
+            user_lon = float(request.session.get("user_lon"))
+        except (TypeError, ValueError):
+            return render(
+                request,
+                "parishes_by_city.html",
+                {
+                    "error": "Coordenadas inválidas. Por favor, permita o acesso à sua localização.",
+                    "show_distance": True,
+                },
+            )
 
     day_name = request.GET.get("dia")
     hour = request.GET.get("horario")
@@ -216,7 +236,7 @@ def nearby_schedules(request):
     template = (
         "cards.html"
         if request.htmx and not request.htmx.boosted
-        else "nearby_schedules.html"
+        else "parishes_by_city.html"
     )
 
     return render(
@@ -228,8 +248,7 @@ def nearby_schedules(request):
             "hour": hour.hour if hour else 0,
             "type": type,
             "max_distance": max_distance,
-            "user_lat": user_lat,
-            "user_lon": user_lon,
+            "show_distance": True,
             "Schedule": Schedule,
         },
     )

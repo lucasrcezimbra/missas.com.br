@@ -2,10 +2,18 @@
     {% for schedule in schedules %}
         <div class="card mb-3 inverse-indicator">
             <div class="card-body">
-                <a href="/{{ schedule.parish.city.state.slug }}/{{ schedule.parish.city.slug }}/{{ schedule.parish.slug }}/"
-                   class="text-decoration-none">
-                    <span class="fs-5 text-primary">{{ schedule.parish.name }}</span>
-                </a>
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <a href="/{{ schedule.parish.city.state.slug }}/{{ schedule.parish.city.slug }}/{{ schedule.parish.slug }}/"
+                       class="text-decoration-none">
+                        <span class="fs-5 text-primary">{{ schedule.parish.name }}</span>
+                    </a>
+                    {% if schedule.distance %}
+                        <span class="distance-badge">
+                            <i class="fa-solid fa-location-arrow"></i>
+                            {{ schedule.distance|floatformat:1 }} km
+                        </span>
+                    {% endif %}
+                </div>
                 {% if schedule.location_name or schedule.location %}
                     <div class="row">
                         <div class="col-auto">
@@ -133,7 +141,13 @@
     {% empty %}
         <div class="card mb-3 inverse-indicator">
             <div class="card-body">
-                <span class="fs-5">Nenhum horário cadastrado.</span>
+                <span class="fs-5">
+                    {% if show_distance %}
+                        Nenhum horário cadastrado próximo à sua localização.
+                    {% else %}
+                        Nenhum horário cadastrado.
+                    {% endif %}
+                </span>
             </div>
         </div>
     {% endfor %}
