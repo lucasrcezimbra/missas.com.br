@@ -160,9 +160,22 @@ def nearby_schedules(request):
         request.session["user_lon"] = user_lon
     else:
         # GET request - retrieve from session
+        user_lat = request.session.get("user_lat")
+        user_lon = request.session.get("user_lon")
+
+        if user_lat is None or user_lon is None:
+            return render(
+                request,
+                "parishes_by_city.html",
+                {
+                    "error": "Coordenadas inválidas. Por favor, permita o acesso à sua localização.",
+                    "show_distance": True,
+                },
+            )
+
         try:
-            user_lat = float(request.session.get("user_lat"))
-            user_lon = float(request.session.get("user_lon"))
+            user_lat = float(user_lat)
+            user_lon = float(user_lon)
         except (TypeError, ValueError):
             return render(
                 request,
