@@ -110,7 +110,10 @@ def by_city(request, state, city):
 
 def parish_detail(request, state, city, parish):
     parish = get_object_or_404(
-        Parish, slug=parish, city__slug=city, city__state__slug=state
+        Parish.objects.select_related("contact", "city", "city__state"),
+        slug=parish,
+        city__slug=city,
+        city__state__slug=state,
     )
     schedules = (
         Schedule.objects.filter(parish=parish)
