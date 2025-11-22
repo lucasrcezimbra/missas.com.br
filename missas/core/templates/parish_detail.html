@@ -160,12 +160,13 @@
         {% endfor %}
     </div>
     <div class="text-center mt-4">
-        <a href="https://wa.me/+5584991234449?text=Olá. Eu gostaria de relatar um problema na '{{ parish.name }}' {% if parish.contact.whatsapp %}{{ parish.contact.whatsapp }}{% endif %}. O problema é:"
-           class="btn btn-outline-danger"
-           target="_blank"
-           rel="noopener noreferrer">
+        <button type="button"
+                class="btn btn-outline-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#feedbackModal"
+                onclick="document.getElementById('feedback_parish_id').value='{{ parish.id }}'">
             <i class="fa-solid fa-flag me-2 text-primary"></i>
             Relatar problema com esta paróquia
-        </a>
+        </button>
     </div>
 {% endblock content %}
