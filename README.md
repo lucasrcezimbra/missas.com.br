@@ -42,9 +42,27 @@ make coverage
 ```
 
 ### Scrapers
+#### Natal/RN
 ```shell
 poetry run scrapy runspider contrib/scraper_natal.py -o natal.jsonl
 ```
+
+#### Porto Velho/RO
+```shell
+# Run the scraper
+poetry run scrapy runspider contrib/scraper_porto_velho.py -o porto_velho.jsonl
+
+# Import the scraped data into Django models
+poetry run python contrib/import_porto_velho.py porto_velho.jsonl
+```
+
+The import script uses LLM to parse unstructured schedule text and:
+- Creates State (Rondônia/RO) if it doesn't exist
+- Creates Cities mentioned in parish names
+- Creates Parishes with proper slug and city association
+- Parses mass schedules using OpenAI GPT-4o
+- Asks for confirmation before saving each parish's schedules
+- Handles duplicates and updates existing schedules
 
 ### WhatsApp Automation
 The WhatsApp automation is still a very manual process. There are two scripts:
