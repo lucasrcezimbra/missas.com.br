@@ -52,6 +52,7 @@ lint:
 
 run:
 	make dbmigrate
+	poetry run python manage.py createcachetable
 	poetry run gunicorn missas.wsgi:application
 
 test:
