@@ -443,34 +443,34 @@ def test_title(client):
 def test_order_by_day_time_verified_and_parish_name(client: Client):
     city = baker.make(City)
 
-    sunday_9am_verified_parish_b = baker.make(
+    sunday_9am_verified_jan15 = baker.make(
         Schedule,
         day=Schedule.Day.SUNDAY,
         parish__city=city,
         start_time=time(9, 0),
         verified_at=date(2024, 1, 15),
     )
-    sunday_9am_verified_parish_a = baker.make(
+    sunday_9am_verified_jan10 = baker.make(
         Schedule,
         day=Schedule.Day.SUNDAY,
         parish__city=city,
         start_time=time(9, 0),
         verified_at=date(2024, 1, 10),
     )
-    sunday_9am_unverified_parish_c = baker.make(
+    sunday_9am_unverified = baker.make(
         Schedule,
         day=Schedule.Day.SUNDAY,
         parish__city=city,
         start_time=time(9, 0),
         verified_at=None,
     )
-    sunday_10am_parish_b = baker.make(
+    sunday_10am = baker.make(
         Schedule,
         day=Schedule.Day.SUNDAY,
         parish__city=city,
         start_time=time(10, 0),
     )
-    saturday_9am_parish_a = baker.make(
+    saturday_9am = baker.make(
         Schedule,
         day=Schedule.Day.SATURDAY,
         parish__city=city,
@@ -484,10 +484,10 @@ def test_order_by_day_time_verified_and_parish_name(client: Client):
     assertQuerySetEqual(
         response.context["schedules"],
         [
-            sunday_9am_verified_parish_a,
-            sunday_9am_verified_parish_b,
-            sunday_9am_unverified_parish_c,
-            sunday_10am_parish_b,
-            saturday_9am_parish_a,
+            sunday_9am_verified_jan15,
+            sunday_9am_verified_jan10,
+            sunday_9am_unverified,
+            sunday_10am,
+            saturday_9am,
         ],
     )
