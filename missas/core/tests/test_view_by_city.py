@@ -1,4 +1,4 @@
-from datetime import time
+from datetime import date, time
 from http import HTTPStatus
 
 import pytest
@@ -441,45 +441,40 @@ def test_title(client):
 
 @pytest.mark.django_db
 def test_order_by_day_time_verified_and_parish_name(client: Client):
-    from datetime import date
-
     city = baker.make(City)
-    parish_a = baker.make("Parish", city=city, name="Paróquia A")
-    parish_b = baker.make("Parish", city=city, name="Paróquia B")
-    parish_c = baker.make("Parish", city=city, name="Paróquia C")
 
     sunday_9am_verified_parish_b = baker.make(
         Schedule,
         day=Schedule.Day.SUNDAY,
+        parish__city=city,
         start_time=time(9, 0),
-        parish=parish_b,
         verified_at=date(2024, 1, 15),
     )
     sunday_9am_verified_parish_a = baker.make(
         Schedule,
         day=Schedule.Day.SUNDAY,
+        parish__city=city,
         start_time=time(9, 0),
-        parish=parish_a,
         verified_at=date(2024, 1, 10),
     )
     sunday_9am_unverified_parish_c = baker.make(
         Schedule,
         day=Schedule.Day.SUNDAY,
+        parish__city=city,
         start_time=time(9, 0),
-        parish=parish_c,
         verified_at=None,
     )
     sunday_10am_parish_b = baker.make(
         Schedule,
         day=Schedule.Day.SUNDAY,
+        parish__city=city,
         start_time=time(10, 0),
-        parish=parish_b,
     )
     saturday_9am_parish_a = baker.make(
         Schedule,
         day=Schedule.Day.SATURDAY,
+        parish__city=city,
         start_time=time(9, 0),
-        parish=parish_a,
     )
 
     response = client.get(
