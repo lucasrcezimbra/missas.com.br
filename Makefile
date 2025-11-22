@@ -30,7 +30,6 @@ dbload:
 dbmigrate:
 	poetry run python manage.py migrate --database=old
 	poetry run python manage.py migrate --database=default
-	poetry run python manage.py postgres2sqlite --source=old --target=default --no-input
 
 dev:
 	docker compose up -d
