@@ -14,32 +14,31 @@ class ManausSpider(scrapy.Spider):
         @returns items 50 100
         @scrapes parish_name times
         """
-        # Get all h4 elements which contain parish names
-        parish_headings = response.css('h4')
+        parish_headings = response.css('h2.wp-block-heading')
 
         for heading in parish_headings:
             parish_name = heading.css('::text').get()
 
             if not parish_name:
+                parish_name = heading.xpath('.//text()').get()
+
+            if not parish_name:
                 continue
 
-            # Get all following siblings until the next h4 or h2/h3
-            following_content = heading.xpath(
-                './following-sibling::*[following-sibling::h4 or following-sibling::h3 or following-sibling::h2]'
-            )
+            # Collect all content between this h2 and the next h2
+            following_content = []
+            for sibling in heading.xpath('./following-sibling::*'):
+                # Stop if we hit another parish h2
+                sibling_classes = sibling.xpath('@class').get()
+                if (sibling.root.tag == 'h2' and
+                    sibling_classes and
+                    'wp-block-heading' in sibling_classes):
+                    break
+                following_content.append(sibling)
 
-            # If no following content found, get everything after this h4
-            if not following_content:
-                following_content = heading.xpath('./following-sibling::*')
-
-            # Extract text from paragraphs and lists
+            # Extract text from all elements
             times = []
             for elem in following_content:
-                # Stop if we hit another parish heading
-                if elem.root.tag in ['h2', 'h3', 'h4']:
-                    break
-
-                # Extract text from the element
                 text_content = elem.css('::text').getall()
                 times.extend([text.strip() for text in text_content if text.strip()])
 
