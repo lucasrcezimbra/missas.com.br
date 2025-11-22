@@ -95,6 +95,10 @@ def by_city(request, state, city):
         else "parishes_by_city.html"
     )
 
+    has_other_schedules = Schedule.objects.filter(
+        parish__city=city, type=Schedule.Type.OTHER
+    ).exists()
+
     return render(
         request,
         template,
@@ -105,6 +109,7 @@ def by_city(request, state, city):
             "hour": hour.hour if hour else 0,
             "type": type,
             "Schedule": Schedule,
+            "has_other_schedules": has_other_schedules,
         },
     )
 

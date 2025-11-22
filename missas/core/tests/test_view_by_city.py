@@ -481,3 +481,32 @@ def test_show_other_type_description(client):
     )
 
     assertContains(response, "Adoração ao Santíssimo")
+
+
+@pytest.mark.django_db
+def test_outros_button_shown_only_when_other_schedules_exist(client):
+    city = baker.make(City)
+    baker.make(Schedule, parish__city=city, type=Schedule.Type.MASS)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+    )
+
+    assertNotContains(response, 'id="outros"')
+
+
+@pytest.mark.django_db
+def test_outros_button_shown_when_other_schedules_exist(client):
+    city = baker.make(City)
+    baker.make(
+        Schedule,
+        parish__city=city,
+        type=Schedule.Type.OTHER,
+        other_type_description="Adoração",
+    )
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+    )
+
+    assertContains(response, 'id="outros"')

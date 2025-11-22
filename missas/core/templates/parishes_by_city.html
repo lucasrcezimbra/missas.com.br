@@ -31,13 +31,15 @@
                        value="confissoes"
                        {% if type == Schedule.Type.CONFESSION %}checked{% endif %}>
                 <label class="btn btn-outline-primary rounded mx-1 my-1" for="confissoes">Confissões</label>
-                <input class="btn-check"
-                       id="outros"
-                       name="tipo"
-                       type="radio"
-                       value="outros"
-                       {% if type == Schedule.Type.OTHER %}checked{% endif %}>
-                <label class="btn btn-outline-primary rounded mx-1 my-1" for="outros">Outros</label>
+                {% if has_other_schedules %}
+                    <input class="btn-check"
+                           id="outros"
+                           name="tipo"
+                           type="radio"
+                           value="outros"
+                           {% if type == Schedule.Type.OTHER %}checked{% endif %}>
+                    <label class="btn btn-outline-primary rounded mx-1 my-1" for="outros">Outros</label>
+                {% endif %}
             </div>
             <div class="vr"></div>
             <div class="btn-group flex-wrap" role="group">
