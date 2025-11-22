@@ -180,3 +180,47 @@ def test_parish_detail_shows_verified_schedule(client):
 
     assert response.status_code == HTTPStatus.OK
     assertContains(response, "Verificado por Missas.com.br")
+
+
+@pytest.mark.django_db
+def test_number_of_queries(client, django_assert_max_num_queries):
+    parish = baker.make(Parish)
+    baker.make(Schedule, parish=parish, _quantity=100)
+
+    with django_assert_max_num_queries(15):
+        response = client.get(
+            resolve_url(
+                "parish_detail",
+                state=parish.city.state.slug,
+                city=parish.city.slug,
+                parish=parish.slug,
+            )
+        )
+
+    assert response.status_code == HTTPStatus.OK
+
+
+@pytest.mark.django_db
+def test_number_of_queries_without_cache(
+    client, django_assert_max_num_queries, settings
+):
+    settings.CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.dummy.DummyCache",
+        }
+    }
+
+    parish = baker.make(Parish)
+    baker.make(Schedule, parish=parish, _quantity=100)
+
+    with django_assert_max_num_queries(3):
+        response = client.get(
+            resolve_url(
+                "parish_detail",
+                state=parish.city.state.slug,
+                city=parish.city.slug,
+                parish=parish.slug,
+            )
+        )
+
+    assert response.status_code == HTTPStatus.OK
