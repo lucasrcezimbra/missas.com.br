@@ -462,5 +462,1960 @@
     "latitude": "-5.76970920",
     "longitude": "-35.26900670"
   }
+},
+{
+  "model": "core.location",
+  "pk": 8,
+  "fields": {
+    "created_at": "2025-11-23T12:28:11.102Z",
+    "updated_at": "2025-11-23T12:28:11.102Z",
+    "name": "Paróquia de Nossa Senhora Mãe dos Homens",
+    "address": "Praça Monsenhor Vicente Freitas, 188 - Centro, João Câmara - RN, 59550-000",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Praça Monsenhor Vicente Freitas, 188 - Centro, João Câmara - RN, 59550-000",
+          "geometry": {
+            "location": {
+              "lat": -5.538461799999999,
+              "lng": -35.8156593
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.537080070107278,
+                "lng": -35.81433757010728
+              },
+              "southwest": {
+                "lat": -5.539779729892722,
+                "lng": -35.81703722989273
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia de Nossa Senhora Mãe dos Homens",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 2035,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/109318367351779611684\">Sergio Falcetti</a>"
+              ],
+              "photo_reference": "AWn5SU5SY7mfH9y6lnrpbKb7jHinNpzuW_p1kO5mZSsXHHwKR67EhgsPbshGrioEvYxiCkl9rNetrGm1h88ZEj9juTgSS_7ST65jV6H4mk97iavWzDE-tWW3QH_uKQeoX_aYc5PvKdXDbl0a3qmnkCIyQ8MSezrv2NJKDsIlshWbEUjNCSwnn83nQjNW-6zk8X0ZBWiHnFn8yzFM_zyROpUsfVH9mK-z0VFV1qCDW0KxqbgKhbtQ_xn-KtDf6W6dBGbTNi7VuzMp9KqspWP4R3lzEnIJMqtlHATNP2SaC2d6zDR7HK03B1gfh6crkXIRKJvNro6Da0a1C8kwLVKwWPbVX01n6-dnQTLFEpVU_hPD6CztrbC2Ndzml7J18SowJHE2uiRhNv7_8OdlkPbGNbxzPd7uX7TuNbQUgaS8QHvMHH4vAz3C7KhBjUs-u5gABtHncEsrZC1RB8CljDsxTl93auIFAORr_LfyGrzvYBI9RTLwOEIilAc3DYr0H_Dphb-d3r_34LClgcd7ex4Flg09TnDLFiIi3l6rY4XubMmB-48I-s_ZWjdiUCK-67kYwKZlPQblZZ5YZ0BXwg",
+              "width": 2048
+            }
+          ],
+          "place_id": "ChIJJaanyw_cswcRimo-0RSpUcU",
+          "plus_code": {
+            "compound_code": "F56M+JQ João Câmara, Rio Grande do Norte",
+            "global_code": "6966F56M+JQ"
+          },
+          "rating": 4.7,
+          "reference": "ChIJJaanyw_cswcRimo-0RSpUcU",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 179
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJJaanyw_cswcRimo-0RSpUcU",
+    "latitude": "-5.53846180",
+    "longitude": "-35.81565930"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 9,
+  "fields": {
+    "created_at": "2025-11-23T12:30:37.230Z",
+    "updated_at": "2025-11-23T12:30:37.230Z",
+    "name": "Igreja Matriz do Sagrado Coração de Jesus",
+    "address": "R. Monsenhor Expedito Medeiros, 46, Riachuelo - RN, 59470-000",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Monsenhor Expedito Medeiros, 46, Riachuelo - RN, 59470-000",
+          "geometry": {
+            "location": {
+              "lat": -5.817094,
+              "lng": -35.8234251
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.815757820107278,
+                "lng": -35.82207967010728
+              },
+              "southwest": {
+                "lat": -5.818457479892722,
+                "lng": -35.82477932989273
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Igreja Matriz do Sagrado Coração de Jesus",
+          "photos": [
+            {
+              "height": 2320,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/103894392812197773553\">Roberto C Simão</a>"
+              ],
+              "photo_reference": "AWn5SU6OhQcU61SUF7HMnxZ1LMafkbhs0HF-ojQSquj5x-tIanxvqQMCLvnuhb_bdmX_Ei_4bCourtKVsgBiw_2gEDH7PeidpgO3bRZLwguUDULaLaaJq7oylMqoyHdLlSr9GiMxvITEgmSq0wYtPPtw-yYOPk729iBdeQVPeHkNDMRKQvyLSVWP27XnfgnL5eOy9_pc1bC2eBXnaC16HwFiqu-pS2K1slukWRZov82zBu0-RreK4w0yDP7nDYdvDgDvGIBFEptnRFRXI--s8xGaIGZ6iuwJBa9atHEa41gmgdTI0IIUp8N-0ODYoOMMSSxQVYpaOiwahfdHvdZQrBUkekd2pH3t4omsBG9wu6b6H677MLZ6LadEUGPm0Eo9zIvv72xZ8AZkpY82_VhUyeAMnhvwafi_jI56hqy6dz58cA6oGDeg7TF_gYPJcl9AEPaOD939ijAoxvbfKyVn48KH-lIPpdQJm7LQIqBLkNXUuEi---Rexw1e5TWJWivLKzOxMYR1CfJIn6AgJ9EE9yu-W28rLwVd3DVIgroT1gBcaG0x4DejkE6zdEBv2O62gIXPALYhkPL0",
+              "width": 4640
+            }
+          ],
+          "place_id": "ChIJ3QzWkgsssgcRNRVt2q75YzE",
+          "plus_code": {
+            "compound_code": "55MG+5J Riachuelo, Rio Grande do Norte",
+            "global_code": "696655MG+5J"
+          },
+          "rating": 4.6,
+          "reference": "ChIJ3QzWkgsssgcRNRVt2q75YzE",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 43
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJ3QzWkgsssgcRNRVt2q75YzE",
+    "latitude": "-5.81709400",
+    "longitude": "-35.82342510"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 10,
+  "fields": {
+    "created_at": "2025-11-23T12:30:38.354Z",
+    "updated_at": "2025-11-23T12:30:38.354Z",
+    "name": "Paróquia Nossa Senhora da Conceição",
+    "address": "Largo Cônego Estevan Dantas, 65, Macaíba - RN, 59280-196",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Largo Cônego Estevan Dantas, 65, Macaíba - RN, 59280-196",
+          "geometry": {
+            "location": {
+              "lat": -5.8581159,
+              "lng": -35.353555
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.856767320107279,
+                "lng": -35.35220632010728
+              },
+              "southwest": {
+                "lat": -5.859466979892723,
+                "lng": -35.35490597989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia Nossa Senhora da Conceição",
+          "opening_hours": {
+            "open_now": false
+          },
+          "photos": [
+            {
+              "height": 3024,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/103753291979184815218\">Augusto Bezerra</a>"
+              ],
+              "photo_reference": "AWn5SU78DKnEBQjgohUz13seG__n0Gf_vnIAmAUvvGltiHxc_q3yOpqfq6NhgIG2X1WsuMsKAJC9imZ_5isE0GG9CpvCjqgqzVIXd9NUhZcf8P9y3-kjHpKcwfwarU8XhQ1md6jhkQTMMB1SSI1-9n9g3zIEz204pHJJZTSdistxxUlzRC7cp4CQujjimONJ_DS4O5pUqypAGcsLWHMwG7_v1y7GfDfTKIN3cdWu0Khg7RZL0XkeUG9H8vDco-0orbSpQUZUe_39GwO6QUDcnJUg_EBuqSKmuKkkNWMEuAK8YjSgZZ4mcSB2o9ue8uqL94lkuRqIqlHUfhltvH0pYC_gC7_verEKfS3R5amNXqmnoZNtHFcfu2l2mtLO4w7-fAHZUWx90qV1ZzQ9kUAzgT79Xw_G5hdnm5_vOZbagTT1Wn7UF1hVxElLCPDSPONnSeXqNxtgBwu7vemoNmHOpFidhzitoeVERXXvRN0opL5RlQZfCXeCSC8SuHJR_b9jixsyJ9bpdltvMEBO1YMUxSb255CY_xOT_npojNvwndck_e0BoS52vhYYcJTg_H_-5h24cr1S4OdQ",
+              "width": 4032
+            }
+          ],
+          "place_id": "ChIJdyPgaS5SsgcRfSm6ytFHRmw",
+          "rating": 4.7,
+          "reference": "ChIJdyPgaS5SsgcRfSm6ytFHRmw",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 345
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJdyPgaS5SsgcRfSm6ytFHRmw",
+    "latitude": "-5.85811590",
+    "longitude": "-35.35355500"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 11,
+  "fields": {
+    "created_at": "2025-11-23T12:30:39.480Z",
+    "updated_at": "2025-11-23T12:30:39.480Z",
+    "name": "Igreja Matriz Nossa Senhora do Perpétuo Socorro",
+    "address": "Tv. Maria e Neves, 393, Barcelona - RN, 59410-000",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Tv. Maria e Neves, 393, Barcelona - RN, 59410-000",
+          "geometry": {
+            "location": {
+              "lat": -5.951660299999999,
+              "lng": -35.9254728
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.950267670107279,
+                "lng": -35.92411762010728
+              },
+              "southwest": {
+                "lat": -5.952967329892723,
+                "lng": -35.92681727989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Igreja Matriz Nossa Senhora do Perpétuo Socorro",
+          "photos": [
+            {
+              "height": 1536,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/109318367351779611684\">Sergio Falcetti</a>"
+              ],
+              "photo_reference": "AWn5SU5dLkv-Zv5FAjk5S73CfeC6KBx5T4BfZnhD3uYtqc2mVAt_ST4QfS67OywBMhosEsO53rlPgsVs6T2ZZNUmMdIwwZSqJlj9yYv7AlbuED6c993UP0eQCV8HpjHIDG1tGkRlnvwI55Gb49Cmalin6Ug3MWkSqbxJte2LPvMYEk_W8lUVUwm8-xm2-Jm2meT9iu-0lN4oWc6OkQHhb7WG64IenKv8O6F7RoPVn1HvGR9wIizhPc4B_hhHNjhbMZgyF1iaBlaNR9fwUmgHh8T67cOR7ehyhPupZ2FZkIfDXSXWOHMsCZAPzBS-HHOqgafS7A9s7doMfS7BG1yI36XeaisP64BihOk6O_99pJnlvC0jffZ2diX9qLjiu7kn8amlP3jg7d0UB1W0Uy9n_Mk-9ep-CJOjzefm_Pu708OEPw5iYI9T7BKybtqfi48PAmj8Z2wf5PyXLLxaMj-LmVcNJf7-ZwrKs0P-aKyuHzb8ozykT9BeWbcFxtLXIVFpin94OdHYOOg0-U7bOFXf-KWwxOxXh0A_U1Jv3pyIYlhU4lsTrcf6345YRXZEFZ9Jq3Glvw4eWxQR",
+              "width": 2048
+            }
+          ],
+          "place_id": "ChIJT2C2_OWJsQcRUJ8nlwKREnM",
+          "rating": 4.8,
+          "reference": "ChIJT2C2_OWJsQcRUJ8nlwKREnM",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 15
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJT2C2_OWJsQcRUJ8nlwKREnM",
+    "latitude": "-5.95166030",
+    "longitude": "-35.92547280"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 12,
+  "fields": {
+    "created_at": "2025-11-23T12:30:40.912Z",
+    "updated_at": "2025-11-23T12:30:40.912Z",
+    "name": "Santuário Arquidiocesano de Nossa Senhora da Conceição",
+    "address": "R. Ver. Euclides Cavalcanti, 51 - Centro, Ceará-Mirim - RN, 59570-000",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Ver. Euclides Cavalcanti, 51 - Centro, Ceará-Mirim - RN, 59570-000",
+          "geometry": {
+            "location": {
+              "lat": -5.634200799999999,
+              "lng": -35.426022
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.632850270107277,
+                "lng": -35.42467207010728
+              },
+              "southwest": {
+                "lat": -5.635549929892721,
+                "lng": -35.42737172989273
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Santuário Arquidiocesano de Nossa Senhora da Conceição",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 1280,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/113645645522892649036\">Claudiuney Andrade</a>"
+              ],
+              "photo_reference": "AWn5SU4z-xxxTpDUESpdDMXrN1KNYM5bM9yev4-r_lCD8EVmGJztzAk3Fmbh7im1hiFw83eWc5ANG0LCyWIyJEsqfLaWAf-LsmLTjw4gGWlPZuj5poCwsLg38KFD4Ytgjfn_P66vjSmTrKzz-bDRTGrTRPAXQQfvLtyxhJ5vZOFCCAsPse_elv38SL7Vwlx6sCQmVcEA3yATkfm6-pykaqVVyfYsgVXFiBoDH0r2PZy5_XzGbKb81bxv1MI_9Egn8BNcxDRp1P8XICGJFeSzJ6mq-MPSrNidgExW8MhaXRTAGd7lJ2vnhbYWazh503PR_OctY3Shs_wuxjNNzZxindc7ozw14PU26Ymk1Cv-HKueMTtGPmnxhY1WN7bKamztFpeEF_rOOFVp4sUS-vgi19gJ0BD9uh-oh-Oc9gLfQh0hDGoNLfrkpNA0QcnjMsdsyTQ6Q9LCxeOaZH3omIHKGFxoPPfzHH23Ozp5iWh3Ln-mdZIGxrZDhUjhdfB9txFP3Q2gwpGG9hbsKAh7oMRTEKEsbysEo-sX4Gbjx-mrwYr9jIm48XoLdV_LbecOBecjJSwsf0_UB35X",
+              "width": 1024
+            }
+          ],
+          "place_id": "ChIJ5_jZvo26swcRVVF77qTA_QU",
+          "rating": 4.8,
+          "reference": "ChIJ5_jZvo26swcRVVF77qTA_QU",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 528
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJ5_jZvo26swcRVVF77qTA_QU",
+    "latitude": "-5.63420080",
+    "longitude": "-35.42602200"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 13,
+  "fields": {
+    "created_at": "2025-11-23T12:31:03.955Z",
+    "updated_at": "2025-11-23T12:31:03.955Z",
+    "name": "Igreja matriz de Nossa Senhora dos Prazeres",
+    "address": "Rua Dr. João Primênio, 325 - Centro, Goianinha - RN, 59173-000",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Rua Dr. João Primênio, 325 - Centro, Goianinha - RN, 59173-000",
+          "geometry": {
+            "location": {
+              "lat": -6.2670473,
+              "lng": -35.20796199999999
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -6.265723970107278,
+                "lng": -35.20662732010727
+              },
+              "southwest": {
+                "lat": -6.268423629892721,
+                "lng": -35.20932697989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Igreja matriz de Nossa Senhora dos Prazeres",
+          "photos": [
+            {
+              "height": 3024,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/113536929132448276548\">Roberta Lima</a>"
+              ],
+              "photo_reference": "AWn5SU6T56c-IqBjZjOMSyoFfEvsIjQKsvs5YzmVEz-ForZc_piPwaDnPwwyTi16locwA6p0eMWfVhp9qJDSdNCQV5LGkCwTwXzmgDwK_TJHDauLNpq-ZrKzgXo7bXsViGpOv3HdAR_hgV6aywPJhipfLYLyR1H8oruUn4C4antyhKnjw5sIOJ1OStO6yqRqwzssnybWLPanC77chQ6sMR98cSjDqr_J1OnbUaTPKyZ_bAjwfoOPw4XOox8F0p7NfdCViT6jn3YQJMFKoItWms4SoDx10G5erBufod8_CfYcfKSzoeXJStLBPFzg3spHsgMxBG-7IWrn_Jzu0C6_VPtZMMwchB_NL4DetJ3AYkZNeH-KAYjK4B41yDb7nbJQS0xxvUnFIy_5wsLQKTu2VQQFjqbB3v59gHnV-k4rWincC-6WM9qXGJwCUXef6wIS7P_yh29xKFB-PKIPj7X5NvbYp1C4tk2NB50xwNh8tgN6Ss1f4S0Ci0xnLlHYibmwAmBCwCEV0aQPt2Ka0TdH_6sWKhzjRXBGCyLihVhVih6bXHX4GEIaWq52Fbu2giFSvJ8Dq2Q_2jEC52WyTA",
+              "width": 4032
+            }
+          ],
+          "place_id": "ChIJ-3kwn3iHsgcRDB1WVauJcX8",
+          "plus_code": {
+            "compound_code": "PQMR+5R Centro, Goianinha - RN",
+            "global_code": "6956PQMR+5R"
+          },
+          "rating": 4.7,
+          "reference": "ChIJ-3kwn3iHsgcRDB1WVauJcX8",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 194
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJ-3kwn3iHsgcRDB1WVauJcX8",
+    "latitude": "-6.26704730",
+    "longitude": "-35.20796200"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 14,
+  "fields": {
+    "created_at": "2025-11-23T12:31:04.997Z",
+    "updated_at": "2025-11-23T12:31:04.997Z",
+    "name": "Paróquia Nossa Senhora do Carmo",
+    "address": "Av. Eliza Branco Pereira dos Santos, s/n - Parque das Nações, Parnamirim - RN, 59158-160",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Av. Eliza Branco Pereira dos Santos, s/n - Parque das Nações, Parnamirim - RN, 59158-160",
+          "geometry": {
+            "location": {
+              "lat": -5.9226372,
+              "lng": -35.2070349
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.921212070107277,
+                "lng": -35.20566672010728
+              },
+              "southwest": {
+                "lat": -5.923911729892721,
+                "lng": -35.20836637989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia Nossa Senhora do Carmo",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 3120,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/105930665476003627278\">Aldir Paulino Pires</a>"
+              ],
+              "photo_reference": "AWn5SU5uESbT_kFY2PDDdpVd2QO4Di7B9nGT4KpQcNjT7zF5xMTOFSgZryMmPadKWgu8jZJHyc7mnLXWcuSMpegrAQmG1NXUFZmn3XkQQU13oymYab2lsmLKOuyUxY8hRbbUWMJnE1X75zDr_1vm_jXvlGrrjtQ4_TVG01UYZmjEF0lwZlJExRkfyBRiNdoTrncGoO7rQeEipqw1-Jkp_ib0THYlwomHE3oqyjjme_nlfcSvBp4oUlmIOetilqBN8qo_m9ZWsHGEmeaEZ8QWxXlTLKuFD6h2DZKrljxFko1G-pTzpDG7_o-XKojZYBeLdaOfb6ndYm_FT_EO8X_0OjWXcz6qVa1uX_uPi_6Jf3G1Nbco6p4XSaL7GF73oJx7HQXJ_hxsaGWrZ3pHkMNErWZzGqQdU0sOUh5WQVX-Wh7s4YjwoD1cvjXQtASjbKjuuB8BjLMaIaU_3bMrj3RXzwyr-DNZDV34Kr0fwbxxQ_2W37dLicbvPoFyF2AVLKUoAeKAOi8um6bz3TaWPb_awnyDGXTq4Z_3y6kSMJLhISRA0lh0LEBi4jSS1emiWw-WGu3gB4TytXQz",
+              "width": 4160
+            }
+          ],
+          "place_id": "ChIJkc4IAnH4sgcRffDuVbjHLnQ",
+          "rating": 4.8,
+          "reference": "ChIJkc4IAnH4sgcRffDuVbjHLnQ",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 168
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJkc4IAnH4sgcRffDuVbjHLnQ",
+    "latitude": "-5.92263720",
+    "longitude": "-35.20703490"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 15,
+  "fields": {
+    "created_at": "2025-11-23T12:31:45.528Z",
+    "updated_at": "2025-11-23T12:31:45.528Z",
+    "name": "Paróquia Nossa Senhora Da Conceição",
+    "address": "Rua Capitão Luíz Gonzaga, 216 - Nova Parnamirim, Parnamirim - RN, 59151-010",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Rua Capitão Luíz Gonzaga, 216 - Nova Parnamirim, Parnamirim - RN, 59151-010",
+          "geometry": {
+            "location": {
+              "lat": -5.8804643,
+              "lng": -35.2098606
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.879117620107277,
+                "lng": -35.20857487010727
+              },
+              "southwest": {
+                "lat": -5.881817279892721,
+                "lng": -35.21127452989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia Nossa Senhora Da Conceição",
+          "opening_hours": {
+            "open_now": false
+          },
+          "photos": [
+            {
+              "height": 3096,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/100797418267671626891\">Francisco Fagnegilo</a>"
+              ],
+              "photo_reference": "AWn5SU6la1Mns_-EbHutUq5QJMW6qmzWf8YuIuZulwNWVYagDFnObCULtunEPpIMHHSuuT9duGFmWBydjKk9GDKdMNc8lmKCk75H0hQ8vZw2CdSOWz7lxHL3Zv3kEz9E3aqisG9jpt2F7MltiPpY8UIH9hZQqWJBifMJB9A7_Kdm6XBivx-9WWymPa0YHyz0IuUCcU2ny7g9iDdFw0WWFdbW63gIqrKDZh3B2UYUw7jy0uvpljwU-uOhkrSZMu0PVkwRYf_DIhJUb-HdcHDfQRgPI_pgxgbgPH6u34iibnJkWSY9OR8DjgXylKa31rI1tIYzSYuHXR3BerkEcUvnb0Pa3A9vSO-kQhdczzs6hENPu9Lt8IMJyfdJ64thsqwcvS35ikZfAdlGij9muLULt3Jjgb5pZHex45wan-RYEPp7GvBm-0ZlKeEVtLqJJQiIzho6wcjqgVuO5QDENKi4vlmHexK5wX937crpCni-P9b3E9PlewRDvJ7g5uvhrM7RMlh3VhTmlGRGGnbp-rdXe9g5RgXjSidhjo1UFSL8avUOnapBL_viHFMjtjqkZ7bRCX2Wj1Snsm3Ye4n11w",
+              "width": 4128
+            }
+          ],
+          "place_id": "ChIJqafXVqn4sgcRoukfFSzKquk",
+          "plus_code": {
+            "compound_code": "4Q9R+R3 Nova Parnamirim, Parnamirim - RN",
+            "global_code": "69664Q9R+R3"
+          },
+          "rating": 4.8,
+          "reference": "ChIJqafXVqn4sgcRoukfFSzKquk",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 239
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJqafXVqn4sgcRoukfFSzKquk",
+    "latitude": "-5.88046430",
+    "longitude": "-35.20986060"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 16,
+  "fields": {
+    "created_at": "2025-11-23T12:31:50.955Z",
+    "updated_at": "2025-11-23T12:31:50.955Z",
+    "name": "Paróquia de Santa Rita de Cássia dos Impossíveis",
+    "address": "R. Praia de Itamaracá, s/n - Ponta Negra, Natal - RN, 59094-510",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Praia de Itamaracá, s/n - Ponta Negra, Natal - RN, 59094-510",
+          "geometry": {
+            "location": {
+              "lat": -5.875192699999999,
+              "lng": -35.1845593
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.873811620107278,
+                "lng": -35.18318212010728
+              },
+              "southwest": {
+                "lat": -5.876511279892722,
+                "lng": -35.18588177989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia de Santa Rita de Cássia dos Impossíveis",
+          "photos": [
+            {
+              "height": 2340,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/111501128723752088568\">Vitor Guimaraes</a>"
+              ],
+              "photo_reference": "AWn5SU6GxXr9DRttnn3TLbCgDD-ki-PdkLR8vXLa535gOrqerBpHQxK0ghYWfjJKvoDEuf7jgt2vsEd0PhANNdaw9zP5ZMVBG_euPNm-QIoL7vRyGgWyQxCTdJ105jSpGiVb6Li2A4hPRSXsx-ZVilQ96f0X8WfaY0MovDM8-wkfeIr9yLUiKYNdsGZHSNYFoCJgTwiBUwX5KStGkGzYnm_7nrrDkP9lkXtkPFHo9V8hFr7KBORAM7GuMhup8PFUEhGEWOgpl0HJDa5ueZGbkK8dmTeOR34HRapqQpM8wIsz88N1XIzktDf3vHJ91QhUUmgY3eVLlbLdiSRmp62uQ_H5HmbfP1FJvslL-jciefSWtczaeTHjmnyBQ5c4TAO0lYAZhTKw8pcMctBip1XQE4hlP-WTIQ2r6qviDWDN34mZVnXBso3-BYk-6FmilOUW_nNkcZ0Lc0BcWRki0MVSdYsYs3_DibbDq6x8EgVVEK2MYV9CE1RYuuzP1bNbfhM9N6HToZpqS8dP98s7UgMhNyGhdHuw-WUcB_dxyQqjVCPrLmlwHiZuPyTQUYuMbRHnxPDl47lhMTHB",
+              "width": 4160
+            }
+          ],
+          "place_id": "ChIJHda4rDP_sgcRnh9utPr3REE",
+          "plus_code": {
+            "compound_code": "4RF8+V5 Ponta Negra, Natal - RN",
+            "global_code": "69664RF8+V5"
+          },
+          "rating": 4.9,
+          "reference": "ChIJHda4rDP_sgcRnh9utPr3REE",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 878
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJHda4rDP_sgcRnh9utPr3REE",
+    "latitude": "-5.87519270",
+    "longitude": "-35.18455930"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 17,
+  "fields": {
+    "created_at": "2025-11-23T12:31:53.106Z",
+    "updated_at": "2025-11-23T12:31:53.106Z",
+    "name": "Paróquia do Bom Jesus das Dores",
+    "address": "Praça Cap. José da Penha, 135 - Ribeira, Natal - RN, 59020-080",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Praça Cap. José da Penha, 135 - Ribeira, Natal - RN, 59020-080",
+          "geometry": {
+            "location": {
+              "lat": -5.777641,
+              "lng": -35.2039663
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.776314120107278,
+                "lng": -35.20265827010728
+              },
+              "southwest": {
+                "lat": -5.779013779892722,
+                "lng": -35.20535792989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia do Bom Jesus das Dores",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 2397,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/108975025114039058706\">Carla</a>"
+              ],
+              "photo_reference": "AWn5SU4Wr0OLkKFizyjXJ5RAdADbG23_s4eqvwDN-b3EJcU9REmmR3ZFXy5Nab8--kZeMZ0G43KHCQofVqxzfN7pWrILKFr6XO9orSvqZJKyxptkZeeMsMwoFZ0GYAYyk7HZM-KYqJP9_7Q0qTg14qXLw0n6S3xkBGTJCmRU32EFULS8CP5ftifP5q4Os5-ypw2i_5iYATwvCRlVzXxtkLg2FqySa7gqvDxJ4TffzCcA7dXBQ52nIVwaeqAzeLlb3Cgxj79G0Ldc-nYCsDuPem_pahGCwNGCZ6cnBQcZA2XS-Gdj8HAsQ5k6BUFUyD4mwn9O3Kn9UC3XLmDsKCWwInYQpP-_CPDC-5e-SqXwGXAjJUuaT-uWiJm5CzUztE1wwVjPmwCvzhP6u4dHlBGHvoZXU5q1z472ycZihOCN0DyGKNMyK3b59okRIrpnR9ejdzasEU154wJhu-HgqfL1DbfUtAs-KE0hnKGX2kP_WCOuq9zBQ3weg2vDtOaHdbWKcbj9D14sh0OzWvidPdihzWn-EC2y5SNUnjl8WI3W-iVspY0FERIq2cLxr0pZ-2I4m1U53plaTA",
+              "width": 2102
+            }
+          ],
+          "place_id": "ChIJxZ8My3oAswcRFzApYO6x-cI",
+          "plus_code": {
+            "compound_code": "6QCW+WC Ribeira, Natal - RN",
+            "global_code": "69666QCW+WC"
+          },
+          "rating": 4.7,
+          "reference": "ChIJxZ8My3oAswcRFzApYO6x-cI",
+          "types": [
+            "tourist_attraction",
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 491
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJxZ8My3oAswcRFzApYO6x-cI",
+    "latitude": "-5.77764100",
+    "longitude": "-35.20396630"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 18,
+  "fields": {
+    "created_at": "2025-11-23T12:33:01.006Z",
+    "updated_at": "2025-11-23T12:33:01.006Z",
+    "name": "Paróquia De São Pedro Apóstolo",
+    "address": "Praça Pedro II, s/n - Alecrim, Natal - RN, 59030-400",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Praça Pedro II, s/n - Alecrim, Natal - RN, 59030-400",
+          "geometry": {
+            "location": {
+              "lat": -5.7928513,
+              "lng": -35.2126391
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.791593620107277,
+                "lng": -35.21122622010728
+              },
+              "southwest": {
+                "lat": -5.794293279892721,
+                "lng": -35.21392587989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia De São Pedro Apóstolo",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 1750,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/110201402503700561535\">Marcos Júnior (Marquinhos)</a>"
+              ],
+              "photo_reference": "AWn5SU63HIIgvvWeL89ffMwAOYQ6QQH7c4q6ytSeJTxg2PpKhe_z_mXMFFnHsY3LrytgyIXhu_jbbj21iIS0FfJWyK15cE4zF1k9ToE9pSCpKzuAsiKUeC0fPJ9hgltHXjgtQtQ5P-eKQWKh-s5SKCuji3SLCTQRmarNdnPhbl-_MgxHQ5JhP6Wh2L4QIhkJmurJP6ZTasZjZ0dstUhI3Ep_ImgsCy_qzR1C-O4kOGtEL1S6q5gOUA0HgsxmrGXKpW2TFZpzsOrWxrwk21NYlrRTbolKpr5fTxadl4YOJEBZ0VIAxcEt05OXcAtnD-Nqw48vV0sMTPO1ThEbZd-oq3rhuE2Jw96gk4bvbvW4DBddpSZxNPMW65Q1k1qwL-W4nLXK3MHjp7-F1xu0OFJVwUAWFDY33aOmDIUDxaKlD_jF4IlmW_w8wX-zwGWol1Tnu6W1HWlTkFkFQQt0xxENqHOMOMC4YDyynY_oP27AJqM2BbCI67SXE6OIxy3H3oKDH8iQVoqSFt1P2edsT4k5zOsxZlQw5SJHOHySwcGsbLlSJBx5yPgL4iXWjWU3jVm7m_I1z1GXp2WVtex-sA",
+              "width": 2200
+            }
+          ],
+          "place_id": "ChIJyctCSmwAswcRRT5nWJHm6O4",
+          "plus_code": {
+            "compound_code": "6Q4P+RX Alecrim, Natal - RN",
+            "global_code": "69666Q4P+RX"
+          },
+          "rating": 4.7,
+          "reference": "ChIJyctCSmwAswcRRT5nWJHm6O4",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 465
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJyctCSmwAswcRRT5nWJHm6O4",
+    "latitude": "-5.79285130",
+    "longitude": "-35.21263910"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 19,
+  "fields": {
+    "created_at": "2025-11-23T12:33:02.534Z",
+    "updated_at": "2025-11-23T12:33:02.534Z",
+    "name": "Igreja Matriz Nossa Senhora do Perpétuo Socorro",
+    "address": "R. Padre Antonio Cassiano da Silva - Quintas, Natal - RN, 59035-070",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Padre Antonio Cassiano da Silva - Quintas, Natal - RN, 59035-070",
+          "geometry": {
+            "location": {
+              "lat": -5.7996481,
+              "lng": -35.2353431
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.798291670107279,
+                "lng": -35.23398442010728
+              },
+              "southwest": {
+                "lat": -5.800991329892723,
+                "lng": -35.23668407989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Igreja Matriz Nossa Senhora do Perpétuo Socorro",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 6936,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/102748089294762227670\">Ronaldo Silva</a>"
+              ],
+              "photo_reference": "AWn5SU52xLBfbA5gbswk2JuNVNAgcXrTfivBY9VL-w2A6R0rxJVLrirZbXmeFCSpl7VH5J3qt7RiUa7Gj5x-oVf7g-7_wsBVdCXa61YzWPzMReklM45pfEDs6bExKzdEkb09mHZqBo6qFE3-reIWGVVbQ1Mcgww_Dmutwat11TAaqdr6mp3RY3TEysAHxYcRP0SOQzNy1IOJRkBxyUAOcWuY7mwc_DI4RBR_aJHfwJTvxrGbP9vWLREwKEcpoP-Sw_Klnq7mybwAKPyFaswHUMpl6PRq60Hwtp_keJfZe_B8TfZqxhH-sLgxeBRO95R9U9nxCtm5XGgM9JqlP2HL3SvXu_98CPdaZoxxGnHO1qgL2K0gQnRjvRU_u0bqIZ6t8Kj1U53m1c-ZWHHov6DsmqY0deywuYeHleLQrActQuknMQuCS8xj4yfNCtqBrSChQS49nGl2SigGLkOpBFdwOxWBX8ve-H9_vI_PIdGWJ2KrDUjZworOjvWrTgfrpl6T_coYw-8N593RBioAYslVXn-5nB5-b20O9oad8NzF2Ij_2JwqrYbroIzbw_WMTeuMMpvrxMeNjR1S",
+              "width": 9248
+            }
+          ],
+          "place_id": "ChIJbwuMwrWqswcRYkPozx0pKIc",
+          "rating": 4.7,
+          "reference": "ChIJbwuMwrWqswcRYkPozx0pKIc",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 163
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJbwuMwrWqswcRYkPozx0pKIc",
+    "latitude": "-5.79964810",
+    "longitude": "-35.23534310"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 20,
+  "fields": {
+    "created_at": "2025-11-23T12:33:08.410Z",
+    "updated_at": "2025-11-23T12:33:08.410Z",
+    "name": "Paróquia Nossa Senhora dos Navegantes",
+    "address": "R. Francisco Ivo, nº85 - Redinha, Natal - RN, 59122-000",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Francisco Ivo, nº85 - Redinha, Natal - RN, 59122-000",
+          "geometry": {
+            "location": {
+              "lat": -5.752326399999999,
+              "lng": -35.2029618
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.750961570107278,
+                "lng": -35.20164172010728
+              },
+              "southwest": {
+                "lat": -5.753661229892722,
+                "lng": -35.20434137989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia Nossa Senhora dos Navegantes",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 3024,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/113486285955540749310\">Canal Travelife</a>"
+              ],
+              "photo_reference": "AWn5SU6NgPap3Z6vTZtV7UCK0oPZLsfxIaDZluHM7t08mcnZy2qta2OZVqxknTRb5fTkvEyIeqoQ-4Hh53MhjFz-YM9THPzr-vmsi7KAqF6UHUpKqKfdtrbWeF0hiDts0jIM_j7QZLB7qRcT12uUbbcKZF3z6ryQPcMLe_MFYAFs6MzDIeJ_k_jk3IyhgC6e4vayyjcqVyhGfyFovACHtjxDsTO0-Sod84c60eCuqxtrswzpD_zMvAql9KtOBXaqTSRM6Hm3SBxCkTBMt77n7jUw16bOZgqJzZM4KPALJ53dUr3rSJtr66hpnglfE7viQ1zVbyVknMyHioi3FYTu-JsnDvL_jhriFZ-Ra4Ig5N2bBaKC5qU3DbaVkQYHk4zPWKq-_LC5FTuZ7qvuuBAcR3LV2a4EQbHifwbROpCtQYmflCzEMwZ1PlcLgBq2QWpef57xEXOFQT6D4_nqyhAaF3cFKVc-GVBtubB7xJQee0asKTzqXtzUHjF7X6jTBNbrVlHmneQVppoI9nzngw17BeMVUBd_zPzVS5hWe-tWsTn-0R4EjopE11qeFSPXSZAcLfYK2Jp_qA",
+              "width": 4032
+            }
+          ],
+          "place_id": "ChIJSwtcWb0AswcRlcjQwXolO1U",
+          "plus_code": {
+            "compound_code": "6QXW+3R Redinha, Natal - RN",
+            "global_code": "69666QXW+3R"
+          },
+          "rating": 4.6,
+          "reference": "ChIJSwtcWb0AswcRlcjQwXolO1U",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 641
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJSwtcWb0AswcRlcjQwXolO1U",
+    "latitude": "-5.75232640",
+    "longitude": "-35.20296180"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 21,
+  "fields": {
+    "created_at": "2025-11-23T12:33:12.256Z",
+    "updated_at": "2025-11-23T12:33:12.256Z",
+    "name": "Paróquia de Cristo Rei",
+    "address": "R. Juiz de Fora, S/n - Neópolis, Natal - RN, 59020-400",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Juiz de Fora, S/n - Neópolis, Natal - RN, 59020-400",
+          "geometry": {
+            "location": {
+              "lat": -5.869810900000001,
+              "lng": -35.2085602
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.868365320107277,
+                "lng": -35.20717622010727
+              },
+              "southwest": {
+                "lat": -5.871064979892721,
+                "lng": -35.20987587989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia de Cristo Rei",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 3120,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/116549138490239875040\">Magno Silva</a>"
+              ],
+              "photo_reference": "AWn5SU6st-qsCOMl6omULnKP-y69Lj2a5m_ZngT-0OJ_KgdI_a5f3t6TjsoAIXwqaYdH6DMxA7CW9FvV7MYPnH29nuTaADfqSe4RmKo70lfG9TkZ37ElHyr4sV5ybsIsuYzNKDU29rjpDggs1Jks2AtlBDHA7zqHv7K8faiRMRLQH9HEKlWP1H5VLoLPLuD9yCo6hRoR6LiZ4M5p19Rr5x0L4VhOPZ4albk2BlYgIiEVwnRMv_nMBg7hrtMzB0KXLXfLzELXJqx_D0mb3suWR6-5KVyftila3GZKZSgAoZSR4IRM_h6cvJhrSGNy-VWNDBcA-vOmd2jJ04XjHl5dADWI4ePWYpt6hlgponHHsxgUVKCStbOcQhpkdsHrS8yVPQmOVcnjrYW7zhB6MAcKGLtuly9NOlni31XU3IalY9hP5vSzvxQeCtRQoIeVvWN_5Jdrgo9KfEF_5HcquME-MCprbjHBcIF6OXxbCTQi6VThgsPWmb5MCjTd4OYF0-UgR8fQztk7i3sl1I28Qq8tCEaK5vqucsxkC-iVaWAdv04EEz4059McEFSBOsta0AXStVyzArkh4u34G-smfw",
+              "width": 4160
+            }
+          ],
+          "place_id": "ChIJmSwf8WD_sgcRnT5lurZbk-s",
+          "rating": 4.8,
+          "reference": "ChIJmSwf8WD_sgcRnT5lurZbk-s",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 349
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJmSwf8WD_sgcRnT5lurZbk-s",
+    "latitude": "-5.86981090",
+    "longitude": "-35.20856020"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 22,
+  "fields": {
+    "created_at": "2025-11-23T12:33:13.800Z",
+    "updated_at": "2025-11-23T12:33:13.800Z",
+    "name": "Paroquia de Santo André de Soveral",
+    "address": "Av. Aeroporto de Petrolina, 2 - Emaús, Parnamirim - RN, 59149-336",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Av. Aeroporto de Petrolina, 2 - Emaús, Parnamirim - RN, 59149-336",
+          "geometry": {
+            "location": {
+              "lat": -5.8803946,
+              "lng": -35.2493643
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.879076220107278,
+                "lng": -35.24791567010728
+              },
+              "southwest": {
+                "lat": -5.881775879892722,
+                "lng": -35.25061532989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paroquia de Santo André de Soveral",
+          "photos": [
+            {
+              "height": 3024,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/100990199609690587875\">Kelffes Bezerra</a>"
+              ],
+              "photo_reference": "AWn5SU5MRkz2QRMJYcgxOdN0JKMpXbBY2B80qL6S8Na7HZbTE3zDhC3m9o2QPZ0gcs6amTUPUzdTVxdxgHd-fyQPyrcl8qWEhtY_M-tKmOw6npYtIkoAbSeATjacwNOnt6njR2wd3axbgO_oNwfWGzIDHqguDQg8EiXQBkRrcM2MGP7IZAoEXOc7mMZgav7aYPVYyuD4GbRcjVyO3WMvZwlK-GHY1el-3UQtLoTnKWQ_5abKav9z_P2CWAZLJ5a67UykLruL1FmACNb7SaFc6GaVFp1Y6Fv9tYPobOmkeu0SMREVepsRjVTi6J7GV38AUktBHOF2exH2yWVJStvICzJ2ORzmNydaQknr_h0JFWruKfyxG2DdY8jhG2gYzGHVO1eeKR6lkcDFjyVJw-tsa4Ud-NLC2mpshXxqUhwqXZQxd7idS_qnzwdPoUXSBvcCSYxeXcfYqHbqCPr6shACrJf2f9vKYPabYVdpmK3GOz8QvBWAwrqtOaAdkaGd8bbwWAl8knW94JhibJD4ZcYRrrF2y04viJWDNXed52TdN4OWfttSAoXRqY_rpKeNXlTnOQRFRE1h0lKYhnPWHw",
+              "width": 4032
+            }
+          ],
+          "place_id": "ChIJVwrTM2VWsgcRDGqssbiAWZ8",
+          "rating": 4.7,
+          "reference": "ChIJVwrTM2VWsgcRDGqssbiAWZ8",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 192
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJVwrTM2VWsgcRDGqssbiAWZ8",
+    "latitude": "-5.88039460",
+    "longitude": "-35.24936430"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 23,
+  "fields": {
+    "created_at": "2025-11-23T12:33:15.438Z",
+    "updated_at": "2025-11-23T12:33:15.438Z",
+    "name": "Igreja de Santo Ambrósio Francisco Ferro",
+    "address": "R. Mira Mangue - Planalto, Natal - RN, 59074-827",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Mira Mangue - Planalto, Natal - RN, 59074-827",
+          "geometry": {
+            "location": {
+              "lat": -5.851646199999999,
+              "lng": -35.2528221
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.850326270107279,
+                "lng": -35.25153147010727
+              },
+              "southwest": {
+                "lat": -5.853025929892723,
+                "lng": -35.25423112989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Igreja de Santo Ambrósio Francisco Ferro",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 720,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/101449420213799405525\">Jose Santos</a>"
+              ],
+              "photo_reference": "AWn5SU7746rMV6oS4fFwHlU7e22BwdujRWNxq1X81Pty723G0PVYd4sEtunPTN2v1kreLCoON3KmeFuqrW4Rz_YdG4AkkP-EaTIEYWPJ9qin51FcIo0OXjNKDkkMNkcsvYeA8YoELv3WBAZbH-8A2v7awzQ9bLsYymput28XU-vF5xPhNRnVHBgE2ix1lutmNX_8a14hQILvR_yLbLATZjN-yofzJhmZpB5YMoDYwK0sVaBT8YoANWo3iUMhl6svz9A-C3iEBYcC69_oju9D75Fa9iCqUa-sU0siymiP0qQO2U6ZSkOX8ujz7NayVWM0U1GTS6U3hgRgAmCL1w1-CoxGH0fCOuNpOHbdeCxj2pqguAGhC_JzmB9MInr9zBtJbPr_Ph_JL0bHzGw13FdH8AW_xKv0r7Nt8jeZz_aiv4d-HLNx7AROiWzEtMDbi05SAfwNLu6k7ZQsMLwLbndd0SMyK16Cu0tR7E9MOp31dnrxkwcbKHr_IQXvbJeLU6qT9i3ZFyozPFe-Xry-2HkuYN_vJUVLXmfh6QLxRR5u6_uma4NeecIxIj750n7nEYtsLc6Ws6xGUXRJubSDpw",
+              "width": 960
+            }
+          ],
+          "place_id": "ChIJ6zP0orZVsgcRa2_CL9qMtY0",
+          "plus_code": {
+            "compound_code": "4PXW+9V Planalto, Natal - RN",
+            "global_code": "69664PXW+9V"
+          },
+          "rating": 4.7,
+          "reference": "ChIJ6zP0orZVsgcRa2_CL9qMtY0",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 178
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJ6zP0orZVsgcRa2_CL9qMtY0",
+    "latitude": "-5.85164620",
+    "longitude": "-35.25282210"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 24,
+  "fields": {
+    "created_at": "2025-11-23T12:33:16.871Z",
+    "updated_at": "2025-11-23T12:33:16.871Z",
+    "name": "Paróquia Nossa Senhora dos Impossíveis",
+    "address": "R. Rio Paranapanema, s/n - Cidade Satelite, Natal - RN, 59068-330",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Rio Paranapanema, s/n - Cidade Satelite, Natal - RN, 59068-330",
+          "geometry": {
+            "location": {
+              "lat": -5.8550482,
+              "lng": -35.2397646
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.853711320107278,
+                "lng": -35.23839287010728
+              },
+              "southwest": {
+                "lat": -5.856410979892722,
+                "lng": -35.24109252989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia Nossa Senhora dos Impossíveis",
+          "photos": [
+            {
+              "height": 3024,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/100990199609690587875\">Kelffes Bezerra</a>"
+              ],
+              "photo_reference": "AWn5SU6PgQ0WhSPRTd4CwOXt-dZ6yVapGDeG4CPqduilfVVNXMBpiPlHW7kwBzDNtufb-xsBkwtg4CsFmKkj2bxZy7RuBwzSaEmnKgk-L7z-KxVkDWRSx1W0eAIq6u8680VIOeCquxBfdJbHk6Amp5Kqi1FTkCcf1TAAJkXGAgCHf34EQfs1jAua4s4j7UK6_vWZbLRcvv3RJbqjcWtK2u-9sO9rd_mOg3b5ew-GPE7XF2F-Kj3CpxTSQ2wchq69HVov_s3tm9UmZpSlRfXJrqLzDhhxHeCgBdj6gbJ-npaYCfSPeGYonqzg-eBrKs_cZNZ7yJEJT7XiVcTa49Bagtq8Uykak-2dvuQv58p5giUeqGNaPTcbYZAlydPWrpBhBTZGksRPeiadp9JEzfQZEnymZGjib2ogEezYtK976LjWUU6fXNBt6hfKYV-fQBdG1qK0r_YEu0NgK2h-dfUTVbhVsgKrVPc1QMwTcAG9tvr5aBlgbZ-XavaDgZowbDvvdzg3OB67Wy5SYofDAf3NY0rN7mTM0L5_hagPH8fgQgCLpIdlOlvWAz4SzTbJlHBulwqXEEC1WU2s",
+              "width": 4032
+            }
+          ],
+          "place_id": "ChIJPUt6dr9VsgcRl6EnOSwyc4k",
+          "rating": 4.9,
+          "reference": "ChIJPUt6dr9VsgcRl6EnOSwyc4k",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 274
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJPUt6dr9VsgcRl6EnOSwyc4k",
+    "latitude": "-5.85504820",
+    "longitude": "-35.23976460"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 25,
+  "fields": {
+    "created_at": "2025-11-23T12:33:18.225Z",
+    "updated_at": "2025-11-23T12:33:18.225Z",
+    "name": "Paróquia de Santa Clara",
+    "address": "R. Eng. Joaquim Cardoso, 435 - Pitimbú, Natal - RN, 59069-010",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Eng. Joaquim Cardoso, 435 - Pitimbú, Natal - RN, 59069-010",
+          "geometry": {
+            "location": {
+              "lat": -5.850457599999999,
+              "lng": -35.240061
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.849091020107278,
+                "lng": -35.23874022010728
+              },
+              "southwest": {
+                "lat": -5.851790679892722,
+                "lng": -35.24143987989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia de Santa Clara",
+          "opening_hours": {
+            "open_now": false
+          },
+          "photos": [
+            {
+              "height": 2298,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/104162434995694119247\">Daniel Quirino</a>"
+              ],
+              "photo_reference": "AWn5SU7CDDWM1-EEhxDciR7sWA-yruz9-GnYNQNs_vrXQ_KZDPLbhfoj-6wGk3PuQrFlHcXIIJbmzyRK9daUP6VJ4rr_pD8b0rchrx4-VTXWNTd82eDASDs1Xua12o2KVC0OjNDIPng1yxDVUoDIhq6sRRZNa_0PIFKOUVD5ygL75ybadLi2g8EY2OpZA_H4BFOBn6Wp8oVOjgKplywdB2XFzRYz5-cdZZpVZKv03VMTrzsJknrDQoK80R_JXfZIJbCzTUR-B7nGY9_exGoTGozb4SmAd4WwTsNpeiRNgQfvo7-ePPorbGP1DxiS7nhWgsL3JPHEdMl4UafsPUn8hzxhLeOSCgihsbv0hZ40WzMBqeCu-_ElkSzZXtmUt__PpcHQXtPUn-lmg5SejIxQLe6skB1qceYX86FeMDB07DbbrBMDendjPYVKFWg6muoSjpQsVeZs9IUAib8eRBHE7lYfWu97s-nFv5FohdaHy_dRISH7tH7r9hFlRL8bN13LHHwoLMmtM_-VXVFuAPWKXSMPk-Yca3OM1Bh3dJWaQaFma26eUPNvW7t8AL_p9tleUnWg-I53G9D3XImCUw",
+              "width": 2480
+            }
+          ],
+          "place_id": "ChIJdRDdN7xVsgcRd2JTRZNfQEQ",
+          "plus_code": {
+            "compound_code": "4QX6+Q2 Pitimbú, Natal - RN",
+            "global_code": "69664QX6+Q2"
+          },
+          "rating": 4.8,
+          "reference": "ChIJdRDdN7xVsgcRd2JTRZNfQEQ",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 247
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJdRDdN7xVsgcRd2JTRZNfQEQ",
+    "latitude": "-5.85045760",
+    "longitude": "-35.24006100"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 26,
+  "fields": {
+    "created_at": "2025-11-23T12:33:21.376Z",
+    "updated_at": "2025-11-23T12:33:21.376Z",
+    "name": "Paróquia Santo Antônio de Pádua",
+    "address": "Nossa Sra. da Apresentação, Natal - RN, 59296-382",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Nossa Sra. da Apresentação, Natal - RN, 59296-382",
+          "geometry": {
+            "location": {
+              "lat": -5.765181699999999,
+              "lng": -35.2809704
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.763880120107277,
+                "lng": -35.27964152010727
+              },
+              "southwest": {
+                "lat": -5.766579779892721,
+                "lng": -35.28234117989271
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia Santo Antônio de Pádua",
+          "photos": [
+            {
+              "height": 1876,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/104058949500535340740\">Jailson Gomes</a>"
+              ],
+              "photo_reference": "AWn5SU6eaGgUAP-S65mSG_8gep8NCjQk80aMSinbPF0ZsYQpHE6gLQuJwjIXksR5mCCFvGYaT1zxdvDrO1Ad7gX1bJ4dzV5wdGFDmBy3jMsmbsDOFQQihOEW6l7tm0mdhmjCRRtHeVw9rB0GGO1yEyc-fLgGRGCCEurU2jhc_g4UXkUQWx2MoSftRbBoZPKc5jP796GC7hi-cVubs4bqa_1xN3rxJGFRz0G2XdgetM7k1mapiTXJLXFhCZR0qX_3RSlazhuRpXXL04AUfQ86FHmfPJNgCHirK6nWrmH3zQpUs6GWB2806TZQCQQp24nFr6MEWZkGUBYtZQiQQuHIG58m_2XLEndwnEPanrtSEuIkNkejJ-mmJJQIzPK8u29OoWqUwVmmw5d0a-30UTO6soTffdW8ZfD5_BwkcrQoFgNyNLLPKRTju8REyYTzxSCT2HLArAo5IPpByVhe_BokkYzpNoZR_5xfCsqBHKhUV2ZifSDmiI9cqKqvjF2gc_H1yMxRSELTXNULSGfxG9z-1YPafwvAX_10f0x0NP23Y4o1r5K_KDxiofBwcGP-6OPsRlqI0aBDUMcA",
+              "width": 2076
+            }
+          ],
+          "place_id": "ChIJSbarrAqrswcRVcPy3lIaxL0",
+          "plus_code": {
+            "compound_code": "6PM9+WJ Nossa Sra. da Apresentação, Natal - RN",
+            "global_code": "69666PM9+WJ"
+          },
+          "rating": 4.9,
+          "reference": "ChIJSbarrAqrswcRVcPy3lIaxL0",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 330
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJSbarrAqrswcRVcPy3lIaxL0",
+    "latitude": "-5.76518170",
+    "longitude": "-35.28097040"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 27,
+  "fields": {
+    "created_at": "2025-11-23T12:33:23.734Z",
+    "updated_at": "2025-11-23T12:33:23.734Z",
+    "name": "Paróquia de Santa Luzia - Natal/RN",
+    "address": "Av. Nila Jales, 1080 - Lagoa Azul, Natal - RN, 59139-440",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Av. Nila Jales, 1080 - Lagoa Azul, Natal - RN, 59139-440",
+          "geometry": {
+            "location": {
+              "lat": -5.732856099999999,
+              "lng": -35.2701906
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.731556770107277,
+                "lng": -35.26875442010728
+              },
+              "southwest": {
+                "lat": -5.734256429892721,
+                "lng": -35.27145407989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia de Santa Luzia - Natal/RN",
+          "opening_hours": {
+            "open_now": false
+          },
+          "photos": [
+            {
+              "height": 774,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/102577015816148594673\">Italo Carlos</a>"
+              ],
+              "photo_reference": "AWn5SU6LzX5dnuWkXq9JS7P4aojP3NOclJtRS3OgZpxLi9JWpAHvb-YU0lrXTC1pgv3g7oFWH_cqbkNKq0vsmKa0dxKPU1fn00PHB9pBb-TEM4b1VEtfTU5jihLd1rPtdYQf6p89zJkFkwlGz4jTtmtrWr8TJq--KCzQ4LnimqTINAbhZiqNIsxJic1SPD-uuKr-6_-uDKO_V2RIAeg0Ugi5eSovG3eWeot3Y98GjtAmuvjDmZpfjafPOv_lcWlbd-BLxjzoGvULFCwg4_3yKytgnaOcDyRULR6Pyk7zIDvaKVAfqUSejbg-K2wSg5hx7eI3AlP_c_Wlo8bE4ox895L7W-eOquk4TH9SQmDIiqOm8KSeWOc0tuK5lsyKaySp854zYp0Y2mNbzoRteJUxEllX4wbaH34kNcwfMbhLGNumtxAB52RxmdH33dLLhPAxcJXkF3ZEq4riK35j9GBZls4UDPNCpYQutgsAm_gt6DrjsO07f9gAvzZsGoLv6TkOlNn6VPIpbt8QQqKaj2pDUBGcwVm1_CBR7syPdkubl18FuqyGjT_glrK5TY2DPn0utWQZVe61GL8H9lriHw",
+              "width": 1032
+            }
+          ],
+          "place_id": "ChIJDwgNV3ypswcRRKYxz0PjOK8",
+          "rating": 4.8,
+          "reference": "ChIJDwgNV3ypswcRRKYxz0PjOK8",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 136
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJDwgNV3ypswcRRKYxz0PjOK8",
+    "latitude": "-5.73285610",
+    "longitude": "-35.27019060"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 28,
+  "fields": {
+    "created_at": "2025-11-23T12:33:26.699Z",
+    "updated_at": "2025-11-23T12:33:26.699Z",
+    "name": "Paróquia Santuário de Nossa Senhora da Esperança e Santo Inácio de Loyola",
+    "address": "Av. Pernambuco, 1 - Cidade da Esperança, Natal - RN, 59070-300",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Av. Pernambuco, 1 - Cidade da Esperança, Natal - RN, 59070-300",
+          "geometry": {
+            "location": {
+              "lat": -5.8257075,
+              "lng": -35.2348579
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.824331320107277,
+                "lng": -35.23349747010728
+              },
+              "southwest": {
+                "lat": -5.827030979892721,
+                "lng": -35.23619712989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia Santuário de Nossa Senhora da Esperança e Santo Inácio de Loyola",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 3120,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/105643612361127918111\">Nestor Leite</a>"
+              ],
+              "photo_reference": "AWn5SU4WUc33iGAksXyd3zoHPjeYYKHXJsY2Wse2OdZl3MSRCkaDSl4leRdUuNXR0Bjne5csPkYM9Niv51pivJrojQbPTyqSYyQmCA1LLVrGfU78GIhuM2nZNYamldugNVkMpC56uYCQB7ASyRPe87oATc3oiAGu259KLEDrDRE5lOnA5z2TJFe1BHP6pCFWGxeIv7c9pP-TV0RpipTDG-pgHfNEjDgn8LKZZacof16iwM5UdNZx-tOyEWry_k1BcTxYHojYn_J3TriqeNaQe7ZRk6RUp5gx8X7DT1rEADe1uMIxH6_DHY9fhQBWER4z5MEHI-4QbYESSMrdedSzcdWZq7D-VmPDEZdTis40QItuRIbgzalTXv8EnEA0R6iRyge0hVvSL1FfPlxirMskBWC2v-PjvQJ7DRAmGq-9DA7ZIHt7MzjqVYNaIvxlnR0hLiEvJt4MKqPNbsbGZExQ2larb03BxXq0-iM5EOsIpwehscgrvu40Q1ZAn_RolH5xauWW8ptw0DLYydBQH941d_G8gmlxVwaqjIbP9JHXibVXpYfteiQl7AKMvJdbk-KKaKyaS0E2fFUJ",
+              "width": 4160
+            }
+          ],
+          "place_id": "ChIJB4R3kmxVsgcReWuW7HtFwEY",
+          "rating": 4.8,
+          "reference": "ChIJB4R3kmxVsgcReWuW7HtFwEY",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 319
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJB4R3kmxVsgcReWuW7HtFwEY",
+    "latitude": "-5.82570750",
+    "longitude": "-35.23485790"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 29,
+  "fields": {
+    "created_at": "2025-11-23T12:33:27.848Z",
+    "updated_at": "2025-11-23T12:33:27.848Z",
+    "name": "Paróquia Jesus - Bom Pastor",
+    "address": "Av. Bom Pastor, s/n - Bom Pastor, Natal - RN, 59052-450",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Av. Bom Pastor, s/n - Bom Pastor, Natal - RN, 59052-450",
+          "geometry": {
+            "location": {
+              "lat": -5.809346700000001,
+              "lng": -35.2351935
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.808070970107279,
+                "lng": -35.23378772010728
+              },
+              "southwest": {
+                "lat": -5.810770629892723,
+                "lng": -35.23648737989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia Jesus - Bom Pastor",
+          "opening_hours": {
+            "open_now": false
+          },
+          "photos": [
+            {
+              "height": 1200,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/110352903829003263443\">Jailson Remigio</a>"
+              ],
+              "photo_reference": "AWn5SU6VHuddjosL2_eyJ7LoEK_0GmI9J_gqq6G5T3MigEH1dW4RvEWn92Cc9cSPwO1_8dG7ofe4W3PHraeEMpg8es4FjR9ZbtZoLSvqpP9SrkQt5FGB6ugDH5Lb9RHdeDj7vm_Bt86_GDFem27bqo_jYDisyDilkYoC2SJZTFmYRGdtLFFtXe3BmtX-sx4rTY775dloGoVxyCNIraI1jepGdvPQgi3GeevTZE9LaQcUz0HR5fxMVtMkoHhtiF3eWldlsIa0fFXU-8DmTQcw6M-nlksCIt2FFLwm4_WmS4VP1Gnaai_rzA5IEs3Mb1H1-TLspOQ3sw6uTmQS18OhDOY281Qa2rkBC9ayUtGN63giqoI_XuqkpWMu5oqEK_kAbbUmGfr764FZtTyjEg4Fo3zA7t0FLG6aRwQW2970hDmt6ChcMNoCrpn159lGu8Dm3l_B1Yi-jB8oWvFzG1c60qyHjNb_UuhmG7MGKyO7Gwa6jYwJYIPMuw2YTmfJ0yRA4WjJ6ZA5efv3HGfJ6YvclP5IWo1ghMbrru5c3bf9ZCK81eoEAYqACtlQxrQM7L8cACGbtpc19H5C",
+              "width": 1600
+            }
+          ],
+          "place_id": "ChIJe39dt0lVsgcRXzxrAChcryE",
+          "rating": 4.8,
+          "reference": "ChIJe39dt0lVsgcRXzxrAChcryE",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 191
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJe39dt0lVsgcRXzxrAChcryE",
+    "latitude": "-5.80934670",
+    "longitude": "-35.23519350"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 30,
+  "fields": {
+    "created_at": "2025-11-23T12:33:29.773Z",
+    "updated_at": "2025-11-23T12:33:29.773Z",
+    "name": "Paróquia de São Sebastião",
+    "address": "Av. Coronel Estevam, 1657 - Alecrim, Natal - RN, 59035-000",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Av. Coronel Estevam, 1657 - Alecrim, Natal - RN, 59035-000",
+          "geometry": {
+            "location": {
+              "lat": -5.801234300000001,
+              "lng": -35.2230982
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.799869470107277,
+                "lng": -35.22175987010727
+              },
+              "southwest": {
+                "lat": -5.802569129892721,
+                "lng": -35.22445952989271
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia de São Sebastião",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 1536,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/114549690197109844754\">Rodrigo Jefferson Caridade de Lira</a>"
+              ],
+              "photo_reference": "AWn5SU4GMjjE29v6g0s9QB23eB97wxaFIGnb3RgX3BNcAo78Diyyv6QE6KsQClvkJgXTa-_m7qmUT6OhSTz9KvyqJCwEHvVKTiZLks2DWgbJ4HYuHoPNfvLD1100j5pY4rDBIP7f4lwNmks7WyLeDXkLa721Dwo6KKGs9V9-x4282N-cKYH_R5KC2VF_jN6SXpoL2ORtSqaPhemCyI-zWnN17XjfujRp2uIYh4O1l0ivDlmZ8yEUsQUHpMrXz8pEVqNPlfPZSePH8QaL2-9rWHrqxWHTP2w8QkfKKwi9fVwPQKvWyZu5IhkR8e9kWn0Cho8LMjS3Wx-dg9gXBnhp477hZJyk6HG2OYq3WTs9xUI8vovrSzIVBCJzVGItdOBbgCHxkxTqS5SMY6Ujj2usT_ClGrt7PgAGLphkRI4Z5A_g7SQRF1agStstu0icv2JRqN5QseahEWSjBhyhNBFV7XWn-4gx_ONwmGkY3TvlcCND102O6FLPHRLPNGRTOTCwKb-DEtrl0IW3PfqPCtfLjmVZZen68RfGaBCYFvzYyOJ3GxJ482W3tpSndlaU5fbEfC9mV03uM594",
+              "width": 2560
+            }
+          ],
+          "place_id": "ChIJw_Vsrq2qswcRk--ZfPrr1pk",
+          "plus_code": {
+            "compound_code": "5QXG+FQ Alecrim, Natal - RN",
+            "global_code": "69665QXG+FQ"
+          },
+          "rating": 4.8,
+          "reference": "ChIJw_Vsrq2qswcRk--ZfPrr1pk",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 373
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJw_Vsrq2qswcRk--ZfPrr1pk",
+    "latitude": "-5.80123430",
+    "longitude": "-35.22309820"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 31,
+  "fields": {
+    "created_at": "2025-11-23T12:33:30.899Z",
+    "updated_at": "2025-11-23T12:33:30.899Z",
+    "name": "Paróquia de São José de Anchieta",
+    "address": "R. São José de Mipibu, 1515 - Lagoa Nova, Natal - RN, 59063-070",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. São José de Mipibu, 1515 - Lagoa Nova, Natal - RN, 59063-070",
+          "geometry": {
+            "location": {
+              "lat": -5.8212519,
+              "lng": -35.2242811
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.819947470107278,
+                "lng": -35.22294837010728
+              },
+              "southwest": {
+                "lat": -5.822647129892721,
+                "lng": -35.22564802989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia de São José de Anchieta",
+          "opening_hours": {
+            "open_now": false
+          },
+          "photos": [
+            {
+              "height": 1080,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/108237713119479520406\">Evaristojoaosilva Evaristo</a>"
+              ],
+              "photo_reference": "AWn5SU6qdn6W3xe5D6k1NqeBsyYUlA2hTsRHU9_D2ZEgrxuaMJeFJHyE0ykFHJq9zzOLjD_TmuWzJItqzCK8rh7zrlZUgteaXaw0_VdofrT2UH4yHrBLN1cAwu2vCtnS6VdbiSJBLkxBR-z6s_HFz90ZN-FUjADV0GxAFlnbx1g9PydAsexMc-fns5krZJI2aCQ3ztkgLNirZRE9VqvHRgd-f2T3MsaABtn_n2NJnlq6bXynPZ_x-efPkPV4_uLNuPA8uyLC2-i2ePutMhvhDgPTOdSPIuZTsE-1gmIAeA5NwueOIN1wxydXt_WvKAQGq9aoSUbSWhkQ3zmV2WEGbqsnqTZPtEO1NjmJYSWY_nzex_KFraWkJrKLpOBn7p8ClHyRbfXAeFLb1t3CAa5a_9S4qMEF9FXsxZkqZsgKlfdDDW7_J_-Pst4vO6rzK5UDZvmsgPNPTiGkKse_7MqM9IED2CaE-2A9c_h3oWPWwO4OxYLv4MSHnI83WPOfGMO_yPXYQGUZwlQMRP8YWRdyDkgZVZBneKAO3Jj4ORgCc2jkWIIgH9BpfcrBXAjkvxbhUvXlx610ei0XL7WyfA",
+              "width": 1920
+            }
+          ],
+          "place_id": "ChIJB3zGZV1VsgcROcs-ngtrVYM",
+          "plus_code": {
+            "compound_code": "5QHG+G7 Lagoa Nova, Natal - RN",
+            "global_code": "69665QHG+G7"
+          },
+          "rating": 4.9,
+          "reference": "ChIJB3zGZV1VsgcROcs-ngtrVYM",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 413
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJB3zGZV1VsgcROcs-ngtrVYM",
+    "latitude": "-5.82125190",
+    "longitude": "-35.22428110"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 32,
+  "fields": {
+    "created_at": "2025-11-23T12:33:32.562Z",
+    "updated_at": "2025-11-23T12:33:32.562Z",
+    "name": "Paróquia Nossa Senhora da Assunção",
+    "address": "Rua Lagoa Nova, nº 137 - Guarapes, Natal - RN, 59074-740",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Rua Lagoa Nova, nº 137 - Guarapes, Natal - RN, 59074-740",
+          "geometry": {
+            "location": {
+              "lat": -5.8410882,
+              "lng": -35.2753561
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.839817120107277,
+                "lng": -35.27396547010729
+              },
+              "southwest": {
+                "lat": -5.842516779892721,
+                "lng": -35.27666512989273
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia Nossa Senhora da Assunção",
+          "opening_hours": {
+            "open_now": false
+          },
+          "photos": [
+            {
+              "height": 846,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/115147573336168336241\">pedro allyson</a>"
+              ],
+              "photo_reference": "AWn5SU6sE5qPIH23B5jnZyoIuqU1GmbCZOvK7Tll7HQaGC8KPu8IyBwg6G5qOdSJD1RHxCBm5gSUzd4qfToy4YvOHzMlKiVNUokaV7zIYVk59Fq589jfZLxqKSTmIepzrjqLuw_5_LkkahLRJeMZB7x0C71xO5fhQvP7krM-2F-RyBR-dWojHsVLWeh_rg9Nt4byB2bp0yNwGeqOKxYjz9PJfWguwvz5NFoVG4DZrRZMWx0C8fuEsmmEs-vTVOWR7VCCbHWRT2LbuH4xvOIhwsZquahK0Mw2TlYyexghOKbgEh8nIoCGG5WJ7a_2u_gy2wbqSzzinJ5Ub5n8P2PjJ5pgU9NeuIYtDA-x0XxfJG2hBWWKQJt5jyRTbeLnlqLO_cO4ZhbKzKVwszy9eUM_HoByautuTroUQtkuue6F1fWkvuxEr12MQ-PT1un7TKkZHplCR8Ux9usQShKfgjvT8TkT4xSV0fWiNPtarkHPqEJXv4GCpqVKmmolPLhFe5RECBLjlV0M3QTUeraIS9BisisB9eAPsN7VDtmYgbOVb-QWbtHSLa8Q4hWeUpoRwTYgbj4hzwG4mrPq",
+              "width": 1219
+            }
+          ],
+          "place_id": "ChIJfZZt9VtUsgcRaSnSJffUaws",
+          "rating": 4.8,
+          "reference": "ChIJfZZt9VtUsgcRaSnSJffUaws",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 28
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJfZZt9VtUsgcRaSnSJffUaws",
+    "latitude": "-5.84108820",
+    "longitude": "-35.27535610"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 33,
+  "fields": {
+    "created_at": "2025-11-23T12:33:33.868Z",
+    "updated_at": "2025-11-23T12:33:33.868Z",
+    "name": "Paróquia São Camilo de Lellis",
+    "address": "R. Pureza, S/n - Lagoa Nova, Natal - RN, 59063-170",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Pureza, S/n - Lagoa Nova, Natal - RN, 59063-170",
+          "geometry": {
+            "location": {
+              "lat": -5.8249985,
+              "lng": -35.219581
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.823671970107278,
+                "lng": -35.21816722010728
+              },
+              "southwest": {
+                "lat": -5.826371629892722,
+                "lng": -35.22086687989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia São Camilo de Lellis",
+          "opening_hours": {
+            "open_now": false
+          },
+          "photos": [
+            {
+              "height": 3024,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/105576569883972900455\">Pedro da Rocha Souza</a>"
+              ],
+              "photo_reference": "AWn5SU7y4oVBJXxEMSbKmUtCLX0lXVjEb09CoFZ0dcmlfFMczjx0_d3bjGjmHAaYnTOSM0uMYx5rHrzuqGkua9Tb8ZxqWyL5P_5j35OZrdxtOq-l22Dhd_wyGF29E77aZni8BGqiHF0QThybTXgi6p6t2bODuRzhkvkAyadtBYveT7setjY2-FHkKxEdjw-uynxD1KQ7E7FglEOlkzKAKOKteoy6qCnWRIJeONv-TG6N8-fZDmmTPe6oYMgd4HbHwUVfYqcWPbLmVXuWaJhMq37-rS6Vw6xeLPEn0ysKPCKwFTdJt7GsY7w6dDtnXDUW0sq_bvMqQ8JRBo1jMFCH02rV0f9glSl8KFD0Kel29dQbP8DdPbbnf9-qUTGRK-cDQ3DCAewY4XrOCqxX_58q6xlt63lP1JYrOm6ewKvCGtOX7HnKT51DTtOUVMlMmX7lzgGrP_uaXpnlbHlJ2vrVgq1AM20haPfD5kA1iz2rOXiiNi_BNSJm8tZj3z1MFUS8BjQD-PRs-KGG3VQ7Z49AAcKt0QYxBIpEEgJ2hrVvkocOzHaf_SGady5a3XX0Wb-fApIG3DzS4Maq",
+              "width": 4032
+            }
+          ],
+          "place_id": "ChIJveFdOmFVsgcRW0SmlfDN0xU",
+          "plus_code": {
+            "compound_code": "5QGJ+25 Lagoa Nova, Natal - RN",
+            "global_code": "69665QGJ+25"
+          },
+          "rating": 4.8,
+          "reference": "ChIJveFdOmFVsgcRW0SmlfDN0xU",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 497
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJveFdOmFVsgcRW0SmlfDN0xU",
+    "latitude": "-5.82499850",
+    "longitude": "-35.21958100"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 34,
+  "fields": {
+    "created_at": "2025-11-23T12:33:35.611Z",
+    "updated_at": "2025-11-23T12:33:35.611Z",
+    "name": "Igreja Nossa Senhora da Candelária",
+    "address": "Candelária, Natal - RN, 59065-220",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "Candelária, Natal - RN, 59065-220",
+          "geometry": {
+            "location": {
+              "lat": -5.8398109,
+              "lng": -35.2169915
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.838462970107279,
+                "lng": -35.21564072010727
+              },
+              "southwest": {
+                "lat": -5.841162629892723,
+                "lng": -35.21834037989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Igreja Nossa Senhora da Candelária",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 668,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/103767639724509705284\">Severino Alves</a>"
+              ],
+              "photo_reference": "AWn5SU4Zc9BoPSOiQF7EiJPwKJIBX66TSxzERAO7xz2Da8tB6YBkusZ8piPQH1ObBA4fVLGZrTpUBLxjBliokuVrcfC-hkEI04SaUlgdH8nRY1oD8t_RSUgn2gUypzjCqnHQD_fujCLSJrvKbtTHIpWfOC9cRTV3gvOGUbo4YJGdMaSf50EK2bpsetVEsl2ygJ9ulW8o631Jl6Pe9ELD0P5X9Z2CuCQRFn9NaKjbaTejba5bIGbAYQU6UyrNUWY3DFH_GXZ_nSJL6HqF-Xyx1daH2-0BNmyzz4tRsWLmuxD7I4cmP9k6gBNOfcoZ8iE8Cu5tlbvXJY-8p9EOhPMfiuwa-J3f73FFbICkrCTTCozLWbUj2ZEvprQsm0jrgPHNJ0PkkXRwYYDYfSAYwtcWfNfpc-VZRRsgZrB2HY_75pviNGkhfQZfH7ZS3xvFnOXy28cFhETyFTj4mNn6OFAviEWMu3fzLo6ZMR0DXTHox6Se34VgIvpCbf91a2WgfixFLyNOVk8j3gbOjCXKWe3-mZ0RnHqtTxIhbi0lkR3cnSk74AjfBr1AWH1ZBPsKm7R2oZnVcxXoUw",
+              "width": 1000
+            }
+          ],
+          "place_id": "ChIJuzGDh39VsgcRS3LJkQBzLZk",
+          "plus_code": {
+            "compound_code": "5Q6M+35 Candelária, Natal - RN",
+            "global_code": "69665Q6M+35"
+          },
+          "rating": 4.8,
+          "reference": "ChIJuzGDh39VsgcRS3LJkQBzLZk",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 410
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJuzGDh39VsgcRS3LJkQBzLZk",
+    "latitude": "-5.83981090",
+    "longitude": "-35.21699150"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 35,
+  "fields": {
+    "created_at": "2025-11-23T12:33:37.215Z",
+    "updated_at": "2025-11-23T12:33:37.215Z",
+    "name": "Paróquia de Nossa Senhora Aparecida",
+    "address": "R. Rondônia, 425 - Neópolis, Natal - RN, 59080-410",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. Rondônia, 425 - Neópolis, Natal - RN, 59080-410",
+          "geometry": {
+            "location": {
+              "lat": -5.8575347,
+              "lng": -35.2096014
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.856214520107279,
+                "lng": -35.20815742010728
+              },
+              "southwest": {
+                "lat": -5.858914179892722,
+                "lng": -35.21085707989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Paróquia de Nossa Senhora Aparecida",
+          "photos": [
+            {
+              "height": 3120,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/106010185782044116802\">rafael morais pacheco</a>"
+              ],
+              "photo_reference": "AWn5SU71uGcNvH45EeSMrYAinKyMlIJ2ATzLtAAGEDvyUW30ORQprWJjArOBQ_QbkjZs4Rg0wuAMGINaNjgmrCDRubVpEgVO5V4_MoYu29aRS4kDBcpIrlFCdXf7fLd4lfMOLeULdwG3zTabVEemsOvODWqTYkfLe2XpWcWV6qhNKTHL7Lj4Yhjfpuu_vn7SAUYIfFrLfCNJCI_Q652EC3cvNEe_9yWVUF1rZMhgrpgj1GOr9Igfci9XqJVDXb8RYzqREpC17JkcmxX2-oWWxtDjpazmCvipBWBEIhqC2FxxFvPZGzl0PH7XxLfTtYPeBLxLhn98oArGlL5j8zcl3xFGLa6nnFFCzlJIwLod2rv1zh75-79VJU1mw_7_uzuEmktKznExBGhMrlr-2VIeoayOO5953Bp6GtBpYN7Jym3hAzDTAVH5kQlqpJXV0z5FBrn2UOUXr12m6BVCOWgs-WldBmL0oH3UEdrfGAeXv1yvYX7RA_pzlu58r6qhhO-JPsc4tQt85Or9eoPL5T02t1OWVfKaGAagVCv7RM04FvN4TNPxP4Owuip6Q1trAVsqYB1kx8mCLgDVen4Arg",
+              "width": 4160
+            }
+          ],
+          "place_id": "ChIJraA3pWD_sgcR6bMvlxdghc4",
+          "rating": 4.8,
+          "reference": "ChIJraA3pWD_sgcR6bMvlxdghc4",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 1252
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJraA3pWD_sgcR6bMvlxdghc4",
+    "latitude": "-5.85753470",
+    "longitude": "-35.20960140"
+  }
+},
+{
+  "model": "core.location",
+  "pk": 36,
+  "fields": {
+    "created_at": "2025-11-23T12:33:38.988Z",
+    "updated_at": "2025-11-23T12:33:38.988Z",
+    "name": "Igreja Matriz - São João Batista - Lagoa Seca",
+    "address": "R. São João, 1363 - Lagoa Seca, Natal - RN, 59035-630",
+    "google_maps_response": {
+      "html_attributions": [],
+      "results": [
+        {
+          "business_status": "OPERATIONAL",
+          "formatted_address": "R. São João, 1363 - Lagoa Seca, Natal - RN, 59035-630",
+          "geometry": {
+            "location": {
+              "lat": -5.8080235,
+              "lng": -35.2097355
+            },
+            "viewport": {
+              "northeast": {
+                "lat": -5.806666570107278,
+                "lng": -35.20840422010728
+              },
+              "southwest": {
+                "lat": -5.809366229892722,
+                "lng": -35.21110387989272
+              }
+            }
+          },
+          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+          "icon_background_color": "#7B9EB0",
+          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+          "name": "Igreja Matriz - São João Batista - Lagoa Seca",
+          "opening_hours": {
+            "open_now": true
+          },
+          "photos": [
+            {
+              "height": 2304,
+              "html_attributions": [
+                "<a href=\"https://maps.google.com/maps/contrib/109988021569096746528\">marcelo aluisio</a>"
+              ],
+              "photo_reference": "AWn5SU6-JN-y0jX_5qHTXIWS7WRKDvnFQInRK47yjUnBFuI5BoEjJeNS2n8xjkOqgpu0ICLqwFneF9zSj9dz4TAfDzpQykr4CO7dU7FB7C-EvOyWKH_USjwasLCs_H0SFbMFDlLk_OlHAVOZE_IuSMaW-e2yrMjrQKVpe_NFwGATLHyunzx7xcUw7v104nFfUXRUmePnH1DLkE0mVjhpOwomZvqDucH0Q4XEyZ1Q4E30Byu_-U3OvHPqJGive0r4hRf3fac5deNhTQFBnYXfUa-6IUfusltinF7rhex0AVgIxK9D1hBtuR0Eknnbn9XdCDKJLbMKJAZbsrx6ktMmU5yHGRJ96cSMS0BVDCL6lnsMEcvHqTfGeQXlag1ZEK6Ds8u6EgyZkdPuH9_toW6fdFmMOFDecKfHE4J3wMtLxQk1pUNyKnSAvkUNs_XA_6QiYcH9qj11x2p1FQqZWiMMyiYSBda63gSGRAmSBBKENlCGglUBPDDI5XZsgd2XN4iapmj-OKSMYIWYVV8W2nafQ6E7HNKchRlOV4h_vCVfZndzyET9tQgMdBDjy5YgXnaIYbN3pNnF85vh",
+              "width": 4096
+            }
+          ],
+          "place_id": "ChIJU4mHm_7_sgcROKhAtCJN0nc",
+          "plus_code": {
+            "compound_code": "5QRR+Q4 Lagoa Seca, Natal - RN",
+            "global_code": "69665QRR+Q4"
+          },
+          "rating": 4.8,
+          "reference": "ChIJU4mHm_7_sgcROKhAtCJN0nc",
+          "types": [
+            "church",
+            "place_of_worship",
+            "point_of_interest",
+            "establishment"
+          ],
+          "user_ratings_total": 315
+        }
+      ],
+      "status": "OK"
+    },
+    "google_maps_place_id": "ChIJU4mHm_7_sgcROKhAtCJN0nc",
+    "latitude": "-5.80802350",
+    "longitude": "-35.20973550"
+  }
 }
 ]
