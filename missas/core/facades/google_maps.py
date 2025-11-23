@@ -18,8 +18,6 @@ def get_schedule_address(schedule):
         location_parts.append(schedule.parish.city.name)
         location_parts.append(schedule.parish.city.state.short_name)
     else:
-        if schedule.location_name:
-            location_parts.append(schedule.location_name)
         location_parts.append(schedule.parish.name)
         location_parts.append(schedule.parish.city.name)
         location_parts.append(schedule.parish.city.state.short_name)
