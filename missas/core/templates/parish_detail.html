@@ -84,18 +84,22 @@
                 {% for schedule in group.list %}
                     <div class="card mb-3">
                         <div class="card-body">
-                            {% if schedule.location_name or schedule.location %}
+                            {% if schedule.location %}
+                                <div class="fs-5 mb-2">
+                                    <i class="fa-solid fa-location-dot text-primary"></i>
+                                    <a href="{{ schedule.location.url }}"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       class="text-decoration-none text-primary">{{ schedule.location.name }}</a>
+                                    {% if schedule.location_name %}
+                                        <span class="text-muted fs-6">- {{ schedule.location_name }}</span>
+                                    {% endif %}
+                                </div>
+                            {% elif schedule.location_name %}
                                 <div class="row mb-2">
                                     <div class="col-auto">
                                         <i class="fa-solid fa-location-dot"></i>
-                                        {% if schedule.location_name %}{{ schedule.location_name }}{% endif %}
-                                        {% if schedule.location %}
-                                            {% if schedule.location_name %}-{% endif %}
-                                            <a href="{{ schedule.location.url }}"
-                                               target="_blank"
-                                               rel="noopener noreferrer"
-                                               class="text-muted">{{ schedule.location.address }}</a>
-                                        {% endif %}
+                                        {{ schedule.location_name }}
                                     </div>
                                 </div>
                             {% endif %}
