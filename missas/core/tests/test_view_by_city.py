@@ -1,5 +1,6 @@
-from datetime import date, time
+from datetime import date, datetime, time
 from http import HTTPStatus
+from unittest.mock import patch
 
 import pytest
 from django.shortcuts import resolve_url
@@ -74,13 +75,16 @@ def test_template(client, hx_request, hx_boosted, expected_template):
 def test_show_schedules_by_city(client: Client):
     city = baker.make(City)
     another_city = baker.make(City)
-    schedule = baker.make(Schedule, start_time=time(9, 57), parish__city=city)
+    schedule = baker.make(
+        Schedule, start_time=time(9, 57), parish__city=city, day=Schedule.Day.SUNDAY
+    )
     another_schedule = baker.make(
         Schedule, start_time=time(8, 12), parish__city=another_city
     )
 
     response = client.get(
         resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"dia": "domingo", "horario": "0"},
     )
 
     assertContains(response, schedule.get_day_display())
@@ -139,6 +143,7 @@ def test_order_by_day_and_time(client: Client):
 
     response = client.get(
         resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"horario": "0"},
     )
 
     assertQuerySetEqual(
@@ -217,11 +222,14 @@ def test_filter_by_time(client: Client):
 @pytest.mark.django_db
 def test_filter_by_type_default_mass(client):
     city = baker.make(City)
-    mass = baker.make(Schedule, parish__city=city, type=Schedule.Type.MASS)
+    mass = baker.make(
+        Schedule, parish__city=city, type=Schedule.Type.MASS, day=Schedule.Day.SUNDAY
+    )
     baker.make(Schedule, parish__city=city, type=Schedule.Type.CONFESSION)
 
     response = client.get(
         resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"dia": "domingo", "horario": "0"},
     )
     assertQuerySetEqual(
         response.context["schedules"],
@@ -296,12 +304,17 @@ def test_filter_by_end_time_if_exists(client: Client):
 @pytest.mark.django_db
 def test_filter_by_verified(client: Client):
     city = baker.make(City)
-    verified = baker.make(Schedule, parish__city=city, _fill_optional=["verified_at"])
-    unverified = baker.make(Schedule, parish__city=city)
+    verified = baker.make(
+        Schedule,
+        parish__city=city,
+        day=Schedule.Day.SUNDAY,
+        _fill_optional=["verified_at"],
+    )
+    unverified = baker.make(Schedule, parish__city=city, day=Schedule.Day.SUNDAY)
 
     response = client.get(
         resolve_url("by_city", state=city.state.slug, city=city.slug),
-        data={"verificado": "1"},
+        data={"verificado": "1", "dia": "domingo", "horario": "0"},
     )
 
     assertContains(response, verified.parish.name)
@@ -350,10 +363,13 @@ def test_schedule_with_source(client):
 @pytest.mark.django_db
 def test_schedule_with_source_with_link(client):
     source = baker.make(Source, _fill_optional=["link"])
-    schedule = baker.make(Schedule, source=source)
+    schedule = baker.make(Schedule, source=source, day=Schedule.Day.SUNDAY)
 
     city = schedule.parish.city
-    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"dia": "domingo", "horario": "0"},
+    )
 
     html = response.content.decode()
     assert f'href="{source.link}"' in html
@@ -361,10 +377,15 @@ def test_schedule_with_source_with_link(client):
 
 @pytest.mark.django_db
 def test_verified_schedule(client):
-    schedule = baker.make(Schedule, _fill_optional=["verified_at"])
+    schedule = baker.make(
+        Schedule, day=Schedule.Day.SUNDAY, _fill_optional=["verified_at"]
+    )
 
     city = schedule.parish.city
-    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"dia": "domingo", "horario": "0"},
+    )
 
     html = response.content.decode()
     assert f"Verificado por Missas.com.br em {schedule.verified_at:%d/%m/%Y}" in html
@@ -372,10 +393,15 @@ def test_verified_schedule(client):
 
 @pytest.mark.django_db
 def test_schedule_with_location_name(client):
-    schedule = baker.make(Schedule, _fill_optional=["location_name"])
+    schedule = baker.make(
+        Schedule, day=Schedule.Day.SUNDAY, _fill_optional=["location_name"]
+    )
 
     city = schedule.parish.city
-    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"dia": "domingo", "horario": "0"},
+    )
 
     html = response.content.decode()
     assert schedule.location_name in html
@@ -479,6 +505,7 @@ def test_order_by_day_time_verified_and_parish_name(client: Client):
 
     response = client.get(
         resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"horario": "0"},
     )
 
     assertQuerySetEqual(
@@ -490,4 +517,137 @@ def test_order_by_day_time_verified_and_parish_name(client: Client):
             sunday_10am,
             saturday_9am,
         ],
+    )
+
+
+@pytest.mark.django_db
+def test_no_params_sets_hx_replace_url_header(client):
+    city = baker.make(City)
+    brazil_now = datetime(2024, 3, 15, 14, 30)  # Friday 14:30
+
+    with patch("missas.core.views._get_brazil_now", return_value=brazil_now):
+        response = client.get(
+            resolve_url("by_city", state=city.state.slug, city=city.slug),
+        )
+
+    assert response.status_code == HTTPStatus.OK
+    assert (
+        response["HX-Replace-Url"]
+        == f"/{city.state.slug}/{city.slug}/?tipo=missas&dia=sexta&horario=14"
+    )
+
+
+@pytest.mark.django_db
+def test_tipo_missas_without_dia_sets_hx_replace_url_header(client):
+    city = baker.make(City)
+    brazil_now = datetime(2024, 3, 17, 10, 0)  # Sunday 10:00
+
+    with patch("missas.core.views._get_brazil_now", return_value=brazil_now):
+        response = client.get(
+            resolve_url("by_city", state=city.state.slug, city=city.slug),
+            data={"tipo": "missas"},
+        )
+
+    assert response.status_code == HTTPStatus.OK
+    assert (
+        response["HX-Replace-Url"]
+        == f"/{city.state.slug}/{city.slug}/?tipo=missas&dia=domingo&horario=10"
+    )
+
+
+@pytest.mark.django_db
+def test_tipo_missas_with_dia_does_not_set_hx_replace_url_header(client):
+    city = baker.make(City)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"tipo": "missas", "dia": "sabado"},
+    )
+
+    assert response.status_code == HTTPStatus.OK
+    assert "HX-Replace-Url" not in response
+
+
+@pytest.mark.django_db
+def test_tipo_missas_with_horario_does_not_set_hx_replace_url_header(client):
+    city = baker.make(City)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"tipo": "missas", "horario": "10"},
+    )
+
+    assert response.status_code == HTTPStatus.OK
+    assert "HX-Replace-Url" not in response
+
+
+@pytest.mark.django_db
+def test_tipo_confissoes_does_not_set_hx_replace_url_header(client):
+    city = baker.make(City)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"tipo": "confissoes"},
+    )
+
+    assert response.status_code == HTTPStatus.OK
+    assert "HX-Replace-Url" not in response
+
+
+@pytest.mark.django_db
+def test_all_params_provided_does_not_set_hx_replace_url_header(client):
+    city = baker.make(City)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"tipo": "missas", "dia": "domingo", "horario": "10"},
+    )
+
+    assert response.status_code == HTTPStatus.OK
+    assert "HX-Replace-Url" not in response
+
+
+@pytest.mark.django_db
+def test_verificado_preserved_in_hx_replace_url(client):
+    city = baker.make(City)
+    brazil_now = datetime(2024, 3, 15, 14, 30)  # Friday 14:30
+
+    with patch("missas.core.views._get_brazil_now", return_value=brazil_now):
+        response = client.get(
+            resolve_url("by_city", state=city.state.slug, city=city.slug),
+            data={"verificado": "1"},
+        )
+
+    assert response.status_code == HTTPStatus.OK
+    assert (
+        response["HX-Replace-Url"]
+        == f"/{city.state.slug}/{city.slug}/?tipo=missas&dia=sexta&horario=14&verificado=1"
+    )
+
+
+@pytest.mark.parametrize(
+    ("weekday_index", "expected_day"),
+    [
+        (0, "segunda"),
+        (1, "terca"),
+        (2, "quarta"),
+        (3, "quinta"),
+        (4, "sexta"),
+        (5, "sabado"),
+        (6, "domingo"),
+    ],
+)
+@pytest.mark.django_db
+def test_all_weekdays_in_hx_replace_url(client, weekday_index, expected_day):
+    city = baker.make(City)
+    brazil_now = datetime(2024, 3, 11 + weekday_index, 12, 0)
+
+    with patch("missas.core.views._get_brazil_now", return_value=brazil_now):
+        response = client.get(
+            resolve_url("by_city", state=city.state.slug, city=city.slug),
+        )
+
+    assert (
+        response["HX-Replace-Url"]
+        == f"/{city.state.slug}/{city.slug}/?tipo=missas&dia={expected_day}&horario=12"
     )

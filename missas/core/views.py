@@ -1,4 +1,4 @@
-from datetime import time
+from datetime import datetime, time, timedelta
 
 from django.db import models
 from django.db.models import Q
@@ -51,6 +51,25 @@ def cities_by_state(request, state):
     )
 
 
+WEEKDAYS_PT = ("segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo")
+
+DAY_NAME_TO_SCHEDULE_DAY = {
+    "domingo": Schedule.Day.SUNDAY,
+    "segunda": Schedule.Day.MONDAY,
+    "terca": Schedule.Day.TUESDAY,
+    "quarta": Schedule.Day.WEDNESDAY,
+    "quinta": Schedule.Day.THURSDAY,
+    "sexta": Schedule.Day.FRIDAY,
+    "sabado": Schedule.Day.SATURDAY,
+}
+
+
+def _get_brazil_now():
+    from datetime import timezone
+
+    return datetime.now(timezone.utc) - timedelta(hours=3)
+
+
 # @vary_on_headers("HX-Request")  # TODO: Cloudflare ignores Vary header
 def by_city(request, state, city):
     city = get_object_or_404(City, slug=city, state__slug=state)
@@ -58,15 +77,22 @@ def by_city(request, state, city):
     hour = request.GET.get("horario")
     type_name = request.GET.get("tipo")
     verified_only = request.GET.get("verificado") == "1"
-    day = {
-        "domingo": Schedule.Day.SUNDAY,
-        "segunda": Schedule.Day.MONDAY,
-        "terca": Schedule.Day.TUESDAY,
-        "quarta": Schedule.Day.WEDNESDAY,
-        "quinta": Schedule.Day.THURSDAY,
-        "sexta": Schedule.Day.FRIDAY,
-        "sabado": Schedule.Day.SATURDAY,
-    }.get(day_name)
+
+    replace_url = None
+    if day_name is None and hour is None and type_name in (None, "missas"):
+        brazil_now = _get_brazil_now()
+        type_name = "missas"
+        day_name = WEEKDAYS_PT[brazil_now.weekday()]
+        hour = str(brazil_now.hour)
+
+        params = {"tipo": type_name, "dia": day_name, "horario": hour}
+        if verified_only:
+            params["verificado"] = "1"
+        replace_url = f"{request.path}?" + "&".join(
+            f"{k}={v}" for k, v in params.items()
+        )
+
+    day = DAY_NAME_TO_SCHEDULE_DAY.get(day_name)
     type = {
         "missas": Schedule.Type.MASS,
         "confissoes": Schedule.Type.CONFESSION,
@@ -94,7 +120,7 @@ def by_city(request, state, city):
         else "parishes_by_city.html"
     )
 
-    return render(
+    response = render(
         request,
         template,
         {
@@ -106,6 +132,11 @@ def by_city(request, state, city):
             "Schedule": Schedule,
         },
     )
+
+    if replace_url:
+        response["HX-Replace-Url"] = replace_url
+
+    return response
 
 
 def parish_detail(request, state, city, parish):
