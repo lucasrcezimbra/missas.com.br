@@ -2,24 +2,38 @@
     {% for schedule in schedules %}
         <div class="card mb-3 inverse-indicator">
             <div class="card-body">
-                <a href="/{{ schedule.parish.city.state.slug }}/{{ schedule.parish.city.slug }}/{{ schedule.parish.slug }}/"
-                   class="text-decoration-none">
-                    <span class="fs-5 text-primary">{{ schedule.parish.name }}</span>
-                </a>
-                {% if schedule.location_name or schedule.location %}
-                    <div class="row">
-                        <div class="col-auto">
+                {% if schedule.location or schedule.location_name %}
+                    <div class="mb-1">
+                        <span class="fs-5 text-primary">
                             <i class="fa-solid fa-location-dot"></i>
-                            {% if schedule.location_name %}{{ schedule.location_name }}{% endif %}
                             {% if schedule.location %}
-                                {% if schedule.location_name %}-{% endif %}
+                                {{ schedule.location.name }}
+                            {% elif schedule.location_name %}
+                                {{ schedule.location_name }}
+                            {% endif %}
+                        </span>
+                    </div>
+                    <a href="/{{ schedule.parish.city.state.slug }}/{{ schedule.parish.city.slug }}/{{ schedule.parish.slug }}/"
+                       class="text-decoration-none">
+                        <span class="text-secondary">{{ schedule.parish.name }}</span>
+                    </a>
+                    {% if schedule.location %}
+                        <div class="row mt-1">
+                            <div class="col-auto">
                                 <a href="{{ schedule.location.url }}"
                                    target="_blank"
                                    rel="noopener noreferrer"
-                                   class="text-muted">{{ schedule.location.address }}</a>
-                            {% endif %}
+                                   class="text-muted small">
+                                    <i class="fa-solid fa-map-marker-alt"></i> {{ schedule.location.address }}
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    {% endif %}
+                {% else %}
+                    <a href="/{{ schedule.parish.city.state.slug }}/{{ schedule.parish.city.slug }}/{{ schedule.parish.slug }}/"
+                       class="text-decoration-none">
+                        <span class="fs-5 text-primary">{{ schedule.parish.name }}</span>
+                    </a>
                 {% endif %}
                 <div class="row">
                     <div class="col-auto">
@@ -65,54 +79,75 @@
                 {% if schedule.parish.contact %}
                     <div class="row">
                         <div class="col">
-                            <div class="d-flex align-items-center flex-wrap">
-                                <span class="me-2">Contatos:</span>
-                                {% if schedule.parish.contact.phone %}
-                                    <span class="me-3 d-inline-flex align-items-center">
-                                        <i class="fa-solid fa-phone text-primary me-1"></i>
-                                        <a href="tel:{{ schedule.parish.contact.phone }}"
-                                           aria-label="Telefone da paróquia"
-                                           class="text-decoration-none">{{ schedule.parish.contact.phone }}</a>
-                                    </span>
-                                {% endif %}
-                                {% if schedule.parish.contact.whatsapp %}
-                                    <a href="https://wa.me/{{ schedule.parish.contact.whatsapp }}"
-                                       target="_blank"
-                                       rel="noopener noreferrer"
-                                       aria-label="WhatsApp da paróquia"
-                                       class="me-3 text-decoration-none d-inline-flex align-items-center">
-                                        <i class="fa-brands fa-whatsapp text-success me-1"></i>
-                                        <span class="ms-1">{{ schedule.parish.contact.whatsapp }}</span>
-                                    </a>
-                                {% endif %}
-                                {% if schedule.parish.contact.email %}
-                                    <a href="mailto:{{ schedule.parish.contact.email }}"
-                                       aria-label="E-mail da paróquia"
-                                       class="me-3 text-decoration-none d-inline-flex align-items-center">
-                                        <i class="fa-solid fa-envelope text-secondary me-1"></i>
-                                        <span class="ms-1">{{ schedule.parish.contact.email }}</span>
-                                    </a>
-                                {% endif %}
-                                {% if schedule.parish.contact.facebook %}
-                                    <a href="https://facebook.com/{{ schedule.parish.contact.facebook }}"
-                                       target="_blank"
-                                       rel="noopener noreferrer"
-                                       aria-label="Facebook da paróquia"
-                                       class="me-3 text-decoration-none d-inline-flex align-items-center">
-                                        <i class="fa-brands fa-facebook text-primary me-1"></i>
-                                        <span class="ms-1">{{ schedule.parish.contact.facebook }}</span>
-                                    </a>
-                                {% endif %}
-                                {% if schedule.parish.contact.instagram %}
-                                    <a href="https://instagram.com/{{ schedule.parish.contact.instagram }}"
-                                       target="_blank"
-                                       rel="noopener noreferrer"
-                                       aria-label="Instagram da paróquia"
-                                       class="me-3 text-decoration-none d-inline-flex align-items-center">
-                                        <i class="fa-brands fa-instagram me-1" style="color: #E1306C;"></i>
-                                        <span class="ms-1">{{ schedule.parish.contact.instagram }}</span>
-                                    </a>
-                                {% endif %}
+                            <div class="accordion accordion-flush"
+                                 id="contact-accordion-{{ schedule.id }}">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed p-0 bg-transparent shadow-none text-primary"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#contact-collapse-{{ schedule.id }}"
+                                                aria-expanded="false"
+                                                aria-controls="contact-collapse-{{ schedule.id }}">
+                                            <i class="fa-solid fa-address-book me-2"></i>
+                                            <span>Contatos</span>
+                                        </button>
+                                    </h2>
+                                    <div id="contact-collapse-{{ schedule.id }}"
+                                         class="accordion-collapse collapse"
+                                         data-bs-parent="#contact-accordion-{{ schedule.id }}">
+                                        <div class="accordion-body p-0 pt-2">
+                                            <div class="d-flex align-items-center flex-wrap">
+                                                {% if schedule.parish.contact.phone %}
+                                                    <span class="me-3 d-inline-flex align-items-center">
+                                                        <i class="fa-solid fa-phone text-primary me-1"></i>
+                                                        <a href="tel:{{ schedule.parish.contact.phone }}"
+                                                           aria-label="Telefone da paróquia"
+                                                           class="text-decoration-none">{{ schedule.parish.contact.phone }}</a>
+                                                    </span>
+                                                {% endif %}
+                                                {% if schedule.parish.contact.whatsapp %}
+                                                    <a href="https://wa.me/{{ schedule.parish.contact.whatsapp }}"
+                                                       target="_blank"
+                                                       rel="noopener noreferrer"
+                                                       aria-label="WhatsApp da paróquia"
+                                                       class="me-3 text-decoration-none d-inline-flex align-items-center">
+                                                        <i class="fa-brands fa-whatsapp text-success me-1"></i>
+                                                        <span class="ms-1">{{ schedule.parish.contact.whatsapp }}</span>
+                                                    </a>
+                                                {% endif %}
+                                                {% if schedule.parish.contact.email %}
+                                                    <a href="mailto:{{ schedule.parish.contact.email }}"
+                                                       aria-label="E-mail da paróquia"
+                                                       class="me-3 text-decoration-none d-inline-flex align-items-center">
+                                                        <i class="fa-solid fa-envelope text-secondary me-1"></i>
+                                                        <span class="ms-1">{{ schedule.parish.contact.email }}</span>
+                                                    </a>
+                                                {% endif %}
+                                                {% if schedule.parish.contact.facebook %}
+                                                    <a href="https://facebook.com/{{ schedule.parish.contact.facebook }}"
+                                                       target="_blank"
+                                                       rel="noopener noreferrer"
+                                                       aria-label="Facebook da paróquia"
+                                                       class="me-3 text-decoration-none d-inline-flex align-items-center">
+                                                        <i class="fa-brands fa-facebook text-primary me-1"></i>
+                                                        <span class="ms-1">{{ schedule.parish.contact.facebook }}</span>
+                                                    </a>
+                                                {% endif %}
+                                                {% if schedule.parish.contact.instagram %}
+                                                    <a href="https://instagram.com/{{ schedule.parish.contact.instagram }}"
+                                                       target="_blank"
+                                                       rel="noopener noreferrer"
+                                                       aria-label="Instagram da paróquia"
+                                                       class="me-3 text-decoration-none d-inline-flex align-items-center">
+                                                        <i class="fa-brands fa-instagram me-1" style="color: #E1306C;"></i>
+                                                        <span class="ms-1">{{ schedule.parish.contact.instagram }}</span>
+                                                    </a>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

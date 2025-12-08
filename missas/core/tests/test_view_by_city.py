@@ -382,6 +382,49 @@ def test_schedule_with_location_name(client):
 
 
 @pytest.mark.django_db
+def test_location_name_shown_prominently_when_location_exists(client):
+    location = baker.make("core.Location")
+    schedule = baker.make(Schedule, location=location)
+
+    city = schedule.parish.city
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    html = response.content.decode()
+    assert '<span class="fs-5 text-primary">' in html
+    assert location.name in html
+    assert f'<span class="text-secondary">{schedule.parish.name}</span>' in html
+
+
+@pytest.mark.django_db
+def test_parish_name_shown_prominently_when_no_location(client):
+    schedule = baker.make(Schedule, location=None, location_name="")
+
+    city = schedule.parish.city
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    html = response.content.decode()
+    assert f'<span class="fs-5 text-primary">{schedule.parish.name}</span>' in html
+
+
+@pytest.mark.django_db
+def test_contacts_in_accordion_collapsed_by_default(client):
+    parish = baker.make("core.Parish")
+    baker.make(
+        "core.Contact", parish=parish, phone="+5584999999999", whatsapp="+5584988888888"
+    )
+    schedule = baker.make(Schedule, parish=parish)
+
+    city = schedule.parish.city
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    html = response.content.decode()
+    assert f'id="contact-accordion-{schedule.id}"' in html
+    assert 'class="accordion-button collapsed' in html
+    assert 'class="accordion-collapse collapse"' in html
+    assert "<span>Contatos</span>" in html
+
+
+@pytest.mark.django_db
 def test_breadcrumb_to_state(client):
     schedule = baker.make(Schedule)
 
