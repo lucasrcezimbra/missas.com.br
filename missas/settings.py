@@ -31,6 +31,11 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default=[], cast=Csv())
 
+# Automatically add .onrender.com wildcard for Render preview deployments
+if config("IS_PULL_REQUEST", default="false") == "true":
+    if ".onrender.com" not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append(".onrender.com")
+
 
 # Application definition
 INSTALLED_APPS = [
