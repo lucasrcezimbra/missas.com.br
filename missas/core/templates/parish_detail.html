@@ -91,9 +91,7 @@
                                        target="_blank"
                                        rel="noopener noreferrer"
                                        class="text-decoration-none text-primary">{{ schedule.location.name }}</a>
-                                    {% if schedule.location_name %}
-                                        <span class="text-muted fs-6">- {{ schedule.location_name }}</span>
-                                    {% endif %}
+                                    {% if schedule.location_name %}<span class="text-muted fs-6">- {{ schedule.location_name }}</span>{% endif %}
                                 </div>
                             {% elif schedule.location_name %}
                                 <div class="row mb-2">
