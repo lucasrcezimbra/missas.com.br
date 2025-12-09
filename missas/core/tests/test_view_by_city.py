@@ -392,7 +392,6 @@ def test_location_name_shown_prominently_when_location_exists(client):
     html = response.content.decode()
     assert '<span class="fs-5 text-primary">' in html
     assert location.name in html
-    assert f'<span class="text-secondary">{schedule.parish.name}</span>' in html
 
 
 @pytest.mark.django_db
@@ -403,7 +402,20 @@ def test_parish_name_shown_prominently_when_no_location(client):
     response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
 
     html = response.content.decode()
-    assert f'<span class="fs-5 text-primary">{schedule.parish.name}</span>' in html
+    assert '<span class="fs-5 text-primary">' in html
+    assert schedule.parish.name in html
+
+
+@pytest.mark.django_db
+def test_location_name_field_shown_prominently_when_no_location_object(client):
+    schedule = baker.make(Schedule, location=None, location_name="Chapel of St. Mary")
+
+    city = schedule.parish.city
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    html = response.content.decode()
+    assert '<span class="fs-5 text-primary">' in html
+    assert "Chapel of St. Mary" in html
 
 
 @pytest.mark.django_db

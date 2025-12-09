@@ -2,38 +2,29 @@
     {% for schedule in schedules %}
         <div class="card mb-3 inverse-indicator">
             <div class="card-body">
-                {% if schedule.location or schedule.location_name %}
-                    <div class="mb-1">
-                        <span class="fs-5 text-primary">
-                            <i class="fa-solid fa-location-dot"></i>
-                            {% if schedule.location %}
-                                {{ schedule.location.name }}
-                            {% elif schedule.location_name %}
-                                {{ schedule.location_name }}
-                            {% endif %}
-                        </span>
-                    </div>
-                    <a href="/{{ schedule.parish.city.state.slug }}/{{ schedule.parish.city.slug }}/{{ schedule.parish.slug }}/"
-                       class="text-decoration-none">
-                        <span class="text-secondary">{{ schedule.parish.name }}</span>
-                    </a>
-                    {% if schedule.location %}
-                        <div class="row mt-1">
-                            <div class="col-auto">
-                                <a href="{{ schedule.location.url }}"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   class="text-muted small">
-                                    <i class="fa-solid fa-map-marker-alt"></i> {{ schedule.location.address }}
-                                </a>
-                            </div>
+                <a href="/{{ schedule.parish.city.state.slug }}/{{ schedule.parish.city.slug }}/{{ schedule.parish.slug }}/"
+                   class="text-decoration-none">
+                    <span class="fs-5 text-primary">
+                        {% if schedule.location %}
+                            <i class="fa-solid fa-location-dot"></i> {{ schedule.location.name }}
+                        {% elif schedule.location_name %}
+                            <i class="fa-solid fa-location-dot"></i> {{ schedule.location_name }}
+                        {% else %}
+                            {{ schedule.parish.name }}
+                        {% endif %}
+                    </span>
+                </a>
+                {% if schedule.location %}
+                    <div class="row mt-1">
+                        <div class="col-auto">
+                            <a href="{{ schedule.location.url }}"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="text-muted small">
+                                <i class="fa-solid fa-map-marker-alt"></i> {{ schedule.location.address }}
+                            </a>
                         </div>
-                    {% endif %}
-                {% else %}
-                    <a href="/{{ schedule.parish.city.state.slug }}/{{ schedule.parish.city.slug }}/{{ schedule.parish.slug }}/"
-                       class="text-decoration-none">
-                        <span class="fs-5 text-primary">{{ schedule.parish.name }}</span>
-                    </a>
+                    </div>
                 {% endif %}
                 <div class="row">
                     <div class="col-auto">
