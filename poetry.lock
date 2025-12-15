@@ -1248,14 +1248,14 @@ files = [
 
 [[package]]
 name = "llm"
-version = "0.27.1"
+version = "0.28"
 description = "CLI utility and Python library for interacting with Large Language Models from organizations like OpenAI, Anthropic and Gemini plus local models installed on your own machine."
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 groups = ["scrapers"]
 files = [
-    {file = "llm-0.27.1-py3-none-any.whl", hash = "sha256:a884a575062fbea8c2b129708a80e146fa9682bd1c444d8d7b028196107de727"},
-    {file = "llm-0.27.1.tar.gz", hash = "sha256:02b0b393e31cf0e0ee1f2a6006c451c74ec18c7ec3973218de56e76fd72baa80"},
+    {file = "llm-0.28-py3-none-any.whl", hash = "sha256:7d70c22f2dbfe47123a67328eea9c25add8f0a3c6a439f7d452219edf2e4dd76"},
+    {file = "llm-0.28.tar.gz", hash = "sha256:e3d8bcc0f016fae8aeca1d702491a1891523702983459cb66afec99d74cabfc1"},
 ]
 
 [package.dependencies]
@@ -1273,9 +1273,6 @@ PyYAML = "*"
 setuptools = "*"
 sqlite-migrate = ">=0.1a2"
 sqlite-utils = ">=3.37"
-
-[package.extras]
-test = ["black (>=25.1.0)", "build", "click (<8.2.0)", "cogapp", "llm-echo (==0.3a3)", "mypy (>=1.10.0)", "numpy", "pytest", "pytest-asyncio", "pytest-httpx (>=0.33.0)", "pytest-recording", "ruff", "syrupy", "types-PyYAML", "types-click", "types-setuptools"]
 
 [[package]]
 name = "lxml"
@@ -2831,4 +2828,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "~=3.12"
-content-hash = "babb17577f9c7c6249eaf31fcced0df1823a7d8fe474068fa52e8027959046bc"
+content-hash = "e11e5652e28eb573c8f434f3888f63ebe15dea9f79b55dc8707c375d9a4b814a"
