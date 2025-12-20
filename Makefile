@@ -53,7 +53,7 @@ lint:
 run:
 	make dbmigrate
 	poetry run python manage.py createcachetable
-	poetry run gunicorn missas.wsgi:application
+	poetry run gunicorn missas.wsgi:application --max-requests 1000 --max-requests-jitter 50
 
 test:
 	docker compose up -d

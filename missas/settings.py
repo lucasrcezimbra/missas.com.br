@@ -1,11 +1,9 @@
-import logging
 from pathlib import Path
 
 import sentry_sdk
 from decouple import Csv, config
 from dj_database_url import parse as dburl
 from sentry_sdk.integrations.django import DjangoIntegration
-from sentry_sdk.integrations.logging import LoggingIntegration
 
 SENTRY_DSN = config("SENTRY_DSN", default=None)
 if SENTRY_DSN:
@@ -14,13 +12,9 @@ if SENTRY_DSN:
         environment=config("ENV"),
         integrations=[
             DjangoIntegration(cache_spans=True),
-            LoggingIntegration(sentry_logs_level=logging.INFO),
         ],
         profiles_sample_rate=0.6,
         traces_sample_rate=0.6,
-        _experiments={
-            "enable_logs": True,
-        },
     )
 
 BASE_DIR = Path(__file__).resolve().parent.parent
