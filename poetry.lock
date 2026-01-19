@@ -1539,14 +1539,14 @@ files = [
 
 [[package]]
 name = "model-bakery"
-version = "1.21.0"
+version = "1.23.0"
 description = "Smart object creation facility for Django."
 optional = false
 python-versions = ">=3.10"
 groups = ["dev"]
 files = [
-    {file = "model_bakery-1.21.0-py3-none-any.whl", hash = "sha256:46df25eb2a0583d595ed5503caf434b4ce91c729456c5abfcb130594c1803c6f"},
-    {file = "model_bakery-1.21.0.tar.gz", hash = "sha256:ea5f579782e6ac521e49acb02f7454b91d24a1f7e602505006fbd4374be1aa94"},
+    {file = "model_bakery-1.23.0-py3-none-any.whl", hash = "sha256:a77af720283fed68024ae136ed59519e62612d0ad4a86fddfbb262fc8c58742b"},
+    {file = "model_bakery-1.23.0.tar.gz", hash = "sha256:486aae3467dee10d29c4273127709a52548c7cc8f143e946b2905e86cf1cbb20"},
 ]
 
 [package.dependencies]
@@ -1554,7 +1554,6 @@ django = ">=4.2"
 
 [package.extras]
 docs = ["myst-parser", "sphinx", "sphinx-rtd-theme"]
-test = ["black", "coverage", "mypy", "pillow", "pytest", "pytest-django", "ruff"]
 
 [[package]]
 name = "nodeenv"
@@ -2828,4 +2827,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "~=3.12"
-content-hash = "38ba9bc0bbc84e6280e19035b81f56cdaf36389787e853aba32d98277193e71a"
+content-hash = "32fc945444c2472357e34f1d35942d1f7e188f2273d299a954115d7431299729"
