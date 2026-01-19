@@ -92,16 +92,14 @@ class ContactAdmin(admin.ModelAdmin):
     ordering = ("parish__name",)
 
     def whatsapp_link(self, obj):
-        message = dedent(
-            """\
+        message = dedent("""\
        Bom dia.
 
        Aqui é o Lucas do site missas.com.br. Estamos atualizando o nosso site com as informações sobre as paróquias da Arquidiocese de Natal para ajudar os fiéis a encontrar horários de missas e confissões.
 
        Você poderia me passar os horários de missas e confissões na sua paróquia?
 
-       Desde já obrigado."""
-        )
+       Desde já obrigado.""")
         return format_html(
             '<a href="https://wa.me/{whatsapp}?text={message}" target="_blank">{whatsapp}</a>',
             whatsapp=obj.whatsapp,
@@ -119,8 +117,7 @@ class ContactRequestAdmin(admin.ModelAdmin):
     actions = ["archive_contact_requests"]
 
     def whatsapp_link(self, obj):
-        message = dedent(
-            """\
+        message = dedent("""\
        Bom dia.
 
        Aqui é o Lucas do site missas.com.br. Somos um site para ajudar os fiéis a encontrar horários de missas e confissões nas paróquias próximas.
@@ -129,8 +126,7 @@ class ContactRequestAdmin(admin.ModelAdmin):
 
        Você poderia me passar os horários de missas e confissões na sua paróquia?
 
-       Desde já obrigado."""
-        )
+       Desde já obrigado.""")
         return format_html(
             '<a href="https://wa.me/{whatsapp}?text={message}" target="_blank">{whatsapp}</a>',
             whatsapp=obj.whatsapp,

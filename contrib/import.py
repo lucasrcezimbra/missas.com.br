@@ -14,7 +14,6 @@ django.setup()
 
 from missas.core.models import Contact, City, Parish, Schedule, Source  # noqa
 
-
 """
 // JS snippet to extract message from WhatsApp Web
 // 1. Open WhatsApp web
@@ -60,8 +59,7 @@ model.key = config("OPENAI_API_KEY")
 
 ai_response = model.prompt(
     messages,
-    system=dedent(
-        """\
+    system=dedent("""\
         You are a Django management tool. You help to create new objects based on WhatsApp messages.
         This is the Django model:
 
@@ -228,8 +226,7 @@ ai_response = model.prompt(
                 }
             ]
         }
-        ```"""
-    ),
+        ```"""),
     json_object=True,
 )
 
