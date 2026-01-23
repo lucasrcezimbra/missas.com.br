@@ -6,6 +6,7 @@ build:
 	poetry run python manage.py collectstatic --no-input
 
 coverage:
+	docker compose up -d
 	poetry run pytest --cov=missas --cov-branch --cov-report=xml
 
 dbdump:
@@ -31,10 +32,12 @@ dbmigrate:
 	poetry run python manage.py migrate --database=default
 
 dev:
+	docker compose up -d
 	make dbmigrate
 	poetry run python manage.py runserver
 
 install:
+	docker compose up -d
 	poetry install
 	poetry run pre-commit install
 	poetry run pre-commit install-hooks
@@ -44,6 +47,7 @@ install:
 
 lint:
 	poetry run pre-commit run -a
+	docker compose up -d
 	poetry run pytest --dead-fixtures
 
 run:
@@ -52,6 +56,7 @@ run:
 	poetry run gunicorn missas.wsgi:application
 
 test:
+	docker compose up -d
 	poetry run pytest
 
 update-template:

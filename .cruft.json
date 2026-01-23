@@ -6,7 +6,7 @@
       "project_name": "missas.com.br",
       "project_slug": "missas",
       "github_username": "lucasrcezimbra",
-      "database": "SQLite",
+      "database": "PostgreSQL",
       "api": "No",
       "html": "HTMX",
       "css": "Bootstrap",

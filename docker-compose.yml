@@ -1,0 +1,9 @@
+services:
+  database:
+    image: postgres
+    environment:
+      - LC_ALL=C.UTF-8
+      - POSTGRES_USER=missas
+      - POSTGRES_PASSWORD=p4ssw0rd
+    ports:
+      - 5439:5432
