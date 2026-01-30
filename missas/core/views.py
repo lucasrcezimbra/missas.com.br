@@ -1,4 +1,4 @@
-from datetime import time
+from datetime import datetime, time, timedelta
 
 from django.db import models
 from django.db.models import Q
@@ -54,10 +54,40 @@ def cities_by_state(request, state):
 # @vary_on_headers("HX-Request")  # TODO: Cloudflare ignores Vary header
 def by_city(request, state, city):
     city = get_object_or_404(City, slug=city, state__slug=state)
+
+    # Brazilian timezone (UTC-3) defaults
+    now = datetime.utcnow() - timedelta(hours=3)
+    weekday_names = (
+        "segunda",
+        "terca",
+        "quarta",
+        "quinta",
+        "sexta",
+        "sabado",
+        "domingo",
+    )
+    default_day = weekday_names[now.weekday()]
+    default_hour = now.hour
+
     day_name = request.GET.get("dia")
     hour = request.GET.get("horario")
     type_name = request.GET.get("tipo")
     verified_only = request.GET.get("verificado") == "1"
+
+    # Check if we need to set defaults and update URL
+    should_update_url = False
+    if not type_name:
+        type_name = "missas"
+        should_update_url = True
+    if not day_name:
+        day_name = default_day
+        should_update_url = True
+    if hour is None:
+        hour = str(default_hour)
+        should_update_url = True
+
+    hour_for_url = hour
+
     day = {
         "domingo": Schedule.Day.SUNDAY,
         "segunda": Schedule.Day.MONDAY,
@@ -94,7 +124,7 @@ def by_city(request, state, city):
         else "parishes_by_city.html"
     )
 
-    return render(
+    response = render(
         request,
         template,
         {
@@ -106,6 +136,14 @@ def by_city(request, state, city):
             "Schedule": Schedule,
         },
     )
+
+    if should_update_url:
+        new_url = (
+            f"{request.path}?tipo={type_name}&dia={day_name}&horario={hour_for_url}"
+        )
+        response["HX-Replace-Url"] = new_url
+
+    return response
 
 
 def parish_detail(request, state, city, parish):
