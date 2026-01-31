@@ -5,7 +5,7 @@ This is a Django web application that manages Catholic parishes and their Mass/c
 
 ## Technology Stack
 - **Backend**: Django 5.2.4 with Python 3.12+
-- **Database**: PostgreSQL with psycopg
+- **Database**: SQLite
 - **Frontend**: Bootstrap 5, HTMX, FontAwesome
 - **Package Management**: Poetry
 - **Testing**: pytest with pytest-django
@@ -83,7 +83,7 @@ State (Brazilian states like RN, SP)
 
 ### Commands
 - `make install`: Set up development environment
-- `make dev`: Start development server with Docker PostgreSQL
+- `make dev`: Start development server with SQLite
 - `make test`: Run pytest test suite
 - `make lint`: Run pre-commit hooks and code quality checks
 - `make coverage`: Generate test coverage reports
