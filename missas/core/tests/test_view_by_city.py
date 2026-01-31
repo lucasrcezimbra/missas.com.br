@@ -103,7 +103,7 @@ def test_filter_by_day(client: Client):
 
     response = client.get(
         resolve_url("by_city", state=city.state.slug, city=city.slug),
-        data={"dia": "sabado"},
+        data={"dia": "sabado", "horario": "0"},
     )
 
     assertContains(response, schedule.parish.name)
@@ -118,7 +118,7 @@ def test_filter_by_sunday(client: Client):
 
     response = client.get(
         resolve_url("by_city", state=city.state.slug, city=city.slug),
-        data={"dia": "domingo"},
+        data={"dia": "domingo", "horario": "0"},
     )
 
     assertContains(response, sunday.parish.name)
