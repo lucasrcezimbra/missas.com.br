@@ -130,4 +130,7 @@
         {% endfor %}
         {% include 'cards.html' %}
     </div>
+    {% if replace_url and not request.htmx %}
+        <script>history.replaceState(null, '', '{{ replace_url|safe }}');</script>
+    {% endif %}
 {% endblock content %}

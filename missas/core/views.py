@@ -124,6 +124,12 @@ def by_city(request, state, city):
         else "parishes_by_city.html"
     )
 
+    new_url = None
+    if should_update_url:
+        new_url = (
+            f"{request.path}?tipo={type_name}&dia={day_name}&horario={hour_for_url}"
+        )
+
     response = render(
         request,
         template,
@@ -134,13 +140,11 @@ def by_city(request, state, city):
             "hour": hour.hour if hour else 0,
             "type": type,
             "Schedule": Schedule,
+            "replace_url": new_url,
         },
     )
 
-    if should_update_url:
-        new_url = (
-            f"{request.path}?tipo={type_name}&dia={day_name}&horario={hour_for_url}"
-        )
+    if new_url:
         response["HX-Replace-Url"] = new_url
 
     return response

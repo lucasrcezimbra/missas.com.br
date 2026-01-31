@@ -568,6 +568,20 @@ def test_no_hx_replace_url_when_all_params(client):
     assert "HX-Replace-Url" not in response.headers
 
 
+@freeze_time("2024-03-15 14:30:00")  # Friday, 11:30 in Brazil (UTC-3)
+@pytest.mark.django_db
+def test_hx_replace_url_when_tipo_and_dia_but_no_horario(client):
+    city = baker.make(City)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"tipo": "missas", "dia": "sexta"},
+    )
+
+    expected_url = f"/{city.state.slug}/{city.slug}/?tipo=missas&dia=sexta&horario=11"
+    assert response.headers.get("HX-Replace-Url") == expected_url
+
+
 @freeze_time("2024-03-17 18:00:00")  # Sunday, 15:00 in Brazil
 @pytest.mark.django_db
 def test_filters_applied_with_defaults(client):
@@ -593,3 +607,28 @@ def test_brazilian_timezone_hour(client):
 
     assert "dia=domingo" in response.headers.get("HX-Replace-Url", "")
     assert "horario=23" in response.headers.get("HX-Replace-Url", "")
+
+
+@freeze_time("2024-03-15 14:30:00")  # Friday, 11:30 in Brazil (UTC-3)
+@pytest.mark.django_db
+def test_replace_url_script_rendered_when_params_missing(client):
+    city = baker.make(City)
+
+    response = client.get(resolve_url("by_city", state=city.state.slug, city=city.slug))
+
+    expected_url = f"/{city.state.slug}/{city.slug}/?tipo=missas&dia=sexta&horario=11"
+    assert response.context["replace_url"] == expected_url
+    assertContains(response, f"history.replaceState(null, '', '{expected_url}')")
+
+
+@pytest.mark.django_db
+def test_replace_url_script_not_rendered_when_all_params(client):
+    city = baker.make(City)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"tipo": "missas", "dia": "domingo", "horario": "10"},
+    )
+
+    assert response.context.get("replace_url") is None
+    assertNotContains(response, "history.replaceState")
