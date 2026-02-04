@@ -88,13 +88,13 @@
                                 <div class="row mb-2">
                                     <div class="col-auto">
                                         <i class="fa-solid fa-location-dot"></i>
-                                        {% if schedule.location_name %}{{ schedule.location_name }}{% endif %}
                                         {% if schedule.location %}
-                                            {% if schedule.location_name %}-{% endif %}
-                                            <a href="{{ schedule.location.url }}"
-                                               target="_blank"
-                                               rel="noopener noreferrer"
-                                               class="text-muted">{{ schedule.location.address }}</a>
+                                            <a href="{% url 'location_detail' pk=schedule.location.pk %}">
+                                                {% if schedule.location_name %}{{ schedule.location_name }} -{% endif %}
+                                                {{ schedule.location.address }}
+                                            </a>
+                                        {% elif schedule.location_name %}
+                                            {{ schedule.location_name }}
                                         {% endif %}
                                     </div>
                                 </div>

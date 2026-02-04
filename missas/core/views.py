@@ -174,6 +174,27 @@ def parish_detail(request, state, city, parish):
     )
 
 
+def location_detail(request, pk):
+    location = get_object_or_404(Location, pk=pk)
+    schedules = (
+        Schedule.objects.filter(location=location)
+        .select_related("parish", "parish__city", "parish__city__state", "source")
+        .order_by("type", "day", "start_time")
+    )
+    parish = schedules.first().parish if schedules.exists() else None
+
+    return render(
+        request,
+        "location_detail.html",
+        {
+            "location": location,
+            "parish": parish,
+            "schedules": schedules,
+            "Schedule": Schedule,
+        },
+    )
+
+
 @csrf_exempt
 def create_contact(request):
     # TODO: tests

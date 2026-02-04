@@ -117,6 +117,7 @@ class Location(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=254)
+    slug = models.SlugField(max_length=254, unique=True)
     address = models.CharField(max_length=512)
     google_maps_response = models.JSONField()
     google_maps_place_id = models.CharField(max_length=255, blank=False, null=False)

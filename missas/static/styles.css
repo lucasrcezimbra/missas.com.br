@@ -205,6 +205,13 @@ footer a i {
     font-size: 2rem;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
+.parish-header a {
+    color: var(--white);
+    text-decoration: underline;
+}
+.parish-header a:hover {
+    color: var(--light-blue);
+}
 .contact-info {
     background-color: var(--gray-100);
     padding: 1.5rem;

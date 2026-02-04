@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="parish-header">
+        <h2>{{ location.name }}</h2>
+        <p class="mb-2">
+            <i class="fa-solid fa-location-dot me-2"></i>
+            <a href="{{ location.url }}" target="_blank" rel="noopener noreferrer">{{ location.address }}</a>
+        </p>
+        {% if parish %}
+            <p class="mb-0">
+                <i class="fa-solid fa-church me-2"></i>
+                Parte de
+                <a href="{% url 'parish_detail' state=parish.city.state.slug city=parish.city.slug parish=parish.slug %}">{{ parish.name }}</a>
+            </p>
+        {% endif %}
+    </div>
+    <div class="schedules-section">
+        <h3>
+            <i class="fa-solid fa-calendar-alt me-2 text-primary"></i>
+            Horários de Missas e Confissões
+        </h3>
+        {% regroup schedules by type as schedule_groups %}
+        {% for group in schedule_groups %}
+            <div class="schedule-type-section">
+                <h4 class="schedule-type-title">
+                    {% if group.grouper == Schedule.Type.MASS %}
+                        <i class="fa-solid fa-church text-primary"></i>
+                        Missas
+                    {% else %}
+                        <i class="fa-solid fa-heart text-primary"></i>
+                        Confissões
+                    {% endif %}
+                </h4>
+                {% for schedule in group.list %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <span>
+                                        <i class="fa-solid fa-calendar-week"></i>
+                                        {{ schedule.get_day_display }}
+                                    </span>
+                                </div>
+                                <div class="col-auto">
+                                    <span>
+                                        <i class="fa-solid fa-clock"></i>
+                                        {{ schedule.start_time|time:"H:i" }}
+                                        {% if schedule.end_time %}- {{ schedule.end_time|time:"H:i" }}{% endif %}
+                                    </span>
+                                </div>
+                                {% if schedule.observation %}
+                                    <div class="col-auto">
+                                        <span>
+                                            <i class="fa-solid fa-exclamation-circle"></i>
+                                            {{ schedule.observation }}
+                                        </span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="row mt-2">
+                                {% if schedule.verified_at %}
+                                    <div class="col-auto">
+                                        <i class="fa-solid fa-circle-check verified"></i>
+                                        Verificado por Missas.com.br em {{ schedule.verified_at|date:"SHORT_DATE_FORMAT" }}
+                                    </div>
+                                {% endif %}
+                                {% if schedule.source %}
+                                    <div class="col-auto">
+                                        <span>
+                                            <i class="fa-solid fa-source"></i>
+                                            {% if schedule.source.link %}
+                                                Fonte:
+                                                <a href="{{ schedule.source.link }}"
+                                                   target="_blank"
+                                                   rel="noopener noreferrer">{{ schedule.source.description }}</a>
+                                            {% else %}
+                                                Fonte: {{ schedule.source.description }}
+                                            {% endif %}
+                                        </span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% empty %}
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <i class="fa-solid fa-calendar-xmark text-muted fa-2x mb-3"></i>
+                    <h5 class="text-muted">Nenhum horário cadastrado</h5>
+                    <p class="text-muted mb-0">Este local ainda não possui horários cadastrados em nosso sistema.</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
