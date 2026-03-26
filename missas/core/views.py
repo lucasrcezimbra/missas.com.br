@@ -74,6 +74,15 @@ def by_city(request, state, city):
     type_name = request.GET.get("tipo")
     verified_only = request.GET.get("verificado") == "1"
 
+    # Validate that hour is a valid integer in the range 0-23
+    if hour is not None:
+        try:
+            hour_int = int(hour)
+            if hour_int < 0 or hour_int > 23:
+                raise ValueError("hour out of range")
+        except (ValueError, TypeError):
+            hour = None
+
     # Check if we need to set defaults and update URL
     should_update_url = False
     if not type_name:
