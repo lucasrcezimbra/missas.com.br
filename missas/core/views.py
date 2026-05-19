@@ -82,7 +82,7 @@ def by_city(request, state, city):
     if not day_name:
         day_name = default_day
         should_update_url = True
-    if hour is None:
+    if not hour:
         hour = str(default_hour)
         should_update_url = True
 
@@ -106,7 +106,7 @@ def by_city(request, state, city):
     if day is not None:
         schedules = schedules.filter(day=day)
 
-    if hour is not None:
+    if hour:
         hour = time(int(hour))
         qs = Q(start_time__gte=hour) | Q(end_time__gte=hour)
         schedules = schedules.filter(qs)
