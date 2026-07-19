@@ -82,7 +82,7 @@ def by_city(request, state, city):
     if not day_name:
         day_name = default_day
         should_update_url = True
-    if hour is None:
+    if not hour:
         hour = str(default_hour)
         should_update_url = True
 
