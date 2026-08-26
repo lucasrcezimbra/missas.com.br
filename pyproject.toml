@@ -23,7 +23,7 @@ dev = [
   "cruft==2.16.0",
   "freezegun==1.5.5",
   "model-bakery==1.23.2",
-  "pre-commit==4.5.1",
+  "pre-commit==4.6.2",
   "pytest==9.0.2",
   "pytest-deadfixtures==3.1.0",
   "pytest-cov==7.0.0",
