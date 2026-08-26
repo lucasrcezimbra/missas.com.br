@@ -5,33 +5,33 @@ description = ""
 authors = []
 requires-python = ">=3.12,<4"
 dependencies = [
-  "dj-database-url==3.0.1",
+  "dj-database-url==3.1.2",
   "django==6.1",
   "django-extensions==4.1",
-  "django-htmx==1.26.0",
+  "django-htmx==1.29.0",
   "django-model-utils==5.0.0",
   "fontawesomefree==6.6.0",
   "googlemaps==4.10.0",
-  "gunicorn==23.0.0",
+  "gunicorn==26.2.0",
   "python-decouple==3.8",
   "sentry-sdk[django]==2.39.0",
-  "whitenoise[brotli]==6.11.0",
+  "whitenoise[brotli]==6.12.0",
 ]
 
 [dependency-groups]
 dev = [
   "cruft==2.16.0",
   "freezegun==1.5.5",
-  "model-bakery==1.23.2",
+  "model-bakery==1.24.0",
   "pre-commit==4.5.1",
-  "pytest==9.0.2",
+  "pytest==9.1.1",
   "pytest-deadfixtures==3.1.0",
   "pytest-cov==7.0.0",
-  "pytest-django==4.11.1",
+  "pytest-django==4.14.0",
   "pytest-mock==3.15.1",
 ]
 scrapers = [
-  "llm==0.28",
+  "llm==0.33",
   "scrapy==2.14.1",
 ]
 
