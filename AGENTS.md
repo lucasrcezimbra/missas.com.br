@@ -73,7 +73,7 @@ State
 
 ## Commands
 
-All Python and Django commands must run through Poetry.
+All Python and Django commands must run through uv.
 
 ```bash
 make install
@@ -81,9 +81,9 @@ make test
 make lint
 make coverage
 make dev
-poetry run python manage.py migrate
-poetry run python manage.py runserver
-poetry run pytest
+uv run python manage.py migrate
+uv run python manage.py runserver
+uv run pytest
 ```
 
 ## Checkpoints

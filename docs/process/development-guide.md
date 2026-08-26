@@ -18,7 +18,7 @@ The Navigator holds intent, trade-offs, product judgment, and acceptance.
 
 ## Project Commands
 
-All Python and Django commands must run through Poetry.
+All Python and Django commands must run through uv.
 
 ```bash
 # install dependencies and seed local data
@@ -26,7 +26,7 @@ make install
 
 # run tests
 make test
-poetry run pytest
+uv run pytest
 
 # run lint and dead-fixture checks
 make lint
@@ -41,23 +41,23 @@ make dev
 make run
 
 # migrate database
-poetry run python manage.py migrate
+uv run python manage.py migrate
 
 # dump and load fixture data
 make dbdump
 make dbload
 
 # run scraper example
-poetry run scrapy runspider contrib/scraper_natal.py -o natal.jsonl
+uv run --group scrapers scrapy runspider contrib/scraper_natal.py -o natal.jsonl
 ```
 
-Do not run Python, Django, pytest, or Scrapy directly without `poetry run`, except through `make` targets that already use Poetry.
+Do not run Python, Django, pytest, or Scrapy directly without `uv run`, except through `make` targets that already use uv.
 
 ## Verification
 
 Verification depends on the change:
 
-- Behavior changes: run relevant `poetry run pytest ...` tests or `make test`.
+- Behavior changes: run relevant `uv run pytest ...` tests or `make test`.
 - Lint-sensitive changes: run `make lint` when practical, especially before commit.
 - Django schema changes: generate migrations with Django CLI, run migrations, and test the affected behavior.
 - Data fixture changes: verify `make dbload` or targeted `loaddata` behavior when relevant.

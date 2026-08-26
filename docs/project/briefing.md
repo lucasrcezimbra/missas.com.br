@@ -20,7 +20,7 @@ Current work should preserve reliability, data quality, low operational cost, an
 - Frontend: Bootstrap 5, HTMX, FontAwesome, project CSS, JavaScript required.
 - Data collection: Scrapy for diocesan websites; manual WhatsApp extraction and LLM-assisted parsing for schedule updates.
 - Monitoring: Sentry.
-- Package management: Poetry.
+- Package management: uv.
 - Domain model: `State`, `City`, `Parish`, `Location`, `Contact`, `Schedule`, `Source`, and `ContactRequest`.
 - Architecture decisions are recorded in `docs/architecture/decisions/` and summarized in `docs/project/decisions.md`.
 
@@ -34,7 +34,7 @@ Current work should preserve reliability, data quality, low operational cost, an
 
 ## Constraints
 
-- All Python and Django commands must run through Poetry.
+- All Python and Django commands must run through uv.
 - Do not introduce database queries inside loops.
 - Do not hand-write Django migrations; generate them with Django CLI.
 - Do not add inline CSS; use classes and static stylesheets.
@@ -56,7 +56,7 @@ make dbdump
 make dbload
 ```
 
-Run direct Python or Django commands with `poetry run`.
+Run direct Python or Django commands with `uv run`.
 
 For user-visible UI work, run the app, capture a Playwright screenshot at 1920x1080, and include `[render preview]` in the PR title.
 

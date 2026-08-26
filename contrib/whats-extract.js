@@ -25,7 +25,7 @@ async function main() {
 
 	    const chatStr = formattedMessages.join('\n');
 	    const phone = chat.id.user;
-	    console.log(`poetry run python contrib/import.py '+${phone}' '${chatStr}'`);
+	    console.log(`uv run --group scrapers python contrib/import.py '+${phone}' '${chatStr}'`);
 	}
 }
 

@@ -20,6 +20,8 @@ throughout Brazil (maybe others in the future).
 
 ## Contributing
 ### Installation
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run:
+
 ```bash
 git clone git@github.com:lucasrcezimbra/missas.com.br.git
 cd missas.com.br
@@ -43,7 +45,7 @@ make coverage
 
 ### Scrapers
 ```shell
-poetry run scrapy runspider contrib/scraper_natal.py -o natal.jsonl
+uv run --group scrapers scrapy runspider contrib/scraper_natal.py -o natal.jsonl
 ```
 
 ### WhatsApp Automation
@@ -64,7 +66,7 @@ Running:
 2. Copy each output and paste it into a new terminal. It should look like this:
     ```shell
     # example
-    poetry run python contrib/import.py '+551298765432' '[17:23, 02/12/2024] You:
+    uv run --group scrapers python contrib/import.py '+551298765432' '[17:23, 02/12/2024] You:
     Bom dia.
 
     Aqui é o Lucas do site missas.com.br. Estamos atualizando o nosso site com as informações sobre as paróquias da Arquidiocese de Natal para ajudar os fiéis a encontrar horários de missas e confissões.

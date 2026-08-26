@@ -8,6 +8,17 @@ Architecture Decision Records in `docs/architecture/decisions/` remain the canon
 
 Add newest decisions at the top.
 
+### Use uv for Python package and environment management
+
+**Date:** 2026-08-26
+**Status:** Decided
+
+Decision: Use uv instead of Poetry for dependency locking, environment synchronization, and Python command execution.
+
+Rationale: uv provides faster dependency installation, uses the existing standard `[project]` metadata, and is supported by the deployment platform.
+
+Consequences: Contributors and automation require uv. Dependency groups use the standard `[dependency-groups]` table, `uv.lock` is the reproducible lock file, and Python commands run through `uv run`.
+
 ### Adopt Ariad as the local agent method
 
 **Date:** 2026-06-15
