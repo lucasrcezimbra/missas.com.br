@@ -582,6 +582,20 @@ def test_hx_replace_url_when_tipo_and_dia_but_no_horario(client):
     assert response.headers.get("HX-Replace-Url") == expected_url
 
 
+@freeze_time("2024-03-15 14:30:00")  # Friday, 11:30 in Brazil (UTC-3)
+@pytest.mark.django_db
+def test_hx_replace_url_when_horario_is_empty(client):
+    city = baker.make(City)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"tipo": "missas", "dia": "sexta", "horario": ""},
+    )
+
+    expected_url = f"/{city.state.slug}/{city.slug}/?tipo=missas&dia=sexta&horario=11"
+    assert response.headers.get("HX-Replace-Url") == expected_url
+
+
 @freeze_time("2024-03-17 18:00:00")  # Sunday, 15:00 in Brazil
 @pytest.mark.django_db
 def test_filters_applied_with_defaults(client):
