@@ -32,7 +32,7 @@ dev = [
 ]
 scrapers = [
   "llm==0.28",
-  "scrapy==2.14.1",
+  "scrapy==2.18.0",
 ]
 
 
