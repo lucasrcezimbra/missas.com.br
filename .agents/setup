@@ -51,23 +51,16 @@ step "Preparing the local environment and SQLite database"
 if [[ ! -f .env ]]; then
     cp -- contrib/env-sample .env
 fi
+export DATABASE_URL="sqlite:///$PWD/db.sqlite3"
 poetry run python manage.py migrate --no-input
-
-has_seed_data="$(
-    poetry run python manage.py shell -c \
-        'from missas.core.models import State; print(State.objects.exists())' |
-        tail -n 1
-)"
-if [[ "$has_seed_data" != "True" ]]; then
-    poetry run python manage.py loaddata \
-        missas/core/fixtures/states.json \
-        missas/core/fixtures/cities.json \
-        missas/core/fixtures/sources.json \
-        missas/core/fixtures/parishes_natal.json \
-        missas/core/fixtures/contacts_natal.json \
-        missas/core/fixtures/locations_natal.json \
-        missas/core/fixtures/schedules_natal.json
-fi
+poetry run python manage.py loaddata \
+    missas/core/fixtures/states.json \
+    missas/core/fixtures/cities.json \
+    missas/core/fixtures/sources.json \
+    missas/core/fixtures/parishes_natal.json \
+    missas/core/fixtures/contacts_natal.json \
+    missas/core/fixtures/locations_natal.json \
+    missas/core/fixtures/schedules_natal.json
 done_step
 
 step "Preparing pre-commit hook environments"
