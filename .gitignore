@@ -402,4 +402,7 @@ poetry.toml
 # LSP config files
 pyrightconfig.json
 
+# Amp orb portal metadata
+.amp/portals/*
+
 # End of https://www.toptal.com/developers/gitignore/api/python,django,node

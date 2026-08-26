@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+readonly UV_VERSION="0.8.13"
+readonly POETRY_VERSION="2.1.4"
+
+step() {
+    printf '\n==> %s\n' "$1"
+    SECONDS=0
+}
+
+done_step() {
+    printf '    completed in %ss\n' "$SECONDS"
+}
+
+step "Installing the Python toolchain"
+if ! command -v uv >/dev/null 2>&1 || [[ "$(uv --version)" != "uv $UV_VERSION" ]]; then
+    curl -LsSf "https://astral.sh/uv/$UV_VERSION/install.sh" |
+        env UV_UNMANAGED_INSTALL="$HOME/.local/bin" sh
+fi
+uv python install 3.12
+python_bin="$(uv python find 3.12)"
+
+if ! command -v poetry >/dev/null 2>&1 ||
+    [[ "$(poetry --version)" != "Poetry (version $POETRY_VERSION)" ]]; then
+    uv tool install --force --python "$python_bin" "poetry==$POETRY_VERSION"
+fi
+done_step
+
+step "Installing Python dependencies"
+poetry env use "$python_bin"
+poetry sync --no-interaction
+done_step
+
+step "Installing Node.js dependencies"
+for browser_dir in "$HOME/.cache/puppeteer/chrome"/linux-*; do
+    if [[ -d "$browser_dir" && ! -x "$browser_dir/chrome-linux64/chrome" ]]; then
+        rm -rf -- "$browser_dir"
+    fi
+done
+for browser_dir in "$HOME/.cache/puppeteer/chrome-headless-shell"/linux-*; do
+    if [[ -d "$browser_dir" &&
+        ! -x "$browser_dir/chrome-headless-shell-linux64/chrome-headless-shell" ]]; then
+        rm -rf -- "$browser_dir"
+    fi
+done
+npm ci --no-audit --no-fund
+done_step
+
+step "Preparing the local environment and SQLite database"
+if [[ ! -f .env ]]; then
+    cp -- contrib/env-sample .env
+fi
+poetry run python manage.py migrate --no-input
+
+has_seed_data="$(
+    poetry run python manage.py shell -c \
+        'from missas.core.models import State; print(State.objects.exists())' |
+        tail -n 1
+)"
+if [[ "$has_seed_data" != "True" ]]; then
+    poetry run python manage.py loaddata \
+        missas/core/fixtures/states.json \
+        missas/core/fixtures/cities.json \
+        missas/core/fixtures/sources.json \
+        missas/core/fixtures/parishes_natal.json \
+        missas/core/fixtures/contacts_natal.json \
+        missas/core/fixtures/locations_natal.json \
+        missas/core/fixtures/schedules_natal.json
+fi
+done_step
+
+step "Preparing pre-commit hook environments"
+poetry run pre-commit install-hooks
+done_step
+
+printf '\nOrb setup complete.\n'

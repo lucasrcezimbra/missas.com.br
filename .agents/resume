@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This project uses SQLite and does not require wake-time service repair.
+printf 'No orb resume steps are required.\n'
