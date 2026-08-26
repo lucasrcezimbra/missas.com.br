@@ -10,7 +10,7 @@ Add newest decisions at the top.
 
 ### Adopt Ariad as the local agent method
 
-**Date:** 2026-06-15  
+**Date:** 2026-06-15
 **Status:** Decided
 
 Decision: Adopt Ariad project documentation and `AGENTS.md` as the local operating contract for agentic development.
@@ -21,8 +21,8 @@ Consequences: `AGENT.md` and `CLAUDE.md` were removed. Future agents should star
 
 ### Geocoding without SpatiaLite
 
-**Date:** 2025-11-16  
-**Status:** Decided  
+**Date:** 2025-11-16
+**Status:** Decided
 **Canonical ADR:** `docs/architecture/decisions/0003-geocoding-without-spatialite.md`
 
 Decision: Do not adopt SpatiaLite or PostGIS. Store coordinates as decimal latitude and longitude fields and perform modest distance calculations in Python.
@@ -33,8 +33,8 @@ Consequences: Advanced GIS features would require revisiting this decision.
 
 ### SQLite as the primary database
 
-**Date:** 2025-11-16  
-**Status:** Decided  
+**Date:** 2025-11-16
+**Status:** Decided
 **Canonical ADR:** `docs/architecture/decisions/0002-postgres-to-sqlite.md`
 
 Decision: Use SQLite instead of PostgreSQL as the primary database.
@@ -45,8 +45,8 @@ Consequences: Brief deploy downtime and limited write concurrency are accepted t
 
 ### Record architecture decisions with ADRs
 
-**Date:** 2025-11-16  
-**Status:** Decided  
+**Date:** 2025-11-16
+**Status:** Decided
 **Canonical ADR:** `docs/architecture/decisions/0001-record-architecture-decisions.md`
 
 Decision: Record architecture decisions using lightweight ADRs.
@@ -64,7 +64,7 @@ No open discussions recorded yet.
 ```markdown
 ### Title
 
-**Date:** YYYY-MM-DD  
+**Date:** YYYY-MM-DD
 **Status:** Decided
 
 Decision:
