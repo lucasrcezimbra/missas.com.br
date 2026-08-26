@@ -14,7 +14,7 @@ dependencies = [
   "googlemaps==4.10.0",
   "gunicorn==23.0.0",
   "python-decouple==3.8",
-  "sentry-sdk[django]==2.39.0",
+  "sentry-sdk[django]==2.68.1",
   "whitenoise[brotli]==6.11.0",
 ]
 
