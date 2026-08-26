@@ -12,7 +12,7 @@ dependencies = [
   "django-model-utils==5.0.0",
   "fontawesomefree==6.6.0",
   "googlemaps==4.10.0",
-  "gunicorn==23.0.0",
+  "gunicorn==26.2.0",
   "python-decouple==3.8",
   "sentry-sdk[django]==2.39.0",
   "whitenoise[brotli]==6.11.0",
