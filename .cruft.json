@@ -1,6 +1,6 @@
 {
   "checkout": null,
-  "commit": "f8ccad81f177d0e9ac2fa508a7755b1ad0f27cfc",
+  "commit": "53a9d8eaf63135a5b972684b9229ce3e4a2bbacd",
   "context": {
     "cookiecutter": {
       "project_name": "missas.com.br",
@@ -14,7 +14,7 @@
       "use_sentry": true,
       "staticfiles": true,
       "_template": "https://github.com/lucasrcezimbra/django-template",
-      "_commit": "f8ccad81f177d0e9ac2fa508a7755b1ad0f27cfc"
+      "_commit": "53a9d8eaf63135a5b972684b9229ce3e4a2bbacd"
     }
   },
   "directory": null,
