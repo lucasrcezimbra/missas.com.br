@@ -39,7 +39,8 @@
                         <div class="card h-100 border-0 shadow-sm state-card">
                             <div class="card-body">
                                 <h5 class="card-title state-title">
-                                    <a href="/{{ state.slug }}/" class="text-decoration-none state-link">{{ state.name }}</a>
+                                    <a href="/{{ state.slug }}/"
+                                       class="text-decoration-none state-link">{{ state.name }}</a>
                                 </h5>
                                 <div class="cities-list">
                                     {% for city in state.cities_with_parishes %}
