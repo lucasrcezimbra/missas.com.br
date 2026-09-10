@@ -1,6 +1,4 @@
 .claude/settings.local.json
-# @wppconnect-team/wppconnect
-tokens/
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,django,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django,node

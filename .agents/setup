@@ -27,21 +27,6 @@ step "Installing Python dependencies"
 "$UV_BIN" sync --locked --all-groups --python "$python_bin"
 done_step
 
-step "Installing Node.js dependencies"
-for browser_dir in "$HOME/.cache/puppeteer/chrome"/linux-*; do
-    if [[ -d "$browser_dir" && ! -x "$browser_dir/chrome-linux64/chrome" ]]; then
-        rm -rf -- "$browser_dir"
-    fi
-done
-for browser_dir in "$HOME/.cache/puppeteer/chrome-headless-shell"/linux-*; do
-    if [[ -d "$browser_dir" &&
-        ! -x "$browser_dir/chrome-headless-shell-linux64/chrome-headless-shell" ]]; then
-        rm -rf -- "$browser_dir"
-    fi
-done
-npm ci --no-audit --no-fund
-done_step
-
 step "Preparing the local environment and SQLite database"
 if [[ ! -f .env ]]; then
     cp -- contrib/env-sample .env
