@@ -930,7 +930,7 @@ wheels = [
 
 [[package]]
 name = "llm"
-version = "0.33"
+version = "0.34"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -947,10 +947,11 @@ dependencies = [
     { name = "pyyaml" },
     { name = "setuptools" },
     { name = "sqlite-utils" },
+    { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/4d/f3/6eea036e9bf54f034d2d463b1552b41d0e5cf006152717fd682673a84427/llm-0.33.tar.gz", hash = "sha256:e491db0615679a6b40b842a6e4da18de14ced6b691788bcb080d2565b6198a65", size = 152623, upload-time = "2026-08-22T17:06:04.896Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f9/8e/5ffec2a091d4cd2691cfd0e8ba3e1904aeb1931313287cfd68f9c1db8b40/llm-0.34.tar.gz", hash = "sha256:09d0b076c4c720c4daeece6ee3a0aae76620059aced552f09589e0e0d7c5f09d", size = 153935, upload-time = "2026-09-02T19:35:05.054Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f3/ef/52ac5f7eb196ae3919e16cf4b8ce300943f8cda7cd247635e88c4ad02bf3/llm-0.33-py3-none-any.whl", hash = "sha256:8cdedecae3aade9191ec3bf1e1ab247695cc87779b1d03fe07f0dea77abbff31", size = 144347, upload-time = "2026-08-22T17:06:03.531Z" },
+    { url = "https://files.pythonhosted.org/packages/af/24/ccf5bba8be42f10e312a305116bfc82a61b547eac37c0e1dcee0645bb9df/llm-0.34-py3-none-any.whl", hash = "sha256:de559652a90df7c80e8300610846afad345a05a1a47886a70ca1766942c6478f", size = 145640, upload-time = "2026-09-02T19:35:03.535Z" },
 ]
 
 [[package]]
@@ -1124,7 +1125,7 @@ dev = [
     { name = "pytest-mock", specifier = "==3.15.1" },
 ]
 scrapers = [
-    { name = "llm", specifier = "==0.33" },
+    { name = "llm", specifier = "==0.34" },
     { name = "scrapy", specifier = "==2.18.0" },
 ]
 
