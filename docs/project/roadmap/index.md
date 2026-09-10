@@ -23,6 +23,7 @@ This focus is complete when users can continue to find trustworthy schedules, co
 
 | Item | Status | Notes |
 |------|--------|-------|
+| Maintenance: Replace WhatsApp extraction workflow | Active | The legacy WPPConnect and LLM-assisted workflow was retired while its replacement is developed. |
 | Maintenance: Ariad adoption | Active | Add local Ariad project memory and replace legacy agent instructions with `AGENTS.md`. |
 
 ## Planned Work

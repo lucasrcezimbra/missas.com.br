@@ -46,12 +46,9 @@ uv run python manage.py migrate
 # dump and load fixture data
 make dbdump
 make dbload
-
-# run scraper example
-uv run --group scrapers scrapy runspider contrib/scraper_natal.py -o natal.jsonl
 ```
 
-Do not run Python, Django, pytest, or Scrapy directly without `uv run`, except through `make` targets that already use uv.
+Do not run Python, Django, or pytest directly without `uv run`, except through `make` targets that already use uv.
 
 ## Verification
 

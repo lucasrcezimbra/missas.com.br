@@ -77,9 +77,6 @@ cover/
 instance/
 .webassets-cache
 
-# Scrapy stuff:
-.scrapy
-
 # Sphinx documentation
 docs/_build/
 
@@ -324,8 +321,6 @@ dist
 # Django stuff:
 
 # Flask stuff:
-
-# Scrapy stuff:
 
 # Sphinx documentation
 

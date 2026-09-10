@@ -8,7 +8,7 @@ Missas.com.br helps Catholic faithful find Mass and confession schedules for par
 
 ## Current State
 
-The project is an existing Django web application with fixtures, tests, templates, scraper scripts, and manual WhatsApp-assisted data collection. The application uses SQLite, Bootstrap 5, HTMX, FontAwesome, Whitenoise, Gunicorn, and Sentry.
+The project is an existing Django web application with fixtures, tests, templates, and scraper scripts. The application uses SQLite, Bootstrap 5, HTMX, FontAwesome, Whitenoise, Gunicorn, and Sentry.
 
 Current work should preserve reliability, data quality, low operational cost, and simple local development.
 
@@ -18,7 +18,7 @@ Current work should preserve reliability, data quality, low operational cost, an
 - Database: SQLite is the source of truth.
 - Deployment: Gunicorn and Whitenoise, currently shaped for Render and possible future VPS hosting.
 - Frontend: Bootstrap 5, HTMX, FontAwesome, project CSS, JavaScript required.
-- Data collection: Scrapy for diocesan websites; manual WhatsApp extraction and LLM-assisted parsing for schedule updates.
+- Data collection: A replacement WhatsApp extraction workflow is in development.
 - Monitoring: Sentry.
 - Package management: uv.
 - Domain model: `State`, `City`, `Parish`, `Location`, `Contact`, `Schedule`, `Source`, and `ContactRequest`.

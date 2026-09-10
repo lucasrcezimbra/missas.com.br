@@ -8,6 +8,14 @@ Update this file when a meaningful milestone is completed. The worklog is not a 
 
 Add newest entries at the top.
 
+### 2026-09-10 — Legacy WhatsApp extraction workflow retired
+
+Removed the WPPConnect extractor, LLM-assisted WhatsApp parser, old LLM contact scraper, Scrapy spider, and their JavaScript and Python dependencies. The legacy workflow is being retired because work has started on a replacement WhatsApp extraction workflow.
+
+Previously generated data and the standalone Caicó collection script remain available.
+
+Verified with dependency locking, the test suite, lint checks, and searches for stale integration references.
+
 ### 2026-08-26 — Python tooling migrated to uv
 
 Replaced Poetry with uv for dependency locking, local development, CI, and Render deployment. Preserved separate development and scraper dependency groups while keeping production installs limited to runtime dependencies.

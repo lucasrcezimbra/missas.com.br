@@ -29,10 +29,6 @@ dev = [
   "pytest-django==4.14.0",
   "pytest-mock==3.15.1",
 ]
-scrapers = [
-  "llm==0.33",
-  "scrapy==2.18.0",
-]
 
 
 [tool.djlint]
