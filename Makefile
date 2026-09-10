@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := dev
-.PHONY: build check-template coverage dbdump dbload dev install lint run test update-template worktree
+.PHONY: build coverage dbdump dbload dev install lint run test worktree
 
 build:
 	uv sync --frozen --no-dev
@@ -52,9 +52,6 @@ run:
 
 test:
 	uv run pytest
-
-update-template:
-	uv run cruft update --skip-apply-ask
 
 worktree:
 	@if [ -z "$(NAME)" ]; then \
