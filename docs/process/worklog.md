@@ -26,5 +26,5 @@ Verified by inspecting the generated files and reviewing the Git diff. No automa
 
 ## Next
 
-- Use the Ariad lifecycle on the next small real change.
+- Use the continuous Ariad workflow on the next small real change.
 - Keep roadmap and worklog updates concise; update only when project memory changes.

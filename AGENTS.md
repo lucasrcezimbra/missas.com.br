@@ -46,7 +46,7 @@ State
 - Use tests for behavior changes when practical.
 - Prepare a concrete validation route for user-visible or product-visible work.
 - Update documentation in the same cycle as the change when project memory changes.
-- Stop at checkpoints and wait for Navigator confirmation.
+- Work continuously through planning, implementation, validation, review, and documentation; surface decisions or blockers that require Navigator input.
 - Do not silently absorb new scope. Capture it for later unless it blocks correctness or coherence.
 - Prefer small, reviewable changes over broad unbounded edits.
 
@@ -86,19 +86,17 @@ uv run python manage.py runserver
 uv run pytest
 ```
 
-## Checkpoints
+## Continuous Workflow
 
 For non-trivial work, follow Ariad's lifecycle:
 
 1. Read and orient.
-2. Plan and stop for Navigator confirmation.
-3. Implement.
-4. Test and present automated evidence plus Navigator validation route.
-5. Review refactoring and debt impact; stop for confirmation.
-6. Update documentation and run coherence check.
-7. Propose history action; stop before commit or push unless local policy says otherwise.
+2. Plan the scope, risks, and validation route.
+3. Implement, test, review refactoring and debt impact, update documentation, and run a coherence check.
+4. Report automated evidence and a Navigator validation route.
+5. Propose a history action when appropriate; do not commit or push unless requested.
 
-For trivial, low-risk work, compress checkpoints but still show what changed and how it was verified.
+For trivial, low-risk work, keep the workflow proportionate while still stating what changed and how it was verified.
 
 ## History Policy
 

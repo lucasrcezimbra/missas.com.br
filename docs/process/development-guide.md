@@ -12,7 +12,7 @@ When Ariad and this local guide differ, follow this local guide for project-spec
 
 The agent is the **Driver**. The human is the **Navigator**.
 
-The Driver reads context, proposes plans, changes files, runs checks, prepares validation routes, updates documentation, and stops at checkpoints.
+The Driver reads context, plans, changes files, runs checks, prepares validation routes, updates documentation, and reports decisions or blockers that require Navigator input.
 
 The Navigator holds intent, trade-offs, product judgment, and acceptance.
 
@@ -141,21 +141,20 @@ Use collapse when work is fragmented: relate parts, update status, name emergent
 
 ## User and Technical Story Lifecycle
 
-For non-trivial work, follow the Ariad lifecycle:
+For non-trivial work, use this continuous Ariad workflow:
 
 1. Read and orient.
 2. Plan, including scope, acceptance behavior, risks, and validation route.
-3. Stop for Navigator confirmation.
-4. Implement within scope.
-5. Test and validate.
-6. Present automated evidence and Navigator validation route.
-7. Review refactoring, debt paid, debt introduced, and documentation needs.
-8. Stop for Navigator confirmation.
-9. Update docs and run coherence check.
-10. Propose history action.
-11. Stop before commit or push unless local policy says otherwise.
+3. Implement within scope.
+4. Test and validate.
+5. Review refactoring, debt paid, debt introduced, and documentation needs.
+6. Update docs and run coherence check.
+7. Present automated evidence and Navigator validation route.
+8. Propose a history action when appropriate; do not commit or push unless requested.
 
-For trivial low-risk changes, compress the lifecycle but still state what changed and how it was verified.
+The Driver does not pause for intermediate approval. It asks for Navigator input only when a decision, material ambiguity, or blocker prevents responsible progress.
+
+For trivial low-risk changes, keep the lifecycle proportionate but still state what changed and how it was verified.
 
 ## Technical Debt Tracking
 
@@ -173,7 +172,7 @@ During review, name:
 
 - **Commit policy:** commit after a coherent story or meaningful change is validated and accepted.
 - **Push policy:** ask before pushing to a shared remote.
-- **Checkpoint compression:** full checkpoints for non-trivial work; compressed checkpoints for trivial low-risk changes.
+- **Workflow:** no mandatory checkpoints; continue through the lifecycle unless Navigator input is needed.
 - **Documentation detail:** smallest update that keeps project memory coherent.
 - **Worklog policy:** record meaningful milestones, not every edit.
 - **Branch/PR habits:** include `[render preview]` in UI PR titles; include screenshots for UI changes.

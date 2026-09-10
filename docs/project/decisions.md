@@ -8,6 +8,17 @@ Architecture Decision Records in `docs/architecture/decisions/` remain the canon
 
 Add newest decisions at the top.
 
+### Use Ariad without mandatory checkpoints
+
+**Date:** 2026-09-10
+**Status:** Decided
+
+Decision: Retain Ariad's context, planning, validation, review, and documentation practices, but do not require the Driver to pause for intermediate Navigator confirmation.
+
+Rationale: The Navigator prefers continuous progress. Navigator input remains necessary for material decisions, ambiguity, blockers, and explicitly requested history actions.
+
+Consequences: Local agent instructions and the development guide define a continuous workflow and supersede Ariad's default Delivery checkpoints for this repository.
+
 ### Use uv for Python package and environment management
 
 **Date:** 2026-08-26
