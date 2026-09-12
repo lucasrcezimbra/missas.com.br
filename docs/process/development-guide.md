@@ -81,6 +81,9 @@ Use these surfaces:
 
 Keep docs concise and in English. User-facing product strings should remain Brazilian Portuguese.
 
+Project-wide implementation conventions are recorded in
+[engineering-convention.md](engineering-convention.md).
+
 ## Roadmap Taxonomy
 
 Use Ariad's default taxonomy unless the project explicitly adapts it:
