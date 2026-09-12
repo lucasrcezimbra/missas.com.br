@@ -1,9 +1,11 @@
 from django.contrib import admin
 from django.urls import path
 
+from missas.api.api import api
 from missas.core import views
 
 urlpatterns = [
+    path("api/", api.urls),
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
     path("contatos/", views.create_contact, name="create_contact"),

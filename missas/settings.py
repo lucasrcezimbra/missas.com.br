@@ -6,11 +6,24 @@ from decouple import Csv, config
 from dj_database_url import parse as dburl
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.logging import LoggingIntegration
+from sentry_sdk.scrubber import DEFAULT_DENYLIST, EventScrubber
+
+SENTRY_EVENT_SCRUBBER = EventScrubber(
+    denylist=[
+        *DEFAULT_DENYLIST,
+        "x-api-key",
+        "http_x_api_key",
+        "missas_api_shared_secret",
+    ],
+    recursive=True,
+)
 
 SENTRY_DSN = config("SENTRY_DSN", default=None)
 if SENTRY_DSN:
     sentry_sdk.init(
         dsn=SENTRY_DSN,
+        event_scrubber=SENTRY_EVENT_SCRUBBER,
+        include_local_variables=False,
         environment=config("ENV"),
         integrations=[
             DjangoIntegration(cache_spans=True),
@@ -32,9 +45,13 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default=[], cast=Csv())
 
 
+# Read-only outreach API; an empty value disables access.
+MISSAS_API_SHARED_SECRET = config("MISSAS_API_SHARED_SECRET", default="")
+
 # Application definition
 INSTALLED_APPS = [
     "missas.core",
+    "missas.api",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -50,9 +67,9 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.cache.UpdateCacheMiddleware",
+    "missas.api.middleware.SiteUpdateCacheMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.cache.FetchFromCacheMiddleware",
+    "missas.api.middleware.SiteFetchFromCacheMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",

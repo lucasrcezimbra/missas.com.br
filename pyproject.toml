@@ -10,6 +10,7 @@ dependencies = [
   "django-extensions==4.1",
   "django-htmx==1.29.0",
   "django-model-utils==5.0.0",
+  "django-ninja==1.7.0",
   "fontawesomefree==6.6.0",
   "googlemaps==4.10.0",
   "gunicorn==26.2.0",

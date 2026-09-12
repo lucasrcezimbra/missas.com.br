@@ -8,6 +8,7 @@
   - [Coverage](#coverage)
   - [Scrapers](#scrapers)
   - [WhatsApp Automation](#whatsapp-automation)
+  - [Parish facts API](#parish-facts-api)
 - [Sponsorship](#sponsorship)
 <!--toc:end-->
 
@@ -83,6 +84,17 @@ Running:
     17h30 (terça, quinta e sexta)'
     ```
 
+
+### Parish facts API
+
+The read-only Django Ninja endpoint `GET /api/parishes` lists parishes with
+recorded WhatsApp contacts, current Mass schedules, and per-schedule verification
+and source information. It requires `X-API-Key`, configured through
+`MISSAS_API_SHARED_SECRET`; an empty value disables access.
+
+See [the API contract and local end-to-end check](docs/api.md) for the response
+schema, cursor behavior, security requirements, and test commands. It does not
+send messages or update schedules.
 
 ## Sponsorship
 

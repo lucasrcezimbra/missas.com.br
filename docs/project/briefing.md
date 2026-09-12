@@ -10,6 +10,11 @@ Missas.com.br helps Catholic faithful find Mass and confession schedules for par
 
 The project is an existing Django web application with fixtures, tests, templates, scraper scripts, and manual WhatsApp-assisted data collection. The application uses SQLite, Bootstrap 5, HTMX, FontAwesome, Whitenoise, Gunicorn, and Sentry.
 
+A read-only Django Ninja API now exposes WhatsApp-contactable parish facts for
+`whatsapp-missas`. See [the API contract](../api.md) for shared-secret authorization,
+pagination, and per-schedule verification/source semantics. Outreach and write-back
+remain outside this server slice.
+
 Current work should preserve reliability, data quality, low operational cost, and simple local development.
 
 ## Architecture Premises

@@ -748,6 +748,19 @@ wheels = [
 ]
 
 [[package]]
+name = "django-ninja"
+version = "1.7.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+    { name = "pydantic" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/25/f7/410af3b53845f04c94a9dabe5934117d9546b6f5ce4028cff5b74deb933c/django_ninja-1.7.0.tar.gz", hash = "sha256:7a0ce06c978a42a808d9a9d7ba1cda383df8eea90040cfc232ad10b7d9024e0d", size = 2341450, upload-time = "2026-08-30T17:49:19.718Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/54/d6/f4f939b912c696b6fc19e15ed3b2b37ac7cb09600373e83211f44adaf6d5/django_ninja-1.7.0-py3-none-any.whl", hash = "sha256:f1a0f762c9810dabcb040fcff76c6e2f5d0cdb51b4a597799ee06b5df8481f3f", size = 2376156, upload-time = "2026-08-30T17:49:17.552Z" },
+]
+
+[[package]]
 name = "filelock"
 version = "3.32.4"
 source = { registry = "https://pypi.org/simple" }
@@ -1258,6 +1271,7 @@ dependencies = [
     { name = "django-extensions" },
     { name = "django-htmx" },
     { name = "django-model-utils" },
+    { name = "django-ninja" },
     { name = "fontawesomefree" },
     { name = "googlemaps" },
     { name = "gunicorn" },
@@ -1290,6 +1304,7 @@ requires-dist = [
     { name = "django-extensions", specifier = "==4.1" },
     { name = "django-htmx", specifier = "==1.29.0" },
     { name = "django-model-utils", specifier = "==5.0.0" },
+    { name = "django-ninja", specifier = "==1.7.0" },
     { name = "fontawesomefree", specifier = "==6.6.0" },
     { name = "googlemaps", specifier = "==4.10.0" },
     { name = "gunicorn", specifier = "==26.2.0" },
