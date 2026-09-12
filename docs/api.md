@@ -17,7 +17,8 @@ GET /api/v0/parishes?limit=100&offset=0
   separate cache entry, so distinct `limit`/`offset` pages do not collide.
 - There is no write method, send side effect, verification mutation, freshness
   cutoff, outreach-history filter, or `verified_before` requirement.
-- Interactive docs and the public OpenAPI endpoint remain disabled.
+- Public Swagger UI is available at `/api/v0/docs`, with the OpenAPI schema at
+  `/api/v0/openapi.json`. Use **Try it out** to run read-only requests.
 - Endpoint and response schemas are colocated in `missas/api/api.py`.
 
 ## Response
