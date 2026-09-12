@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Página não encontrada - Missas.com.br</title>
+{% endblock title %}
+
+{% block content %}
+    <main class="not-found text-center" aria-labelledby="not-found-title">
+        <p class="not-found-code mb-2">404</p>
+        <h2 id="not-found-title" class="fw-bold mb-3">Página não encontrada</h2>
+        <p class="text-muted mb-2">O endereço pode ter mudado ou a página não está mais disponível.</p>
+        <p class="text-muted mb-4">Volte ao início para encontrar horários de missas e confissões na sua cidade.</p>
+        <a href="{% url 'index' %}"
+           class="btn btn-primary btn-lg"
+           hx-boost="false">
+            <i class="fa-solid fa-house me-2" aria-hidden="true"></i>
+            Voltar ao início
+        </a>
+    </main>
+{% endblock content %}

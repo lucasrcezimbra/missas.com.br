@@ -133,6 +133,19 @@ footer a i {
     font-size: 1.1rem;
 }
 
+.not-found {
+    padding: 3rem 0 4rem;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.not-found-code {
+    color: var(--secondary-blue);
+    font-size: clamp(5rem, 15vw, 8rem);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
 .logo-container {
     display: block;
 }
