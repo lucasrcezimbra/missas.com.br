@@ -17,8 +17,10 @@ GET /api/v0/parishes?limit=100&offset=0
   separate cache entry, so distinct `limit`/`offset` pages do not collide.
 - There is no write method, send side effect, verification mutation, freshness
   cutoff, outreach-history filter, or `verified_before` requirement.
-- Public Swagger UI is available at `/api/v0/docs`, with the OpenAPI schema at
+- Public Swagger UI is available at `/api/v0/docs/`, with the OpenAPI schema at
   `/api/v0/openapi.json`. Use **Try it out** to run read-only requests.
+  `/api/v0/docs` redirects to the trailing-slash URL, which also supports browsers
+  that cached this redirect before Swagger was enabled.
 - Endpoint and response schemas are colocated in `missas/api/api.py`.
 
 ## Response

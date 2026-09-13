@@ -1,12 +1,17 @@
+import pytest
 import requests
 from model_bakery import baker
 
 from missas.core.models import Contact, Parish
 
 
-def test_public_api_documentation(live_server):
-    docs = requests.get(f"{live_server.url}/api/v0/docs", timeout=5)
+@pytest.mark.parametrize("path", ["/api/v0/docs", "/api/v0/docs/"])
+def test_public_api_documentation(live_server, settings, path):
+    settings.DEBUG = False
+    docs = requests.get(f"{live_server.url}{path}", timeout=5)
     assert docs.status_code == 200
+    assert docs.url == f"{live_server.url}/api/v0/docs/"
+    assert len(docs.history) == (0 if path.endswith("/") else 1)
     assert "swagger-ui" in docs.text
     assert "/api/v0/openapi.json" in docs.text
 

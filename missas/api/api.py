@@ -55,7 +55,7 @@ class ParishOut(Schema):
         return obj.city.state.short_name
 
 
-api = NinjaAPI()
+api = NinjaAPI(docs_url="/docs/")
 
 
 @api.get("/parishes", response=list[ParishOut])
