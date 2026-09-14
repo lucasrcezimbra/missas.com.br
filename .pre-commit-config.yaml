@@ -16,7 +16,7 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.16.6
+    rev: v0.16.7
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
@@ -34,7 +34,7 @@ repos:
     hooks:
       - id: actionlint
   - repo: https://github.com/Riverside-Healthcare/djLint/
-    rev: v1.46.0
+    rev: v1.46.1
     hooks:
       - id: djlint-reformat-django
   - repo: https://github.com/adamchainz/djade-pre-commit
