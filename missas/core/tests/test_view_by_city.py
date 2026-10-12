@@ -33,6 +33,18 @@ def test_404_if_city_doesnt_exist(client):
 
 
 @pytest.mark.django_db
+def test_invalid_horario_returns_200(client):
+    city = baker.make(City)
+
+    response = client.get(
+        resolve_url("by_city", state=city.state.slug, city=city.slug),
+        data={"horario": "15/static/apple-touch-icon.c9d394ca7803.png"},
+    )
+
+    assert response.status_code == HTTPStatus.OK
+
+
+@pytest.mark.django_db
 def test_view_by_city(client):
     city = baker.make(City)
 

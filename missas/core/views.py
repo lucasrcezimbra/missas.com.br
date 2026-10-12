@@ -107,7 +107,11 @@ def by_city(request, state, city):
         schedules = schedules.filter(day=day)
 
     if hour is not None:
-        hour = time(int(hour))
+        try:
+            hour = time(int(hour))
+        except ValueError:
+            hour = None
+    if hour is not None:
         qs = Q(start_time__gte=hour) | Q(end_time__gte=hour)
         schedules = schedules.filter(qs)
 
